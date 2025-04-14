@@ -1,0 +1,152 @@
+[gd_scene load_steps=12 format=3 uid="uid://dwjy4n3kb7xng"]
+
+[ext_resource type="Script" uid="uid://cqngvn0ave1k6" path="res://Player(chef)/Script/player_script.gd" id="1_l1mtr"]
+[ext_resource type="Texture2D" uid="uid://cxnqakp4j6b0x" path="res://Player(chef)/Sprite/player.png" id="1_r7nfx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
+
+[sub_resource type="Animation" id="Animation_l1mtr"]
+resource_name = "idle_down"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [19, 21, 20]
+}
+
+[sub_resource type="Animation" id="Animation_jw3s0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [19]
+}
+
+[sub_resource type="Animation" id="Animation_t7qnp"]
+resource_name = "idle_up"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [23, 25, 24]
+}
+
+[sub_resource type="Animation" id="Animation_bblps"]
+resource_name = "idle-leftright"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [27, 28, 29]
+}
+
+[sub_resource type="Animation" id="Animation_klnfl"]
+resource_name = "walk_down"
+length = 0.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_dbyqi"]
+resource_name = "walk_leftright"
+length = 0.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_fpgim"]
+resource_name = "walk_up"
+length = 0.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6o5qf"]
+_data = {
+&"RESET": SubResource("Animation_jw3s0"),
+&"idle-leftright": SubResource("Animation_bblps"),
+&"idle_down": SubResource("Animation_l1mtr"),
+&"idle_up": SubResource("Animation_t7qnp"),
+&"walk_down": SubResource("Animation_klnfl"),
+&"walk_leftright": SubResource("Animation_dbyqi"),
+&"walk_up": SubResource("Animation_fpgim")
+}
+
+[node name="Player_character" type="CharacterBody2D"]
+script = ExtResource("1_l1mtr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_edjgo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -13)
+scale = Vector2(1.4375, 1.57031)
+texture = ExtResource("1_r7nfx")
+hframes = 30
+frame = 19
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6o5qf")
+}
