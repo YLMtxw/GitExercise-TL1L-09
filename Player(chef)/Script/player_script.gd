@@ -1,4 +1,4 @@
-class_name player_character extends CharacterBody2D
+extends CharacterBody2D
 
 const  movement_speed : int = 150
 const run_speed : int = 225
@@ -11,20 +11,18 @@ func _process( delta ):
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	direction.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	
-func UpdateDirection():
+func UpdateAction():
+	var action = "walk_down"
+	if velocity.y < 0: action = "walk_up"
+	elif velocity.x > 0: 
+		$Sprite2D.flip_h = false
+		action = "walk_leftright"
+	elif velocity.x < 0: 
+		$Sprite2D.flip_h = true
+		action = "walk_leftright"
+	animation.play(action)
 	if direction == Vector2.ZERO:
 		animation.stop()
-	else:
-		var direction = "_down"
-		if velocity.y < 0: direction = "_up"
-		elif velocity.x > 0: 
-			$Sprite2D.flip_h = false
-			direction = "_leftright"
-		elif velocity.x < 0: 
-			$Sprite2D.flip_h = true
-			direction = "_leftright"
-		
-		animation.play("walk" + direction)
 
 func _physics_process( delta ):
 	var current_speed = movement_speed
@@ -32,4 +30,4 @@ func _physics_process( delta ):
 		current_speed = run_speed
 	velocity = direction * current_speed
 	move_and_slide()
-	UpdateDirection()
+	UpdateAction()
