@@ -5,23 +5,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
 
-[sub_resource type="Animation" id="Animation_l1mtr"]
-resource_name = "idle_down"
-length = 0.3
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [19, 21, 20]
-}
-
 [sub_resource type="Animation" id="Animation_jw3s0"]
 length = 0.001
 tracks/0/type = "value"
@@ -35,23 +18,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [19]
-}
-
-[sub_resource type="Animation" id="Animation_t7qnp"]
-resource_name = "idle_up"
-length = 0.3
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [23, 25, 24]
 }
 
 [sub_resource type="Animation" id="Animation_bblps"]
@@ -69,6 +35,40 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [27, 28, 29]
+}
+
+[sub_resource type="Animation" id="Animation_l1mtr"]
+resource_name = "idle_down"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [19, 21, 20]
+}
+
+[sub_resource type="Animation" id="Animation_t7qnp"]
+resource_name = "idle_up"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [23, 25, 24]
 }
 
 [sub_resource type="Animation" id="Animation_klnfl"]
@@ -140,7 +140,7 @@ script = ExtResource("1_l1mtr")
 shape = SubResource("CircleShape2D_edjgo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, -13)
+position = Vector2(154, 116)
 scale = Vector2(1.4375, 1.57031)
 texture = ExtResource("1_r7nfx")
 hframes = 30
