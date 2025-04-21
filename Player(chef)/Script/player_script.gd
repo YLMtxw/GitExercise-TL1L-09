@@ -12,6 +12,7 @@ func _process( delta ):
 	direction.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	
 	if direction != Vector2.ZERO:
+		#to store player direction so when player is not moving, it will face to where its stop
 		store_direction = direction
 
 func UpdateAction():

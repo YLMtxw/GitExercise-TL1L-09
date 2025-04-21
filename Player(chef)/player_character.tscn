@@ -134,14 +134,19 @@ _data = {
 }
 
 [node name="Player_character" type="CharacterBody2D"]
+z_index = 1
+texture_filter = 1
+position = Vector2(100, 100)
+scale = Vector2(2, 2)
 script = ExtResource("1_l1mtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.677898, 0.469829)
 shape = SubResource("CircleShape2D_edjgo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(170, 129)
-scale = Vector2(1.6875, 1.8164)
+position = Vector2(-0.666667, -15.3333)
+scale = Vector2(1.60692, 1.76917)
 texture = ExtResource("1_r7nfx")
 hframes = 30
 frame = 19
