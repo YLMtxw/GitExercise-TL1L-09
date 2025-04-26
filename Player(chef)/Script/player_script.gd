@@ -37,4 +37,12 @@ func _physics_process( delta ):
 		current_speed = run_speed
 	velocity = direction * current_speed
 	move_and_slide()
-	UpdateAction()        
+	UpdateAction()
+	
+func _input(event):
+	if event.is_action_pressed("sell"):  # usually Enter or Space key
+		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
+		money_display.add_money(10)
+	if event.is_action_pressed("upgrade"):
+		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
+		money_display.upgrade(20)

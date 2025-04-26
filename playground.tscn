@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cersdphmqtx6u"]
+[gd_scene load_steps=12 format=4 uid="uid://cersdphmqtx6u"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Texture2D" uid="uid://cujpni7aqak6q" path="res://Restaurant_map/restaurant_sprite/kitchen16_tan.png" id="2_is3ju"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://4bmdd42inlv5" path="res://Restaurant_map/knive.png" id="4_4bqqs"]
 [ext_resource type="Script" uid="uid://cjia024exbdu" path="res://CLayer/canvas_layer.gd" id="5_4bqqs"]
 [ext_resource type="PackedScene" uid="uid://dcv7le4img47f" path="res://Inventory/InventoryGUI.tscn" id="5_o00ia"]
+[ext_resource type="PackedScene" uid="uid://blbj7tqyl6mi8" path="res://MoneyLabel/money_label.tscn" id="7_ynsuh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynsuh"]
 texture = ExtResource("2_is3ju")
@@ -898,3 +899,11 @@ offset_right = 51.5
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="MoneyLabel" parent="CanvasLayer" instance=ExtResource("7_ynsuh")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_right = 0.0
+grow_horizontal = 0
