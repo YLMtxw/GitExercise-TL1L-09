@@ -7,6 +7,20 @@ var direction : Vector2 = Vector2.ZERO
 var store_direction : Vector2 = Vector2.DOWN
 @onready var animation = $AnimationPlayer
 
+@onready var tilemap = $"../TileMapLayer3"
+var offsets = [
+		Vector2i(0, 0),
+		Vector2i(0, 1),   
+		Vector2i(0, -1),  
+		Vector2i(1, 0),   
+		Vector2i(-1, 0)
+	]
+const source = 0
+const stove_coord1 = Vector2i(7,28)
+const stove_coord2 = Vector2i(8,28)
+const knive_source = 2
+const knive_coord = Vector2i(13,7)
+
 func _process( delta ):
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	direction.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
@@ -14,6 +28,15 @@ func _process( delta ):
 	if direction != Vector2.ZERO:
 		#to store player direction so when player is not moving, it will face to where its stop
 		store_direction = direction
+
+func is_near() -> bool:
+	for offset in offsets:
+		var cell = tilemap.local_to_map(global_position) + offset
+		var source_id = tilemap.get_cell_source_id(cell)
+		var coords = tilemap.get_cell_atlas_coords(cell)
+		if source_id == source and (coords == stove_coord1 or coords == stove_coord2):
+			return true
+	return false
 
 func UpdateAction():
 	var action = "walk_down"
@@ -46,3 +69,6 @@ func _input(event):
 	if event.is_action_pressed("upgrade"):
 		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
 		money_display.upgrade(20)
+	if event.is_action_pressed("interact"):
+			print("stove")
+		
