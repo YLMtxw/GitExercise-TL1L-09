@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwjy4n3kb7xng"]
+[gd_scene load_steps=13 format=3 uid="uid://dwjy4n3kb7xng"]
 
 [ext_resource type="Script" uid="uid://cqngvn0ave1k6" path="res://Player(chef)/Script/player_script.gd" id="1_l1mtr"]
 [ext_resource type="Texture2D" uid="uid://cxnqakp4j6b0x" path="res://Player(chef)/Sprite/player.png" id="1_r7nfx"]
+[ext_resource type="Script" uid="uid://kf41prbgj2k" path="res://Player(chef)/interact[e].gd" id="3_jw3s0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
 
@@ -155,3 +156,12 @@ frame = 19
 libraries = {
 &"": SubResource("AnimationLibrary_6o5qf")
 }
+
+[node name="InteractE" type="Label" parent="."]
+texture_filter = 1
+offset_left = -50.0
+offset_top = -50.0
+offset_right = -10.0
+offset_bottom = -27.0
+text = "[E]"
+script = ExtResource("3_jw3s0")

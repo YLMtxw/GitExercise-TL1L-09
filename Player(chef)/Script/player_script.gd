@@ -30,6 +30,8 @@ const bm_coord1 = Vector2i(0,6)
 const bm_coord2 = Vector2i(1,6)
 const bm_coord3 = Vector2i(13,31)
 
+@onready var EPrompt = $InteractE
+
 func _process( delta ):
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	direction.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
@@ -37,6 +39,13 @@ func _process( delta ):
 	if direction != Vector2.ZERO:
 		#to store player direction so when player is not moving, it will face to where its stop
 		store_direction = direction
+	
+	var near = is_near()
+	if near == "stove" or near == "refri" or near == "knive" or near == "bin" or near == "bm":
+		$InteractE.showE()
+		$InteractE.position = $InteractE.EP_pos  # <- This line is the key
+	else:
+		$InteractE.hideE()
 
 func is_near() -> String:
 	for offset in offsets:
