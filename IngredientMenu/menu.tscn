@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://it3laliekou5"]
+
+[ext_resource type="Script" uid="uid://bfl2av01eblr4" path="res://menu.gd" id="1_iw7va"]
+[ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="2_0xrjd"]
+[ext_resource type="PackedScene" uid="uid://b8m5u0iygxod5" path="res://Inventory/InvSlots.tscn" id="3_lmq3c"]
+[ext_resource type="Texture2D" uid="uid://cbawl20alpd5b" path="res://IngredientMenu/Ingredient_Sprite/vegetable.png" id="4_kwe34"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 155.0
+offset_bottom = 98.0
+script = ExtResource("1_iw7va")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 155.0
+offset_bottom = 98.0
+texture = ExtResource("2_0xrjd")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -42.0
+offset_right = 71.5
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer" instance=ExtResource("3_lmq3c")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(0.346583, 0.332912)
+texture = ExtResource("4_kwe34")
+
+[node name="Button" type="Button" parent="NinePatchRect/GridContainer"]
+layout_mode = 2

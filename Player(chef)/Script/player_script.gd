@@ -31,6 +31,7 @@ const bm_coord2 = Vector2i(1,6)
 const bm_coord3 = Vector2i(13,31)
 
 @onready var EPrompt = $InteractE
+@onready var menu = $menu
 
 func _process( delta ):
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
@@ -100,7 +101,11 @@ func _input(event):
 		if is_near() == "stove":
 			print("stove")
 		if is_near() == "knive":
-			print("knive")
+			if menu.menu1:
+				menu.closeMenu()
+			else:
+				menu.openMenu()
+				print("knive")
 		if is_near() == "refri":
 			print("refri")
 		if is_near() == "bin":
