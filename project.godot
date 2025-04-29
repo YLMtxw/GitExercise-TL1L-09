@@ -14,3 +14,11 @@ config/name="test game"
 run/main_scene="uid://v46hvmlbt3i0"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor]
+
+version_control/autoload_on_startup=true
+
+[gui]
+
+theme/custom="game restaurant"
