@@ -142,7 +142,7 @@ scale = Vector2(2, 2)
 script = ExtResource("1_l1mtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.677898, 0.469829)
+scale = Vector2(0.708674, 0.356954)
 shape = SubResource("CircleShape2D_edjgo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
