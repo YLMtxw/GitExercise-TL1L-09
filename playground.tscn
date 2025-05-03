@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cersdphmqtx6u"]
+[gd_scene load_steps=15 format=4 uid="uid://cersdphmqtx6u"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Texture2D" uid="uid://cujpni7aqak6q" path="res://Restaurant_map/restaurant_sprite/kitchen16_tan.png" id="2_is3ju"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cjia024exbdu" path="res://CLayer/canvas_layer.gd" id="5_4bqqs"]
 [ext_resource type="PackedScene" uid="uid://dcv7le4img47f" path="res://Inventory/InventoryGUI.tscn" id="5_o00ia"]
 [ext_resource type="PackedScene" uid="uid://blbj7tqyl6mi8" path="res://MoneyLabel/money_label.tscn" id="7_ynsuh"]
+[ext_resource type="PackedScene" uid="uid://wxx1kdjlh366" path="res://IngredientMenu/menu.tscn" id="8_pi42a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynsuh"]
 texture = ExtResource("2_is3ju")
@@ -860,7 +861,9 @@ texture = ExtResource("3_o00ia")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pi42a"]
 texture = ExtResource("4_4bqqs")
+13:7/next_alternative_id = 2
 13:7/0 = 0
+13:7/1 = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1jm5"]
 texture = ExtResource("4_v7dth")
@@ -957,7 +960,7 @@ tile_map_data = PackedByteArray("AAADAA8AAAAFAAQAADADABAAAAAFAAMAADACAA8AAAAGAAQ
 tile_set = SubResource("TileSet_h1jm5")
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAABAAEAAAAKAAAAAAACAAEAAAALAAAAAAAEAAEAAAAKAAAAAAABAAIAAAAFAAgAAAACAAIAAAAGAAgAAAAEAAIAAAAFAAgAAAAFAAIAAAAGAAgAAAAFAAEAAAALAAAAAAAKAAEAAAAHABgAAAALAAEAAAAIABgAAAAPAAEAAAAHABgAAAAQAAEAAAAIABgAAAAKAAIAAAAHABwAAAALAAIAAAAIABwAAAAPAAIAAAAHABwAAAAQAAIAAAAIABwAAAAUAAIAAAALAB8AAAAAAAYAAAAAAA4AAAAAAAcAAAAAAA8AAAAAAAgAAAAAABAAAAABAAYAAAABAA4AAAABAAcAAAABAA8AAAABAAgAAAABABAAAAAEAAcAAAANAB8AAAAFAAcAAAANAB8AAAAQAAcAAAAPAB8AAAAOAAcAAAAPAB8AAAAJAAcAAgANAAcAAAALAAcAAgANAAcAAAALAAgAAQADAAIAAAAJAAgAAQADAAIAAAAUAA4AAAALAB4AAAAEAAgAAQAAAAYAAAAFAAgAAQABAAYAAAA=")
+tile_map_data = PackedByteArray("AAABAAEAAAAKAAAAAAACAAEAAAALAAAAAAAEAAEAAAAKAAAAAAABAAIAAAAFAAgAAAACAAIAAAAGAAgAAAAEAAIAAAAFAAgAAAAFAAIAAAAGAAgAAAAFAAEAAAALAAAAAAAKAAEAAAAHABgAAAALAAEAAAAIABgAAAAPAAEAAAAHABgAAAAQAAEAAAAIABgAAAAKAAIAAAAHABwAAAALAAIAAAAIABwAAAAPAAIAAAAHABwAAAAQAAIAAAAIABwAAAAUAAIAAAALAB8AAAAAAAYAAAAAAA4AAAAAAAcAAAAAAA8AAAAAAAgAAAAAABAAAAABAAYAAAABAA4AAAABAAcAAAABAA8AAAABAAgAAAABABAAAAAEAAcAAAANAB8AAAAFAAcAAAANAB8AAAAQAAcAAAAPAB8AAAAOAAcAAAAPAB8AAAAJAAcAAgANAAcAAAALAAcAAgANAAcAAAALAAgAAQADAAIAAAAJAAgAAQADAAIAAAAUAA4AAAALAB4AAAAEAAgAAQAAAAYAAAAFAAgAAQABAAYAAAAJAAkAAAANACcAAAA=")
 tile_set = SubResource("TileSet_h1jm5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -983,6 +986,13 @@ anchor_right = 1.0
 offset_left = -77.0
 offset_right = 0.0
 grow_horizontal = 0
+
+[node name="menu" parent="CanvasLayer" instance=ExtResource("8_pi42a")]
+offset_left = 95.0
+offset_top = 31.0
+offset_right = 224.0
+offset_bottom = 110.0
+scale = Vector2(0.928291, 1.01094)
 
 [node name="Player_character" parent="." instance=ExtResource("1_rupst")]
 position = Vector2(120, 150)

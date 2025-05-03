@@ -8,13 +8,7 @@ var store_direction : Vector2 = Vector2.DOWN
 @onready var animation = $AnimationPlayer
 
 @onready var tilemap = $"../TileMapLayer3"
-var offsets = [
-		Vector2i(0, 0),
-		Vector2i(0, 1),   
-		Vector2i(0, -1),  
-		Vector2i(1, 0),   
-		Vector2i(-1, 0)
-	]
+
 const source = 0
 const stove_coord1 = Vector2i(7,28)
 const stove_coord2 = Vector2i(8,28)
@@ -29,6 +23,7 @@ const bin_coord2 = Vector2i(11,30)
 const bm_coord1 = Vector2i(0,6)
 const bm_coord2 = Vector2i(1,6)
 const bm_coord3 = Vector2i(13,31)
+const k1_coord = Vector2i(13,39)
 
 @onready var EPrompt = $InteractE
 @onready var canvas = $CanvasLayer
@@ -49,6 +44,13 @@ func _process( delta ):
 		$InteractE.hideE()
 
 func is_near() -> String:
+	var offsets = [
+		Vector2i(0, 0),
+		Vector2i(0, 1),   
+		Vector2i(0, -1),  
+		Vector2i(1, 0),   
+		Vector2i(-1, 0)
+	]
 	for offset in offsets:
 		var cell = tilemap.local_to_map(global_position) + offset
 		var source_id = tilemap.get_cell_source_id(cell)
@@ -63,6 +65,15 @@ func is_near() -> String:
 			return "bin"
 		if (source_id == source or source_id == source2) and (coords == bm_coord1 or coords == bm_coord2 or coords == bm_coord3):
 			return "bm"
+	return ""
+
+func is_on() -> String :
+	var offset = Vector2i(0,0)
+	var cell = tilemap.local_to_map(global_position) + offset
+	var source_id = tilemap.get_cell_source_id(cell)
+	var coords = tilemap.get_cell_atlas_coords(cell)
+	if source_id == source and coords == k1_coord:
+		return "1"
 	return ""
 
 func UpdateAction():
