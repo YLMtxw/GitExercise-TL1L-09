@@ -6,8 +6,12 @@ const run_speed : int = 225
 var direction : Vector2 = Vector2.ZERO
 var store_direction : Vector2 = Vector2.DOWN
 @onready var animation = $AnimationPlayer
-
 @onready var tilemap = $"../TileMapLayer3"
+@onready var menuOpen = get_node("/root/Playground/CanvasLayer/menu")
+@onready var menuOpen2 = get_node("/root/Playground/CanvasLayer/menu2")
+@onready var refriOpen = get_node("/root/Playground/CanvasLayer/refri")
+@onready var EPrompt = $InteractE
+@onready var canvas = $CanvasLayer
 
 const source = 0
 const stove_coord1 = Vector2i(7,28)
@@ -24,11 +28,19 @@ const bm_coord1 = Vector2i(0,6)
 const bm_coord2 = Vector2i(1,6)
 const bm_coord3 = Vector2i(13,31)
 const k1_coord = Vector2i(13,39)
+const k2_coord = Vector2i(14,40)
 
-@onready var EPrompt = $InteractE
-@onready var canvas = $CanvasLayer
+func _process(delta):
+	if menuOpen.Mopen():
+		return
+	if menuOpen2.Mopen2():
+		return
+	if refriOpen.Ropen():
+		return
+		
+	movement(delta)
 
-func _process( delta ):
+func movement(delta):
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	direction.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	
@@ -42,6 +54,7 @@ func _process( delta ):
 		$InteractE.position = $InteractE.EP_pos  # <- This line is the key
 	else:
 		$InteractE.hideE()
+		
 
 func is_near() -> String:
 	var offsets = [
@@ -74,6 +87,8 @@ func is_on() -> String :
 	var coords = tilemap.get_cell_atlas_coords(cell)
 	if source_id == source and coords == k1_coord:
 		return "1"
+	if source_id == source and coords == k2_coord:
+		return "2"
 	return ""
 
 func UpdateAction():

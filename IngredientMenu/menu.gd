@@ -1,17 +1,24 @@
 extends Control
 
-
-
 var menu : bool = false
+var is_menu_open = false
 
 func openMenu1():
 	visible = true
 	menu = true
 
+func Mopen():
+	if menu == true:
+		is_menu_open = true
+	return menu
+
 func closeMenu1():
 	visible = false
 	menu = false
 
+func Mclose():
+	if menu == false:
+		is_menu_open = false
 
 func _on_vege_1_pressed() -> void:
 	print("vege1")
