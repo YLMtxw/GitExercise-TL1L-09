@@ -4,6 +4,8 @@ extends CanvasLayer
 @onready var Imenu = $menu
 @onready var Imenu2 = $menu2
 @onready var Irefri = $refri
+@onready var Istove1 = $stove1
+@onready var Istove2 = $stove2
 @onready var player = get_node("/root/Playground/Player_character")
 
 
@@ -12,6 +14,7 @@ func _ready():
 	Imenu.closeMenu1()
 	Imenu2.closeMenu2()
 	Irefri.closeRefri()
+	Istove1.closeStove1()
 
 func _process( delta ):
 	if Input.is_action_just_pressed("OpenInv"):
@@ -39,5 +42,13 @@ func _input(event):
 				Irefri.closeRefri()
 			else:
 				Irefri.openRefri()
-		
-	pass
+		elif player.is_near() == "stove" and (player.is_on() == "3" or player.is_on() == "1"):
+			if Istove1.stove1:
+				Istove1.closeStove1()
+			else:
+				Istove1.openStove1()
+		elif player.is_near() == "stove" and (player.is_on() == "4" or player.is_on() == "2"):
+			if Istove2.stove2:
+				Istove2.closeStove2()
+			else:
+				Istove2.openStove2()

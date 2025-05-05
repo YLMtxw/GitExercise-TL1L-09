@@ -10,8 +10,10 @@ var store_direction : Vector2 = Vector2.DOWN
 @onready var menuOpen = get_node("/root/Playground/CanvasLayer/menu")
 @onready var menuOpen2 = get_node("/root/Playground/CanvasLayer/menu2")
 @onready var refriOpen = get_node("/root/Playground/CanvasLayer/refri")
+@onready var stoveOpen1 = get_node("/root/Playground/CanvasLayer/stove1")
+@onready var stoveOpen2 = get_node("/root/Playground/CanvasLayer/stove2")
 @onready var EPrompt = $InteractE
-@onready var canvas = $CanvasLayer
+@onready var canvas = get_node("/root/Playground/CanvasLayer")
 
 const source = 0
 const stove_coord1 = Vector2i(7,28)
@@ -29,6 +31,8 @@ const bm_coord2 = Vector2i(1,6)
 const bm_coord3 = Vector2i(13,31)
 const k1_coord = Vector2i(13,39)
 const k2_coord = Vector2i(14,40)
+const k3_coord = Vector2i(13,40)
+const k4_coord = Vector2i(14,39)
 
 func _process(delta):
 	if menuOpen.Mopen():
@@ -36,6 +40,10 @@ func _process(delta):
 	if menuOpen2.Mopen2():
 		return
 	if refriOpen.Ropen():
+		return
+	if stoveOpen1.S1open():
+		return
+	if stoveOpen2.S2open():
 		return
 		
 	movement(delta)
@@ -89,6 +97,10 @@ func is_on() -> String :
 		return "1"
 	if source_id == source and coords == k2_coord:
 		return "2"
+	if source_id == source and coords == k3_coord:
+		return "3"
+	if source_id == source and coords == k4_coord:
+		return "4"
 	return ""
 
 func UpdateAction():

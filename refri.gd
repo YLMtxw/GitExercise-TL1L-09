@@ -19,3 +19,42 @@ func closeRefri():
 func Rclose():
 	if refri == false:
 		is_menu_open = false
+
+
+func _on_rvege_pressed() -> void:
+	print("rvege")
+
+
+func _on_rtomato_pressed() -> void:
+	print("rtomato")
+
+
+func _on_rspaghetti_pressed() -> void:
+	print("rspaghetti")
+
+
+func _on_beefsteak_pressed() -> void:
+	print("beefsteak")
+
+
+func _on_beefpatty_pressed() -> void:
+	print("beefpatty")
+
+
+func _on_lamb_pressed() -> void:
+	print("lamb")
+
+func _on_lambpatty_pressed() -> void:
+	print("lambpatty")
+
+
+func _on_chicken_pressed() -> void:
+	print("chicken")
+
+
+func _on_chickenpatty_pressed() -> void:
+	print("chickenpatty")
+
+
+func _on_rcheese_pressed() -> void:
+	print("rcheese")
