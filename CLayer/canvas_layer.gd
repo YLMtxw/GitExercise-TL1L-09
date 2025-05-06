@@ -6,6 +6,8 @@ extends CanvasLayer
 @onready var Irefri = $refri
 @onready var Istove1 = $stove1
 @onready var Istove2 = $stove2
+@onready var Itoaster1 = $toaster1
+@onready var Itoaster2 = $toaster2
 @onready var player = get_node("/root/Playground/Player_character")
 
 
@@ -15,6 +17,8 @@ func _ready():
 	Imenu2.closeMenu2()
 	Irefri.closeRefri()
 	Istove1.closeStove1()
+	Itoaster1.closeToaster1()
+	Itoaster2.closeToaster2()
 
 func _process( delta ):
 	if Input.is_action_just_pressed("OpenInv"):
@@ -27,12 +31,12 @@ func _process( delta ):
 
 func _input(event):
 	if Input.is_action_just_pressed("interact"):
-		if player.is_near() == "knive" and player.is_on() == "1":
+		if player.is_near() == "knive" and (player.is_on() == "1" or player.is_on() == "3"):
 			if Imenu.menu:
 				Imenu.closeMenu1()
 			else:
 				Imenu.openMenu1()
-		elif player.is_near() == "knive" and player.is_on() == "2":
+		elif player.is_near() == "knive" and (player.is_on() == "2" or player.is_on() == "4"):
 			if Imenu2.menu2:
 				Imenu2.closeMenu2()
 			else:
@@ -52,3 +56,13 @@ func _input(event):
 				Istove2.closeStove2()
 			else:
 				Istove2.openStove2()
+		elif player.is_near() == "bm" and (player.is_on() == "1" or player.is_on() == "3"):
+			if Itoaster1.toaster1:
+				Itoaster1.closeToaster1()
+			else:
+				Itoaster1.openToaster1()
+		elif player.is_near() == "bm" and (player.is_on() == "2" or player.is_on() == "4"):
+			if Itoaster2.toaster2:
+				Itoaster2.closeToaster2()
+			else:
+				Itoaster2.openToaster2()

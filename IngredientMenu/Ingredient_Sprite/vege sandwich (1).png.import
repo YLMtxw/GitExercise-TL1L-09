@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce28muas2g7ap"
-path="res://.godot/imported/spaghetti cooked.png-532944f54b4c83cf443f2a132dea578b.ctex"
+uid="uid://c2kl7fqv0usnh"
+path="res://.godot/imported/vege sandwich (1).png-b6f846631dcb4e76446e1c0336a0b74f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/spaghetti cooked.png"
-dest_files=["res://.godot/imported/spaghetti cooked.png-532944f54b4c83cf443f2a132dea578b.ctex"]
+source_file="res://IngredientMenu/Ingredient_Sprite/vege sandwich (1).png"
+dest_files=["res://.godot/imported/vege sandwich (1).png-b6f846631dcb4e76446e1c0336a0b74f.ctex"]
 
 [params]
 

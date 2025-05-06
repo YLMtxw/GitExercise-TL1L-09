@@ -12,6 +12,8 @@ var store_direction : Vector2 = Vector2.DOWN
 @onready var refriOpen = get_node("/root/Playground/CanvasLayer/refri")
 @onready var stoveOpen1 = get_node("/root/Playground/CanvasLayer/stove1")
 @onready var stoveOpen2 = get_node("/root/Playground/CanvasLayer/stove2")
+@onready var toasterOpen1 = get_node("/root/Playground/CanvasLayer/toaster1")
+@onready var toasterOpen2 = get_node("/root/Playground/CanvasLayer/toaster2")
 @onready var EPrompt = $InteractE
 @onready var canvas = get_node("/root/Playground/CanvasLayer")
 
@@ -45,7 +47,10 @@ func _process(delta):
 		return
 	if stoveOpen2.S2open():
 		return
-		
+	if toasterOpen1.t1open():
+		return
+	if toasterOpen2.t2open():
+		return
 	movement(delta)
 
 func movement(delta):
