@@ -16,6 +16,7 @@ var store_direction : Vector2 = Vector2.DOWN
 @onready var toasterOpen2 = get_node("/root/Playground/CanvasLayer/toaster2")
 @onready var EPrompt = $InteractE
 @onready var canvas = get_node("/root/Playground/CanvasLayer")
+@onready var buttons := get_tree().get_nodes_in_group("stove")
 
 const source = 0
 const stove_coord1 = Vector2i(7,28)
@@ -35,6 +36,24 @@ const k1_coord = Vector2i(13,39)
 const k2_coord = Vector2i(14,40)
 const k3_coord = Vector2i(13,40)
 const k4_coord = Vector2i(14,39)
+
+func _ready() :
+	for button in buttons:
+		if button is TextureButton:
+			button.pressed.connect(_on_stove_pressed.bind(button))
+
+func _on_stove_pressed(button):
+	print("Button", button.name, "was pressed. Starting timer.")
+	var timer = Timer.new()
+	timer.wait_time = 8.0
+	timer.one_shot = true
+	timer.timeout.connect(_on_timer_timeout.bind(button))
+	add_child(timer)
+	timer.start()
+	
+	
+func _on_timer_timeout(button):
+	print("Timer for", button.name, "finished!")
 
 func _process(delta):
 	if menuOpen.Mopen():

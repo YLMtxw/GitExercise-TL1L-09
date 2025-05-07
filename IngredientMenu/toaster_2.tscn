@@ -195,3 +195,9 @@ offset_right = 82.0
 offset_bottom = 91.0
 texture_normal = ExtResource("11_26h2n")
 texture_pressed = ExtResource("12_hwp2i")
+
+[connection signal="pressed" from="NinePatchRect/vege sandwich" to="." method="_on_vege_sandwich_pressed"]
+[connection signal="pressed" from="NinePatchRect/egg mayo sandwich" to="." method="_on_egg_mayo_sandwich_pressed"]
+[connection signal="pressed" from="NinePatchRect/chic sandwich" to="." method="_on_chic_sandwich_pressed"]
+[connection signal="pressed" from="NinePatchRect/lamb sandwich" to="." method="_on_lamb_sandwich_pressed"]
+[connection signal="pressed" from="NinePatchRect/beef sandwich" to="." method="_on_beef_sandwich_pressed"]
