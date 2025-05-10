@@ -981,7 +981,6 @@ offset_right = -441.0
 offset_bottom = -234.0
 
 [node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("5_o00ia")]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -995,7 +994,6 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="MoneyLabel" parent="CanvasLayer" instance=ExtResource("7_ynsuh")]
-visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -1027,11 +1025,6 @@ offset_right = 151.0
 offset_bottom = 76.0
 scale = Vector2(1.17648, 1.38004)
 
-[node name="stove1" parent="CanvasLayer" instance=ExtResource("11_te8jg")]
-visible = false
-offset_left = 102.0
-offset_right = 256.0
-
 [node name="stove2" parent="CanvasLayer" instance=ExtResource("12_yjl7g")]
 visible = false
 offset_left = 180.0
@@ -1045,6 +1038,11 @@ offset_left = 28.0
 offset_top = 23.0
 offset_right = -456.0
 offset_bottom = -233.0
+
+[node name="stove1" parent="CanvasLayer" instance=ExtResource("11_te8jg")]
+visible = false
+offset_left = 102.0
+offset_right = 256.0
 
 [node name="Player_character" parent="." instance=ExtResource("1_rupst")]
 position = Vector2(120, 150)

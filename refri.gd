@@ -58,3 +58,19 @@ func _on_chickenpatty_pressed() -> void:
 
 func _on_rcheese_pressed() -> void:
 	print("rcheese")
+
+
+func _on_coke_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on__pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_up_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_sprite_pressed() -> void:
+	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cy1d6xhr11qgy"]
+[gd_scene load_steps=23 format=3 uid="uid://cy1d6xhr11qgy"]
 
 [ext_resource type="Script" uid="uid://csiyiwt5y62k7" path="res://refri.gd" id="1_5uh55"]
 [ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="2_fu6ni"]
@@ -17,6 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://bkactxd3dubok" path="res://IngredientMenu/Ingredient_Sprite/tomato.png" id="15_hyg3o"]
 [ext_resource type="Texture2D" uid="uid://br3axtxxam50y" path="res://IngredientMenu/Ingredient_Sprite/spaghetti cooked.png" id="16_1px5y"]
 [ext_resource type="Texture2D" uid="uid://srkbl3adqsfd" path="res://IngredientMenu/Ingredient_Sprite/cheese.png" id="17_3c5yy"]
+[ext_resource type="Texture2D" uid="uid://de0bdeguiyxuu" path="res://IngredientMenu/Ingredient_Sprite/Drink label.png" id="18_h7tpu"]
+[ext_resource type="Texture2D" uid="uid://dwsv5plhe76n0" path="res://IngredientMenu/Ingredient_Sprite/Coke.png" id="19_gkade"]
+[ext_resource type="Texture2D" uid="uid://bx1qm5blh1co8" path="res://IngredientMenu/Ingredient_Sprite/100plus.png" id="20_tb2no"]
+[ext_resource type="Texture2D" uid="uid://0sjanjo5bw45" path="res://IngredientMenu/7up.png" id="21_wyqo1"]
+[ext_resource type="Texture2D" uid="uid://bbxqbulql4nuw" path="res://IngredientMenu/Sprite.png" id="22_lmx7x"]
 
 [node name="refri" type="Control"]
 layout_mode = 3
@@ -28,7 +33,7 @@ script = ExtResource("1_5uh55")
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_right = 148.0
-offset_bottom = 104.0
+offset_bottom = 158.0
 texture = ExtResource("2_fu6ni")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -221,11 +226,11 @@ expand_mode = 1
 
 [node name="GridContainer4" type="GridContainer" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 5.0
+offset_left = 4.0
 offset_top = 62.0
-offset_right = 73.0
+offset_right = 144.0
 offset_bottom = 82.0
-columns = 4
+columns = 6
 
 [node name="InvSlots" parent="NinePatchRect/GridContainer4" instance=ExtResource("4_i2w46")]
 layout_mode = 2
@@ -270,6 +275,12 @@ offset_bottom = 27.0
 texture = ExtResource("17_3c5yy")
 expand_mode = 1
 
+[node name="InvSlots5" parent="NinePatchRect/GridContainer4" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="InvSlots6" parent="NinePatchRect/GridContainer4" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
 [node name="rvege" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 4.0
@@ -310,6 +321,104 @@ scale = Vector2(0.9, 1)
 texture_normal = ExtResource("11_h7tpu")
 texture_pressed = ExtResource("12_gkade")
 
+[node name="TextureRect5" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 96.0
+offset_right = 31.0
+offset_bottom = 105.0
+texture = ExtResource("18_h7tpu")
+
+[node name="GridContainer5" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 106.0
+offset_right = 46.0
+offset_bottom = 126.0
+columns = 4
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer5" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer5/InvSlots"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 16.0
+offset_bottom = 18.0
+texture = ExtResource("19_gkade")
+expand_mode = 1
+
+[node name="InvSlots2" parent="NinePatchRect/GridContainer5" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer5/InvSlots2"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 15.0
+offset_bottom = 19.0
+texture = ExtResource("20_tb2no")
+expand_mode = 1
+
+[node name="InvSlots3" parent="NinePatchRect/GridContainer5" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer5/InvSlots3"]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 16.0
+offset_bottom = 19.0
+texture = ExtResource("21_wyqo1")
+expand_mode = 1
+
+[node name="InvSlots4" parent="NinePatchRect/GridContainer5" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer5/InvSlots4"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 15.0
+offset_bottom = 19.0
+texture = ExtResource("22_lmx7x")
+expand_mode = 1
+
+[node name="coke" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 127.0
+offset_right = 28.0
+offset_bottom = 136.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="100" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 127.0
+offset_right = 52.0
+offset_bottom = 136.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="7up" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 127.0
+offset_right = 76.0
+offset_bottom = 136.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="sprite" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 127.0
+offset_right = 100.0
+offset_bottom = 136.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
 [connection signal="pressed" from="NinePatchRect/beefsteak" to="." method="_on_beefsteak_pressed"]
 [connection signal="pressed" from="NinePatchRect/beefpatty" to="." method="_on_beefpatty_pressed"]
 [connection signal="pressed" from="NinePatchRect/lamb" to="." method="_on_lamb_pressed"]
@@ -320,3 +429,7 @@ texture_pressed = ExtResource("12_gkade")
 [connection signal="pressed" from="NinePatchRect/rtomato" to="." method="_on_rtomato_pressed"]
 [connection signal="pressed" from="NinePatchRect/rspaghetti" to="." method="_on_rspaghetti_pressed"]
 [connection signal="pressed" from="NinePatchRect/rcheese" to="." method="_on_rcheese_pressed"]
+[connection signal="pressed" from="NinePatchRect/coke" to="." method="_on_coke_pressed"]
+[connection signal="pressed" from="NinePatchRect/100" to="." method="_on__pressed"]
+[connection signal="pressed" from="NinePatchRect/7up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="NinePatchRect/sprite" to="." method="_on_sprite_pressed"]
