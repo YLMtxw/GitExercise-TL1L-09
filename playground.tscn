@@ -986,10 +986,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -51.5
-offset_top = -29.0
-offset_right = 51.5
-offset_bottom = 0.0
+offset_left = -119.5
+offset_top = -45.0
+offset_right = 124.5
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -1010,7 +1010,6 @@ offset_bottom = 89.0
 scale = Vector2(1.1613, 1.24289)
 
 [node name="menu2" parent="CanvasLayer" instance=ExtResource("9_h1jm5")]
-visible = false
 offset_left = 110.0
 offset_top = 9.0
 offset_right = -331.0
@@ -1018,7 +1017,6 @@ offset_bottom = -262.0
 scale = Vector2(1.16537, 1.24691)
 
 [node name="refri" parent="CanvasLayer" instance=ExtResource("10_pio1y")]
-visible = false
 offset_left = 2.0
 offset_top = 22.0
 offset_right = 151.0

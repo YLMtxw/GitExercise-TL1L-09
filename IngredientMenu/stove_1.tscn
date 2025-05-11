@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://b8m5u0iygxod5" path="res://Inventory/InvSlots.tscn" id="3_6acnr"]
 [ext_resource type="Texture2D" uid="uid://br3axtxxam50y" path="res://IngredientMenu/Ingredient_Sprite/spaghetti cooked.png" id="4_jli51"]
 [ext_resource type="Texture2D" uid="uid://bscsd1tq8d4kq" path="res://IngredientMenu/Ingredient_Sprite/aglio olio.png" id="5_s77xn"]
-[ext_resource type="Texture2D" uid="uid://cvevoov0s56yu" path="res://IngredientMenu/Ingredient_Sprite/bolognese.png" id="6_anl77"]
-[ext_resource type="Texture2D" uid="uid://c3nahgv8r72hg" path="res://IngredientMenu/Ingredient_Sprite/carbonara.png" id="7_2vxsl"]
+[ext_resource type="Texture2D" uid="uid://cvevoov0s56yu" path="res://IngredientMenu/Ingredient_Sprite/carbo.png" id="6_anl77"]
+[ext_resource type="Texture2D" uid="uid://c3nahgv8r72hg" path="res://IngredientMenu/Ingredient_Sprite/bolognese.png" id="7_2vxsl"]
 [ext_resource type="Texture2D" uid="uid://cvbswq0p4t8a0" path="res://IngredientMenu/Ingredient_Sprite/selects.png" id="8_frvdk"]
 [ext_resource type="Texture2D" uid="uid://byy1iwm5st1bl" path="res://IngredientMenu/Ingredient_Sprite/selects_clicked.png" id="9_it2lg"]
 [ext_resource type="Texture2D" uid="uid://ouc1g0wn6kxu" path="res://IngredientMenu/Ingredient_Sprite/BeefLabel (1).png" id="10_jli51"]
@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://p0fwxh5vhdl5" path="res://IngredientMenu/Ingredient_Sprite/meat chicken.png" id="20_v28cv"]
 [ext_resource type="Texture2D" uid="uid://cncbc65caocb7" path="res://IngredientMenu/Ingredient_Sprite/vegeLabel.png" id="21_2vxsl"]
 [ext_resource type="Texture2D" uid="uid://cft82glfu4q7o" path="res://IngredientMenu/Ingredient_Sprite/otherLabel.png" id="22_frvdk"]
-[ext_resource type="Texture2D" uid="uid://bkrsxvd6fdeoj" path="res://IngredientMenu/Ingredient_Sprite/egg.png" id="23_it2lg"]
+[ext_resource type="Texture2D" uid="uid://bkrsxvd6fdeoj" path="res://IngredientMenu/Ingredient_Sprite/fried egg.png" id="23_it2lg"]
 
 [node name="stove1" type="Control"]
 layout_mode = 3
@@ -113,7 +113,7 @@ offset_bottom = 37.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="Bolognese" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="carbo" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 28.0
@@ -122,7 +122,7 @@ offset_bottom = 37.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="Carbonara" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="bolognese" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
 layout_mode = 0
 offset_left = 77.0
 offset_top = 28.0
@@ -472,8 +472,8 @@ expand_mode = 1
 
 [connection signal="pressed" from="NinePatchRect/spaghetti cooked" to="." method="_on_spaghetti_cooked_pressed"]
 [connection signal="pressed" from="NinePatchRect/Aglio olio" to="." method="_on_aglio_olio_pressed"]
-[connection signal="pressed" from="NinePatchRect/Bolognese" to="." method="_on_bolognese_pressed"]
-[connection signal="pressed" from="NinePatchRect/Carbonara" to="." method="_on_carbonara_pressed"]
+[connection signal="pressed" from="NinePatchRect/carbo" to="." method="_on_bolognese_pressed"]
+[connection signal="pressed" from="NinePatchRect/bolognese" to="." method="_on_carbonara_pressed"]
 [connection signal="pressed" from="NinePatchRect/beef cooked" to="." method="_on_beef_cooked_pressed"]
 [connection signal="pressed" from="NinePatchRect/pattyb cooked" to="." method="_on_pattyb_cooked_pressed"]
 [connection signal="pressed" from="NinePatchRect/lamb cooked" to="." method="_on_lamb_cooked_pressed"]

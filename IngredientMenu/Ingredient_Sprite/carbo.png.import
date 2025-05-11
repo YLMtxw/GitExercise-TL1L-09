@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3nahgv8r72hg"
-path="res://.godot/imported/carbonara.png-9ebda51c178a75ada9fd795871dc2140.ctex"
+uid="uid://cvevoov0s56yu"
+path="res://.godot/imported/carbo.png-6bf999bf375d78ab0091539595295a23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://IngredientMenu/Ingredient_Sprite/carbonara.png"
-dest_files=["res://.godot/imported/carbonara.png-9ebda51c178a75ada9fd795871dc2140.ctex"]
+source_file="res://IngredientMenu/Ingredient_Sprite/carbo.png"
+dest_files=["res://.godot/imported/carbo.png-6bf999bf375d78ab0091539595295a23.ctex"]
 
 [params]
 

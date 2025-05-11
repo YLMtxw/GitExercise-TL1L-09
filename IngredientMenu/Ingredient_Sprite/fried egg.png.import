@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0sjanjo5bw45"
-path="res://.godot/imported/7up.png-7299d0bf42e1bd688da62e4fae70df86.ctex"
+uid="uid://bkrsxvd6fdeoj"
+path="res://.godot/imported/fried egg.png-c92619abe808d09f5b8dfa4bb4dbcd17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://IngredientMenu/7up.png"
-dest_files=["res://.godot/imported/7up.png-7299d0bf42e1bd688da62e4fae70df86.ctex"]
+source_file="res://IngredientMenu/Ingredient_Sprite/fried egg.png"
+dest_files=["res://.godot/imported/fried egg.png-c92619abe808d09f5b8dfa4bb4dbcd17.ctex"]
 
 [params]
 

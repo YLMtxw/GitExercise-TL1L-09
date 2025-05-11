@@ -20,8 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://de0bdeguiyxuu" path="res://IngredientMenu/Ingredient_Sprite/Drink label.png" id="18_h7tpu"]
 [ext_resource type="Texture2D" uid="uid://dwsv5plhe76n0" path="res://IngredientMenu/Ingredient_Sprite/Coke.png" id="19_gkade"]
 [ext_resource type="Texture2D" uid="uid://bx1qm5blh1co8" path="res://IngredientMenu/Ingredient_Sprite/100plus.png" id="20_tb2no"]
-[ext_resource type="Texture2D" uid="uid://0sjanjo5bw45" path="res://IngredientMenu/7up.png" id="21_wyqo1"]
-[ext_resource type="Texture2D" uid="uid://bbxqbulql4nuw" path="res://IngredientMenu/Sprite.png" id="22_lmx7x"]
+[ext_resource type="Texture2D" uid="uid://0sjanjo5bw45" path="res://IngredientMenu/Ingredient_Sprite/7up.png" id="21_wyqo1"]
+[ext_resource type="Texture2D" uid="uid://bbxqbulql4nuw" path="res://IngredientMenu/Ingredient_Sprite/Sprite.png" id="22_lmx7x"]
 
 [node name="refri" type="Control"]
 layout_mode = 3

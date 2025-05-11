@@ -17,6 +17,7 @@ var store_direction : Vector2 = Vector2.DOWN
 @onready var EPrompt = $InteractE
 @onready var canvas = get_node("/root/Playground/CanvasLayer")
 @onready var buttons := get_tree().get_nodes_in_group("stove")
+@export var inventory : Inventory
 
 const source = 0
 const stove_coord1 = Vector2i(7,28)

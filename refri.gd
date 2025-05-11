@@ -22,6 +22,8 @@ func Rclose():
 
 
 func _on_rvege_pressed() -> void:
+	var item = InventoryItem.new()
+	item.texture = preload("res://Inventory/Item/vegetable.tres")
 	print("rvege")
 
 

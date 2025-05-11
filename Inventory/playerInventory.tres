@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=6 format=3 uid="uid://drhlh6kh526jw"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_y7vrm"]
+[ext_resource type="Resource" uid="uid://dkhew3b6mudbj" path="res://Inventory/Item/vege sandwich.tres" id="2_tdus5"]
+[ext_resource type="Resource" uid="uid://dkbpw5co3j2p0" path="res://Inventory/Item/sprite.tres" id="3_5r6hm"]
+[ext_resource type="Resource" uid="uid://b06hr5gxbtsvl" path="res://Inventory/Item/tomato sauce.tres" id="4_te54h"]
+[ext_resource type="Script" uid="uid://bxrmofj8ghknn" path="res://inventory.gd" id="4_xtjt5"]
+
+[resource]
+script = ExtResource("4_xtjt5")
+items = Array[ExtResource("1_y7vrm")]([ExtResource("2_tdus5"), ExtResource("3_5r6hm"), ExtResource("4_te54h"), null, null, null, null])
+metadata/_custom_type_script = "uid://bxrmofj8ghknn"

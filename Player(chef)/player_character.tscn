@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwjy4n3kb7xng"]
+[gd_scene load_steps=14 format=3 uid="uid://dwjy4n3kb7xng"]
 
 [ext_resource type="Script" uid="uid://cqngvn0ave1k6" path="res://Player(chef)/Script/player_script.gd" id="1_l1mtr"]
 [ext_resource type="Texture2D" uid="uid://cxnqakp4j6b0x" path="res://Player(chef)/Sprite/player.png" id="1_r7nfx"]
+[ext_resource type="Resource" uid="uid://drhlh6kh526jw" path="res://Inventory/playerInventory.tres" id="2_t7qnp"]
 [ext_resource type="Script" uid="uid://kf41prbgj2k" path="res://Player(chef)/interact[e].gd" id="3_jw3s0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
@@ -140,6 +141,7 @@ texture_filter = 1
 position = Vector2(100, 100)
 scale = Vector2(2, 2)
 script = ExtResource("1_l1mtr")
+inventory = ExtResource("2_t7qnp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.708674, 0.356954)

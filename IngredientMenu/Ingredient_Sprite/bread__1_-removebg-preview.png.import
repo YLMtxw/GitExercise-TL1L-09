@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgvngce6he5uq"
-path="res://.godot/imported/egg mayo sandwich.png-97df80630e2f7cb55b237c7bffec1ade.ctex"
+uid="uid://cx3u0xgrcxpqx"
+path="res://.godot/imported/bread__1_-removebg-preview.png-5be46fcf545bc9fd20b57e64d67ef763.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://IngredientMenu/egg mayo sandwich.png"
-dest_files=["res://.godot/imported/egg mayo sandwich.png-97df80630e2f7cb55b237c7bffec1ade.ctex"]
+source_file="res://IngredientMenu/Ingredient_Sprite/bread__1_-removebg-preview.png"
+dest_files=["res://.godot/imported/bread__1_-removebg-preview.png-5be46fcf545bc9fd20b57e64d67ef763.ctex"]
 
 [params]
 

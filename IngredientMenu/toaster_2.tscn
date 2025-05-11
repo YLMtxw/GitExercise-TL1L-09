@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cft82glfu4q7o" path="res://IngredientMenu/Ingredient_Sprite/otherLabel.png" id="3_p2nih"]
 [ext_resource type="PackedScene" uid="uid://b8m5u0iygxod5" path="res://Inventory/InvSlots.tscn" id="4_p0hc8"]
 [ext_resource type="Texture2D" uid="uid://c2kl7fqv0usnh" path="res://IngredientMenu/Ingredient_Sprite/vege sandwich (1).png" id="5_qxyfe"]
-[ext_resource type="Texture2D" uid="uid://dgvngce6he5uq" path="res://IngredientMenu/egg mayo sandwich.png" id="6_yskmc"]
+[ext_resource type="Texture2D" uid="uid://dgvngce6he5uq" path="res://IngredientMenu/Ingredient_Sprite/egg mayo sandwich.png" id="6_yskmc"]
 [ext_resource type="Texture2D" uid="uid://0sej6igb337m" path="res://IngredientMenu/Ingredient_Sprite/chickLabel (1).png" id="7_p3b2n"]
 [ext_resource type="Texture2D" uid="uid://bxrsrx50ff8o0" path="res://IngredientMenu/Ingredient_Sprite/LambLabel (1).png" id="8_1m322"]
 [ext_resource type="Texture2D" uid="uid://ouc1g0wn6kxu" path="res://IngredientMenu/Ingredient_Sprite/BeefLabel (1).png" id="9_v5d2p"]

@@ -2,20 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="1_40lof"]
 [ext_resource type="Script" uid="uid://b3v2lyxq8b40i" path="res://Inventory/Inventory_open_close.gd" id="1_jmfrp"]
-[ext_resource type="PackedScene" uid="uid://b8m5u0iygxod5" path="res://Inventory/InvSlots.tscn" id="2_mdrn5"]
+[ext_resource type="PackedScene" uid="uid://dnf2q1vgc5a3x" path="res://Inventory/slot.tscn" id="3_jmfrp"]
 
 [node name="InventoryGUI" type="Control"]
 custom_minimum_size = Vector2(103, 29)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 176.0
-offset_bottom = 29.0
+offset_right = 244.0
+offset_bottom = 45.0
 script = ExtResource("1_jmfrp")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 176.0
-offset_bottom = 29.0
+offset_right = 244.0
+offset_bottom = 44.0
 texture = ExtResource("1_40lof")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -29,31 +29,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -83.5
-offset_top = -10.5
-offset_right = 80.5
-offset_bottom = 10.5
+offset_left = -117.0
+offset_top = -15.0
+offset_right = 117.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 7
 
-[node name="InvSlots" parent="NinePatchRect/GridContainer" instance=ExtResource("2_mdrn5")]
+[node name="slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_jmfrp")]
 layout_mode = 2
 
-[node name="InvSlots2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_mdrn5")]
+[node name="slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_jmfrp")]
 layout_mode = 2
 
-[node name="InvSlots3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_mdrn5")]
+[node name="slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_jmfrp")]
 layout_mode = 2
 
-[node name="InvSlots4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_mdrn5")]
+[node name="slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_jmfrp")]
 layout_mode = 2
 
-[node name="InvSlots5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_mdrn5")]
+[node name="slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_jmfrp")]
 layout_mode = 2
 
-[node name="InvSlots6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_mdrn5")]
+[node name="slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_jmfrp")]
 layout_mode = 2
 
-[node name="InvSlots7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_mdrn5")]
+[node name="slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_jmfrp")]
 layout_mode = 2

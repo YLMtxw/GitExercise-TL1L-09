@@ -29,11 +29,11 @@ func _on_aglio_olio_pressed() -> void:
 	pass # Replace with function body.
 
 
-func _on_bolognese_pressed() -> void:
+func _on_carbo_pressed() -> void:
 	pass # Replace with function body.
 
 
-func _on_carbonara_pressed() -> void:
+func _on_bolognese_pressed() -> void:
 	pass # Replace with function body.
 
 

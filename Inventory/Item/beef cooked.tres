@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dgaptwkdhtom"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_hhvp3"]
+[ext_resource type="Texture2D" uid="uid://cvevoov0s56yu" path="res://IngredientMenu/Ingredient_Sprite/bolognese.png" id="2_hhvp3"]
+
+[resource]
+script = ExtResource("1_hhvp3")
+name = "beef cooked"
+texture = ExtResource("2_hhvp3")
+metadata/_custom_type_script = "uid://c2jevq51ijiin"
