@@ -11,6 +11,7 @@ func update(item: InventoryItem):
 		itemS.visible = true
 		itemS.texture = item.texture
 		resize_inventory_item(itemS, Vector2(30, 30))
+		
 
 func resize_inventory_item(sprite: Sprite2D, target_size: Vector2):
 	if sprite.texture == null:

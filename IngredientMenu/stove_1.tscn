@@ -95,7 +95,7 @@ offset_bottom = 18.0
 texture = ExtResource("7_2vxsl")
 expand_mode = 1
 
-[node name="spaghetti cooked" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="spaghetti cooked" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 28.0
@@ -104,7 +104,7 @@ offset_bottom = 37.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="Aglio olio" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="Aglio olio" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 28.0
@@ -113,7 +113,7 @@ offset_bottom = 37.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="carbo" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="carbo" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 28.0
@@ -122,7 +122,7 @@ offset_bottom = 37.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="bolognese" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="bolognese" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 77.0
 offset_top = 28.0
@@ -228,7 +228,7 @@ offset_bottom = 48.0
 texture = ExtResource("16_anl77")
 expand_mode = 1
 
-[node name="beef cooked" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="beef cooked" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 69.0
@@ -237,7 +237,7 @@ offset_bottom = 78.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="pattyb cooked" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="pattyb cooked" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 69.0
@@ -246,7 +246,7 @@ offset_bottom = 78.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="lamb cooked" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="lamb cooked" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 52.0
 offset_top = 69.0
@@ -255,7 +255,7 @@ offset_bottom = 78.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="pattyl cooked" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="pattyl cooked" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 69.0
@@ -264,7 +264,7 @@ offset_bottom = 78.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="chicken cooked" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="chicken cooked" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 69.0
@@ -273,7 +273,7 @@ offset_bottom = 78.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="pattyc cooked" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="pattyc cooked" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 124.0
 offset_top = 69.0
@@ -354,7 +354,7 @@ offset_bottom = 19.0
 texture = ExtResource("18_dpvpa")
 expand_mode = 1
 
-[node name="beef steak" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="beef steak" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 102.0
@@ -363,7 +363,7 @@ offset_bottom = 111.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="beef burger" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="beef burger" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 102.0
@@ -372,7 +372,7 @@ offset_bottom = 111.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="lamb" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="lamb" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 52.0
 offset_top = 102.0
@@ -381,7 +381,7 @@ offset_bottom = 111.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="lamb burger" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="lamb burger" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 102.0
@@ -390,7 +390,7 @@ offset_bottom = 111.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="chicken" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="chicken" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 102.0
@@ -399,7 +399,7 @@ offset_bottom = 111.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="chicken burger" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="chicken burger" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 124.0
 offset_top = 102.0
@@ -408,7 +408,7 @@ offset_bottom = 111.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="vege burger" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="vege burger" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 144.0
@@ -417,7 +417,7 @@ offset_bottom = 153.0
 texture_normal = ExtResource("8_frvdk")
 texture_pressed = ExtResource("9_it2lg")
 
-[node name="egg" type="TextureButton" parent="NinePatchRect" groups=["stove"]]
+[node name="egg" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 73.0
 offset_top = 144.0

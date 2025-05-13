@@ -16,8 +16,11 @@ var store_direction : Vector2 = Vector2.DOWN
 @onready var toasterOpen2 = get_node("/root/Playground/CanvasLayer/toaster2")
 @onready var EPrompt = $InteractE
 @onready var canvas = get_node("/root/Playground/CanvasLayer")
-@onready var buttons := get_tree().get_nodes_in_group("stove")
 @export var inventory : Inventory
+var locked_stove := false
+var locked_stove2 := false
+@onready var stoveBar = get_node("/root/Playground/CanvasLayer/loadingBar1")
+@onready var stoveBar2 = get_node("/root/Playground/CanvasLayer/loadingBar2")
 
 const source = 0
 const stove_coord1 = Vector2i(7,28)
@@ -39,11 +42,54 @@ const k3_coord = Vector2i(13,40)
 const k4_coord = Vector2i(14,39)
 
 func _ready() :
+	var buttons = get_tree().get_nodes_in_group("stove")
 	for button in buttons:
 		if button is TextureButton:
 			button.pressed.connect(_on_stove_pressed.bind(button))
+			
+	var buttons2 = get_tree().get_nodes_in_group("stove2")
+	print("Found stove2 buttons:", buttons2.size())
+	for button2 in buttons2 :
+		if button2 is TextureButton:
+			button2.pressed.connect(_on_stove2_pressed.bind(button2))
+	
+	var buttons3 = get_tree().get_nodes_in_group("toaster")
+	for button in buttons3:
+		if button is TextureButton:
+			button.pressed.connect(_on_toaster_pressed.bind(button))
+	
+	var buttons4 = get_tree().get_nodes_in_group("toaster2")
+	for button in buttons4:
+		if button is TextureButton:
+			button.pressed.connect(_on_toaster2_pressed.bind(button))
+	
+	var buttons5 = get_tree().get_nodes_in_group("menu")
+	for button in buttons5:
+		if button is TextureButton:
+			button.pressed.connect(_on_menu_pressed.bind(button))
+	
+	var buttons6 = get_tree().get_nodes_in_group("menu2")
+	for button in buttons6:
+		if button is TextureButton:
+			button.pressed.connect(_on_menu2_pressed.bind(button))
+	
+	stoveBar.connect("loading_finished", Callable(self, "_on_loading_finished"))
+	stoveBar2.connect("loading_finished", Callable(self, "_on_loading_finished"))
+	
 
 func _on_stove_pressed(button):
+	print("Button", button.name, "was pressed. Starting timer.")
+	locked_stove = true
+	stoveBar.show_bar()
+	stoveOpen1.closeStove1()
+
+func _on_stove2_pressed(button2):
+	print("Button", button2.name, "was pressed. Starting timer.")
+	locked_stove2 = true
+	stoveBar2.show_bar()
+	stoveOpen2.closeStove2()
+	
+func _on_toaster_pressed(button):
 	print("Button", button.name, "was pressed. Starting timer.")
 	var timer = Timer.new()
 	timer.wait_time = 8.0
@@ -52,9 +98,40 @@ func _on_stove_pressed(button):
 	add_child(timer)
 	timer.start()
 	
-	
+func _on_toaster2_pressed(button):
+	print("Button", button.name, "was pressed. Starting timer.")
+	var timer = Timer.new()
+	timer.wait_time = 8.0
+	timer.one_shot = true
+	timer.timeout.connect(_on_timer_timeout.bind(button))
+	add_child(timer)
+	timer.start()
+
+func _on_menu_pressed(button):
+	print("Button", button.name, "was pressed. Starting timer.")
+	var timer = Timer.new()
+	timer.wait_time = 5.0
+	timer.one_shot = true
+	timer.timeout.connect(_on_timer_timeout.bind(button))
+	add_child(timer)
+	timer.start()
+
+func _on_menu2_pressed(button):
+	print("Button", button.name, "was pressed. Starting timer.")
+	var timer = Timer.new()
+	timer.wait_time = 5.0
+	timer.one_shot = true
+	timer.timeout.connect(_on_timer_timeout.bind(button))
+	add_child(timer)
+	timer.start()
+
+func _on_loading_finished():
+	if locked_stove:
+		locked_stove = false
+		print("Loading finished")
+
 func _on_timer_timeout(button):
-	print("Timer for", button.name, "finished!")
+	print("Timer for ", button.name, "finished!")
 
 func _process(delta):
 	if menuOpen.Mopen():

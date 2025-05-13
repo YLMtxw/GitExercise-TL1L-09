@@ -4,8 +4,12 @@ var stove1 : bool = false
 var is_menu_open : bool = false
 
 func openStove1():
-	visible = true
-	stove1 = true
+	var main = get_node("/root/Playground/Player_character")
+	if main.locked_stove:
+		return
+	else:
+		visible = true
+		stove1 = true
 
 func S1open():
 	if stove1 == true:
