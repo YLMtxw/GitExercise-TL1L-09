@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cvbswq0p4t8a0" path="res://IngredientMenu/Ingredient_Sprite/selects.png" id="11_26h2n"]
 [ext_resource type="Texture2D" uid="uid://byy1iwm5st1bl" path="res://IngredientMenu/Ingredient_Sprite/selects_clicked.png" id="12_hwp2i"]
 
-[node name="toaster2" type="Control"]
+[node name="toaster2" type="Control" groups=["toaster2"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -151,7 +151,7 @@ offset_bottom = 19.0
 texture = ExtResource("10_ivdax")
 expand_mode = 1
 
-[node name="vege sandwich" type="TextureButton" parent="NinePatchRect"]
+[node name="vege sandwich" type="TextureButton" parent="NinePatchRect" groups=["toaster2"]]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 36.0
@@ -160,7 +160,7 @@ offset_bottom = 45.0
 texture_normal = ExtResource("11_26h2n")
 texture_pressed = ExtResource("12_hwp2i")
 
-[node name="egg mayo sandwich" type="TextureButton" parent="NinePatchRect"]
+[node name="egg mayo sandwich" type="TextureButton" parent="NinePatchRect" groups=["toaster2"]]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 36.0
@@ -169,7 +169,7 @@ offset_bottom = 45.0
 texture_normal = ExtResource("11_26h2n")
 texture_pressed = ExtResource("12_hwp2i")
 
-[node name="chic sandwich" type="TextureButton" parent="NinePatchRect"]
+[node name="chic sandwich" type="TextureButton" parent="NinePatchRect" groups=["toaster2"]]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 82.0
@@ -178,7 +178,7 @@ offset_bottom = 91.0
 texture_normal = ExtResource("11_26h2n")
 texture_pressed = ExtResource("12_hwp2i")
 
-[node name="lamb sandwich" type="TextureButton" parent="NinePatchRect"]
+[node name="lamb sandwich" type="TextureButton" parent="NinePatchRect" groups=["toaster2"]]
 layout_mode = 0
 offset_left = 33.0
 offset_top = 82.0
@@ -187,7 +187,7 @@ offset_bottom = 91.0
 texture_normal = ExtResource("11_26h2n")
 texture_pressed = ExtResource("12_hwp2i")
 
-[node name="beef sandwich" type="TextureButton" parent="NinePatchRect"]
+[node name="beef sandwich" type="TextureButton" parent="NinePatchRect" groups=["toaster2"]]
 layout_mode = 0
 offset_left = 58.0
 offset_top = 82.0

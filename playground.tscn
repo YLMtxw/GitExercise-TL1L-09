@@ -974,7 +974,7 @@ tile_set = SubResource("TileSet_h1jm5")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("5_4bqqs")
 
-[node name="toaster2" parent="CanvasLayer" groups=["toaster2"] instance=ExtResource("6_jgc46")]
+[node name="toaster2" parent="CanvasLayer" instance=ExtResource("6_jgc46")]
 visible = false
 offset_left = 43.0
 offset_top = 22.0
@@ -1002,7 +1002,7 @@ offset_left = -77.0
 offset_right = 0.0
 grow_horizontal = 0
 
-[node name="menu" parent="CanvasLayer" groups=["menu"] instance=ExtResource("8_pi42a")]
+[node name="menu" parent="CanvasLayer" instance=ExtResource("8_pi42a")]
 visible = false
 offset_left = 81.0
 offset_top = 10.0
@@ -1010,7 +1010,7 @@ offset_right = 209.0
 offset_bottom = 89.0
 scale = Vector2(1.1613, 1.24289)
 
-[node name="menu2" parent="CanvasLayer" groups=["menu2"] instance=ExtResource("9_h1jm5")]
+[node name="menu2" parent="CanvasLayer" instance=ExtResource("9_h1jm5")]
 visible = false
 offset_left = 110.0
 offset_top = 9.0
@@ -1026,21 +1026,21 @@ offset_right = 151.0
 offset_bottom = 76.0
 scale = Vector2(1.17648, 1.38004)
 
-[node name="stove2" parent="CanvasLayer" groups=["stove2"] instance=ExtResource("12_yjl7g")]
+[node name="stove2" parent="CanvasLayer" instance=ExtResource("12_yjl7g")]
 visible = false
 offset_left = 180.0
 offset_top = 1.0
 offset_right = 334.0
 offset_bottom = 119.0
 
-[node name="toaster1" parent="CanvasLayer" groups=["toaster"] instance=ExtResource("13_f7pug")]
+[node name="toaster1" parent="CanvasLayer" instance=ExtResource("13_f7pug")]
 visible = false
 offset_left = 28.0
 offset_top = 23.0
 offset_right = -456.0
 offset_bottom = -233.0
 
-[node name="stove1" parent="CanvasLayer" groups=["stove"] instance=ExtResource("11_te8jg")]
+[node name="stove1" parent="CanvasLayer" instance=ExtResource("11_te8jg")]
 visible = false
 offset_left = 99.0
 offset_top = 4.0
@@ -1048,16 +1048,28 @@ offset_right = 253.0
 offset_bottom = 163.0
 
 [node name="loadingBar1" parent="CanvasLayer" instance=ExtResource("15_dk0co")]
-offset_left = 145.0
-offset_top = 6.0
-offset_right = -366.0
-offset_bottom = -340.0
+offset_left = 163.0
+offset_top = 9.0
+offset_right = -385.0
+offset_bottom = -337.0
 
 [node name="loadingBar2" parent="CanvasLayer" instance=ExtResource("15_dk0co")]
-offset_left = 222.0
-offset_top = 6.0
-offset_right = -289.0
-offset_bottom = -339.0
+offset_left = 243.0
+offset_top = 9.0
+offset_right = -305.0
+offset_bottom = -336.0
+
+[node name="loadingBar3" parent="CanvasLayer" instance=ExtResource("15_dk0co")]
+offset_left = 57.0
+offset_top = 110.0
+offset_right = -491.0
+offset_bottom = -235.0
+
+[node name="loadingBar4" parent="CanvasLayer" instance=ExtResource("15_dk0co")]
+offset_left = 73.0
+offset_top = 132.0
+offset_right = -475.0
+offset_bottom = -213.0
 
 [node name="Player_character" parent="." instance=ExtResource("1_rupst")]
 position = Vector2(120, 150)

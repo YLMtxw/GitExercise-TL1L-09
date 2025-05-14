@@ -2,10 +2,37 @@ extends Control
 
 var toaster1 : bool = false
 var is_menu_open : bool = false
+var locked : bool = false
+@onready var toasterBar = get_node("/root/Playground/CanvasLayer/loadingBar3")
+
+func _ready() :
+	for button in get_tree().get_nodes_in_group("toaster1"):
+		if button is TextureButton:
+			button.pressed.connect(_on_toaster1_button_pressed.bind(button))
+			print("texture button")
+	
+	toasterBar.connect("loading_finished", Callable(self, "_on_loading_finished"))
+
+func _on_toaster1_button_pressed(button: TextureButton):
+	locked = true
+	print("Button pressed, showing bar...")
+	toasterBar.show_bar()
+	closeToaster1()
+
+func _on_loading_finished():
+	if locked:
+		locked = false
+		print("Loading finished")
+
+func _on_timer_timeout(button):
+	print("Timer for ", button.name, "finished!")
 
 func openToaster1():
-	visible = true
-	toaster1 = true
+	if locked:
+		return
+	else:
+		visible = true
+		toaster1 = true
 
 func t1open():
 	if toaster1 == true:
