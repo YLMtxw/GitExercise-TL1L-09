@@ -4,4 +4,4 @@ class_name Inventory extends Resource
 
 func add_item(item: InventoryItem) -> void:
 	items.append(item)
-	print("added item", item.name)
+	print("added item ", item.name)
