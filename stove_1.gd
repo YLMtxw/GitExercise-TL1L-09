@@ -4,6 +4,8 @@ var stove1 : bool = false
 var is_menu_open : bool = false
 var locked : bool = false
 @onready var stoveBar = get_node("/root/Playground/CanvasLayer/loadingBar1")
+var inventory = preload("res://Inventory/playerInventory.tres")
+@onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
 
 func _ready() :
 	for button in get_tree().get_nodes_in_group("stove1"):
@@ -48,8 +50,9 @@ func S1close():
 		is_menu_open = false
 
 
-func _on_vege_burger_pressed() -> void:
-	pass # Replace with function body.
+func _on_vege_burger_pressed():
+	var item = preload("res://Inventory/Item/vege burger.tres")
+	pass
 
 
 func _on_egg_pressed() -> void:

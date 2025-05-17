@@ -33,6 +33,7 @@ var inventory = preload(\"res://Inventory/playerInventory.tres\")
 @onready var inventorygui = get_node(\"/root/Playground/CanvasLayer/InventoryGUI\")
 
 
+
 func openRefri():
 	visible = true
 	refri = true
@@ -49,70 +50,120 @@ func closeRefri():
 func Rclose():
 	if refri == false:
 		is_menu_open = false
+		
+func insert(item: InventoryItem) -> void:
+	inventory.add_item(item)
+	
 
 func _on_rvege_pressed() -> void:
 	var item = preload(\"res://Inventory/Item/vegetable.tres\")
 	print(\"rvege\")
-	inventory.add_item(item)
 	inventorygui.update()
+	insert(item)
 
 func _on_rtomato_pressed() -> void:
+	var item = preload(\"res://Inventory/Item/tomato.tres\")
 	print(\"rtomato\")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_rspaghetti_pressed() -> void:
+	var item = preload(\"res://Inventory/Item/spaghetti raw.tres\")
 	print(\"rspaghetti\")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_beefsteak_pressed() -> void:
+	var item = preload(\"res://Inventory/Item/beef_raw.tres\")
 	print(\"beefsteak\")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_beefpatty_pressed() -> void:
+	var item = preload(\"res://Inventory/Item/beef patty raw.tres\")
 	print(\"beefpatty\")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_lamb_pressed() -> void:
+	var item = preload(\"res://Inventory/Item/lamb raw.tres\")
 	print(\"lamb\")
+	inventorygui.update()
+	insert(item)
+
 
 func _on_lambpatty_pressed() -> void:
+	var item = preload(\"res://Inventory/Item/lamb patty raw.tres\")
 	print(\"lambpatty\")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_chicken_pressed() -> void:
+	var item = preload(\"res://Inventory/Item/chicken raw.tres\")
 	print(\"chicken\")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_chickenpatty_pressed() -> void:
+	var item = preload(\"res://Inventory/Item/chicken patty raw.tres\")
 	print(\"chickenpatty\")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_rcheese_pressed() -> void:
+	var item = preload(\"res://Inventory/Item/cheese.tres\")
 	print(\"rcheese\")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_coke_pressed() -> void:
-	pass # Replace with function body.
+	var item = preload(\"res://Inventory/Item/coke.tres\")
+	print(\"coke\")
+	inventorygui.update()
+	insert(item)
+	
 
 
 func _on__pressed() -> void:
-	pass # Replace with function body.
+	var item = preload(\"res://Inventory/Item/100plus.tres\")
+	print(\"100\")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_up_pressed() -> void:
-	pass # Replace with function body.
-
+	var item = preload(\"res://Inventory/Item/7up.tres\")
+	print(\"7up\")
+	inventorygui.update()
+	insert(item)
 
 func _on_sprite_pressed() -> void:
-	pass # Replace with function body.
+	var item = preload(\"res://Inventory/Item/sprite.tres\")
+	print(\"sprite\")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_bun_pressed() -> void:
-	pass # Replace with function body.
+	var item = preload(\"res://Inventory/Item/bun.tres\")
+	print(\"bun\")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_bread_pressed() -> void:
-	pass # Replace with function body.
+	var item = preload(\"res://Inventory/Item/bread.tres\")
+	print(\"bread\")
+	inventorygui.update()
+	insert(item)
 "
 
 [node name="refri" type="Control"]
