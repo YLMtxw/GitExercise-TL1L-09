@@ -63,7 +63,6 @@ shadow_color = Color(0, 0, 0, 1)
 script = SubResource("GDScript_8crf7")
 
 [node name="TextureButton" type="TextureButton" parent="."]
-visible = false
 texture_filter = 1
 clip_contents = true
 offset_left = 800.0

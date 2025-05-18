@@ -20,13 +20,15 @@ func _on_TutorialPopup_gui_input(event): #一旦，我打开了窗口后，我�
 
 
 func _on_tutorial_button_pressed() -> void:
+	$ClickSound.play()
 	$PopupPanel.popup_centered()
 
 
-func _on_start_button_pressed():
-	$CanvasLayer/AnimationPlayer.play("fade_out")
+func _on_start_button_pressed() -> void:
+	$ClickSound.play()
 	get_tree().change_scene_to_file("res://PlayerInfo.tscn")
 
 
 func _on_texture_button_pressed() -> void:
+	$ClickSound.play()
 	get_tree().change_scene_to_file("res://PlayerInfo.tscn")

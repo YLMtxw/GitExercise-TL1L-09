@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=3 uid="uid://jjtkcedp5hyj"]
+
+[ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
+[ext_resource type="Texture2D" uid="uid://f6157ah74bx3" path="res://photo/menu01-removebg-preview.png" id="2_rc1au"]
+[ext_resource type="Texture2D" uid="uid://dleod6oi06gyu" path="res://photo/WhatsApp_图像2025-05-14于00.15.16_9bdf4754-removebg-preview (1).png" id="3_k1gfb"]
+[ext_resource type="Texture2D" uid="uid://brwdj4lim6gvp" path="res://photo/WhatsApp_图像2025-05-14于00.15.16_b55d65e7-removebg-preview.png" id="4_0whe8"]
+[ext_resource type="Texture2D" uid="uid://cpe7flaxc7wqu" path="res://photo/WhatsApp_图像2025-05-14于00.15.17_72a5ef38-removebg-preview.png" id="5_ax1vu"]
+[ext_resource type="Texture2D" uid="uid://cluqgich4icd6" path="res://photo/WhatsApp_图像2025-05-14于00.15.17_6bd5c3b7-removebg-preview.png" id="6_8snal"]
+[ext_resource type="Texture2D" uid="uid://dvkrr630308np" path="res://photo/WhatsApp_图像2025-05-14于00.15.20_2c6ad564-removebg-preview.png" id="7_x6bcb"]
+[ext_resource type="Texture2D" uid="uid://ch7x4nd6148dg" path="res://photo/WhatsApp_图像2025-05-14于00.15.14_dd7fad6a-removebg-preview.png" id="8_6rsue"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ra00y")
+
+[node name="Planning Screen" type="Sprite2D" parent="."]
+position = Vector2(637, 336)
+scale = Vector2(1.7958, 1.954)
+texture = ExtResource("2_rc1au")
+
+[node name="Button1" type="TextureButton" parent="."]
+texture_filter = 1
+clip_contents = true
+layout_mode = 0
+offset_left = 326.0
+offset_top = 80.0
+offset_right = 632.0
+offset_bottom = 292.0
+scale = Vector2(0.27, 0.3)
+texture_normal = ExtResource("3_k1gfb")
+stretch_mode = 0
+
+[node name="photo1" type="Sprite2D" parent="."]
+position = Vector2(604, 338)
+scale = Vector2(1.95308, 1.94967)
+texture = ExtResource("4_0whe8")
+
+[node name="blue box" type="Sprite2D" parent="photo1"]
+position = Vector2(-100.866, -36.4165)
+scale = Vector2(0.377763, 0.39682)
+texture = ExtResource("8_6rsue")
+
+[node name="blue box2" type="Sprite2D" parent="photo1"]
+position = Vector2(-25.0886, -34.3648)
+scale = Vector2(0.36575, 0.40212)
+texture = ExtResource("8_6rsue")
+
+[node name="Button2" type="TextureButton" parent="."]
+texture_filter = 1
+clip_contents = true
+layout_mode = 0
+offset_left = 425.0
+offset_top = 85.0
+offset_right = 731.0
+offset_bottom = 297.0
+scale = Vector2(0.27, 0.28)
+texture_normal = ExtResource("3_k1gfb")
+
+[node name="photo2" type="Sprite2D" parent="."]
+position = Vector2(604.5, 338)
+scale = Vector2(1.95345, 1.936)
+texture = ExtResource("5_ax1vu")
+
+[node name="Button3" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 530.0
+offset_top = 84.0
+offset_right = 836.0
+offset_bottom = 296.0
+scale = Vector2(0.27, 0.28)
+texture_normal = ExtResource("3_k1gfb")
+
+[node name="photo3" type="Sprite2D" parent="."]
+position = Vector2(606, 339)
+scale = Vector2(1.95045, 1.94667)
+texture = ExtResource("6_8snal")
+
+[node name="WhatsApp图像2025-05-14于00_15_202c6Ad564-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(1389, 736)
+scale = Vector2(1.997, 1.83467)
+texture = ExtResource("7_x6bcb")
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_table_2_pressed"]
