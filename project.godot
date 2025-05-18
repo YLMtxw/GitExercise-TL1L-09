@@ -10,17 +10,24 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="test game"
+run/main_scene="uid://v46hvmlbt3i0"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=578
-window/size/viewport_height=350
 window/size/window_width_override=1080
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+
+[editor]
+
+version_control/autoload_on_startup=true
+
+[gui]
+
+theme/custom="game restaurant"
 
 [input]
 
@@ -76,3 +83,4 @@ interact={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+config_version=5

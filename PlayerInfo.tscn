@@ -1,0 +1,119 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh0bnbmse2ai0"]
+
+[ext_resource type="Texture2D" uid="uid://1el28nogvkee" path="res://photo/Player Info.jpg" id="1_ijsdh"]
+[ext_resource type="Script" uid="uid://41r7f4447njn" path="res://button.gd" id="2_ijsdh"]
+
+[sub_resource type="GDScript" id="GDScript_8crf7"]
+script/source = "extends Node
+
+var player_name = \"\"
+var store_name = \"\"
+var player_age = 0
+
+
+@onready var age_slider = $AgeSlider
+@onready var age_label = $AgeLabel
+
+func _on_AgeSlider_value_changed(value):
+	age_label.text = str(int(value)) + \" Age\"
+
+
+
+@onready var player_name_input = $PlayerNameInput
+@onready var store_name_input = $StoreNameInput
+@onready var age_input = $AgeInput
+
+func _on_CreateButton_pressed():
+	var player_name = player_name_input.text
+	var store_name = store_name_input.text
+	var player_age = age_input.text
+
+	if player_name == \"\" or store_name == \"\" or player_age == \"\":
+		# 防止没填资料
+		show_warning(\"请填写完整资料！\")
+		return
+	
+
+func show_warning(message):
+	# 弹出警告（可以简单用print，或者做个Popup弹窗）
+	print(message)
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file(\"res://game_01.tscn\")
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8crf7"]
+bg_color = Color(0.96678, 0.400092, 9.62615e-07, 1)
+border_width_left = 5
+border_width_top = 15
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.26666, 0.67, 0.0938, 1)
+border_blend = true
+corner_detail = 1
+shadow_size = 6
+
+[sub_resource type="FontVariation" id="FontVariation_8crf7"]
+variation_embolden = 0.67
+
+[node name="PlayerInfo" type="Node2D"]
+script = SubResource("GDScript_8crf7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578.249, 322.75)
+scale = Vector2(1.06898, 0.896528)
+texture = ExtResource("1_ijsdh")
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+initial_position = 2
+size = Vector2i(550, 480)
+theme_override_styles/panel = SubResource("StyleBoxFlat_8crf7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 255.0
+offset_top = -127.0
+offset_right = 783.0
+offset_bottom = 321.0
+theme_override_colors/font_color = Color(0.980392, 0.854902, 0.552941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.329412, 0.235294, 0.262745, 1)
+theme_override_fonts/font = SubResource("FontVariation_8crf7")
+theme_override_font_sizes/font_size = 50
+text = "CREATE PROFILE"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 278.0
+offset_top = 424.0
+offset_right = 806.0
+offset_bottom = 544.0
+min_value = 1.0
+value = 1.0
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+offset_left = 279.0
+offset_top = 286.0
+offset_right = 807.0
+offset_bottom = 385.0
+placeholder_text = "Input your Shop Name"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 281.0
+offset_top = 160.0
+offset_right = 809.0
+offset_bottom = 246.0
+placeholder_text = "Input your Username"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 889.0
+offset_top = 240.0
+offset_right = 1027.0
+offset_bottom = 300.0
+text = "Create Now"
+script = ExtResource("2_ijsdh")
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

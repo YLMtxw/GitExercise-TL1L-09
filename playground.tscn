@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cersdphmqtx6u"]
+[gd_scene load_steps=22 format=4 uid="uid://bmlcjik7mnbd1"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Texture2D" uid="uid://cujpni7aqak6q" path="res://Restaurant_map/restaurant_sprite/kitchen16_tan.png" id="2_is3ju"]
