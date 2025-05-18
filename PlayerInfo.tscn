@@ -62,6 +62,12 @@ font_color = Color(1, 0.0392157, 0.054902, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ijsdh"]
+font_size = 40
+font_color = Color(1, 0.0392157, 0.054902, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
 [node name="PlayerInfo" type="Node2D"]
 script = SubResource("GDScript_8crf7")
 
@@ -81,6 +87,14 @@ position = Vector2(287.5, 175.5)
 scale = Vector2(0.530556, 0.4875)
 texture = ExtResource("1_ijsdh")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_wbq6p")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Control" type="Control" parent="."]
@@ -116,6 +130,13 @@ offset_left = 340.0
 offset_top = 302.0
 offset_right = 745.0
 offset_bottom = 379.0
+[node name="LineEdit2" type="LineEdit" parent="Control"]
+auto_translate_mode = 1
+layout_mode = 0
+offset_left = 340.0
+offset_top = 302.0
+offset_right = 745.0
+offset_bottom = 379.0
 placeholder_text = "Input your Shop Name"
 
 [node name="LineEdit" type="LineEdit" parent="Control"]
@@ -125,6 +146,7 @@ offset_top = 111.0
 offset_right = 355.0
 offset_bottom = 152.0
 placeholder_text = "Input your Username"
+script = ExtResource("2_8ex5c")
 script = ExtResource("2_8ex5c")
 
 [node name="HSlider" type="HSlider" parent="Control"]

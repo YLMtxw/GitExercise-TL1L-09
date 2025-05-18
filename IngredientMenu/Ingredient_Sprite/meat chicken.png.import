@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7a6gqexehx3g"
-path="res://.godot/imported/box.jpg-e01ee769a0baf37978711973aaba2560.ctex"
+uid="uid://p0fwxh5vhdl5"
+path="res://.godot/imported/meat chicken.png-b367d9ea666260e742a65af407e94ade.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://photo/box.jpg"
-dest_files=["res://.godot/imported/box.jpg-e01ee769a0baf37978711973aaba2560.ctex"]
+source_file="res://IngredientMenu/Ingredient_Sprite/meat chicken.png"
+dest_files=["res://.godot/imported/meat chicken.png-b367d9ea666260e742a65af407e94ade.ctex"]
 
 [params]
 

@@ -3,11 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d1lwvjd88b05l"
-valid=false
+path="res://.godot/imported/G.E.M.鄧紫棋無雙的王者Peerless KingOfficial Music Video.mp3-f3db1c28132a2c792b72e556bd8887c9.mp3str"
 
 [deps]
 
 source_file="res://song/G.E.M.鄧紫棋無雙的王者Peerless KingOfficial Music Video.mp3"
+dest_files=["res://.godot/imported/G.E.M.鄧紫棋無雙的王者Peerless KingOfficial Music Video.mp3-f3db1c28132a2c792b72e556bd8887c9.mp3str"]
 
 [params]
 
