@@ -3,8 +3,8 @@ extends Node2D
 func _ready():
 	pass
 
-func _on_StartButton_pressed():
-	$CanvasLayer/AnimationPlayer.play("fade_out")
+
+	
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "fade_out":
@@ -24,4 +24,9 @@ func _on_tutorial_button_pressed() -> void:
 
 
 func _on_start_button_pressed():
+	$CanvasLayer/AnimationPlayer.play("fade_out")
+	get_tree().change_scene_to_file("res://PlayerInfo.tscn")
+
+
+func _on_texture_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://PlayerInfo.tscn")
