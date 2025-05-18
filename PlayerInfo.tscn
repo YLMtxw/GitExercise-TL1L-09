@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bh0bnbmse2ai0"]
+[gd_scene load_steps=11 format=3 uid="uid://bh0bnbmse2ai0"]
 
 [ext_resource type="Texture2D" uid="uid://1el28nogvkee" path="res://photo/Player Info.jpg" id="1_ijsdh"]
 [ext_resource type="Script" uid="uid://brfvdde8id256" path="res://line_edit.gd" id="2_8ex5c"]
 [ext_resource type="Texture2D" path="res://pixil-frame-0.png" id="3_8ex5c"]
 [ext_resource type="Texture2D" path="res://hi.png" id="4_34t3e"]
+[ext_resource type="Texture2D" uid="uid://dt7ocpxfdhm6w" path="res://photo/pixil-frame-0.png" id="5_w17oj"]
+[ext_resource type="Texture2D" uid="uid://ca7vc4wm66k27" path="res://photo/hi.png" id="6_1dwlc"]
 
 [sub_resource type="GDScript" id="GDScript_8crf7"]
 script/source = "extends Node
@@ -43,6 +45,7 @@ func is_valid_username(username: String) -> bool:
 
 
 func _on_texture_button_pressed() -> void:
+	$TextureButton.visible = true
 	get_tree().change_scene_to_file(\"res://game_01.tscn\")
 "
 
@@ -117,10 +120,10 @@ placeholder_text = "Input your Shop Name"
 
 [node name="LineEdit" type="LineEdit" parent="Control"]
 layout_mode = 0
-offset_left = 339.0
-offset_top = 160.0
-offset_right = 750.0
-offset_bottom = 235.0
+offset_left = 335.0
+offset_top = 182.0
+offset_right = 746.0
+offset_bottom = 257.0
 placeholder_text = "Input your Username"
 script = ExtResource("2_8ex5c")
 
@@ -157,6 +160,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 visible_characters_behavior = 1
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(29, 0)
+offset_left = 876.0
+offset_top = 382.0
+offset_right = 924.0
+offset_bottom = 406.0
+texture_normal = ExtResource("5_w17oj")
+texture_pressed = ExtResource("6_1dwlc")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="value_changed" from="Control/HSlider" to="." method="_on_h_slider_value_changed"]
