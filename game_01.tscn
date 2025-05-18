@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bo4o20ng5smtj"]
+[gd_scene load_steps=5 format=3 uid="uid://dxahe2n3ex32m"]
 
 [ext_resource type="Texture2D" uid="uid://dglvgwccphwfl" path="res://photo/download.jpg" id="1_ydg6a"]
-[ext_resource type="Texture2D" path="res://photo/飞船.jpg" id="2_vyio7"]
 [ext_resource type="AudioStream" uid="uid://bbljp5n8dot2x" path="res://song/chinese-new-year-184077.mp3" id="3_vyio7"]
 
 [sub_resource type="GDScript" id="GDScript_ydg6a"]
@@ -26,7 +25,6 @@ position = Vector2(440, 232)
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(-169.125, 323)
 scale = Vector2(0.445555, 0.82)
-texture = ExtResource("2_vyio7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-168, 318)

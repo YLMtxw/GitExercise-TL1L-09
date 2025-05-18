@@ -6,6 +6,7 @@ var locked : bool = false
 @onready var stoveBar = get_node("/root/Playground/CanvasLayer/loadingBar1")
 var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+var item = null
 
 func _ready() :
 	for button in get_tree().get_nodes_in_group("stove1"):
@@ -25,9 +26,18 @@ func _on_loading_finished():
 	if locked:
 		locked = false
 		print("Loading finished")
+		
+		if item:
+			insert(item)
+			inventorygui.update()  # ← Make sure this updates the UI
+			print("Added item to inventory: ", item.name)
+			item = null
 
 func _on_timer_timeout(button):
 	print("Timer for ", button.name, "finished!")
+	
+func insert(item: InventoryItem) -> void:
+	inventory.add_item(item)
 
 func openStove1():
 	if locked == true:
@@ -51,15 +61,17 @@ func S1close():
 
 
 func _on_vege_burger_pressed():
-	var item = preload("res://Inventory/Item/vege burger.tres")
+	item = preload("res://Inventory/Item/vege burger.tres")
 	pass
 
 
 func _on_egg_pressed() -> void:
+	item = preload("res://Inventory/Item/fried egg.tres")
 	pass # Replace with function body.
 
 
 func _on_spaghetti_cooked_pressed() -> void:
+	
 	pass # Replace with function body.
 
 
