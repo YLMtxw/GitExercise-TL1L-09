@@ -70,11 +70,12 @@ script = ExtResource("1_ufv5y")
 [node name="tutorial button" type="TextureButton" parent="."]
 texture_filter = 1
 clip_contents = true
-offset_left = 250.0
-offset_top = 470.0
-offset_right = 294.0
-offset_bottom = 490.0
-scale = Vector2(5.5, 5.5)
+anchors_preset = -1
+offset_left = 125.0
+offset_top = 255.0
+offset_right = 169.0
+offset_bottom = 275.0
+scale = Vector2(3, 3.5)
 tooltip_auto_translate_mode = 1
 texture_normal = ExtResource("2_ht3pi")
 texture_pressed = ExtResource("3_ms31j")
@@ -85,29 +86,34 @@ texture_repeat = 1
 anchors_preset = -1
 anchor_left = -0.04
 anchor_right = 0.87
-offset_left = 625.0
-offset_top = 470.0
-offset_right = 669.0
-offset_bottom = 490.0
-scale = Vector2(5.5, 5.5)
+offset_left = 320.0
+offset_top = 255.0
+offset_right = 364.0
+offset_bottom = 275.0
+scale = Vector2(3, 3.5)
 texture_normal = ExtResource("4_ht3pi")
 texture_pressed = ExtResource("5_ms31j")
 script = ExtResource("5_ht3pi")
 
 [node name="PopupPanel" type="PopupPanel" parent="."]
 initial_position = 1
-size = Vector2i(253, 219)
+size = Vector2i(223, 245)
 visible = true
+max_size = Vector2i(32731, 32768)
 theme_override_styles/panel = SubResource("StyleBoxFlat_0d5ky")
 
 [node name="TutorialLabel" type="Label" parent="PopupPanel"]
-anchors_preset = -1
-anchor_right = 1.069
-anchor_bottom = 1.054
-offset_left = 15.0
-offset_top = 25.0
-offset_right = 238.0
-offset_bottom = 204.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -97.5
+offset_right = 96.5
+offset_bottom = 107.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.976471, 0.803922, 0.556863, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Welcome to ServeInEase!
@@ -116,7 +122,8 @@ D key: Move right
 W key: Move up
 S key: Move down
 E key: Pick up food
-Esc key : Setting"
+Esc key : Setting
+Shift key : Speed Up "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -124,8 +131,8 @@ vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0)
-offset_right = 1152.0
-offset_bottom = 666.0
+offset_right = 574.0
+offset_bottom = 351.0
 mouse_filter = 2
 color = Color(0.243173, 0.478954, 0.396798, 1)
 
@@ -152,11 +159,12 @@ script = ExtResource("6_rd8cm")
 texture_filter = 1
 position = Vector2(0, 3)
 motion_scale = Vector2(2, 2)
-motion_mirroring = Vector2(1153, 0)
+motion_mirroring = Vector2(574, 0)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(578, 325)
-scale = Vector2(1.06759, 0.898611)
+texture_filter = 1
+position = Vector2(286, 172.625)
+scale = Vector2(0.531017, 0.484375)
 texture = ExtResource("2_0d5ky")
 
 [connection signal="pressed" from="tutorial button" to="." method="_on_tutorial_button_pressed"]

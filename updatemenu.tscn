@@ -32,9 +32,9 @@ texture_filter = 1
 clip_contents = true
 layout_mode = 0
 offset_left = 326.0
-offset_top = 80.0
+offset_top = 85.0
 offset_right = 632.0
-offset_bottom = 292.0
+offset_bottom = 297.0
 scale = Vector2(0.27, 0.28)
 texture_normal = ExtResource("3_k1gfb")
 stretch_mode = 0
@@ -87,9 +87,14 @@ position = Vector2(606, 339)
 scale = Vector2(1.95045, 1.94667)
 texture = ExtResource("6_8snal")
 
-[node name="WhatsApp图像2025-05-14于00_15_202c6Ad564-removebg-preview" type="Sprite2D" parent="."]
-position = Vector2(1389, 736)
-scale = Vector2(1.997, 1.83467)
+[node name="button4" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="photo4" type="Sprite2D" parent="."]
+position = Vector2(605, 340.5)
+scale = Vector2(1.95796, 1.96)
 texture = ExtResource("7_x6bcb")
 
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
