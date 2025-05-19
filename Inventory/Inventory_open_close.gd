@@ -10,12 +10,12 @@ func _ready():
 	update()
 
 func update():
-	var item_count = pInventory.items.size()
+	var item_count = pInventory.slots.size()
 	var slot_count = slot.size()
 	var count = min(item_count, slot_count)
 	
 	for i in range(count):
-		slot[i].update(pInventory.items[i])
+		slot[i].update(pInventory.slots[i])
 	
 
 func open():

@@ -2,16 +2,24 @@ extends Panel
 
 @onready var backgroundS : Sprite2D = $background
 @onready var itemS : Sprite2D = $CenterContainer/Panel/item
+@onready var numLabel : Label = $CenterContainer/Panel/Label
+@export var InvSlot : iSlot
 
-func update(item: InventoryItem):
+func update(slot: iSlot):
 	var itemS = get_node("CenterContainer/Panel/item") as Sprite2D
-	if item == null:
+	if not slot.item:
 		itemS.visible = false
+		numLabel.visible = false
 	else:
 		itemS.visible = true
-		itemS.texture = item.texture
+		itemS.texture = slot.item.texture
 		resize_inventory_item(itemS, Vector2(30, 30))
 		
+		if slot.itemNum >= 2:
+			numLabel.visible = true
+			numLabel.text = str(slot.itemNum)
+		else:
+			numLabel.visible = false
 
 func resize_inventory_item(sprite: Sprite2D, target_size: Vector2):
 	if sprite.texture == null:

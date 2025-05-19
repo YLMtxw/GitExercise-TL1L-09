@@ -71,65 +71,80 @@ func _on_egg_pressed() -> void:
 
 
 func _on_spaghetti_cooked_pressed() -> void:
-	
+	item = preload("res://Inventory/Item/spaghetti cooked.tres")
 	pass # Replace with function body.
 
 
 func _on_aglio_olio_pressed() -> void:
+	item = preload("res://Inventory/Item/aglio olio.tres")
 	pass # Replace with function body.
 
 
 func _on_carbo_pressed() -> void:
+	item = preload("res://Inventory/Item/carbonara.tres")
 	pass # Replace with function body.
 
 
 func _on_bolognese_pressed() -> void:
+	item = preload("res://Inventory/Item/bolognese.tres")
 	pass # Replace with function body.
 
 
 func _on_beef_cooked_pressed() -> void:
+	item = preload("res://Inventory/Item/beef cooked.tres")
 	pass # Replace with function body.
 
 
 func _on_pattyb_cooked_pressed() -> void:
+	item = preload("res://Inventory/Item/beef patty cooked.tres")
 	pass # Replace with function body.
 
 
 func _on_lamb_cooked_pressed() -> void:
+	item = preload("res://Inventory/Item/lamb cooked.tres")
 	pass # Replace with function body.
 
 
 func _on_pattyl_cooked_pressed() -> void:
+	item = preload("res://Inventory/Item/lamb patty cooked.tres")
 	pass # Replace with function body.
 
 
 func _on_chicken_cooked_pressed() -> void:
+	item = preload("res://Inventory/Item/chicken cooked.tres")
 	pass # Replace with function body.
 
 
 func _on_pattyc_cooked_pressed() -> void:
+	item = preload("res://Inventory/Item/chicken patty cooked.tres")
 	pass # Replace with function body.
 
 
 func _on_beef_steak_pressed() -> void:
+	item = preload("res://Inventory/Item/meat beef.tres")
 	pass # Replace with function body.
 
 
 func _on_beef_burger_pressed() -> void:
+	item = preload("res://Inventory/Item/beef burger.tres")
 	pass # Replace with function body.
 
 
 func _on_lamb_pressed() -> void:
+	item = preload("res://Inventory/Item/meat lamb.tres")
 	pass # Replace with function body.
 
 
 func _on_lamb_burger_pressed() -> void:
+	item = preload("res://Inventory/Item/lamb burger.tres")
 	pass # Replace with function body.
 
 
 func _on_chicken_pressed() -> void:
+	item = preload("res://Inventory/Item/meat chicken.tres")
 	pass # Replace with function body.
 
 
 func _on_chicken_burger_pressed() -> void:
+	item = preload("res://Inventory/Item/chicken burger.tres")
 	pass # Replace with function body.

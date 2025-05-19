@@ -488,5 +488,5 @@ expand_mode = 1
 [connection signal="pressed" from="NinePatchRect/lamb burger" to="." method="_on_lamb_burger_pressed"]
 [connection signal="pressed" from="NinePatchRect/chicken" to="." method="_on_chicken_pressed"]
 [connection signal="pressed" from="NinePatchRect/chicken burger" to="." method="_on_chicken_burger_pressed"]
-[connection signal="pressed" from="NinePatchRect/vege burger" to="." method="_on_chicken_burger_pressed"]
-[connection signal="pressed" from="NinePatchRect/egg" to="." method="_on_chicken_burger_pressed"]
+[connection signal="pressed" from="NinePatchRect/vege burger" to="." method="_on_vege_burger_pressed"]
+[connection signal="pressed" from="NinePatchRect/egg" to="." method="_on_egg_pressed"]

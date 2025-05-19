@@ -1,13 +1,16 @@
 class_name Inventory extends Resource
 
-@export var items : Array[InventoryItem]
+@export var slots : Array[iSlot]
 
 signal updated
 
 func add_item(item: InventoryItem) -> void:
-	for i in range (items.size()):
-		if !items[i]:
-			items[i] = item
-			print("added item ", item.name)
-			break
+	var slotHaveItem = slots.filter(func(slot): return slot.item == item)
+	if not slotHaveItem.is_empty():
+		slotHaveItem[0].itemNum += 1
+	else:
+		var slotIsEmpty = slots.filter(func(slot): return slot.item == null)
+		if not slotIsEmpty.is_empty():
+			slotIsEmpty[0].item = item
+			slotIsEmpty[0].itemNum = 1
 	updated.emit()
