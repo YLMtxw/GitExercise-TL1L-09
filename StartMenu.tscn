@@ -5,9 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://coj4de1vjh0fw" path="res://photo/tutorial.png" id="2_ht3pi"]
 [ext_resource type="Texture2D" uid="uid://4wgnkqj5uvih" path="res://photo/tutorial 01.png" id="3_ms31j"]
 [ext_resource type="Texture2D" uid="uid://bckmsp7vrgy7q" path="res://photo/startttttt.png" id="4_ht3pi"]
-[ext_resource type="Texture2D" uid="uid://coj4de1vjh0fw" path="res://photo/tutorial.png" id="2_ht3pi"]
-[ext_resource type="Texture2D" uid="uid://4wgnkqj5uvih" path="res://photo/tutorial 01.png" id="3_ms31j"]
-[ext_resource type="Texture2D" uid="uid://bckmsp7vrgy7q" path="res://photo/startttttt.png" id="4_ht3pi"]
 [ext_resource type="AudioStream" uid="uid://bp5df5e5p4t2n" path="res://song/china-culture-320198.mp3" id="5_3wf2c"]
 [ext_resource type="Script" uid="uid://bv73fbn0em47v" path="res://texture_button.gd" id="5_ht3pi"]
 [ext_resource type="Texture2D" uid="uid://c7420k42q2fbn" path="res://photo/start01111.png" id="5_ms31j"]
@@ -73,7 +70,6 @@ script = ExtResource("1_ufv5y")
 [node name="tutorial button" type="TextureButton" parent="."]
 texture_filter = 1
 clip_contents = true
-anchors_preset = -1
 offset_left = 125.0
 offset_top = 255.0
 offset_right = 169.0
@@ -84,20 +80,9 @@ texture_normal = ExtResource("2_ht3pi")
 texture_pressed = ExtResource("3_ms31j")
 
 [node name="start button" type="TextureButton" parent="."]
-[node name="start button" type="TextureButton" parent="."]
+
+[node name="start button2" type="TextureButton" parent="."]
 texture_filter = 1
-texture_repeat = 1
-anchors_preset = -1
-anchor_left = -0.04
-anchor_right = 0.87
-offset_left = 320.0
-offset_top = 255.0
-offset_right = 364.0
-offset_bottom = 275.0
-scale = Vector2(3, 3.5)
-texture_normal = ExtResource("4_ht3pi")
-texture_pressed = ExtResource("5_ms31j")
-script = ExtResource("5_ht3pi")
 texture_repeat = 1
 anchors_preset = -1
 anchor_left = -0.04
@@ -124,10 +109,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -96.5
-offset_top = -97.5
-offset_right = 96.5
-offset_bottom = 107.5
+offset_left = 15.0
+offset_top = 25.0
+offset_right = 208.0
+offset_bottom = 230.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.976471, 0.803922, 0.556863, 1)
@@ -185,3 +170,4 @@ texture = ExtResource("2_0d5ky")
 
 [connection signal="pressed" from="tutorial button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="start button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="start button2" to="." method="_on_start_button_2_pressed"]

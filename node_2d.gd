@@ -32,3 +32,8 @@ func _on_start_button_pressed() -> void:
 func _on_texture_button_pressed() -> void:
 	$ClickSound.play()
 	get_tree().change_scene_to_file("res://PlayerInfo.tscn")
+
+
+func _on_start_button_2_pressed() -> void:
+	$ClickSound.play()
+	get_tree().change_scene_to_file("res://PlayerInfo.tscn")

@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh0bnbmse2ai0"]
+[gd_scene load_steps=9 format=3 uid="uid://bh0bnbmse2ai0"]
 
 [ext_resource type="Texture2D" uid="uid://1el28nogvkee" path="res://photo/Player Info.jpg" id="1_ijsdh"]
 [ext_resource type="Script" uid="uid://brfvdde8id256" path="res://line_edit.gd" id="2_8ex5c"]
-[ext_resource type="Texture2D" path="res://pixil-frame-0.png" id="3_8ex5c"]
-[ext_resource type="Texture2D" path="res://hi.png" id="4_34t3e"]
-[ext_resource type="Texture2D" uid="uid://dt7ocpxfdhm6w" path="res://photo/pixil-frame-0.png" id="5_w17oj"]
-[ext_resource type="Texture2D" uid="uid://ca7vc4wm66k27" path="res://photo/hi.png" id="6_1dwlc"]
+[ext_resource type="Texture2D" uid="uid://iip3rxa8nrpn" path="res://photo/create-removebg-preview.png" id="3_8ex5c"]
+[ext_resource type="Texture2D" uid="uid://dt704kekpyjqx" path="res://photo/create_pressed-removebg-preview.png" id="4_34t3e"]
 
 [sub_resource type="GDScript" id="GDScript_8crf7"]
 script/source = "extends Node
@@ -57,13 +55,7 @@ script/source = "extends Control
 variation_embolden = 0.67
 
 [sub_resource type="LabelSettings" id="LabelSettings_ijsdh"]
-font_size = 40
-font_color = Color(1, 0.0392157, 0.054902, 1)
-shadow_size = 5
-shadow_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ijsdh"]
-font_size = 40
+font_size = 20
 font_color = Color(1, 0.0392157, 0.054902, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
@@ -79,22 +71,12 @@ offset_top = 280.0
 offset_right = 848.0
 offset_bottom = 304.0
 scale = Vector2(4.5, 4.5)
-texture_normal = ExtResource("3_8ex5c")
-texture_pressed = ExtResource("4_34t3e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(287.5, 175.5)
 scale = Vector2(0.530556, 0.4875)
 texture = ExtResource("1_ijsdh")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = SubResource("GDScript_wbq6p")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Control" type="Control" parent="."]
@@ -123,20 +105,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="LineEdit2" type="LineEdit" parent="Control"]
+[node name="LineEdit3" type="LineEdit" parent="Control"]
 auto_translate_mode = 1
 layout_mode = 0
-offset_left = 340.0
-offset_top = 302.0
-offset_right = 745.0
-offset_bottom = 379.0
-[node name="LineEdit2" type="LineEdit" parent="Control"]
-auto_translate_mode = 1
-layout_mode = 0
-offset_left = 340.0
-offset_top = 302.0
-offset_right = 745.0
-offset_bottom = 379.0
+offset_left = 138.0
+offset_top = 176.0
+offset_right = 356.0
+offset_bottom = 226.0
 placeholder_text = "Input your Shop Name"
 
 [node name="LineEdit" type="LineEdit" parent="Control"]
@@ -147,14 +122,13 @@ offset_right = 355.0
 offset_bottom = 152.0
 placeholder_text = "Input your Username"
 script = ExtResource("2_8ex5c")
-script = ExtResource("2_8ex5c")
 
 [node name="HSlider" type="HSlider" parent="Control"]
 layout_mode = 0
-offset_left = 319.0
-offset_top = 402.0
-offset_right = 761.0
-offset_bottom = 570.0
+offset_left = 147.0
+offset_top = 245.0
+offset_right = 346.0
+offset_bottom = 308.0
 min_value = 1.0
 value = 1.0
 rounded = true
@@ -168,10 +142,10 @@ anchor_left = 0.153
 anchor_top = 0.116
 anchor_right = 0.888
 anchor_bottom = 0.373
-offset_left = 829.88
-offset_top = 229.36
-offset_right = 994.48
-offset_bottom = 274.08
+offset_left = 342.88
+offset_top = 104.36
+offset_right = 507.48
+offset_bottom = 149.08
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
@@ -183,15 +157,26 @@ vertical_alignment = 1
 uppercase = true
 visible_characters_behavior = 1
 
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_wbq6p")
+
 [node name="TextureButton2" type="TextureButton" parent="."]
+texture_filter = 1
 clip_contents = true
 custom_minimum_size = Vector2(29, 0)
-offset_left = 890.0
-offset_top = 387.0
-offset_right = 938.0
-offset_bottom = 411.0
-texture_normal = ExtResource("5_w17oj")
-texture_pressed = ExtResource("6_1dwlc")
+offset_left = 394.0
+offset_top = 154.0
+offset_right = 442.0
+offset_bottom = 178.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_8ex5c")
+texture_pressed = ExtResource("4_34t3e")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="value_changed" from="Control/HSlider" to="." method="_on_h_slider_value_changed"]

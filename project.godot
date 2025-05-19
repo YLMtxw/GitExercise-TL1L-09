@@ -31,10 +31,6 @@ version_control/autoload_on_startup=true
 
 theme/custom="game restaurant"
 
-[rendering]
-
-textures/canvas_textures/default_texture_filter=0
-
 [input]
 
 Up={
