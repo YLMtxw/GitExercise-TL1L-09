@@ -4,9 +4,10 @@ extends Panel
 @onready var itemS : Sprite2D = $CenterContainer/Panel/item
 @onready var numLabel : Label = $CenterContainer/Panel/Label
 @export var InvSlot : iSlot
+var is_selected = false
 
 func update(slot: iSlot):
-	var itemS = get_node("CenterContainer/Panel/item") as Sprite2D
+	InvSlot = slot
 	if not slot.item:
 		itemS.visible = false
 		numLabel.visible = false
@@ -30,3 +31,12 @@ func resize_inventory_item(sprite: Sprite2D, target_size: Vector2):
 	var final_scale = Vector2(min(scale_factor.x, scale_factor.y),min(scale_factor.x, scale_factor.y))
 	sprite.scale = final_scale
 	
+func item_selected (selected: bool):
+	is_selected = selected
+	update_selected()
+	
+func update_selected():
+	if is_selected:
+		backgroundS.frame = 1
+	else: 
+		backgroundS.frame = 0
