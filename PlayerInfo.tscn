@@ -1,50 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://bh0bnbmse2ai0"]
+[gd_scene load_steps=10 format=3 uid="uid://bh0bnbmse2ai0"]
 
 [ext_resource type="Texture2D" uid="uid://1el28nogvkee" path="res://photo/Player Info.jpg" id="1_ijsdh"]
 [ext_resource type="Script" uid="uid://brfvdde8id256" path="res://line_edit.gd" id="2_8ex5c"]
 [ext_resource type="Texture2D" uid="uid://iip3rxa8nrpn" path="res://photo/create-removebg-preview.png" id="3_8ex5c"]
+[ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="3_34t3e"]
 [ext_resource type="Texture2D" uid="uid://dt704kekpyjqx" path="res://photo/create_pressed-removebg-preview.png" id="4_34t3e"]
 
 [sub_resource type="GDScript" id="GDScript_8crf7"]
 script/source = "extends Node
 
-
-func _on_button_pressed():
-	var username = $Control/LineEdit.text
-
-	if is_valid_username(username):
-		$Label2.visible = true
-		get_tree().change_scene_to_file(\"res://game_01.tscn\")
-	else:
-		$Label2.text = \"必须包含大写、小写和数字\"
-		$Label2.visible = false
-		print($Control/Label2)
-
-
-# 验证函数
-func is_valid_username(username: String) -> bool:
-	var has_upper = false
-	var has_lower = false
-	var has_digit = false
-
-	for i in username:
-		var c := i.unicode_at(0)
-
-		if c >= 65 and c <= 90:  # A-Z
-			has_upper = true
-		elif c >= 97 and c <= 122:  # a-z
-			has_lower = true
-		elif c >= 48 and c <= 57:  # 0-9
-			has_digit = true
-
-	return has_upper and has_lower and has_digit
-
-	get_tree().change_scene_to_file(\"res://game_01.tscn\")
-
-
 func _on_texture_button_pressed() -> void:
-	$TextureButton.visible = true
-	get_tree().change_scene_to_file(\"res://game_01.tscn\")
+	$ClickSound.play()
+	get_tree().change_scene_to_file(\"res://playground.tscn\")
 "
 
 [sub_resource type="GDScript" id="GDScript_wbq6p"]
@@ -63,19 +30,21 @@ shadow_color = Color(0, 0, 0, 1)
 [node name="PlayerInfo" type="Node2D"]
 script = SubResource("GDScript_8crf7")
 
-[node name="TextureButton" type="TextureButton" parent="."]
-texture_filter = 1
-clip_contents = true
-offset_left = 800.0
-offset_top = 280.0
-offset_right = 848.0
-offset_bottom = 304.0
-scale = Vector2(4.5, 4.5)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(287.5, 175.5)
 scale = Vector2(0.530556, 0.4875)
 texture = ExtResource("1_ijsdh")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+clip_contents = true
+offset_left = 406.0
+offset_top = 158.0
+offset_right = 454.0
+offset_bottom = 178.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_8ex5c")
+texture_pressed = ExtResource("4_34t3e")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
@@ -91,10 +60,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.082
 anchor_bottom = 0.131
-offset_left = 59.0
-offset_top = -104.0
-offset_right = 455.72
-offset_bottom = 231.76
+offset_left = 68.0
+offset_top = -90.0
+offset_right = 431.72
+offset_bottom = 219.76
 theme_override_colors/font_color = Color(0.980392, 0.854902, 0.552941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.329412, 0.235294, 0.262745, 1)
@@ -142,10 +111,10 @@ anchor_left = 0.153
 anchor_top = 0.116
 anchor_right = 0.888
 anchor_bottom = 0.373
-offset_left = 342.88
-offset_top = 104.36
-offset_right = 507.48
-offset_bottom = 149.08
+offset_left = 353.88
+offset_top = 90.36
+offset_right = 518.48
+offset_bottom = 135.08
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
@@ -157,8 +126,6 @@ vertical_alignment = 1
 uppercase = true
 visible_characters_behavior = 1
 
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
-
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -167,6 +134,7 @@ offset_bottom = 40.0
 script = SubResource("GDScript_wbq6p")
 
 [node name="TextureButton2" type="TextureButton" parent="."]
+visible = false
 texture_filter = 1
 clip_contents = true
 custom_minimum_size = Vector2(29, 0)
@@ -177,6 +145,9 @@ offset_bottom = 178.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("3_8ex5c")
 texture_pressed = ExtResource("4_34t3e")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_34t3e")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="value_changed" from="Control/HSlider" to="." method="_on_h_slider_value_changed"]
