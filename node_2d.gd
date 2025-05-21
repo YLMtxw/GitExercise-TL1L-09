@@ -3,8 +3,10 @@ extends Node2D
 func _ready():
 	pass
 
+func _input(event):
 
-	
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		get_tree().quit()
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "fade_out":
@@ -24,16 +26,11 @@ func _on_tutorial_button_pressed() -> void:
 	$PopupPanel.popup_centered()
 
 
-func _on_start_button_pressed() -> void:
-	$ClickSound.play()
-	get_tree().change_scene_to_file("res://PlayerInfo.tscn")
-
-
-func _on_texture_button_pressed() -> void:
-	$ClickSound.play()
-	get_tree().change_scene_to_file("res://PlayerInfo.tscn")
-
-
 func _on_start_button_2_pressed() -> void:
 	$ClickSound.play()
+	await $ClickSound.finished
 	get_tree().change_scene_to_file("res://PlayerInfo.tscn")
+
+
+func _on_setting_button_pressed() -> void:
+	$ClickSound.play()

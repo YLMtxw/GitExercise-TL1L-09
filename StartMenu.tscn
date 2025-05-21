@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://v46hvmlbt3i0"]
+[gd_scene load_steps=19 format=3 uid="uid://v46hvmlbt3i0"]
 
 [ext_resource type="Script" uid="uid://ewyi0xfg6ddr" path="res://node_2d.gd" id="1_ufv5y"]
 [ext_resource type="Texture2D" uid="uid://ghn4vl843k8x" path="res://photo/final main menu.jpg" id="2_0d5ky"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://c7420k42q2fbn" path="res://photo/start01111.png" id="5_ms31j"]
 [ext_resource type="Script" uid="uid://hhmdoorpi4i6" path="res://parallax_background.gd" id="6_rd8cm"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="7_ht3pi"]
+[ext_resource type="Texture2D" uid="uid://c8rtdnwaknhfr" path="res://photo/setting.png" id="11_ms31j"]
+[ext_resource type="Texture2D" uid="uid://d4jti1aksdca7" path="res://photo/setting pressed.png" id="12_xuc80"]
+[ext_resource type="Texture2D" uid="uid://b4iiu364kj40a" path="res://photo/setting hover.png" id="13_aa878"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d5ky"]
 bg_color = Color(0.552941, 0.290196, 0.215686, 1)
@@ -79,8 +82,6 @@ tooltip_auto_translate_mode = 1
 texture_normal = ExtResource("2_ht3pi")
 texture_pressed = ExtResource("3_ms31j")
 
-[node name="start button" type="TextureButton" parent="."]
-
 [node name="start button2" type="TextureButton" parent="."]
 texture_filter = 1
 texture_repeat = 1
@@ -98,7 +99,7 @@ script = ExtResource("5_ht3pi")
 
 [node name="PopupPanel" type="PopupPanel" parent="."]
 initial_position = 1
-size = Vector2i(223, 245)
+size = Vector2i(300, 271)
 visible = true
 max_size = Vector2i(32731, 32768)
 theme_override_styles/panel = SubResource("StyleBoxFlat_0d5ky")
@@ -111,8 +112,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 15.0
 offset_top = 25.0
-offset_right = 208.0
-offset_bottom = 230.0
+offset_right = 285.0
+offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.976471, 0.803922, 0.556863, 1)
@@ -124,6 +125,7 @@ W key: Move up
 S key: Move down
 E key: Pick up food
 Esc key : Setting
+I key : Inventory
 Shift key : Speed Up "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -164,10 +166,20 @@ motion_mirroring = Vector2(574, 0)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
-position = Vector2(286, 172.625)
+position = Vector2(286, 173)
 scale = Vector2(0.531017, 0.484375)
 texture = ExtResource("2_0d5ky")
 
+[node name="setting button" type="TextureButton" parent="."]
+offset_left = 510.0
+offset_top = 17.0
+offset_right = 532.0
+offset_bottom = 39.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("11_ms31j")
+texture_pressed = ExtResource("12_xuc80")
+texture_hover = ExtResource("13_aa878")
+
 [connection signal="pressed" from="tutorial button" to="." method="_on_tutorial_button_pressed"]
-[connection signal="pressed" from="start button" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="start button2" to="." method="_on_start_button_2_pressed"]
+[connection signal="pressed" from="setting button" to="." method="_on_setting_button_pressed"]

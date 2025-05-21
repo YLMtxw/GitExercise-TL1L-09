@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/chinese-new-year-184077.mp3-29d683f746c66bd1d
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
-beat_count=0
+loop=true
+loop_offset=0.0
+bpm=100.0
+beat_count=261
 bar_beats=4

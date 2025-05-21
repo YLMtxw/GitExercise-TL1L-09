@@ -1,13 +1,35 @@
-[gd_scene load_steps=9 format=3 uid="uid://jjtkcedp5hyj"]
+[gd_scene load_steps=31 format=3 uid="uid://jjtkcedp5hyj"]
 
 [ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
+[ext_resource type="AudioStream" uid="uid://d1lwvjd88b05l" path="res://song/G.E.M.鄧紫棋無雙的王者Peerless KingOfficial Music Video.mp3" id="2_1vrc5"]
+[ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_eupx0"]
+[ext_resource type="Texture2D" uid="uid://dalaivqo5qhq8" path="res://photo/background planning.jpg" id="2_k1gfb"]
 [ext_resource type="Texture2D" uid="uid://f6157ah74bx3" path="res://photo/menu01-removebg-preview.png" id="2_rc1au"]
+[ext_resource type="AudioStream" uid="uid://8pwv4v0iata" path="res://song/door-open-close-45475.mp3" id="3_g0luy"]
 [ext_resource type="Texture2D" uid="uid://dleod6oi06gyu" path="res://photo/WhatsApp_图像2025-05-14于00.15.16_9bdf4754-removebg-preview (1).png" id="3_k1gfb"]
 [ext_resource type="Texture2D" uid="uid://brwdj4lim6gvp" path="res://photo/WhatsApp_图像2025-05-14于00.15.16_b55d65e7-removebg-preview.png" id="4_0whe8"]
 [ext_resource type="Texture2D" uid="uid://cpe7flaxc7wqu" path="res://photo/WhatsApp_图像2025-05-14于00.15.17_72a5ef38-removebg-preview.png" id="5_ax1vu"]
 [ext_resource type="Texture2D" uid="uid://cluqgich4icd6" path="res://photo/WhatsApp_图像2025-05-14于00.15.17_6bd5c3b7-removebg-preview.png" id="6_8snal"]
+[ext_resource type="Texture2D" uid="uid://cdw8g1qym72tl" path="res://photo/aglio_olio-removebg-preview.png" id="7_8snal"]
 [ext_resource type="Texture2D" uid="uid://dvkrr630308np" path="res://photo/WhatsApp_图像2025-05-14于00.15.20_2c6ad564-removebg-preview.png" id="7_x6bcb"]
 [ext_resource type="Texture2D" uid="uid://ch7x4nd6148dg" path="res://photo/WhatsApp_图像2025-05-14于00.15.14_dd7fad6a-removebg-preview.png" id="8_6rsue"]
+[ext_resource type="Texture2D" uid="uid://bpfjd00jh36p6" path="res://photo/aglio olio.png" id="8_26cu5"]
+[ext_resource type="Texture2D" uid="uid://bjcoa78e4uwbq" path="res://photo/bolognese-removebg-preview.png" id="8_x6bcb"]
+[ext_resource type="Texture2D" uid="uid://c8lppk7664ej5" path="res://photo/exit planning screen.png" id="9_rc1au"]
+[ext_resource type="Texture2D" uid="uid://dxo2of40nn4ag" path="res://photo/bolognese.png" id="10_slpgo"]
+[ext_resource type="Texture2D" uid="uid://0yfnht3ym1cr" path="res://photo/cabonara-removebg-preview.png" id="11_30naw"]
+[ext_resource type="Texture2D" uid="uid://b74bbbpmgb771" path="res://photo/steak.png" id="12_8snal"]
+[ext_resource type="Texture2D" uid="uid://bc1mn1r8tdpor" path="res://photo/carbonara.png" id="12_eupx0"]
+[ext_resource type="Texture2D" uid="uid://c0t2pu6rq7obe" path="res://photo/chicken_steak-removebg-preview.png" id="13_g0luy"]
+[ext_resource type="Texture2D" uid="uid://c40t36g52dwsf" path="res://photo/chicken chop.png" id="14_1vrc5"]
+[ext_resource type="Texture2D" uid="uid://ij1dt3t45ifo" path="res://photo/lamb_steak-removebg-preview.png" id="18_002rh"]
+[ext_resource type="Texture2D" uid="uid://du4cdeh56xp70" path="res://photo/comfirmation.png" id="20_55p65"]
+[ext_resource type="Texture2D" uid="uid://23vgpiual70w" path="res://photo/are u sure.png" id="21_slpgo"]
+[ext_resource type="Texture2D" uid="uid://3dlpocgx0sxq" path="res://photo/100plus.png" id="22_30naw"]
+[ext_resource type="Texture2D" uid="uid://btswaslmdpc10" path="res://photo/beef_steak-removebg-preview.png" id="24_08tfn"]
+[ext_resource type="Texture2D" uid="uid://dyjy4bgwx0lgf" path="res://photo/cancel.png" id="27_dpwdq"]
+[ext_resource type="Texture2D" uid="uid://3kip4ao3w2ho" path="res://photo/cancel pressed.png" id="28_tyfo1"]
+[ext_resource type="Texture2D" uid="uid://tobikanm2drg" path="res://photo/cancel hover.png" id="29_uv10y"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -22,82 +44,288 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ra00y")
 
-[node name="Planning Screen" type="Sprite2D" parent="."]
-position = Vector2(637, 336)
-scale = Vector2(1.7958, 1.954)
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_1vrc5")
+autoplay = true
+max_distance = 4096.0
+attenuation = 0.366022
+max_polyphony = 4
+parameters/looping = false
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_eupx0")
+volume_db = 10.0
+
+[node name="ClickSound01" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_g0luy")
+volume_db = 10.0
+pitch_scale = 1.3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(286.5, 168.45)
+scale = Vector2(0.532407, 0.533792)
+texture = ExtResource("2_k1gfb")
+
+[node name="PlanningScreen" type="Sprite2D" parent="."]
+position = Vector2(315, 150)
+scale = Vector2(0.845347, 0.889)
 texture = ExtResource("2_rc1au")
 
 [node name="Button1" type="TextureButton" parent="."]
 texture_filter = 1
 clip_contents = true
 layout_mode = 0
-offset_left = 326.0
-offset_top = 85.0
-offset_right = 632.0
-offset_bottom = 297.0
-scale = Vector2(0.27, 0.28)
+offset_left = 180.0
+offset_top = 28.0
+offset_right = 486.0
+offset_bottom = 240.0
+scale = Vector2(0.125, 0.13)
 texture_normal = ExtResource("3_k1gfb")
 stretch_mode = 0
 
 [node name="photo1" type="Sprite2D" parent="."]
-position = Vector2(604, 338)
-scale = Vector2(1.95308, 1.94967)
+position = Vector2(306, 146)
+scale = Vector2(0.886168, 0.904)
 texture = ExtResource("4_0whe8")
 
 [node name="blue box" type="Sprite2D" parent="photo1"]
-position = Vector2(-100.866, -36.4165)
-scale = Vector2(0.377763, 0.39682)
+position = Vector2(-102.689, -32.0796)
+scale = Vector2(0.374956, 0.385193)
 texture = ExtResource("8_6rsue")
 
+[node name="upgrade button" type="TextureButton" parent="photo1/blue box"]
+offset_left = -92.5928
+offset_top = -109.128
+offset_right = 91.4072
+offset_bottom = 109.872
+
+[node name="Aglio olio" type="Sprite2D" parent="photo1/blue box"]
+position = Vector2(-3.75509e-06, -45.9487)
+scale = Vector2(0.414052, 0.366175)
+texture = ExtResource("7_8snal")
+
+[node name="AglioOlio word" type="Sprite2D" parent="photo1/blue box"]
+position = Vector2(-6.10352e-05, 47.1362)
+scale = Vector2(4.03345, 4.35712)
+texture = ExtResource("8_26cu5")
+
 [node name="blue box2" type="Sprite2D" parent="photo1"]
-position = Vector2(-25.0886, -34.3648)
-scale = Vector2(0.36575, 0.40212)
+position = Vector2(-28.5121, -32.2379)
+scale = Vector2(0.36895, 0.38378)
 texture = ExtResource("8_6rsue")
+
+[node name="upgrade button 2" type="TextureButton" parent="photo1/blue box2"]
+offset_left = -90.9415
+offset_top = -112.0
+offset_right = 94.0585
+offset_bottom = 111.0
+
+[node name="bolognese" type="Sprite2D" parent="photo1/blue box2"]
+position = Vector2(0.815266, -39.9408)
+scale = Vector2(0.425912, 0.377986)
+texture = ExtResource("8_x6bcb")
+
+[node name="Bolognese word" type="Sprite2D" parent="photo1/blue box2"]
+position = Vector2(3.87377, 52.295)
+scale = Vector2(2.81824, 6.26915)
+texture = ExtResource("10_slpgo")
+
+[node name="blue box3" type="Sprite2D" parent="photo1"]
+position = Vector2(44.2849, -32.2446)
+scale = Vector2(0.363072, 0.38372)
+texture = ExtResource("8_6rsue")
+
+[node name="upgrade button" type="TextureButton" parent="photo1/blue box3"]
+offset_left = -90.892
+offset_top = -109.117
+offset_right = 93.108
+offset_bottom = 111.883
+
+[node name="Cabonara-removebg-preview" type="Sprite2D" parent="photo1/blue box3"]
+position = Vector2(-0.757935, -39.9295)
+scale = Vector2(0.432475, 0.396122)
+texture = ExtResource("11_30naw")
+
+[node name="Carbonara word" type="Sprite2D" parent="photo1/blue box3"]
+position = Vector2(5.45815, 52.3207)
+scale = Vector2(2.80836, 6.07795)
+texture = ExtResource("12_eupx0")
+
+[node name="blue box4" type="Sprite2D" parent="photo1"]
+position = Vector2(115.667, -31.8031)
+scale = Vector2(0.354143, 0.377785)
+texture = ExtResource("8_6rsue")
+
+[node name="upgrade button" type="TextureButton" parent="photo1/blue box4"]
+offset_left = -91.0
+offset_top = -112.0
+offset_right = 90.0
+offset_bottom = 111.0
+
+[node name="ChickenSteak-removebg-preview" type="Sprite2D" parent="photo1/blue box4"]
+position = Vector2(1.59314, -42.4575)
+scale = Vector2(0.232783, 0.220008)
+texture = ExtResource("13_g0luy")
+
+[node name="ChickenChop" type="Sprite2D" parent="photo1/blue box4"]
+position = Vector2(1.59323, 54.902)
+scale = Vector2(3.2703, 4.23302)
+texture = ExtResource("14_1vrc5")
+
+[node name="blue box6" type="Sprite2D" parent="photo1"]
+position = Vector2(44.0097, 57.5221)
+scale = Vector2(0.359618, 0.3711)
+texture = ExtResource("8_6rsue")
+
+[node name="upgrade button" type="TextureButton" parent="photo1/blue box6"]
+offset_left = -210.241
+offset_top = -86.4448
+offset_right = -26.2411
+offset_bottom = 134.555
+
+[node name="blue box7" type="Sprite2D" parent="photo1"]
+position = Vector2(-28.6346, 57.5221)
+scale = Vector2(0.364647, 0.372847)
+texture = ExtResource("8_6rsue")
+
+[node name="upgrade button" type="TextureButton" parent="photo1/blue box7"]
+offset_left = -91.6789
+offset_top = -106.808
+offset_right = 92.3211
+offset_bottom = 114.192
+
+[node name="LambSteak-removebg-preview" type="Sprite2D" parent="photo1/blue box7"]
+position = Vector2(4.25531, -38.5695)
+scale = Vector2(0.243265, 0.235819)
+texture = ExtResource("18_002rh")
+
+[node name="blue box8" type="Sprite2D" parent="photo1"]
+position = Vector2(-102.689, 57.5221)
+scale = Vector2(0.37215, 0.365809)
+texture = ExtResource("8_6rsue")
+
+[node name="upgrade button" type="TextureButton" parent="photo1/blue box8"]
+offset_left = -38.7059
+offset_top = -104.583
+offset_right = 145.294
+offset_bottom = 116.417
+
+[node name="BeefSteak-removebg-preview" type="Sprite2D" parent="photo1/blue box8"]
+position = Vector2(0, -39.3114)
+scale = Vector2(0.259432, 0.243619)
+texture = ExtResource("24_08tfn")
+
+[node name="blue box5" type="Sprite2D" parent="photo1"]
+position = Vector2(115.102, 57.5221)
+scale = Vector2(0.347456, 0.36832)
+texture = ExtResource("8_6rsue")
+
+[node name="upgrade button" type="TextureButton" parent="photo1/blue box5"]
+offset_left = -717.754
+offset_top = -111.124
+offset_right = -535.754
+offset_bottom = 107.876
 
 [node name="Button2" type="TextureButton" parent="."]
 texture_filter = 1
 clip_contents = true
 layout_mode = 0
-offset_left = 425.0
-offset_top = 85.0
-offset_right = 731.0
-offset_bottom = 297.0
-scale = Vector2(0.27, 0.28)
+offset_left = 227.0
+offset_top = 28.0
+offset_right = 533.0
+offset_bottom = 240.0
+scale = Vector2(0.125, 0.13)
 texture_normal = ExtResource("3_k1gfb")
 
 [node name="photo2" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(604.5, 338)
-scale = Vector2(1.95345, 1.936)
+position = Vector2(308, 147)
+scale = Vector2(0.886, 0.904)
 texture = ExtResource("5_ax1vu")
 
 [node name="Button3" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 530.0
-offset_top = 84.0
-offset_right = 836.0
-offset_bottom = 296.0
-scale = Vector2(0.27, 0.28)
+offset_left = 271.0
+offset_top = 28.0
+offset_right = 577.0
+offset_bottom = 240.0
+scale = Vector2(0.125, 0.13)
 texture_normal = ExtResource("3_k1gfb")
 
 [node name="photo3" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(606, 339)
-scale = Vector2(1.95045, 1.94667)
+position = Vector2(307, 146)
+scale = Vector2(0.886, 0.904)
 texture = ExtResource("6_8snal")
 
 [node name="button4" type="TextureButton" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 315.3
+offset_top = 28.0
+offset_right = 621.3
+offset_bottom = 240.0
+scale = Vector2(0.125, 0.13)
+pivot_offset = Vector2(0.125, 0)
+texture_normal = ExtResource("3_k1gfb")
 
 [node name="photo4" type="Sprite2D" parent="."]
-position = Vector2(605, 340.5)
-scale = Vector2(1.95796, 1.96)
+visible = false
+position = Vector2(306, 147)
+scale = Vector2(0.886, 0.904)
 texture = ExtResource("7_x6bcb")
 
+[node name="Exit Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 25.0
+offset_right = 758.0
+offset_bottom = 251.0
+scale = Vector2(0.125, 0.125)
+texture_normal = ExtResource("9_rc1au")
+
+[node name="steak" type="Sprite2D" parent="."]
+position = Vector2(199, 43)
+scale = Vector2(0.0442251, 0.0521978)
+texture = ExtResource("12_8snal")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Comfirmation" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(316, 167)
+scale = Vector2(0.351547, 0.407338)
+texture = ExtResource("20_55p65")
+
+[node name="AreUSure" type="Sprite2D" parent="CanvasLayer/Comfirmation"]
+position = Vector2(2.84444, -44.1893)
+scale = Vector2(3.88757, 3.53803)
+texture = ExtResource("21_slpgo")
+
+[node name="Cancel Button" type="TextureButton" parent="CanvasLayer/Comfirmation"]
+texture_filter = 1
+offset_left = 39.8239
+offset_top = -1.4782e-05
+offset_right = 84.8239
+offset_bottom = 17.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("27_dpwdq")
+texture_pressed = ExtResource("28_tyfo1")
+texture_hover = ExtResource("29_uv10y")
+
+[node name="100Plus" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(247, 48)
+scale = Vector2(0.2125, 0.128968)
+texture = ExtResource("22_30naw")
+
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_table_2_pressed"]
+[connection signal="pressed" from="photo1/blue box/upgrade button" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="photo1/blue box2/upgrade button 2" to="." method="_on_upgrade_button_2_pressed"]
+[connection signal="pressed" from="photo1/blue box3/upgrade button" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_table_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Comfirmation/Cancel Button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Comfirmation/Cancel Button" to="." method="_on_cancel_button_pressed"]
