@@ -17,6 +17,7 @@ var store_direction : Vector2 = Vector2.DOWN
 @onready var EPrompt = $InteractE
 @onready var canvas = get_node("/root/Playground/CanvasLayer")
 @export var inventory : Inventory
+@export var slots : iSlot
 
 const source = 0
 const stove_coord1 = Vector2i(7,28)
@@ -124,6 +125,19 @@ func UpdateAction():
 	else:
 		animation.play(action)
 
+func remove_selected_item():
+	var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+	if inv and inv is InvOpenClose:
+		if inv.selected_index >= 0 and inv.selected_index < inventory.slots.size():
+			var slot = inventory.slots[inv.selected_index]
+			if slot.item:
+				inventory.remove_item(slot.item, 1)
+			else:
+				print("No item in selected slot.")
+		else:
+			print("No valid slot selected.")
+	else:
+		print("Inventory UI not found or not loaded.")
 
 func _physics_process( delta ):
 	var current_speed = movement_speed
@@ -149,6 +163,7 @@ func _input(event):
 		if is_near() == "refri":
 			print("refri")
 		if is_near() == "bin":
+			remove_selected_item()
 			print("bin")
 		if is_near() == "bm":
 			print("bm")

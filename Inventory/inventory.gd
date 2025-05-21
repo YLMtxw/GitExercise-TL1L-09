@@ -14,3 +14,13 @@ func add_item(item: InventoryItem) -> void:
 			slotIsEmpty[0].item = item
 			slotIsEmpty[0].itemNum = 1
 	updated.emit()
+	
+func remove_item(item: InventoryItem, amount: int = 1):
+	for slot in slots:
+		if slot.item == item:
+			slot.itemNum -= amount
+			if slot.itemNum <= 0:
+				slot.item = null
+				slot.itemNum = 0
+			updated.emit()
+			return
