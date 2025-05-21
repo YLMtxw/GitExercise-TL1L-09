@@ -73,3 +73,8 @@ func _on_upgrade_button_2_pressed() -> void:
 func _on_cancel_button_pressed() -> void:
 	$ClickSound.play()
 	confirm.visible = false
+
+
+func _on_accept_button_pressed() -> void:
+	$ClickSound.play()
+	confirm.visible = false
