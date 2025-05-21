@@ -112,6 +112,15 @@ position = Vector2(-6.10352e-05, 47.1362)
 scale = Vector2(4.03345, 4.35712)
 texture = ExtResource("8_26cu5")
 
+[node name="Counting" type="Label" parent="photo1/blue box"]
+visible = false
+offset_left = -84.2687
+offset_top = -112.0
+offset_right = -74.2687
+offset_bottom = -89.0
+scale = Vector2(2, 2)
+text = "1"
+
 [node name="blue box2" type="Sprite2D" parent="photo1"]
 position = Vector2(-28.5121, -32.2379)
 scale = Vector2(0.36895, 0.38378)

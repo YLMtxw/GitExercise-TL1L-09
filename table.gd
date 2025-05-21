@@ -5,6 +5,7 @@ extends Control
 @onready var sprite_c = $photo3
 @onready var sprite_d = $photo4
 @onready var confirm = $CanvasLayer/Comfirmation
+@onready var label = $"photo1/blue box/Counting"
 
 func _input(event):
 
@@ -63,18 +64,26 @@ func _on_upgrade_button_pressed() -> void:
 	$ClickSound.play()	
 	confirm.visible = true
 
-
 func _on_upgrade_button_2_pressed() -> void:
 	$ClickSound.play()	
 	confirm.visible = true
 
-
-
 func _on_cancel_button_pressed() -> void:
 	$ClickSound.play()
 	confirm.visible = false
+	label.visible = false
 
 
 func _on_accept_button_pressed() -> void:
 	$ClickSound.play()
 	confirm.visible = false
+	label.visible = true
+
+	var previous_mark = 0      # 初始是0分
+	var A = 1   
+
+	var current_mark = previous_mark + A
+	previous_mark = current_mark    # 更新历史分数
+
+	label.text = "%d" % current_mark
+	label.visible = true
