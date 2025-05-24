@@ -139,7 +139,7 @@ scale = Vector2(0.9, 1.1)
 texture_normal = ExtResource("9_cuudn")
 texture_pressed = ExtResource("10_wldcl")
 
-[node name="chili_f2" type="TextureButton" parent="NinePatchRect"]
+[node name="bbqs2" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 101.0
 offset_top = 26.0
@@ -182,5 +182,5 @@ expand_mode = 1
 [connection signal="pressed" from="NinePatchRect/stomato2" to="." method="_on_stomato_2_pressed"]
 [connection signal="pressed" from="NinePatchRect/mayo2" to="." method="_on_mayo_2_pressed"]
 [connection signal="pressed" from="NinePatchRect/tsauce2" to="." method="_on_tsauce_2_pressed"]
-[connection signal="pressed" from="NinePatchRect/chili_f2" to="." method="_on_chili_f_2_pressed"]
+[connection signal="pressed" from="NinePatchRect/bbqs2" to="." method="_on_bbqs_2_pressed"]
 [connection signal="pressed" from="NinePatchRect/oil2" to="." method="_on_oil_2_pressed"]

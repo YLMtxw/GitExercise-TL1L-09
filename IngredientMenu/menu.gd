@@ -46,13 +46,6 @@ func _on_tsauce_1_pressed() -> void:
 	insert(item)
 
 
-func _on_chili_f_1_pressed() -> void:
-	var item = preload("res://Inventory/Item/chili flakes.tres")
-	print("chili_f1")
-	inventorygui.update()
-	insert(item)
-
-
 func _on_oil_1_pressed() -> void:
 	var item = preload("res://Inventory/Item/oil.tres")
 	print("oil1")
@@ -63,5 +56,12 @@ func _on_oil_1_pressed() -> void:
 func _on_stomato_1_pressed() -> void:
 	var item = preload("res://Inventory/Item/sliced tomato.tres")
 	print("stomato1")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_bbqs_pressed() -> void:
+	var item = preload("res://Inventory/Item/bbqs.tres")
+	print("chili_f1")
 	inventorygui.update()
 	insert(item)

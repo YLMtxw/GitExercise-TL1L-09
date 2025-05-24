@@ -1051,6 +1051,7 @@ offset_bottom = 163.0
 
 [node name="loadingBar1" parent="CanvasLayer" instance=ExtResource("15_dk0co")]
 visible = false
+z_index = -1
 offset_left = 163.0
 offset_top = 9.0
 offset_right = -385.0
@@ -1058,6 +1059,7 @@ offset_bottom = -337.0
 
 [node name="loadingBar2" parent="CanvasLayer" instance=ExtResource("15_dk0co")]
 visible = false
+z_index = -1
 offset_left = 243.0
 offset_top = 9.0
 offset_right = -305.0
@@ -1065,6 +1067,7 @@ offset_bottom = -336.0
 
 [node name="loadingBar3" parent="CanvasLayer" instance=ExtResource("15_dk0co")]
 visible = false
+z_index = -1
 offset_left = 57.0
 offset_top = 110.0
 offset_right = -491.0
@@ -1072,6 +1075,7 @@ offset_bottom = -235.0
 
 [node name="loadingBar4" parent="CanvasLayer" instance=ExtResource("15_dk0co")]
 visible = false
+z_index = -1
 offset_left = 73.0
 offset_top = 132.0
 offset_right = -475.0

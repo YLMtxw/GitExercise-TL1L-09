@@ -53,15 +53,16 @@ func _on_tsauce_2_pressed() -> void:
 	insert(item)
 
 
-func _on_chili_f_2_pressed() -> void:
-	var item = preload("res://Inventory/Item/chili flakes.tres")
-	print("chili_f2")
-	inventorygui.update()
-	insert(item)
-
-
 func _on_oil_2_pressed() -> void:
 	var item = preload("res://Inventory/Item/oil.tres")
 	print("oil2")
 	inventorygui.update()
 	insert(item)
+
+
+func _on_bbqs_2_pressed() -> void:
+	var item = preload("res://Inventory/Item/bbqs.tres")
+	print("chili_f2")
+	inventorygui.update()
+	insert(item)
+	pass # Replace with function body.

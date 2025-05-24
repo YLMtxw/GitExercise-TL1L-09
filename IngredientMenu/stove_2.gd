@@ -7,6 +7,26 @@ var locked : bool = false
 var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
 var item = null
+var recipes = {
+	"spaghetti cooked": ["spaghetti raw"],
+	"egg": ["raw egg", "oil"],
+	"vege burger": ["bun","sliced vege", "cheese", "sliced tomato", "mayonaise"],
+	"beef burger": ["bun", "cheese", "sliced vege", "beef patty cooked", "mayonaise"],
+	"chicken burger": ["bun", "cheese", "sliced vege", "chicken patty cooked", "mayonaise"],
+	"lamb burger": ["bun", "cheese", "sliced vege", "lamb patty cooked", "mayonaise"],
+	"chicken patty cooked": ["chicken patty raw", "oil"],
+	"beef patty cooked": ["beef patty raw", "oil"],
+	"lamb patty cooked": ["lamb patty raw", "oil"],
+	"aglio olio": ["spaghetti cooked", "oil"],
+	"carbonara": ["spaghetti cooked", "fried egg", "chicken cooked"],
+	"bolognese": ["spaghetti cooked", "tomato sauce", "beef cooked"],
+	"beef cooked": ["beef raw"],
+	"chicken cooked": ["chicken raw"],
+	"lamb cooked": ["lamb raw"],
+	"meat beef": ["beef raw", "oil", "bbqs", "sliced vege"],
+	"meat chicken": ["chicken raw", "oil", "bbqs", "sliced vege"],
+	"meat lamb": ["lamb raw", "oil", "bbqs", "sliced vege"]
+}
 
 func _ready() :
 	for button in get_tree().get_nodes_in_group("stove2"):
@@ -16,11 +36,32 @@ func _ready() :
 	
 	stoveBar2.connect("loading_finished", Callable(self, "_on_loading_finished"))
 
+func has_ingredients(dish: String) -> bool:
+	if not recipes.has(dish):
+		return false
+	
+	var required = recipes[dish]
+	var available = inventory.slots
+	
+	for ingredient_name in required:
+		var found = false
+		for slot in available:
+			if slot.item and slot.item.name == ingredient_name and slot.itemNum > 0:
+				found = true
+				break
+		if not found:
+			print("Missing ingredient: ", ingredient_name)
+			return false
+	return true
+
 func _on_stove2_button_pressed(button: TextureButton):
-	locked = true
-	print("Button pressed, showing bar...")
-	stoveBar2.show_bar()
-	closeStove2()
+	if item and has_ingredients(item.name):
+		locked = true
+		print("Button pressed, showing bar...")
+		stoveBar2.show_bar()
+		closeStove2()
+	else:
+		print("You dont have enough ingredient to cook ", item.name)
 
 func _on_loading_finished():
 	if locked:
