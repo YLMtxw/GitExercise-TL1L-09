@@ -4,6 +4,39 @@ var menu2 : bool = false
 var is_menu_open : bool = false
 var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+var recipes = {
+	"sliced vege": ["vegetable"],
+	"sliced tomato": ["tomato"]
+}
+
+func has_ingredients(dish: String) -> bool:
+	if not recipes.has(dish):
+		return false
+
+	var required = recipes[dish]
+	var available = inventory.slots
+
+	for ingredient_name in required:
+		var found = false
+		for slot in available:
+			if slot.item and slot.item.name == ingredient_name and slot.itemNum > 0:
+				found = true
+				break
+		if not found:
+			print("Missing ingredient: ", ingredient_name)
+			return false
+
+	return true
+
+func consume_ingredients(dish: String):
+	if not recipes.has(dish):
+		return
+
+	for ingredient_name in recipes[dish]:
+		for slot in inventory.slots:
+			if slot.item and slot.item.name == ingredient_name:
+				inventory.remove_item(slot.item, 1)
+				break
 
 func openMenu2():
 	visible = true
@@ -26,17 +59,25 @@ func insert(item: InventoryItem) -> void:
 	inventory.add_item(item)
 
 func _on_vege_2_pressed() -> void:
-	var item = preload("res://Inventory/Item/sliced vege.tres")
-	print("vege2")
-	inventorygui.update()
-	insert(item)
+	if has_ingredients("sliced vege"):
+		consume_ingredients("sliced vege")
+		var item = preload("res://Inventory/Item/sliced vege.tres")
+		insert(item)
+		inventorygui.update()
+		print("Crafted sliced vege")
+	else:
+		print("Not enough ingredients!")
 
 
 func _on_stomato_2_pressed() -> void:
-	var item = preload("res://Inventory/Item/sliced tomato.tres")
-	print("stomato2")
-	inventorygui.update()
-	insert(item)
+	if has_ingredients("sliced tomato"):
+		consume_ingredients("sliced tomato")
+		var item = preload("res://Inventory/Item/sliced tomato.tres")
+		insert(item)
+		inventorygui.update()
+		print("Crafted sliced vege")
+	else:
+		print("Not enough ingredients!")
 
 
 func _on_mayo_2_pressed() -> void:

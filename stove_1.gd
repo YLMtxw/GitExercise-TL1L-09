@@ -54,11 +54,21 @@ func has_ingredients(dish: String) -> bool:
 			return false
 	return true
 
+func consume_ingredients(dish: String):
+	if not recipes.has(dish):
+		return
+
+	for ingredient_name in recipes[dish]:
+		for slot in inventory.slots:
+			if slot.item and slot.item.name == ingredient_name:
+				inventory.remove_item(slot.item, 1)
+				break
 
 func _on_stove1_button_pressed(button: TextureButton):
 	if item and has_ingredients(item.name):
 		locked = true
 		print("Button pressed, showing bar...")
+		consume_ingredients(item.name)
 		stoveBar.show_bar()
 		closeStove1()
 	else:

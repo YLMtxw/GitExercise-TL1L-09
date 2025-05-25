@@ -7,6 +7,13 @@ var locked : bool = false
 var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
 var item = null
+var recipes = {
+	"egg mayo sandwich": ["fried egg", "mayonaise", "sliced vege", "sliced tomato", "cheese", "bread", "bread"],
+	"chicken sandwich": ["chicken cooked", "sliced vege", "sliced tomato", "mayonaise", "cheese", "bread", "bread"],
+	"lamb sandwich": ["lamb cooked", "sliced vege", "sliced tomato", "mayonaise", "cheese", "bread", "bread"],
+	"beef sandwich": ["beef cooked", "sliced vege", "sliced tomato", "mayonaise", "cheese", "bread", "bread"],
+	"vege sandwich": ["sliced vege", "sliced vege", "sliced tomato", "sliced tomato", "mayonaise", "bread", "bread"]
+}
 
 
 func _ready() :
@@ -17,11 +24,43 @@ func _ready() :
 	
 	toasterBar.connect("loading_finished", Callable(self, "_on_loading_finished"))
 
+func has_ingredients(dish: String) -> bool:
+	if not recipes.has(dish):
+		return false
+	
+	var required = recipes[dish]
+	var available = inventory.slots
+	
+	for ingredient_name in required:
+		var found = false
+		for slot in available:
+			if slot.item and slot.item.name == ingredient_name and slot.itemNum > 0:
+				found = true
+				break
+		if not found:
+			print("Missing ingredient: ", ingredient_name)
+			return false
+	return true
+
+func consume_ingredients(dish: String):
+	if not recipes.has(dish):
+		return
+
+	for ingredient_name in recipes[dish]:
+		for slot in inventory.slots:
+			if slot.item and slot.item.name == ingredient_name:
+				inventory.remove_item(slot.item, 1)
+				break
+
 func _on_toaster1_button_pressed(button: TextureButton):
-	locked = true
-	print("Button pressed, showing bar...")
-	toasterBar.show_bar()
-	closeToaster1()
+	if item and has_ingredients(item.name):
+		locked = true
+		print("Button pressed, showing bar...")
+		consume_ingredients(item.name)
+		toasterBar.show_bar()
+		closeToaster1()
+	else:
+		print("You dont have enough ingredient to cook ", item.name)
 
 func _on_loading_finished():
 	if locked:
