@@ -18,6 +18,7 @@ var store_direction : Vector2 = Vector2.DOWN
 @onready var canvas = get_node("/root/Playground/CanvasLayer")
 @export var inventory : Inventory
 @export var slots : iSlot
+@onready var paycheckmenu = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/total label/Total")
 
 const source = 0
 const stove_coord1 = Vector2i(7,28)
@@ -151,9 +152,11 @@ func _input(event):
 	if event.is_action_pressed("sell"):  # q
 		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
 		money_display.add_money(10) 
+		paycheckmenu.add_money(10)
 	if event.is_action_pressed("upgrade"): # r
 		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
 		money_display.upgrade(20)
+		paycheckmenu.upgrade(20)
 	if event.is_action_pressed("interact"): # e
 		var near = is_near()
 		if is_near() == "stove":

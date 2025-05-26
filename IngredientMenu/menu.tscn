@@ -187,5 +187,5 @@ texture_pressed = ExtResource("11_o0okj")
 [connection signal="pressed" from="NinePatchRect/mayo1" to="." method="_on_mayo_1_pressed"]
 [connection signal="pressed" from="NinePatchRect/tsauce1" to="." method="_on_tsauce_1_pressed"]
 [connection signal="pressed" from="NinePatchRect/bbqs" to="." method="_on_bbqs_pressed"]
-[connection signal="pressed" from="NinePatchRect/oil1" to="." method="_on_oil_1_pressed"]
 [connection signal="pressed" from="NinePatchRect/oil1" to="." method="_on_oil1_pressed"]
+[connection signal="pressed" from="NinePatchRect/oil1" to="." method="_on_oil_1_pressed"]

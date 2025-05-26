@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bmlcjik7mnbd1"]
+[gd_scene load_steps=28 format=4 uid="uid://bmlcjik7mnbd1"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Texture2D" uid="uid://cujpni7aqak6q" path="res://Restaurant_map/restaurant_sprite/kitchen16_tan.png" id="2_is3ju"]
@@ -16,6 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://dm3qtlptr7vky" path="res://IngredientMenu/stove_2.tscn" id="12_yjl7g"]
 [ext_resource type="PackedScene" uid="uid://cts5tooeur1rb" path="res://IngredientMenu/toaster_1.tscn" id="13_f7pug"]
 [ext_resource type="PackedScene" uid="uid://csiflhdqibpix" path="res://loading bar/loading_bar.tscn" id="15_dk0co"]
+[ext_resource type="Texture2D" uid="uid://qx25yw3h1t4a" path="res://CLayer/sprite/closebutton.png" id="16_ycdrs"]
+[ext_resource type="Texture2D" uid="uid://cdofpbc5il82i" path="res://CLayer/sprite/closebutton_p.png" id="17_5m40n"]
+[ext_resource type="Texture2D" uid="uid://cy4b3lpcb8jpo" path="res://CLayer/sprite/paycheck.png" id="18_ymgag"]
+[ext_resource type="Script" uid="uid://d3rw5xtgp1qxj" path="res://paycheckmenu.gd" id="19_u2qr3"]
+[ext_resource type="Texture2D" uid="uid://cxswasa6cflkc" path="res://CLayer/sprite/frame.png" id="20_vnugj"]
+[ext_resource type="Texture2D" uid="uid://u2qomjwlkjt3" path="res://CLayer/sprite/paycheck label.png" id="21_2yo0f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynsuh"]
 texture = ExtResource("2_is3ju")
@@ -1081,6 +1087,100 @@ offset_top = 132.0
 offset_right = -475.0
 offset_bottom = -213.0
 
+[node name="closeButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 522.0
+offset_top = 323.0
+offset_right = 571.0
+offset_bottom = 345.0
+texture_normal = ExtResource("16_ycdrs")
+texture_pressed = ExtResource("17_5m40n")
+stretch_mode = 0
+
+[node name="paycheck" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchor_left = 0.589
+anchor_top = 0.5
+anchor_right = 0.589
+anchor_bottom = 0.5
+offset_left = -183.264
+offset_top = -168.0
+offset_right = 153.736
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("19_u2qr3")
+
+[node name="paycheckmenu" type="TextureRect" parent="CanvasLayer/paycheck"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 334.0
+offset_bottom = 332.0
+texture = ExtResource("18_ymgag")
+
+[node name="total label" type="TextureRect" parent="CanvasLayer/paycheck/paycheckmenu"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 225.0
+offset_right = 236.0
+offset_bottom = 266.0
+texture = ExtResource("20_vnugj")
+
+[node name="Total" parent="CanvasLayer/paycheck/paycheckmenu/total label" instance=ExtResource("7_ynsuh")]
+layout_mode = 0
+offset_right = 137.0
+offset_bottom = 41.0
+
+[node name="Income label" type="TextureRect" parent="CanvasLayer/paycheck/paycheckmenu"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 152.0
+offset_right = 235.0
+offset_bottom = 193.0
+texture = ExtResource("20_vnugj")
+
+[node name="Income" parent="CanvasLayer/paycheck/paycheckmenu/Income label" instance=ExtResource("7_ynsuh")]
+layout_mode = 0
+offset_right = 137.0
+offset_bottom = 41.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/paycheck/paycheckmenu"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 9.0
+offset_right = 266.0
+offset_bottom = 56.0
+texture = ExtResource("21_2yo0f")
+
+[node name="Label2" type="Label" parent="CanvasLayer/paycheck/paycheckmenu"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 99.0
+offset_top = 126.0
+offset_right = 234.0
+offset_bottom = 149.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Income:"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label" type="Label" parent="CanvasLayer/paycheck/paycheckmenu"]
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 102.0
+offset_top = 199.0
+offset_right = 235.0
+offset_bottom = 222.0
+text = "TOTAL:"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
 [node name="Player_character" parent="." instance=ExtResource("1_rupst")]
 position = Vector2(120, 150)
 scale = Vector2(1, 1)
+
+[connection signal="pressed" from="CanvasLayer/closeButton" to="CanvasLayer" method="_on_close_button_pressed"]

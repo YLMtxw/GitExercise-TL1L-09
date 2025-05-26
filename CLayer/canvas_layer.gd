@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var Itoaster1 = $toaster1
 @onready var Itoaster2 = $toaster2
 @onready var player = get_node("/root/Playground/Player_character")
+@onready var paycheckmenu = $paycheck
 
 
 func _ready():
@@ -19,6 +20,7 @@ func _ready():
 	Istove1.closeStove1()
 	Itoaster1.closeToaster1()
 	Itoaster2.closeToaster2()
+	paycheckmenu.close_paycheck()
 
 func _process( delta ):
 	if Input.is_action_just_pressed("OpenInv"):
@@ -27,7 +29,6 @@ func _process( delta ):
 		else:
 			inventory.open()
 	
-
 
 func _input(event):
 	if Input.is_action_just_pressed("interact"):
@@ -66,3 +67,8 @@ func _input(event):
 				Itoaster2.closeToaster2()
 			else:
 				Itoaster2.openToaster2()
+
+
+func _on_close_button_pressed() -> void:
+	paycheckmenu.open_paycheck()
+	pass # Replace with function body.
