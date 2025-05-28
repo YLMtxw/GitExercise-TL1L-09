@@ -1,0 +1,161 @@
+[gd_scene load_steps=21 format=3 uid="uid://jab4cnh7batx"]
+
+[ext_resource type="Script" uid="uid://jlppjd4u51dh" path="res://body.gd" id="1_f7vnm"]
+[ext_resource type="Texture2D" uid="uid://co3yn6oj054oa" path="res://walk.png" id="2_f7vnm"]
+[ext_resource type="Texture2D" uid="uid://c4opwjfxnas8t" path="res://idle.png" id="2_i8u8t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ne2x"]
+atlas = ExtResource("2_i8u8t")
+region = Rect2(0, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2j6j"]
+atlas = ExtResource("2_i8u8t")
+region = Rect2(48, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwylx"]
+atlas = ExtResource("2_i8u8t")
+region = Rect2(96, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsbeh"]
+atlas = ExtResource("2_i8u8t")
+region = Rect2(144, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcfii"]
+atlas = ExtResource("2_i8u8t")
+region = Rect2(192, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujeyq"]
+atlas = ExtResource("2_i8u8t")
+region = Rect2(240, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qm4e"]
+atlas = ExtResource("2_i8u8t")
+region = Rect2(288, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8u8t"]
+atlas = ExtResource("2_f7vnm")
+region = Rect2(0, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w27f0"]
+atlas = ExtResource("2_f7vnm")
+region = Rect2(48, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_357jt"]
+atlas = ExtResource("2_f7vnm")
+region = Rect2(96, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v185q"]
+atlas = ExtResource("2_f7vnm")
+region = Rect2(144, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag30x"]
+atlas = ExtResource("2_f7vnm")
+region = Rect2(192, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v8hj"]
+atlas = ExtResource("2_f7vnm")
+region = Rect2(240, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruqyr"]
+atlas = ExtResource("2_f7vnm")
+region = Rect2(288, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjx01"]
+atlas = ExtResource("2_f7vnm")
+region = Rect2(336, 192, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ne2x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ne2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2j6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwylx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsbeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcfii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujeyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qm4e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8u8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w27f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_357jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v185q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag30x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v8hj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruqyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjx01")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8u8t"]
+radius = 5.0
+
+[node name="NPC" type="CharacterBody2D" groups=["npcs"]]
+y_sort_enabled = true
+script = ExtResource("1_f7vnm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.8147e-06, -1.90735e-06)
+scale = Vector2(1.16602, 1.16602)
+sprite_frames = SubResource("SpriteFrames_0ne2x")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_i8u8t")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+simplify_path = true
+debug_enabled = true
+
+[node name="LeaveTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="RetryTimer" type="Timer" parent="."]
+
+[node name="SpeechLabel" type="Label" parent="."]
+offset_left = -50.0
+offset_top = -43.0
+offset_right = 51.0
+offset_bottom = -20.0
+text = "dahjksbfiabjfasdadawdasd"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,203 @@
+[gd_scene load_steps=14 format=3 uid="uid://cts5tooeur1rb"]
+
+[ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="1_phkxn"]
+[ext_resource type="Script" uid="uid://ca23uk6w16bwn" path="res://IngredientMenu/toaster_1.gd" id="1_tpujl"]
+[ext_resource type="Texture2D" uid="uid://cncbc65caocb7" path="res://IngredientMenu/Ingredient_Sprite/vegeLabel.png" id="2_tpujl"]
+[ext_resource type="Texture2D" uid="uid://cft82glfu4q7o" path="res://IngredientMenu/Ingredient_Sprite/otherLabel.png" id="3_7lymw"]
+[ext_resource type="PackedScene" uid="uid://b8m5u0iygxod5" path="res://Inventory/InvSlots.tscn" id="4_3t5gp"]
+[ext_resource type="Texture2D" uid="uid://c2kl7fqv0usnh" path="res://IngredientMenu/Ingredient_Sprite/vege sandwich (1).png" id="5_2x21x"]
+[ext_resource type="Texture2D" uid="uid://dgvngce6he5uq" path="res://IngredientMenu/Ingredient_Sprite/egg mayo sandwich.png" id="6_kcinq"]
+[ext_resource type="Texture2D" uid="uid://0sej6igb337m" path="res://IngredientMenu/Ingredient_Sprite/chickLabel (1).png" id="7_ll71d"]
+[ext_resource type="Texture2D" uid="uid://bxrsrx50ff8o0" path="res://IngredientMenu/Ingredient_Sprite/LambLabel (1).png" id="8_ti6n1"]
+[ext_resource type="Texture2D" uid="uid://ouc1g0wn6kxu" path="res://IngredientMenu/Ingredient_Sprite/BeefLabel (1).png" id="9_lasy3"]
+[ext_resource type="Texture2D" uid="uid://c0hj58oxefkaf" path="res://IngredientMenu/Ingredient_Sprite/meat sandwich.png" id="10_7ynxf"]
+[ext_resource type="Texture2D" uid="uid://cvbswq0p4t8a0" path="res://IngredientMenu/Ingredient_Sprite/selects.png" id="11_ju4ae"]
+[ext_resource type="Texture2D" uid="uid://byy1iwm5st1bl" path="res://IngredientMenu/Ingredient_Sprite/selects_clicked.png" id="12_0c8oq"]
+
+[node name="toaster1" type="Control" groups=["toaster1"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -484.0
+offset_bottom = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tpujl")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 91.0
+offset_bottom = 96.0
+texture = ExtResource("1_phkxn")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 5.0
+offset_right = 36.0
+offset_bottom = 14.0
+texture = ExtResource("2_tpujl")
+
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 5.0
+offset_right = 77.0
+offset_bottom = 14.0
+texture = ExtResource("3_7lymw")
+
+[node name="InvSlots" parent="NinePatchRect" instance=ExtResource("4_3t5gp")]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = 33.0
+offset_bottom = 35.0
+
+[node name="TextureRect3" type="TextureRect" parent="NinePatchRect/InvSlots"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 19.0
+offset_bottom = 18.0
+texture = ExtResource("5_2x21x")
+expand_mode = 1
+
+[node name="InvSlots2" parent="NinePatchRect" instance=ExtResource("4_3t5gp")]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 15.0
+offset_right = 75.0
+offset_bottom = 35.0
+
+[node name="TextureRect4" type="TextureRect" parent="NinePatchRect/InvSlots2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 20.0
+offset_bottom = 18.0
+texture = ExtResource("6_kcinq")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 48.0
+offset_right = 29.0
+offset_bottom = 60.0
+texture = ExtResource("7_ll71d")
+
+[node name="TextureRect4" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 48.0
+offset_right = 61.0
+offset_bottom = 61.0
+texture = ExtResource("8_ti6n1")
+
+[node name="TextureRect5" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 48.0
+offset_right = 87.0
+offset_bottom = 61.0
+texture = ExtResource("9_lasy3")
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 61.0
+offset_right = 79.0
+offset_bottom = 81.0
+columns = 3
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer" instance=ExtResource("4_3t5gp")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 20.0
+offset_bottom = 19.0
+texture = ExtResource("10_7ynxf")
+expand_mode = 1
+
+[node name="InvSlots2" parent="NinePatchRect/GridContainer" instance=ExtResource("4_3t5gp")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 20.0
+offset_bottom = 19.0
+texture = ExtResource("10_7ynxf")
+expand_mode = 1
+
+[node name="InvSlots3" parent="NinePatchRect/GridContainer" instance=ExtResource("4_3t5gp")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots3"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 20.0
+offset_bottom = 19.0
+texture = ExtResource("10_7ynxf")
+expand_mode = 1
+
+[node name="vege sandwich" type="TextureButton" parent="NinePatchRect" groups=["toaster1"]]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 36.0
+offset_right = 35.0
+offset_bottom = 45.0
+texture_normal = ExtResource("11_ju4ae")
+texture_pressed = ExtResource("12_0c8oq")
+
+[node name="egg mayo sandwich" type="TextureButton" parent="NinePatchRect" groups=["toaster1"]]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 36.0
+offset_right = 77.0
+offset_bottom = 45.0
+texture_normal = ExtResource("11_ju4ae")
+texture_pressed = ExtResource("12_0c8oq")
+
+[node name="chic sandwich" type="TextureButton" parent="NinePatchRect" groups=["toaster1"]]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 82.0
+offset_right = 32.0
+offset_bottom = 91.0
+texture_normal = ExtResource("11_ju4ae")
+texture_pressed = ExtResource("12_0c8oq")
+
+[node name="lamb sandwich" type="TextureButton" parent="NinePatchRect" groups=["toaster1"]]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 82.0
+offset_right = 57.0
+offset_bottom = 91.0
+texture_normal = ExtResource("11_ju4ae")
+texture_pressed = ExtResource("12_0c8oq")
+
+[node name="beef sandwich" type="TextureButton" parent="NinePatchRect" groups=["toaster1"]]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 82.0
+offset_right = 82.0
+offset_bottom = 91.0
+texture_normal = ExtResource("11_ju4ae")
+texture_pressed = ExtResource("12_0c8oq")
+
+[connection signal="pressed" from="NinePatchRect/vege sandwich" to="." method="_on_vege_sandwich_pressed"]
+[connection signal="pressed" from="NinePatchRect/egg mayo sandwich" to="." method="_on_egg_mayo_sandwich_pressed"]
+[connection signal="pressed" from="NinePatchRect/chic sandwich" to="." method="_on_chic_sandwich_pressed"]
+[connection signal="pressed" from="NinePatchRect/lamb sandwich" to="." method="_on_lamb_sandwich_pressed"]
+[connection signal="pressed" from="NinePatchRect/beef sandwich" to="." method="_on_beef_sandwich_pressed"]

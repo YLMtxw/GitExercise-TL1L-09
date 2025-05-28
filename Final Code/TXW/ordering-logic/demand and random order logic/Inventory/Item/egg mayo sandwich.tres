@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dy7yabqt6jlve"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_ixo3n"]
+[ext_resource type="Texture2D" uid="uid://dgvngce6he5uq" path="res://IngredientMenu/Ingredient_Sprite/egg mayo sandwich.png" id="2_8wiat"]
+
+[resource]
+script = ExtResource("1_ixo3n")
+name = "egg mayo sandwich"
+texture = ExtResource("2_8wiat")
+metadata/_custom_type_script = "uid://c2jevq51ijiin"
