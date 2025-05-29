@@ -5,7 +5,9 @@ extends Control
 @onready var sprite_c = $photo3
 @onready var sprite_d = $photo4
 @onready var confirm = $CanvasLayer/Comfirmation
-@onready var label = $"photo1/blue box/Counting"
+@onready var board = $"CanvasLayer/burger board"
+@onready var level =  $"photo1/blue box/level2"
+
 
 func _input(event):
 
@@ -17,7 +19,7 @@ func _ready():
 	for button in $Button2.get_children():
 		if button is Button or button is TextureButton:
 			button.connect("pressed", Callable(self, "_on_button_2_pressed"))
-
+		
 
 func _on_button_2_pressed() -> void:
 	$ClickSound.play()
@@ -64,6 +66,7 @@ func _on_upgrade_button_pressed() -> void:
 	$ClickSound.play()	
 	confirm.visible = true
 
+
 func _on_upgrade_button_2_pressed() -> void:
 	$ClickSound.play()	
 	confirm.visible = true
@@ -71,19 +74,51 @@ func _on_upgrade_button_2_pressed() -> void:
 func _on_cancel_button_pressed() -> void:
 	$ClickSound.play()
 	confirm.visible = false
-	label.visible = false
 
 
 func _on_accept_button_pressed() -> void:
 	$ClickSound.play()
 	confirm.visible = false
-	label.visible = true
 
-	var previous_mark = 0      # 初始是0分
-	var A = 1   
 
-	var current_mark = previous_mark + A
-	previous_mark = current_mark    # 更新历史分数
 
-	label.text = "%d" % current_mark
-	label.visible = true
+func _on_texture_button_pressed() -> void:
+	$ClickSound.play()	
+	confirm.visible = true
+	board.visible = false
+
+
+func _on_lamb_pressed() -> void:
+	$ClickSound.play()	
+	confirm.visible = true
+	board.visible = false
+
+
+func _on_beef_pressed() -> void:
+	$ClickSound.play()	
+	confirm.visible = true
+	board.visible = false
+	
+func _on_vege_pressed() -> void:
+	$ClickSound.play()	
+	confirm.visible = true
+	board.visible = false
+
+
+func _on_select_button_pressed() -> void:
+	$ClickSound.play()	
+	board.visible = true
+
+func get_player_coins(store_name: String) -> int:
+	var path = "user://player_data.json"
+	if FileAccess.file_exists(path):
+		var file = FileAccess.open(path, FileAccess.READ)
+		var text = file.get_as_text()
+		file.close()
+		var data = JSON.parse_string(text)
+		
+		if typeof(data) == TYPE_DICTIONARY and data.has("players"):
+			for player in data["players"]:
+				if player.get("store_name", "") == store_name:
+					return player.get("coins", 0)
+	return 0
