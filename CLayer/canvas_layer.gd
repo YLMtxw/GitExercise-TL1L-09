@@ -10,6 +10,8 @@ extends CanvasLayer
 @onready var Itoaster2 = $toaster2
 @onready var player = get_node("/root/Playground/Player_character")
 @onready var paycheckmenu = $paycheck
+@onready var income = $"paycheck/paycheckmenu/Income label/Income"
+@onready var overlay = $overlay
 
 
 func _ready():
@@ -68,7 +70,23 @@ func _input(event):
 			else:
 				Itoaster2.openToaster2()
 
+func set_pause_mode_recursive(node: Node, mode: int) -> void:
+	if "process_mode" in node:
+		node.process_mode = mode
+	for child in node.get_children():
+		if child is Node:
+			set_pause_mode_recursive(child, mode)
 
 func _on_close_button_pressed() -> void:
 	paycheckmenu.open_paycheck()
+	overlay.visible = true
+	get_tree().paused = true
+	
+	set_pause_mode_recursive(paycheckmenu, Node.PROCESS_MODE_ALWAYS)
+
+func _on_next_pressed() -> void:
+	income.reset()
+	paycheckmenu.close_paycheck()
+	overlay.visible = false
+	get_tree().paused = false
 	pass # Replace with function body.

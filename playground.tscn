@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bmlcjik7mnbd1"]
+[gd_scene load_steps=33 format=4 uid="uid://bmlcjik7mnbd1"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Texture2D" uid="uid://cujpni7aqak6q" path="res://Restaurant_map/restaurant_sprite/kitchen16_tan.png" id="2_is3ju"]
@@ -22,6 +22,11 @@
 [ext_resource type="Script" uid="uid://d3rw5xtgp1qxj" path="res://paycheckmenu.gd" id="19_u2qr3"]
 [ext_resource type="Texture2D" uid="uid://cxswasa6cflkc" path="res://CLayer/sprite/frame.png" id="20_vnugj"]
 [ext_resource type="Texture2D" uid="uid://u2qomjwlkjt3" path="res://CLayer/sprite/paycheck label.png" id="21_2yo0f"]
+[ext_resource type="Script" uid="uid://blba0h18s6r6b" path="res://income.gd" id="21_3i8ot"]
+[ext_resource type="Texture2D" uid="uid://bue5c4maub8v2" path="res://MoneyLabel/MLabel_Sprites/Money.png" id="22_ofol1"]
+[ext_resource type="Texture2D" uid="uid://c643gn8fdagmf" path="res://CLayer/sprite/Next.png" id="24_snn6g"]
+[ext_resource type="Texture2D" uid="uid://c63k5aecrled" path="res://CLayer/sprite/Next_p.png" id="25_lraom"]
+[ext_resource type="AudioStream" uid="uid://cemm7i42isxxp" path="res://song/jazz-restaurant-cafe-music-334836.mp3" id="27_ofol1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynsuh"]
 texture = ExtResource("2_is3ju")
@@ -1000,6 +1005,14 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="InvItemLabel" type="Label" parent="CanvasLayer/InventoryGUI"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -23.0
+offset_right = 238.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MoneyLabel" parent="CanvasLayer" instance=ExtResource("7_ynsuh")]
 anchors_preset = 1
 anchor_left = 1.0
@@ -1098,6 +1111,7 @@ stretch_mode = 0
 
 [node name="paycheck" type="Control" parent="CanvasLayer"]
 visible = false
+z_index = 1
 layout_mode = 3
 anchor_left = 0.589
 anchor_top = 0.5
@@ -1140,10 +1154,21 @@ offset_right = 235.0
 offset_bottom = 193.0
 texture = ExtResource("20_vnugj")
 
-[node name="Income" parent="CanvasLayer/paycheck/paycheckmenu/Income label" instance=ExtResource("7_ynsuh")]
+[node name="Income" type="HBoxContainer" parent="CanvasLayer/paycheck/paycheckmenu/Income label"]
 layout_mode = 0
-offset_right = 137.0
-offset_bottom = 41.0
+offset_right = 135.0
+offset_bottom = 40.0
+script = ExtResource("21_3i8ot")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/paycheck/paycheckmenu/Income label/Income"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture = ExtResource("22_ofol1")
+expand_mode = 1
+
+[node name="Money" type="Label" parent="CanvasLayer/paycheck/paycheckmenu/Income label/Income"]
+layout_mode = 2
+text = "0"
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/paycheck/paycheckmenu"]
 layout_mode = 0
@@ -1172,15 +1197,37 @@ texture_filter = 1
 layout_mode = 0
 offset_left = 102.0
 offset_top = 199.0
-offset_right = 235.0
-offset_bottom = 222.0
+offset_right = 232.0
+offset_bottom = 223.0
 text = "TOTAL:"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
+[node name="next" type="TextureButton" parent="CanvasLayer/paycheck/paycheckmenu"]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 293.0
+offset_right = 210.0
+offset_bottom = 302.0
+scale = Vector2(2.5, 2.5)
+texture_normal = ExtResource("24_snn6g")
+texture_pressed = ExtResource("25_lraom")
+
+[node name="overlay" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 576.0
+offset_bottom = 352.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.839216)
+
 [node name="Player_character" parent="." instance=ExtResource("1_rupst")]
 position = Vector2(120, 150)
 scale = Vector2(1, 1)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_ofol1")
+parameters/looping = true
+
 [connection signal="pressed" from="CanvasLayer/closeButton" to="CanvasLayer" method="_on_close_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/paycheck/paycheckmenu/next" to="CanvasLayer" method="_on_next_pressed"]

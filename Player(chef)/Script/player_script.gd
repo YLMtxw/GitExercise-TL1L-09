@@ -19,6 +19,8 @@ var store_direction : Vector2 = Vector2.DOWN
 @export var inventory : Inventory
 @export var slots : iSlot
 @onready var paycheckmenu = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/total label/Total")
+@onready var income = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/Income label/Income")
+@onready var bgm = get_parent().get_node("AudioStreamPlayer")
 
 const source = 0
 const stove_coord1 = Vector2i(7,28)
@@ -38,6 +40,10 @@ const k1_coord = Vector2i(13,39)
 const k2_coord = Vector2i(14,40)
 const k3_coord = Vector2i(13,40)
 const k4_coord = Vector2i(14,39)
+
+func _ready():
+	bgm.play()
+	pass
 
 func _process(delta):
 	if menuOpen.Mopen():
@@ -153,6 +159,7 @@ func _input(event):
 		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
 		money_display.add_money(10) 
 		paycheckmenu.add_money(10)
+		income.add_money(10)
 	if event.is_action_pressed("upgrade"): # r
 		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
 		money_display.upgrade(20)
