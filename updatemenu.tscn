@@ -586,7 +586,6 @@ texture = ExtResource("14_wlpo0")
 [node name="Button2" type="TextureButton" parent="."]
 texture_filter = 1
 clip_contents = true
-layout_mode = 0
 offset_left = 227.0
 offset_top = 28.0
 offset_right = 533.0
@@ -879,6 +878,7 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 60
 text = "0"
 script = ExtResource("44_313i5")
+money = 40
 
 [node name="Cooked01" type="Sprite2D" parent="."]
 position = Vector2(109, 215)
@@ -907,7 +907,6 @@ scale = Vector2(0.3, 0.3)
 [connection signal="pressed" from="photo1/blue box3/upgrade button" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="photo1/blue box6/select button" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="photo1/blue box6/select button" to="." method="_on_select_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_table_2_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="button4" to="." method="_on_button_4_pressed"]

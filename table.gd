@@ -7,7 +7,20 @@ extends Control
 @onready var confirm = $CanvasLayer/Comfirmation
 @onready var board = $"CanvasLayer/burger board"
 @onready var level =  $"photo1/blue box/level2"
+@onready var money_label = $"MoneyBox/Coin Label"  # 假设您有一个名为 MoneyLabel 的 Label 节点
 
+func load_player_data() -> PlayerData:
+	var file_path = "res://DATA/Hello.json"
+	if FileAccess.file_exists(file_path):
+		var json_string = FileAccess.get_file_as_string(file_path)
+		var player_data = JsonClassConverter.json_string_to_class(PlayerData, json_string)
+		if player_data != null:
+			return player_data
+		else:
+			push_error("无法解析 JSON 数据。")
+	else:
+		push_error("玩家数据文件不存在：%s" % file_path)
+	return null
 
 func _input(event):
 
@@ -18,8 +31,14 @@ func _ready():
 	# 给所有按钮连接 signal
 	for button in $Button2.get_children():
 		if button is Button or button is TextureButton:
-			button.connect("pressed", Callable(self, "_on_button_2_pressed"))
-		
+			button.pressed.connect(_on_button_2_pressed)
+	
+	var player_data = load_player_data()
+	if player_data:
+		money_label.text = str(player_data.money)
+	else:
+		money_label.text = "无法加载玩家数据。"
+
 
 func _on_button_2_pressed() -> void:
 	$ClickSound.play()
@@ -108,17 +127,3 @@ func _on_vege_pressed() -> void:
 func _on_select_button_pressed() -> void:
 	$ClickSound.play()	
 	board.visible = true
-
-func get_player_coins(store_name: String) -> int:
-	var path = "user://player_data.json"
-	if FileAccess.file_exists(path):
-		var file = FileAccess.open(path, FileAccess.READ)
-		var text = file.get_as_text()
-		file.close()
-		var data = JSON.parse_string(text)
-		
-		if typeof(data) == TYPE_DICTIONARY and data.has("players"):
-			for player in data["players"]:
-				if player.get("store_name", "") == store_name:
-					return player.get("coins", 0)
-	return 0
