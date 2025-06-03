@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rmcghmfa2ud1"
-path="res://.godot/imported/button.png-b4e8ee669e044103da710f75479e9800.ctex"
+uid="uid://c0t2pu6rq7obe"
+path="res://.godot/imported/chicken_steak-removebg-preview.png-0294660997809d1b11baceb7ad108215.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://photo/button.png"
-dest_files=["res://.godot/imported/button.png-b4e8ee669e044103da710f75479e9800.ctex"]
+source_file="res://photo/chicken_steak-removebg-preview.png"
+dest_files=["res://.godot/imported/chicken_steak-removebg-preview.png-0294660997809d1b11baceb7ad108215.ctex"]
 
 [params]
 

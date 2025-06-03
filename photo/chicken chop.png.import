@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rmcghmfa2ud1"
-path="res://.godot/imported/button.png-b4e8ee669e044103da710f75479e9800.ctex"
+uid="uid://c40t36g52dwsf"
+path="res://.godot/imported/chicken chop.png-3bc0482fcea6faf1c23557811f92dfef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://photo/button.png"
-dest_files=["res://.godot/imported/button.png-b4e8ee669e044103da710f75479e9800.ctex"]
+source_file="res://photo/chicken chop.png"
+dest_files=["res://.godot/imported/chicken chop.png-3bc0482fcea6faf1c23557811f92dfef.ctex"]
 
 [params]
 

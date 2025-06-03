@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rmcghmfa2ud1"
-path="res://.godot/imported/button.png-b4e8ee669e044103da710f75479e9800.ctex"
+uid="uid://bpfjd00jh36p6"
+path="res://.godot/imported/aglio olio.png-d61e40248342e8a05d7f2a307a71afa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://photo/button.png"
-dest_files=["res://.godot/imported/button.png-b4e8ee669e044103da710f75479e9800.ctex"]
+source_file="res://photo/aglio olio.png"
+dest_files=["res://.godot/imported/aglio olio.png-d61e40248342e8a05d7f2a307a71afa7.ctex"]
 
 [params]
 

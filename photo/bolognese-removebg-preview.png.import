@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rmcghmfa2ud1"
-path="res://.godot/imported/button.png-b4e8ee669e044103da710f75479e9800.ctex"
+uid="uid://bjcoa78e4uwbq"
+path="res://.godot/imported/bolognese-removebg-preview.png-cfb8335feff82187d18484363517b2ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://photo/button.png"
-dest_files=["res://.godot/imported/button.png-b4e8ee669e044103da710f75479e9800.ctex"]
+source_file="res://photo/bolognese-removebg-preview.png"
+dest_files=["res://.godot/imported/bolognese-removebg-preview.png-cfb8335feff82187d18484363517b2ab.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rmcghmfa2ud1"
-path="res://.godot/imported/button.png-b4e8ee669e044103da710f75479e9800.ctex"
+uid="uid://cdw8g1qym72tl"
+path="res://.godot/imported/aglio_olio-removebg-preview.png-708516f6de640485a667e24864a383d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://photo/button.png"
-dest_files=["res://.godot/imported/button.png-b4e8ee669e044103da710f75479e9800.ctex"]
+source_file="res://photo/aglio_olio-removebg-preview.png"
+dest_files=["res://.godot/imported/aglio_olio-removebg-preview.png-708516f6de640485a667e24864a383d2.ctex"]
 
 [params]
 

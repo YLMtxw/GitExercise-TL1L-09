@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rmcghmfa2ud1"
-path="res://.godot/imported/button.png-b4e8ee669e044103da710f75479e9800.ctex"
+uid="uid://c5jheyn8glyf2"
+path="res://.godot/imported/egg_mayo_sandwich-removebg-preview.png-619b8f0eac8295571dfabeaa794a1a1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://photo/button.png"
-dest_files=["res://.godot/imported/button.png-b4e8ee669e044103da710f75479e9800.ctex"]
+source_file="res://photo/egg_mayo_sandwich-removebg-preview.png"
+dest_files=["res://.godot/imported/egg_mayo_sandwich-removebg-preview.png-619b8f0eac8295571dfabeaa794a1a1d.ctex"]
 
 [params]
 

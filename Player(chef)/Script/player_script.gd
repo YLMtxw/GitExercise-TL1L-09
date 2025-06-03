@@ -155,6 +155,9 @@ func _physics_process( delta ):
 	UpdateAction()
 	
 func _input(event):
+	
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		get_tree().quit()
 	if event.is_action_pressed("sell"):  # q
 		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
 		money_display.add_money(10) 
@@ -177,3 +180,8 @@ func _input(event):
 			print("bin")
 		if is_near() == "bm":
 			print("bm")
+
+
+func _on_timer_timeout() -> void:
+	# 跳转到另一个场景，比如 "res://NextPage.tscn"
+	get_tree().change_scene_to_file("res://updatemenu.tscn")

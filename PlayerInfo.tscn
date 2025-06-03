@@ -1,46 +1,34 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0e6a003pdxu4"]
+[gd_scene load_steps=11 format=3 uid="uid://bh0bnbmse2ai0"]
 
 [ext_resource type="Texture2D" uid="uid://1el28nogvkee" path="res://photo/Player Info.jpg" id="1_ijsdh"]
+[ext_resource type="AudioStream" uid="uid://bbljp5n8dot2x" path="res://song/chinese-new-year-184077.mp3" id="1_w17oj"]
 [ext_resource type="Script" uid="uid://brfvdde8id256" path="res://line_edit.gd" id="2_8ex5c"]
-[ext_resource type="Texture2D" uid="uid://dt7ocpxfdhm6w" path="res://photo/pixil-frame-0.png" id="3_8ex5c"]
-[ext_resource type="Texture2D" uid="uid://ca7vc4wm66k27" path="res://photo/hi.png" id="4_34t3e"]
+[ext_resource type="Texture2D" uid="uid://iip3rxa8nrpn" path="res://photo/create-removebg-preview.png" id="3_8ex5c"]
+[ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="3_34t3e"]
+[ext_resource type="Texture2D" uid="uid://dt704kekpyjqx" path="res://photo/create_pressed-removebg-preview.png" id="4_34t3e"]
 
 [sub_resource type="GDScript" id="GDScript_8crf7"]
 script/source = "extends Node
 
+func _input(event):
 
-func _on_button_pressed():
-	var username = $Control/LineEdit.text
-
-	if is_valid_username(username):
-		$Label2.visible = true
-		get_tree().change_scene_to_file(\"res://game_01.tscn\")
-	else:
-		$Label2.text = \"必须包含大写、小写和数字\"
-		$Label2.visible = false
-		print($Control/Label2)
-
-
-# 验证函数
-func is_valid_username(username: String) -> bool:
-	var has_upper = false
-	var has_lower = false
-	var has_digit = false
-
-	for i in username:
-		var c := i.unicode_at(0)
-
-		if c >= 65 and c <= 90:  # A-Z
-			has_upper = true
-		elif c >= 97 and c <= 122:  # a-z
-			has_lower = true
-		elif c >= 48 and c <= 57:  # 0-9
-			has_digit = true
-
-	return has_upper and has_lower and has_digit
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		get_tree().quit()
 
 func _on_texture_button_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://playground.tscn\")
+	$ClickSound.play() # 等待音效播放完毕	
+
+func _on_shop_name_focus_exited() -> void:
+
+	var shop_name = $\"Control/Shop name\".text
+	
+	if shop_name.length() < 8:
+		$Control/Label2.text = \"must be at least 8 characters\"
+	else:
+			$ClickSound.play()
+			await $ClickSound.finished  # 等待音效播放完毕
+			get_tree().change_scene_to_file(\"res://playground.tscn\")
+# 这个是和上面的函数平级的，不要放到 _on_CreateButton_pressed() 里面！
 "
 
 [sub_resource type="GDScript" id="GDScript_wbq6p"]
@@ -51,7 +39,7 @@ script/source = "extends Control
 variation_embolden = 0.67
 
 [sub_resource type="LabelSettings" id="LabelSettings_ijsdh"]
-font_size = 40
+font_size = 20
 font_color = Color(1, 0.0392157, 0.054902, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
@@ -59,12 +47,27 @@ shadow_color = Color(0, 0, 0, 1)
 [node name="PlayerInfo" type="Node2D"]
 script = SubResource("GDScript_8crf7")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_w17oj")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_34t3e")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(578.249, 322.75)
-scale = Vector2(1.06898, 0.896528)
+position = Vector2(287.5, 175.5)
+scale = Vector2(0.530556, 0.4875)
 texture = ExtResource("1_ijsdh")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+clip_contents = true
+offset_left = 406.0
+offset_top = 158.0
+offset_right = 454.0
+offset_bottom = 178.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_8ex5c")
+texture_pressed = ExtResource("4_34t3e")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -78,44 +81,44 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.082
 anchor_bottom = 0.131
-offset_left = 265.0
-offset_top = -126.0
-offset_right = 756.756
-offset_bottom = 299.992
+offset_left = 68.0
+offset_top = -90.0
+offset_right = 431.72
+offset_bottom = 219.76
 theme_override_colors/font_color = Color(0.980392, 0.854902, 0.552941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.329412, 0.235294, 0.262745, 1)
 theme_override_fonts/font = SubResource("FontVariation_8crf7")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "CREATE PROFILE"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="LineEdit2" type="LineEdit" parent="Control"]
-auto_translate_mode = 1
+[node name="Shop name" type="LineEdit" parent="Control"]
 layout_mode = 0
-offset_left = 340.0
-offset_top = 302.0
-offset_right = 745.0
-offset_bottom = 379.0
-placeholder_text = "Input your Shop Name"
-
-[node name="LineEdit" type="LineEdit" parent="Control"]
-layout_mode = 0
-offset_left = 339.0
-offset_top = 160.0
-offset_right = 750.0
-offset_bottom = 235.0
+offset_left = 158.0
+offset_top = 106.0
+offset_right = 338.0
+offset_bottom = 147.0
 placeholder_text = "Input your Username"
 script = ExtResource("2_8ex5c")
 
+[node name="Username" type="LineEdit" parent="Control"]
+auto_translate_mode = 1
+layout_mode = 0
+offset_left = 157.0
+offset_top = 187.0
+offset_right = 335.0
+offset_bottom = 227.0
+placeholder_text = "Input your Shop Name"
+
 [node name="HSlider" type="HSlider" parent="Control"]
 layout_mode = 0
-offset_left = 319.0
-offset_top = 402.0
-offset_right = 761.0
-offset_bottom = 570.0
+offset_left = 155.0
+offset_top = 234.0
+offset_right = 354.0
+offset_bottom = 297.0
 min_value = 1.0
 value = 1.0
 rounded = true
@@ -129,29 +132,35 @@ anchor_left = 0.153
 anchor_top = 0.116
 anchor_right = 0.888
 anchor_bottom = 0.373
-offset_left = 829.88
-offset_top = 229.36
-offset_right = 994.48
-offset_bottom = 274.08
+offset_left = 104.88
+offset_top = 142.36
+offset_right = 239.48
+offset_bottom = 160.08
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 theme_override_font_sizes/font_size = 40
-text = "warning"
+text = "------"
 label_settings = SubResource("LabelSettings_ijsdh")
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
 uppercase = true
 visible_characters_behavior = 1
 
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 829.0
-offset_top = 275.0
-offset_right = 1039.0
-offset_bottom = 400.0
+[node name="TextureButton2" type="TextureButton" parent="."]
+visible = false
+texture_filter = 1
+clip_contents = true
+custom_minimum_size = Vector2(29, 0)
+offset_left = 394.0
+offset_top = 154.0
+offset_right = 442.0
+offset_bottom = 178.0
+scale = Vector2(2, 2)
 texture_normal = ExtResource("3_8ex5c")
 texture_pressed = ExtResource("4_34t3e")
-stretch_mode = 0
 
-[connection signal="value_changed" from="Control/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_shop_name_focus_exited"]
+[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_line_edit_focus_exited"]
+[connection signal="value_changed" from="Control/HSlider" to="." method="_on_h_slider_value_changed"]
