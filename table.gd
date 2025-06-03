@@ -6,6 +6,7 @@ extends Control
 @onready var sprite_d = $photo4
 @onready var confirm = $CanvasLayer/Comfirmation
 @onready var label = $"photo1/blue box/Counting"
+var UM = false
 
 func _input(event):
 

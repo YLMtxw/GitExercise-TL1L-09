@@ -20,7 +20,6 @@ var store_direction : Vector2 = Vector2.DOWN
 @export var slots : iSlot
 @onready var paycheckmenu = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/total label/Total")
 @onready var income = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/Income label/Income")
-@onready var bgm = get_parent().get_node("AudioStreamPlayer")
 
 const source = 0
 const stove_coord1 = Vector2i(7,28)
@@ -40,10 +39,6 @@ const k1_coord = Vector2i(13,39)
 const k2_coord = Vector2i(14,40)
 const k3_coord = Vector2i(13,40)
 const k4_coord = Vector2i(14,39)
-
-func _ready():
-	bgm.play()
-	pass
 
 func _process(delta):
 	if menuOpen.Mopen():
@@ -180,8 +175,3 @@ func _input(event):
 			print("bin")
 		if is_near() == "bm":
 			print("bm")
-
-
-func _on_timer_timeout() -> void:
-	# 跳转到另一个场景，比如 "res://NextPage.tscn"
-	get_tree().change_scene_to_file("res://updatemenu.tscn")

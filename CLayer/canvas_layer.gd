@@ -12,6 +12,7 @@ extends CanvasLayer
 @onready var paycheckmenu = $paycheck
 @onready var income = $"paycheck/paycheckmenu/Income label/Income"
 @onready var overlay = $overlay
+@onready var UM = preload("res://updatemenu.tscn")
 
 
 func _ready():
@@ -89,4 +90,5 @@ func _on_next_pressed() -> void:
 	paycheckmenu.close_paycheck()
 	overlay.visible = false
 	get_tree().paused = false
+	get_tree().change_scene_to_packed(UM)
 	pass # Replace with function body.
