@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://vopx7ngh5whv"]
+[gd_scene load_steps=13 format=3 uid="uid://vopx7ngh5whv"]
 
 [ext_resource type="Script" uid="uid://bw1mqnh02kuji" path="res://IngredientMenu/menu_2.gd" id="1_6aymy"]
 [ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="2_n2tm0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cvbswq0p4t8a0" path="res://IngredientMenu/Ingredient_Sprite/selects.png" id="9_cuudn"]
 [ext_resource type="Texture2D" uid="uid://byy1iwm5st1bl" path="res://IngredientMenu/Ingredient_Sprite/selects_clicked.png" id="10_wldcl"]
 [ext_resource type="Texture2D" uid="uid://boatjmul8j8id" path="res://IngredientMenu/Ingredient_Sprite/oil.png" id="10_xeku5"]
+[ext_resource type="AudioStream" uid="uid://dwnomvmsq8402" path="res://song/mixkit-game-click-1114.wav" id="12_wldcl"]
 
 [node name="menu2" type="Control"]
 layout_mode = 3
@@ -177,6 +178,9 @@ offset_right = 15.0
 offset_bottom = 19.0
 texture = ExtResource("10_xeku5")
 expand_mode = 1
+
+[node name="Clicksound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_wldcl")
 
 [connection signal="pressed" from="NinePatchRect/vege2" to="." method="_on_vege_2_pressed"]
 [connection signal="pressed" from="NinePatchRect/stomato2" to="." method="_on_stomato_2_pressed"]

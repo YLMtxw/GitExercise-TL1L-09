@@ -14,7 +14,7 @@ var recipes = {
 	"beef sandwich": ["beef cooked", "sliced vege", "sliced tomato", "mayonaise", "cheese", "bread", "bread"],
 	"vege sandwich": ["sliced vege", "sliced vege", "sliced tomato", "sliced tomato", "mayonaise", "bread", "bread"]
 }
-
+@onready var click = $Clicksound
 
 func _ready() :
 	for button in get_tree().get_nodes_in_group("toaster1"):
@@ -101,25 +101,30 @@ func t1close():
 
 
 func _on_vege_sandwich_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/vege sandwich.tres")
 	pass # Replace with function body.
 
 
 func _on_egg_mayo_sandwich_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/egg mayo sandwich.tres")
 	pass # Replace with function body.
 
 
 func _on_chic_sandwich_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/chicken sandwich.tres")
 	pass # Replace with function body.
 
 
 func _on_lamb_sandwich_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/lamb sandwich.tres")
 	pass # Replace with function body.
 
 
 func _on_beef_sandwich_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/beef sandwich.tres")
 	pass # Replace with function body.

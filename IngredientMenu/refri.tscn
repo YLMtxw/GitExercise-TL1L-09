@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cy1d6xhr11qgy"]
+[gd_scene load_steps=26 format=3 uid="uid://cy1d6xhr11qgy"]
 
 [ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="2_fu6ni"]
 [ext_resource type="Texture2D" uid="uid://b10vfo3m8noe3" path="res://IngredientMenu/Ingredient_Sprite/BeefLabel.png" id="3_dft21"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bx1qm5blh1co8" path="res://IngredientMenu/Ingredient_Sprite/100plus.png" id="20_tb2no"]
 [ext_resource type="Texture2D" uid="uid://0sjanjo5bw45" path="res://IngredientMenu/Ingredient_Sprite/7up.png" id="21_wyqo1"]
 [ext_resource type="Texture2D" uid="uid://bbxqbulql4nuw" path="res://IngredientMenu/Ingredient_Sprite/Sprite.png" id="22_lmx7x"]
+[ext_resource type="AudioStream" uid="uid://dwnomvmsq8402" path="res://song/mixkit-game-click-1114.wav" id="24_tb2no"]
 
 [sub_resource type="GDScript" id="GDScript_3c5yy"]
 script/source = "extends Control
@@ -31,7 +32,7 @@ var refri : bool = false
 var is_menu_open : bool = false
 var inventory = preload(\"res://Inventory/playerInventory.tres\")
 @onready var inventorygui = get_node(\"/root/Playground/CanvasLayer/InventoryGUI\")
-
+@onready var click = $Clicksound
 
 
 func openRefri():
@@ -56,12 +57,14 @@ func insert(item: InventoryItem) -> void:
 	
 
 func _on_rvege_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/vegetable.tres\")
 	print(\"rvege\")
 	inventorygui.update()
 	insert(item)
 
 func _on_rtomato_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/tomato.tres\")
 	print(\"rtomato\")
 	inventorygui.update()
@@ -69,6 +72,7 @@ func _on_rtomato_pressed() -> void:
 
 
 func _on_rspaghetti_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/spaghetti raw.tres\")
 	print(\"rspaghetti\")
 	inventorygui.update()
@@ -76,6 +80,7 @@ func _on_rspaghetti_pressed() -> void:
 
 
 func _on_beefsteak_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/beef_raw.tres\")
 	print(\"beefsteak\")
 	inventorygui.update()
@@ -83,6 +88,7 @@ func _on_beefsteak_pressed() -> void:
 
 
 func _on_beefpatty_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/beef patty raw.tres\")
 	print(\"beefpatty\")
 	inventorygui.update()
@@ -90,6 +96,7 @@ func _on_beefpatty_pressed() -> void:
 
 
 func _on_lamb_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/lamb raw.tres\")
 	print(\"lamb\")
 	inventorygui.update()
@@ -97,6 +104,7 @@ func _on_lamb_pressed() -> void:
 
 
 func _on_lambpatty_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/lamb patty raw.tres\")
 	print(\"lambpatty\")
 	inventorygui.update()
@@ -104,6 +112,7 @@ func _on_lambpatty_pressed() -> void:
 
 
 func _on_chicken_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/chicken raw.tres\")
 	print(\"chicken\")
 	inventorygui.update()
@@ -111,6 +120,7 @@ func _on_chicken_pressed() -> void:
 
 
 func _on_chickenpatty_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/chicken patty raw.tres\")
 	print(\"chickenpatty\")
 	inventorygui.update()
@@ -118,6 +128,7 @@ func _on_chickenpatty_pressed() -> void:
 
 
 func _on_rcheese_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/cheese.tres\")
 	print(\"rcheese\")
 	inventorygui.update()
@@ -125,6 +136,7 @@ func _on_rcheese_pressed() -> void:
 
 
 func _on_coke_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/coke.tres\")
 	print(\"coke\")
 	inventorygui.update()
@@ -133,6 +145,7 @@ func _on_coke_pressed() -> void:
 
 
 func _on__pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/100plus.tres\")
 	print(\"100\")
 	inventorygui.update()
@@ -140,12 +153,14 @@ func _on__pressed() -> void:
 
 
 func _on_up_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/7up.tres\")
 	print(\"7up\")
 	inventorygui.update()
 	insert(item)
 
 func _on_sprite_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/sprite.tres\")
 	print(\"sprite\")
 	inventorygui.update()
@@ -153,6 +168,7 @@ func _on_sprite_pressed() -> void:
 
 
 func _on_bun_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/bun.tres\")
 	print(\"bun\")
 	inventorygui.update()
@@ -160,6 +176,7 @@ func _on_bun_pressed() -> void:
 
 
 func _on_bread_pressed() -> void:
+	click.play()
 	var item = preload(\"res://Inventory/Item/bread.tres\")
 	print(\"bread\")
 	inventorygui.update()
@@ -597,6 +614,9 @@ offset_bottom = 92.0
 scale = Vector2(0.9, 1)
 texture_normal = ExtResource("11_h7tpu")
 texture_pressed = ExtResource("12_gkade")
+
+[node name="Clicksound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_tb2no")
 
 [connection signal="pressed" from="NinePatchRect/beefsteak" to="." method="_on_beefsteak_pressed"]
 [connection signal="pressed" from="NinePatchRect/beefpatty" to="." method="_on_beefpatty_pressed"]
