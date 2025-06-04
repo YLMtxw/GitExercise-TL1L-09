@@ -5,8 +5,22 @@ extends Control
 @onready var sprite_c = $photo3
 @onready var sprite_d = $photo4
 @onready var confirm = $CanvasLayer/Comfirmation
-@onready var label = $"photo1/blue box/Counting"
-var UM = false
+@onready var board = $"CanvasLayer/burger board"
+@onready var level =  $"photo1/blue box/level2"
+@onready var money_label = $"MoneyBox/Coin Label"  # 假设您有一个名为 MoneyLabel 的 Label 节点
+
+func load_player_data() -> PlayerData:
+	var file_path = "res://DATA/Hello.json"
+	if FileAccess.file_exists(file_path):
+		var json_string = FileAccess.get_file_as_string(file_path)
+		var player_data = JsonClassConverter.json_string_to_class(PlayerData, json_string)
+		if player_data != null:
+			return player_data
+		else:
+			push_error("无法解析 JSON 数据。")
+	else:
+		push_error("玩家数据文件不存在：%s" % file_path)
+	return null
 
 func _input(event):
 
@@ -17,7 +31,13 @@ func _ready():
 	# 给所有按钮连接 signal
 	for button in $Button2.get_children():
 		if button is Button or button is TextureButton:
-			button.connect("pressed", Callable(self, "_on_button_2_pressed"))
+			button.pressed.connect(_on_button_2_pressed)
+	
+	var player_data = load_player_data()
+	if player_data:
+		money_label.text = str(player_data.money)
+	else:
+		money_label.text = "无法加载玩家数据。"
 
 
 func _on_button_2_pressed() -> void:
@@ -65,6 +85,7 @@ func _on_upgrade_button_pressed() -> void:
 	$ClickSound.play()	
 	confirm.visible = true
 
+
 func _on_upgrade_button_2_pressed() -> void:
 	$ClickSound.play()	
 	confirm.visible = true
@@ -72,19 +93,37 @@ func _on_upgrade_button_2_pressed() -> void:
 func _on_cancel_button_pressed() -> void:
 	$ClickSound.play()
 	confirm.visible = false
-	label.visible = false
 
 
 func _on_accept_button_pressed() -> void:
 	$ClickSound.play()
 	confirm.visible = false
-	label.visible = true
 
-	var previous_mark = 0      # 初始是0分
-	var A = 1   
 
-	var current_mark = previous_mark + A
-	previous_mark = current_mark    # 更新历史分数
 
-	label.text = "%d" % current_mark
-	label.visible = true
+func _on_texture_button_pressed() -> void:
+	$ClickSound.play()	
+	confirm.visible = true
+	board.visible = false
+
+
+func _on_lamb_pressed() -> void:
+	$ClickSound.play()	
+	confirm.visible = true
+	board.visible = false
+
+
+func _on_beef_pressed() -> void:
+	$ClickSound.play()	
+	confirm.visible = true
+	board.visible = false
+	
+func _on_vege_pressed() -> void:
+	$ClickSound.play()	
+	confirm.visible = true
+	board.visible = false
+
+
+func _on_select_button_pressed() -> void:
+	$ClickSound.play()	
+	board.visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://v46hvmlbt3i0"]
+[gd_scene load_steps=25 format=3 uid="uid://v46hvmlbt3i0"]
 
 [ext_resource type="Script" uid="uid://ewyi0xfg6ddr" path="res://node_2d.gd" id="1_ufv5y"]
 [ext_resource type="Texture2D" uid="uid://ghn4vl843k8x" path="res://photo/final main menu.jpg" id="2_0d5ky"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://c8rtdnwaknhfr" path="res://photo/setting.png" id="11_ms31j"]
 [ext_resource type="Texture2D" uid="uid://d4jti1aksdca7" path="res://photo/setting pressed.png" id="12_xuc80"]
 [ext_resource type="Texture2D" uid="uid://b4iiu364kj40a" path="res://photo/setting hover.png" id="13_aa878"]
+[ext_resource type="Texture2D" uid="uid://c02qcug22fath" path="res://photo/a_2025-05-27_143504-removebg-preview.png" id="14_q1tr0"]
+[ext_resource type="Script" uid="uid://dboerlcfa0opp" path="res://h_slider.gd" id="15_f6et0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d5ky"]
 bg_color = Color(0.552941, 0.290196, 0.215686, 1)
@@ -67,6 +69,18 @@ _data = {
 
 [sub_resource type="GDScript" id="GDScript_lo4tm"]
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_q1tr0"]
+dof_blur_far_enabled = true
+
+[sub_resource type="Environment" id="Environment_f6et0"]
+
+[sub_resource type="Environment" id="Environment_7oljx"]
+
+[sub_resource type="World3D" id="World3D_7ei3k"]
+environment = SubResource("Environment_f6et0")
+fallback_environment = SubResource("Environment_7oljx")
+camera_attributes = SubResource("CameraAttributesPractical_q1tr0")
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ufv5y")
 
@@ -100,7 +114,6 @@ script = ExtResource("5_ht3pi")
 [node name="PopupPanel" type="PopupPanel" parent="."]
 initial_position = 1
 size = Vector2i(300, 271)
-visible = true
 max_size = Vector2i(32731, 32768)
 theme_override_styles/panel = SubResource("StyleBoxFlat_0d5ky")
 
@@ -110,10 +123,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -135.0
-offset_top = -110.5
-offset_right = 135.0
-offset_bottom = 120.5
+offset_left = 5.0
+offset_top = 15.0
+offset_right = 295.0
+offset_bottom = 266.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.976471, 0.803922, 0.556863, 1)
@@ -151,7 +164,7 @@ script = SubResource("GDScript_lo4tm")
 
 [node name="bgm for Start menu" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_3wf2c")
-volume_db = -4.952
+volume_db = 12.0
 autoplay = true
 parameters/looping = true
 
@@ -180,6 +193,70 @@ texture_normal = ExtResource("11_ms31j")
 texture_pressed = ExtResource("12_xuc80")
 texture_hover = ExtResource("13_aa878")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="PopupPanel2" type="PopupPanel" parent="."]
+world_3d = SubResource("World3D_7ei3k")
+canvas_item_default_texture_filter = 0
+position = Vector2i(193, 45)
+size = Vector2i(190, 220)
+visible = true
+transient_to_focused = true
+min_size = Vector2i(50, 0)
+content_scale_size = Vector2i(0, 15)
+content_scale_mode = 1
+content_scale_aspect = 2
+content_scale_stretch = 1
+
+[node name="Setting" type="Sprite2D" parent="PopupPanel2"]
+texture_filter = 1
+position = Vector2(99.1562, 109.187)
+scale = Vector2(1.36336, 1.64018)
+texture = ExtResource("14_q1tr0")
+
+[node name="HSlider" type="HSlider" parent="PopupPanel2/Setting"]
+anchors_preset = -1
+anchor_left = 0.223
+anchor_right = 0.223
+offset_left = -84.5267
+offset_top = -22.6728
+offset_right = 24.4733
+offset_bottom = -6.67284
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+size_flags_horizontal = 0
+min_value = -40.0
+max_value = 0.0
+script = ExtResource("15_f6et0")
+
+[node name="Label" type="Label" parent="PopupPanel2/Setting"]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.089
+anchor_top = 0.08
+anchor_right = 0.921
+anchor_bottom = 0.942
+offset_left = -66.5637
+offset_top = -82.0383
+offset_right = 13.7963
+offset_bottom = -111.718
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+tooltip_auto_translate_mode = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "
+Audio Change"
+horizontal_alignment = 1
+autowrap_mode = 2
+justification_flags = 160
+clip_text = true
+
 [connection signal="pressed" from="tutorial button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="start button2" to="." method="_on_start_button_2_pressed"]
 [connection signal="pressed" from="setting button" to="." method="_on_setting_button_pressed"]
+[connection signal="value_changed" from="PopupPanel2/Setting/HSlider" to="." method="_on_h_slider_value_changed"]

@@ -10,6 +10,32 @@
 [sub_resource type="GDScript" id="GDScript_8crf7"]
 script/source = "extends Node
 
+func get_player_file_path(store_name: String) -> String:
+	return \"user://%s.json\" % store_name
+	
+func create_new_player(store_name: String) -> void:
+	var data = {
+		\"store_name\": store_name,
+		\"coins\": 1000,
+		\"spent\": 0,
+	}
+	var file = FileAccess.open(get_player_file_path(store_name), FileAccess.WRITE)
+	file.store_string(JSON.stringify(data))
+	file.close()
+	
+func load_player_data(store_name: String) -> Dictionary:
+	var path = get_player_file_path(store_name)
+	if FileAccess.file_exists(path):
+		var file = FileAccess.open(path, FileAccess.READ)
+		var text = file.get_as_text()
+		file.close()
+		var data = JSON.parse_string(text)
+		if typeof(data) == TYPE_DICTIONARY:
+			return data
+	return {}  # 不存在或读取失败
+
+
+
 func _input(event):
 
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
@@ -17,18 +43,29 @@ func _input(event):
 
 func _on_texture_button_pressed() -> void:
 	$ClickSound.play() # 等待音效播放完毕	
+	var name = $\"Control/Shop name\".text.strip_edges()
+	
+	if name == \"\":
+		$Control/Label2.text = \"店名不能为空\"
+	else:
+		create_new_player(name)
+		$Control/Label2.text = \"店铺创建成功！\"
+		load_player_data(\"\")
+		await $ClickSound.finished
+		get_tree().change_scene_to_file(\"res://playground.tscn\")
+	
 
 func _on_shop_name_focus_exited() -> void:
 
-	var shop_name = $\"Control/Shop name\".text
+	var name = $\"Control/Shop name\".text.strip_edges()
 	
-	if shop_name.length() < 8:
-		$Control/Label2.text = \"must be at least 8 characters\"
+	if name == \"\":
+		$Control/Label2.text = \"店名不能为空\"
 	else:
-			$ClickSound.play()
-			await $ClickSound.finished  # 等待音效播放完毕
-			get_tree().change_scene_to_file(\"res://playground.tscn\")
-# 这个是和上面的函数平级的，不要放到 _on_CreateButton_pressed() 里面！
+		create_new_player(name)
+		$Control/Label2.text = \"店铺创建成功！\"
+		load_player_data(\"\")
+		get_tree().change_scene_to_file(\"res://playground.tscn\")
 "
 
 [sub_resource type="GDScript" id="GDScript_wbq6p"]
@@ -81,10 +118,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.082
 anchor_bottom = 0.131
-offset_left = 68.0
-offset_top = -90.0
-offset_right = 431.72
-offset_bottom = 219.76
+offset_left = 82.0
+offset_top = -94.0
+offset_right = 445.72
+offset_bottom = 215.76
 theme_override_colors/font_color = Color(0.980392, 0.854902, 0.552941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.329412, 0.235294, 0.262745, 1)
@@ -97,33 +134,12 @@ uppercase = true
 
 [node name="Shop name" type="LineEdit" parent="Control"]
 layout_mode = 0
-offset_left = 158.0
-offset_top = 106.0
-offset_right = 338.0
-offset_bottom = 147.0
-placeholder_text = "Input your Username"
-script = ExtResource("2_8ex5c")
-
-[node name="Username" type="LineEdit" parent="Control"]
-auto_translate_mode = 1
-layout_mode = 0
-offset_left = 157.0
-offset_top = 187.0
-offset_right = 335.0
-offset_bottom = 227.0
+offset_left = 168.0
+offset_top = 109.0
+offset_right = 364.0
+offset_bottom = 150.0
 placeholder_text = "Input your Shop Name"
-
-[node name="HSlider" type="HSlider" parent="Control"]
-layout_mode = 0
-offset_left = 155.0
-offset_top = 234.0
-offset_right = 354.0
-offset_bottom = 297.0
-min_value = 1.0
-value = 1.0
-rounded = true
-tick_count = 10
-ticks_on_borders = true
+script = ExtResource("2_8ex5c")
 
 [node name="Label2" type="Label" parent="Control"]
 layout_mode = 1
@@ -132,10 +148,10 @@ anchor_left = 0.153
 anchor_top = 0.116
 anchor_right = 0.888
 anchor_bottom = 0.373
-offset_left = 104.88
-offset_top = 142.36
-offset_right = 239.48
-offset_bottom = 160.08
+offset_left = 126.88
+offset_top = 222.36
+offset_right = 261.48
+offset_bottom = 240.08
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
@@ -147,20 +163,6 @@ vertical_alignment = 1
 uppercase = true
 visible_characters_behavior = 1
 
-[node name="TextureButton2" type="TextureButton" parent="."]
-visible = false
-texture_filter = 1
-clip_contents = true
-custom_minimum_size = Vector2(29, 0)
-offset_left = 394.0
-offset_top = 154.0
-offset_right = 442.0
-offset_bottom = 178.0
-scale = Vector2(2, 2)
-texture_normal = ExtResource("3_8ex5c")
-texture_pressed = ExtResource("4_34t3e")
-
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="focus_exited" from="Control/Shop name" to="." method="_on_shop_name_focus_exited"]
 [connection signal="focus_exited" from="Control/Shop name" to="." method="_on_line_edit_focus_exited"]
-[connection signal="value_changed" from="Control/HSlider" to="." method="_on_h_slider_value_changed"]
