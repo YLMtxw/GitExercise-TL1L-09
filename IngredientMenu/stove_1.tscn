@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bq4icvsbh2qyg"]
+[gd_scene load_steps=25 format=3 uid="uid://bq4icvsbh2qyg"]
 
 [ext_resource type="Script" uid="uid://bji5gcen6oorc" path="res://stove_1.gd" id="1_gij4g"]
 [ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="2_k14xl"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cncbc65caocb7" path="res://IngredientMenu/Ingredient_Sprite/vegeLabel.png" id="21_2vxsl"]
 [ext_resource type="Texture2D" uid="uid://cft82glfu4q7o" path="res://IngredientMenu/Ingredient_Sprite/otherLabel.png" id="22_frvdk"]
 [ext_resource type="Texture2D" uid="uid://bkrsxvd6fdeoj" path="res://IngredientMenu/Ingredient_Sprite/fried egg.png" id="23_it2lg"]
+[ext_resource type="AudioStream" uid="uid://dwnomvmsq8402" path="res://song/mixkit-game-click-1114.wav" id="24_s77xn"]
 
 [node name="stove1" type="Control"]
 layout_mode = 3
@@ -469,6 +470,9 @@ offset_right = 19.0
 offset_bottom = 20.0
 texture = ExtResource("23_it2lg")
 expand_mode = 1
+
+[node name="Clicksound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_s77xn")
 
 [connection signal="pressed" from="NinePatchRect/spaghetti cooked" to="." method="_on_spaghetti_cooked_pressed"]
 [connection signal="pressed" from="NinePatchRect/Aglio olio" to="." method="_on_aglio_olio_pressed"]

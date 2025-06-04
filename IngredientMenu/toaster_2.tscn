@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d00supx0kutvq"]
+[gd_scene load_steps=15 format=3 uid="uid://d00supx0kutvq"]
 
 [ext_resource type="Script" uid="uid://cietbwcxddwtp" path="res://IngredientMenu/toaster_2.gd" id="1_t24jj"]
 [ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="1_wslrh"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c0hj58oxefkaf" path="res://IngredientMenu/Ingredient_Sprite/meat sandwich.png" id="10_ivdax"]
 [ext_resource type="Texture2D" uid="uid://cvbswq0p4t8a0" path="res://IngredientMenu/Ingredient_Sprite/selects.png" id="11_26h2n"]
 [ext_resource type="Texture2D" uid="uid://byy1iwm5st1bl" path="res://IngredientMenu/Ingredient_Sprite/selects_clicked.png" id="12_hwp2i"]
+[ext_resource type="AudioStream" uid="uid://dwnomvmsq8402" path="res://song/mixkit-game-click-1114.wav" id="14_p2nih"]
 
 [node name="toaster2" type="Control" groups=["toaster2"]]
 layout_mode = 3
@@ -195,6 +196,9 @@ offset_right = 82.0
 offset_bottom = 91.0
 texture_normal = ExtResource("11_26h2n")
 texture_pressed = ExtResource("12_hwp2i")
+
+[node name="Clicksound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_p2nih")
 
 [connection signal="pressed" from="NinePatchRect/vege sandwich" to="." method="_on_vege_sandwich_pressed"]
 [connection signal="pressed" from="NinePatchRect/egg mayo sandwich" to="." method="_on_egg_mayo_sandwich_pressed"]
