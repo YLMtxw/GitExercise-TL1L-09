@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dprymryl3khd2"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_qjyhv"]
+[ext_resource type="Texture2D" uid="uid://cs8yvh86v480c" path="res://IngredientMenu/Ingredient_Sprite/burger.png" id="2_gkk23"]
+
+[resource]
+script = ExtResource("1_qjyhv")
+name = "vege burger"
+texture = ExtResource("2_gkk23")
+metadata/_custom_type_script = "uid://c2jevq51ijiin"
