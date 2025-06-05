@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://ciyrdhr4vycum"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_kdadj"]
+[ext_resource type="Texture2D" uid="uid://bscsd1tq8d4kq" path="res://IngredientMenu/Ingredient_Sprite/aglio olio.png" id="2_0glxx"]
+
+[resource]
+script = ExtResource("1_kdadj")
+name = "aglio olio"
+texture = ExtResource("2_0glxx")
+metadata/_custom_type_script = "uid://c2jevq51ijiin"
