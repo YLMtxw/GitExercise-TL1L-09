@@ -115,19 +115,19 @@ scale = Vector2(0.374956, 0.385193)
 texture = ExtResource("8_6rsue")
 
 [node name="upgrade button" type="TextureButton" parent="photo1/blue box"]
-offset_left = -93.2974
-offset_top = -109.128
-offset_right = 90.7026
-offset_bottom = 109.872
+offset_left = -90.2878
+offset_top = -112.0
+offset_right = 93.7122
+offset_bottom = 107.0
 
 [node name="Aglio olio" type="Sprite2D" parent="photo1/blue box"]
-position = Vector2(-0.000876188, -8.61549)
-scale = Vector2(0.414052, 0.352784)
+position = Vector2(-3.01043, -25.8463)
+scale = Vector2(0.337877, 0.267767)
 texture = ExtResource("7_8snal")
 
 [node name="AglioOlio word" type="Sprite2D" parent="photo1/blue box"]
-position = Vector2(3.00868, 63.1794)
-scale = Vector2(4.03345, 4.35712)
+position = Vector2(-3.01044, 70.3588)
+scale = Vector2(3.78345, 3.17409)
 texture = ExtResource("8_26cu5")
 
 [node name="level2" type="Sprite2D" parent="photo1/blue box"]
@@ -163,6 +163,17 @@ visible = false
 position = Vector2(13.0645, -0.871796)
 scale = Vector2(0.755663, 1.13527)
 texture = ExtResource("14_wlpo0")
+
+[node name="200" type="Label" parent="photo1/blue box"]
+offset_left = -39.1252
+offset_top = 8.61528
+offset_right = 30.8748
+offset_bottom = 40.6153
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "200"
 
 [node name="blue box2" type="Sprite2D" parent="photo1"]
 position = Vector2(-28.5121, -32.2379)
@@ -586,6 +597,7 @@ texture = ExtResource("14_wlpo0")
 [node name="Button2" type="TextureButton" parent="."]
 texture_filter = 1
 clip_contents = true
+layout_mode = 0
 offset_left = 227.0
 offset_top = 28.0
 offset_right = 533.0
@@ -682,6 +694,55 @@ texture = ExtResource("14_wlpo0")
 position = Vector2(39.5034, -44.2478)
 scale = Vector2(0.369219, 0.390131)
 texture = ExtResource("8_6rsue")
+
+[node name="100Plus" type="Sprite2D" parent="photo2/blue box3"]
+position = Vector2(-3.05688, -2.83542)
+scale = Vector2(0.63917, 0.504454)
+texture = ExtResource("22_30naw")
+
+[node name="Label" type="Label" parent="photo2/blue box3"]
+offset_left = -79.4796
+offset_top = 56.7089
+offset_right = 83.5204
+offset_bottom = 84.7089
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "100 PLUS"
+
+[node name="level2" type="Sprite2D" parent="photo2/blue box3"]
+position = Vector2(4.37486, -73.1399)
+scale = Vector2(4.15317, 3.26739)
+texture = ExtResource("12_qt1ew")
+
+[node name="BlackBox" type="Sprite2D" parent="photo2/blue box3/level2"]
+position = Vector2(-15.9677, -0.871796)
+scale = Vector2(0.755663, 1.13527)
+texture = ExtResource("14_wlpo0")
+
+[node name="BlackBox2" type="Sprite2D" parent="photo2/blue box3/level2"]
+visible = false
+position = Vector2(-8.70967, -0.871796)
+scale = Vector2(0.755663, 1.13527)
+texture = ExtResource("14_wlpo0")
+
+[node name="BlackBox3" type="Sprite2D" parent="photo2/blue box3/level2"]
+visible = false
+position = Vector2(-1.45161, -0.871796)
+scale = Vector2(0.755663, 1.13527)
+texture = ExtResource("14_wlpo0")
+
+[node name="BlackBox4" type="Sprite2D" parent="photo2/blue box3/level2"]
+visible = false
+position = Vector2(5.80646, -0.871796)
+scale = Vector2(0.755663, 1.13527)
+texture = ExtResource("14_wlpo0")
+
+[node name="BlackBox5" type="Sprite2D" parent="photo2/blue box3/level2"]
+visible = false
+position = Vector2(13.0645, -0.871796)
+scale = Vector2(0.755663, 1.13527)
+texture = ExtResource("14_wlpo0")
 
 [node name="blue box4" type="Sprite2D" parent="photo2"]
 position = Vector2(111.738, -44.2478)
@@ -878,28 +939,11 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 60
 text = "0"
 script = ExtResource("44_313i5")
-money = 40
 
 [node name="Cooked01" type="Sprite2D" parent="."]
 position = Vector2(109, 215)
 scale = Vector2(0.241525, 0.283009)
 texture = ExtResource("42_rpnmw")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 194.0
-offset_top = 60.0
-offset_right = 235.0
-offset_bottom = 83.0
-text = "Level"
-
-[node name="UpgradeBar" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_left = 188.0
-offset_top = 83.0
-offset_right = 365.0
-offset_bottom = 120.0
-scale = Vector2(0.3, 0.3)
 
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="photo1/blue box/upgrade button" to="." method="_on_upgrade_button_pressed"]

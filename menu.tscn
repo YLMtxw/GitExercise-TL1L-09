@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmhla7sag35as"]
+
+[ext_resource type="Texture2D" uid="uid://bkdo3b5s7g4ev" path="res://photo/sky.png" id="1_4hy44"]
+[ext_resource type="Script" uid="uid://bw6wjv8uyovkw" path="res://menu.gd" id="1_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://b4xetlk7ar7gw" path="res://photo/WhatsApp_图像2025-05-14于00.15.21_e46d42ba-removebg-preview.png" id="2_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://b3yi6o0n0usrt" path="res://photo/WhatsApp_图像2025-05-14于00.15.20_db979e95-removebg-preview.png" id="3_l48gv"]
+[ext_resource type="FontFile" uid="uid://bk4cd3hvf031o" path="res://font/PixelatedEleganceRegular-ovyAA.ttf" id="4_ecwwl"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_ytr4m")
+
+[node name="Sky" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(287, 180.373)
+scale = Vector2(1.02857, 1.11715)
+texture = ExtResource("1_4hy44")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+position = Vector2(-6.80554, -11.9708)
+scale = Vector2(0.746897, 0.630366)
+texture = ExtResource("2_ytr4m")
+
+[node name="WhatsApp图像2025-05-14于00_15_20Db979e95-removebg-preview" type="Sprite2D" parent="Sky"]
+position = Vector2(-120.556, -8.39024)
+scale = Vector2(0.810389, 0.69919)
+texture = ExtResource("3_l48gv")
+
+[node name="WhatsApp图像2025-05-14于00_15_20Db979e95-removebg-preview2" type="Sprite2D" parent="Sky"]
+position = Vector2(94.9866, -10.1805)
+scale = Vector2(0.811975, 0.679397)
+texture = ExtResource("3_l48gv")
+
+[node name="Chicken Burger" type="Label" parent="Sky"]
+offset_left = -194.0
+offset_top = -108.0
+offset_right = 654.0
+offset_bottom = -6.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_fonts/font = ExtResource("4_ecwwl")
+theme_override_font_sizes/font_size = 60
+text = "Chicken Burger
+Bun, Lettuce (Peeled), Mayonnaise, 
+Chicken patty (Grilled), Bun"
+
+[node name="Beef Burger" type="Label" parent="Sky"]
+texture_filter = 1
+offset_left = -194.444
+offset_top = -80.8962
+offset_right = 1499.56
+offset_bottom = 114.104
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("4_ecwwl")
+theme_override_font_sizes/font_size = 70
+text = "Beef Burger
+Bun, Lettuce (Peeled), Mayonnaise, 
+Beef patty (Grilled), Bun"
