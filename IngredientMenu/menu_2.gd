@@ -5,8 +5,8 @@ var is_menu_open : bool = false
 var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
 var recipes = {
-	"sliced vege": ["vegetable"],
-	"sliced tomato": ["tomato"]
+	"vegetable (peeled)": ["vegetable"],
+	"tomato (sliced)": ["tomato"]
 }
 @onready var click = $Clicksound
 
@@ -61,8 +61,8 @@ func insert(item: InventoryItem) -> void:
 
 func _on_vege_2_pressed() -> void:
 	click.play()
-	if has_ingredients("sliced vege"):
-		consume_ingredients("sliced vege")
+	if has_ingredients("vegetable (peeled)"):
+		consume_ingredients("vegetable (peeled)")
 		var item = preload("res://Inventory/Item/sliced vege.tres")
 		insert(item)
 		inventorygui.update()
@@ -73,8 +73,8 @@ func _on_vege_2_pressed() -> void:
 
 func _on_stomato_2_pressed() -> void:
 	click.play()
-	if has_ingredients("sliced tomato"):
-		consume_ingredients("sliced tomato")
+	if has_ingredients("tomato (sliced)"):
+		consume_ingredients("tomato (sliced)")
 		var item = preload("res://Inventory/Item/sliced tomato.tres")
 		insert(item)
 		inventorygui.update()

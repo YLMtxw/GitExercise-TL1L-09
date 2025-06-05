@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_kdadj")
-name = "aglio olio"
+name = "Aglio Olio"
 texture = ExtResource("2_0glxx")
 metadata/_custom_type_script = "uid://c2jevq51ijiin"

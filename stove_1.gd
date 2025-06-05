@@ -8,24 +8,24 @@ var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
 var item = null
 var recipes = {
-	"spaghetti cooked": ["spaghetti raw"],
-	"egg": ["raw egg", "oil"],
-	"vege burger": ["bun","sliced vege", "cheese", "sliced tomato", "mayonaise"],
-	"beef burger": ["bun", "cheese", "sliced vege", "beef patty cooked", "mayonaise"],
-	"chicken burger": ["bun", "cheese", "sliced vege", "chicken patty cooked", "mayonaise"],
-	"lamb burger": ["bun", "cheese", "sliced vege", "lamb patty cooked", "mayonaise"],
-	"chicken patty cooked": ["chicken patty raw", "oil"],
-	"beef patty cooked": ["beef patty raw", "oil"],
-	"lamb patty cooked": ["lamb patty raw", "oil"],
-	"aglio olio": ["spaghetti cooked", "oil"],
-	"carbonara": ["spaghetti cooked", "fried egg", "chicken cooked"],
-	"bolognese": ["spaghetti cooked", "tomato sauce", "beef cooked"],
-	"beef cooked": ["beef raw"],
-	"chicken cooked": ["chicken raw"],
-	"lamb cooked": ["lamb raw"],
-	"meat beef": ["beef raw", "oil", "bbqs", "sliced vege"],
-	"meat chicken": ["chicken raw", "oil", "bbqs", "sliced vege"],
-	"meat lamb": ["lamb raw", "oil", "bbqs", "sliced vege"]
+	"spaghetti (cooked)": ["spaghetti (raw)"],
+	"egg": ["egg (raw)", "oil"],
+	"vegetable burger": ["bun","vegetable (peeled)", "cheese", "tomato (sliced)", "mayonaise"],
+	"beef burger": ["bun", "cheese", "vegetable (peeled)", "beef patty (grilled)", "mayonaise"],
+	"chicken burger": ["bun", "cheese", "vegetable (peeled)", "chicken patty (grilled)", "mayonaise"],
+	"lamb burger": ["bun", "cheese", "vegetable (peeled)", "lamb patty (grilled)", "mayonaise"],
+	"chicken patty (grilled)": ["chicken patty (raw)", "oil"],
+	"beef patty (grilled)": ["beef patty (raw)", "oil"],
+	"lamb patty (grilled)": ["lamb patty (raw)", "oil"],
+	"Aglio Olio": ["spaghetti (cooked)", "oil"],
+	"carbonara": ["spaghetti (cooked)", "fried egg", "chicken (grilled)", "cheese"],
+	"bolognese": ["spaghetti (cooked)", "tomato sauce", "beef (grilled)"],
+	"beef (grilled)": ["beef (raw)"],
+	"chicken (grilled)": ["chicken (raw)"],
+	"lamb (grilled)": ["lamb (raw)"],
+	"Grilled Beef Steak": ["beef (raw)", "oil", "Barbecue Sauce", "vegetable (peeled)"],
+	"Grilled Chicken Steak": ["chicken (raw)", "oil", "Barbecue Sauce", "vegetable (peeled)"],
+	"Grilled Lamb Steak": ["lamb (raw)", "oil", "Barbecue Sauce", "vegetable (peeled)"]
 }
 @onready var click = $Clicksound
 

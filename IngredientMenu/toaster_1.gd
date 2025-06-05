@@ -8,11 +8,11 @@ var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
 var item = null
 var recipes = {
-	"egg mayo sandwich": ["fried egg", "mayonaise", "sliced vege", "sliced tomato", "cheese", "bread", "bread"],
-	"chicken sandwich": ["chicken cooked", "sliced vege", "sliced tomato", "mayonaise", "cheese", "bread", "bread"],
-	"lamb sandwich": ["lamb cooked", "sliced vege", "sliced tomato", "mayonaise", "cheese", "bread", "bread"],
-	"beef sandwich": ["beef cooked", "sliced vege", "sliced tomato", "mayonaise", "cheese", "bread", "bread"],
-	"vege sandwich": ["sliced vege", "sliced vege", "sliced tomato", "sliced tomato", "mayonaise", "bread", "bread"]
+	"egg mayo sandwich": ["fried egg", "mayonaise", "vegetable (peeled)", "tomato (sliced)", "cheese", "bread", "bread"],
+	"chicken sandwich": ["chicken (grilled)", "vegetable (peeled)", "tomato (sliced)", "mayonaise", "cheese", "bread", "bread"],
+	"lamb sandwich": ["lamb (grilled)", "vegetable (peeled)", "tomato (sliced)", "mayonaise", "cheese", "bread", "bread"],
+	"beef sandwich": ["beef (grilled)", "vegetable (peeled)", "tomato (sliced)", "mayonaise", "cheese", "bread", "bread"],
+	"vegetable sandwich": ["vegetable (peeled)", "vegetable (peeled)", "tomato (sliced)", "tomato (sliced)", "mayonaise", "bread", "bread"]
 }
 @onready var click = $Clicksound
 
