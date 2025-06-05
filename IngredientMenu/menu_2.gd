@@ -6,7 +6,8 @@ var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
 var recipes = {
 	"vegetable (peeled)": ["vegetable"],
-	"tomato (sliced)": ["tomato"]
+	"tomato (sliced)": ["tomato"],
+	"carrot (sliced)": ["carrot"]
 }
 @onready var click = $Clicksound
 
@@ -114,3 +115,15 @@ func _on_bbqs_2_pressed() -> void:
 	inventorygui.update()
 	insert(item)
 	pass # Replace with function body.
+
+
+func _on_carrot_pressed() -> void:
+	click.play()
+	if has_ingredients("carrot (sliced)"):
+		consume_ingredients("carrot (sliced)")
+		var item = preload("res://Inventory/Item/carrot (sliced).tres")
+		insert(item)
+		inventorygui.update()
+		print("Crafted sliced carrot")
+	else:
+		print("Not enough ingredients!")

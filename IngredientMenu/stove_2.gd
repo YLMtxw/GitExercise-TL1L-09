@@ -23,9 +23,9 @@ var recipes = {
 	"beef (grilled)": ["beef (raw)"],
 	"chicken (grilled)": ["chicken (raw)"],
 	"lamb (grilled)": ["lamb (raw)"],
-	"Grilled Beef Steak": ["beef (raw)", "oil", "Barbecue Sauce", "vegetable (peeled)"],
-	"Grilled Chicken Steak": ["chicken (raw)", "oil", "Barbecue Sauce", "vegetable (peeled)"],
-	"Grilled Lamb Steak": ["lamb (raw)", "oil", "Barbecue Sauce", "vegetable (peeled)"]
+	"Grilled Beef Steak": ["beef (raw)", "oil", "Barbecue Sauce", "vegetable (peeled)","carrot (sliced)"],
+	"Grilled Chicken Steak": ["chicken (raw)", "oil", "Barbecue Sauce", "vegetable (peeled)","carrot (sliced)"],
+	"Grilled Lamb Steak": ["lamb (raw)", "oil", "Barbecue Sauce", "vegetable (peeled)","carrot (sliced)"]
 }
 @onready var click = $Clicksound
 

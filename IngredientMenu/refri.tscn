@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cy1d6xhr11qgy"]
+[gd_scene load_steps=27 format=3 uid="uid://cy1d6xhr11qgy"]
 
 [ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="2_fu6ni"]
 [ext_resource type="Texture2D" uid="uid://b10vfo3m8noe3" path="res://IngredientMenu/Ingredient_Sprite/BeefLabel.png" id="3_dft21"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://0sjanjo5bw45" path="res://IngredientMenu/Ingredient_Sprite/7up.png" id="21_wyqo1"]
 [ext_resource type="Texture2D" uid="uid://bbxqbulql4nuw" path="res://IngredientMenu/Ingredient_Sprite/Sprite.png" id="22_lmx7x"]
 [ext_resource type="AudioStream" uid="uid://dwnomvmsq8402" path="res://song/mixkit-game-click-1114.wav" id="24_tb2no"]
+[ext_resource type="Texture2D" uid="uid://b7i5jn1i1a7wy" path="res://IngredientMenu/Ingredient_Sprite/carrot.png" id="24_wyqo1"]
 
 [sub_resource type="GDScript" id="GDScript_3c5yy"]
 script/source = "extends Control
@@ -181,6 +182,14 @@ func _on_bread_pressed() -> void:
 	print(\"bread\")
 	inventorygui.update()
 	insert(item)
+
+
+func _on_carrot_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/carrot.tres\")
+	print(\"bread\")
+	inventorygui.update()
+	insert(item)
 "
 
 [node name="refri" type="Control"]
@@ -193,7 +202,7 @@ script = SubResource("GDScript_3c5yy")
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_right = 148.0
-offset_bottom = 158.0
+offset_bottom = 174.0
 texture = ExtResource("2_fu6ni")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -500,17 +509,17 @@ texture_pressed = ExtResource("12_gkade")
 [node name="TextureRect5" type="TextureRect" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 5.0
-offset_top = 96.0
+offset_top = 126.0
 offset_right = 31.0
-offset_bottom = 105.0
+offset_bottom = 135.0
 texture = ExtResource("18_h7tpu")
 
 [node name="GridContainer5" type="GridContainer" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 6.0
-offset_top = 106.0
-offset_right = 46.0
-offset_bottom = 126.0
+offset_top = 136.0
+offset_right = 98.0
+offset_bottom = 156.0
 columns = 4
 
 [node name="InvSlots" parent="NinePatchRect/GridContainer5" instance=ExtResource("4_i2w46")]
@@ -562,36 +571,36 @@ expand_mode = 1
 [node name="coke" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 127.0
+offset_top = 157.0
 offset_right = 28.0
-offset_bottom = 136.0
+offset_bottom = 166.0
 texture_normal = ExtResource("11_h7tpu")
 texture_pressed = ExtResource("12_gkade")
 
 [node name="100" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 28.0
-offset_top = 127.0
+offset_top = 157.0
 offset_right = 52.0
-offset_bottom = 136.0
+offset_bottom = 166.0
 texture_normal = ExtResource("11_h7tpu")
 texture_pressed = ExtResource("12_gkade")
 
 [node name="7up" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 127.0
-offset_right = 76.0
-offset_bottom = 136.0
+offset_left = 53.0
+offset_top = 157.0
+offset_right = 77.0
+offset_bottom = 166.0
 texture_normal = ExtResource("11_h7tpu")
 texture_pressed = ExtResource("12_gkade")
 
 [node name="sprite" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 76.0
-offset_top = 127.0
+offset_top = 157.0
 offset_right = 100.0
-offset_bottom = 136.0
+offset_bottom = 166.0
 texture_normal = ExtResource("11_h7tpu")
 texture_pressed = ExtResource("12_gkade")
 
@@ -615,6 +624,30 @@ scale = Vector2(0.9, 1)
 texture_normal = ExtResource("11_h7tpu")
 texture_pressed = ExtResource("12_gkade")
 
+[node name="InvSlots" parent="NinePatchRect" instance=ExtResource("4_i2w46")]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 94.0
+offset_right = 24.0
+offset_bottom = 114.0
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/InvSlots"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 18.0
+offset_bottom = 20.0
+texture = ExtResource("24_wyqo1")
+expand_mode = 1
+
+[node name="carrot" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 115.0
+offset_right = 28.0
+offset_bottom = 124.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
 [node name="Clicksound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_tb2no")
 
@@ -634,3 +667,4 @@ stream = ExtResource("24_tb2no")
 [connection signal="pressed" from="NinePatchRect/sprite" to="." method="_on_sprite_pressed"]
 [connection signal="pressed" from="NinePatchRect/bun" to="." method="_on_bun_pressed"]
 [connection signal="pressed" from="NinePatchRect/bread" to="." method="_on_bread_pressed"]
+[connection signal="pressed" from="NinePatchRect/carrot" to="." method="_on_carrot_pressed"]

@@ -7,7 +7,7 @@ extends Control
 @onready var confirm = $CanvasLayer/Comfirmation
 @onready var board = $"CanvasLayer/burger board"
 @onready var level =  $"photo1/blue box/level2"
-@onready var money_label = $"MoneyBox/Coin Label"  # 假设您有一个名为 MoneyLabel 的 Label 节点
+@onready var money_label = $MoneyBox/Coin_Label  # 假设您有一个名为 MoneyLabel 的 Label 节点
 
 func load_player_data() -> PlayerData:
 	var file_path = "res://DATA/Hello.json"
