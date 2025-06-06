@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfq2apfhur3sl"]
+
+[ext_resource type="Script" uid="uid://bw6wjv8uyovkw" path="res://menu.gd" id="1_2u7t2"]
+[ext_resource type="Texture2D" uid="uid://bkdo3b5s7g4ev" path="res://photo/sky.png" id="2_t6dnv"]
+[ext_resource type="Texture2D" uid="uid://b4xetlk7ar7gw" path="res://photo/WhatsApp_图像2025-05-14于00.15.21_e46d42ba-removebg-preview.png" id="3_pfu3g"]
+[ext_resource type="Texture2D" uid="uid://b3yi6o0n0usrt" path="res://photo/WhatsApp_图像2025-05-14于00.15.20_db979e95-removebg-preview.png" id="4_ooxj4"]
+[ext_resource type="FontFile" uid="uid://bk4cd3hvf031o" path="res://font/PixelatedEleganceRegular-ovyAA.ttf" id="5_t6dnv"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_2u7t2")
+
+[node name="Sky" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(287, 180.373)
+scale = Vector2(1.02857, 1.11715)
+texture = ExtResource("2_t6dnv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+position = Vector2(-6.80554, -11.9708)
+scale = Vector2(0.746897, 0.630366)
+texture = ExtResource("3_pfu3g")
+
+[node name="WhatsApp图像2025-05-14于00_15_20Db979e95-removebg-preview" type="Sprite2D" parent="Sky"]
+position = Vector2(-120.556, -8.39024)
+scale = Vector2(0.810389, 0.69919)
+texture = ExtResource("4_ooxj4")
+
+[node name="WhatsApp图像2025-05-14于00_15_20Db979e95-removebg-preview2" type="Sprite2D" parent="Sky"]
+position = Vector2(94.9866, -10.1805)
+scale = Vector2(0.811975, 0.679397)
+texture = ExtResource("4_ooxj4")
+
+[node name="Chicken Sandwich3" type="Label" parent="."]
+offset_left = 79.0
+offset_top = 75.0
+offset_right = 1685.0
+offset_bottom = 284.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 55
+text = "14)  Vege Sandwich
+Bread, Vegetable (Peeled), Tomato (Sliced), 
+Mayonnaise, Bread"
+
+[node name="Chicken Sandwich4" type="Label" parent="."]
+offset_left = 79.0
+offset_top = 99.0
+offset_right = 1484.0
+offset_bottom = 308.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 55
+text = "15)  Egg & Mayo Sandwich
+Bread, Fried egg, Vegetable (Peeled), 
+Tomato (Sliced), Cheese, Mayonnaise, 
+Bread"
+
+[node name="WATER" type="Label" parent="."]
+offset_left = 131.0
+offset_top = 151.0
+offset_right = 204.0
+offset_bottom = 174.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+text = "WATER"
+
+[node name="Chicken Sandwich4" type="Label" parent="WATER"]
+offset_left = -34.0
+offset_top = 23.0
+offset_right = 860.0
+offset_bottom = 152.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 70
+text = "1)  Coca Cola
+Coca Cola drink, Ice"
+
+[node name="Chicken Sandwich5" type="Label" parent="WATER"]
+offset_left = -34.0
+offset_top = 45.0
+offset_right = 1234.0
+offset_bottom = 240.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 70
+text = "2)  Sparkling Water
+Sparkling water drink, Ice
+"

@@ -164,5 +164,5 @@ uppercase = true
 visible_characters_behavior = 1
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_line_edit_focus_exited"]
 [connection signal="focus_exited" from="Control/Shop name" to="." method="_on_shop_name_focus_exited"]
+[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_line_edit_focus_exited"]
