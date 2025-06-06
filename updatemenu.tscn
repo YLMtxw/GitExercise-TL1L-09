@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://jjtkcedp5hyj"]
+[gd_scene load_steps=47 format=3 uid="uid://jjtkcedp5hyj"]
 
 [ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_eupx0"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://bue5c4maub8v2" path="res://MoneyLabel/MLabel_Sprites/Money.png" id="41_2ta2v"]
 [ext_resource type="Texture2D" uid="uid://dt5ewslwai5la" path="res://photo/cooked 01.png" id="42_rpnmw"]
 [ext_resource type="Texture2D" uid="uid://bqstpvyioyupd" path="res://photo/chatbox-removebg-preview.png" id="43_3hp0w"]
+[ext_resource type="Script" uid="uid://d1x6tcqwop57s" path="res://money_box.gd" id="43_cvh4x"]
 [ext_resource type="Script" uid="uid://fwycxljunopo" path="res://coin_label.gd" id="44_313i5"]
 
 [node name="Control" type="Control"]
@@ -923,13 +924,14 @@ offset_bottom = 15.0
 position = Vector2(451, 253)
 scale = Vector2(0.218487, 0.141753)
 texture = ExtResource("40_7p0w4")
+script = ExtResource("43_cvh4x")
 
 [node name="Money" type="Sprite2D" parent="MoneyBox"]
 position = Vector2(-85.9445, -1.81198e-05)
 scale = Vector2(0.363611, 0.439402)
 texture = ExtResource("41_2ta2v")
 
-[node name="Coin Label" type="Label" parent="MoneyBox"]
+[node name="Coin_Label" type="Label" parent="MoneyBox"]
 offset_left = -32.0386
 offset_top = -21.1637
 offset_right = 87.9614
@@ -949,8 +951,8 @@ texture = ExtResource("42_rpnmw")
 [connection signal="pressed" from="photo1/blue box/upgrade button" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="photo1/blue box2/upgrade button 2" to="." method="_on_upgrade_button_2_pressed"]
 [connection signal="pressed" from="photo1/blue box3/upgrade button" to="." method="_on_upgrade_button_pressed"]
-[connection signal="pressed" from="photo1/blue box6/select button" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="photo1/blue box6/select button" to="." method="_on_select_button_pressed"]
+[connection signal="pressed" from="photo1/blue box6/select button" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="button4" to="." method="_on_button_4_pressed"]

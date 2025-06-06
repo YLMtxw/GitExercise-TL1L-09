@@ -4,6 +4,17 @@ var toaster1 : bool = false
 var is_menu_open : bool = false
 var locked : bool = false
 @onready var toasterBar = get_node("/root/Playground/CanvasLayer/loadingBar3")
+var inventory = preload("res://Inventory/playerInventory.tres")
+@onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+var item = null
+var recipes = {
+	"egg mayo sandwich": ["fried egg", "mayonaise", "vegetable (peeled)", "tomato (sliced)", "cheese", "bread", "bread"],
+	"chicken sandwich": ["chicken (grilled)", "vegetable (peeled)", "tomato (sliced)", "mayonaise", "cheese", "bread", "bread"],
+	"lamb sandwich": ["lamb (grilled)", "vegetable (peeled)", "tomato (sliced)", "mayonaise", "cheese", "bread", "bread"],
+	"beef sandwich": ["beef (grilled)", "vegetable (peeled)", "tomato (sliced)", "mayonaise", "cheese", "bread", "bread"],
+	"vegetable sandwich": ["vegetable (peeled)", "vegetable (peeled)", "tomato (sliced)", "tomato (sliced)", "mayonaise", "bread", "bread"]
+}
+@onready var click = $Clicksound
 
 func _ready() :
 	for button in get_tree().get_nodes_in_group("toaster1"):
@@ -13,19 +24,60 @@ func _ready() :
 	
 	toasterBar.connect("loading_finished", Callable(self, "_on_loading_finished"))
 
+func has_ingredients(dish: String) -> bool:
+	if not recipes.has(dish):
+		return false
+	
+	var required = recipes[dish]
+	var available = inventory.slots
+	
+	for ingredient_name in required:
+		var found = false
+		for slot in available:
+			if slot.item and slot.item.name == ingredient_name and slot.itemNum > 0:
+				found = true
+				break
+		if not found:
+			print("Missing ingredient: ", ingredient_name)
+			return false
+	return true
+
+func consume_ingredients(dish: String):
+	if not recipes.has(dish):
+		return
+
+	for ingredient_name in recipes[dish]:
+		for slot in inventory.slots:
+			if slot.item and slot.item.name == ingredient_name:
+				inventory.remove_item(slot.item, 1)
+				break
+
 func _on_toaster1_button_pressed(button: TextureButton):
-	locked = true
-	print("Button pressed, showing bar...")
-	toasterBar.show_bar()
-	closeToaster1()
+	if item and has_ingredients(item.name):
+		locked = true
+		print("Button pressed, showing bar...")
+		consume_ingredients(item.name)
+		toasterBar.show_bar()
+		closeToaster1()
+	else:
+		print("You dont have enough ingredient to cook ", item.name)
 
 func _on_loading_finished():
 	if locked:
 		locked = false
 		print("Loading finished")
+		
+		if item:
+			insert(item)
+			inventorygui.update()  # ← Make sure this updates the UI
+			print("Added item to inventory: ", item.name)
+			item = null
 
 func _on_timer_timeout(button):
 	print("Timer for ", button.name, "finished!")
+
+func insert(item: InventoryItem) -> void:
+	inventory.add_item(item)
 
 func openToaster1():
 	if locked:
@@ -49,20 +101,30 @@ func t1close():
 
 
 func _on_vege_sandwich_pressed() -> void:
+	click.play()
+	item = preload("res://Inventory/Item/vege sandwich.tres")
 	pass # Replace with function body.
 
 
 func _on_egg_mayo_sandwich_pressed() -> void:
+	click.play()
+	item = preload("res://Inventory/Item/egg mayo sandwich.tres")
 	pass # Replace with function body.
 
 
 func _on_chic_sandwich_pressed() -> void:
+	click.play()
+	item = preload("res://Inventory/Item/chicken sandwich.tres")
 	pass # Replace with function body.
 
 
 func _on_lamb_sandwich_pressed() -> void:
+	click.play()
+	item = preload("res://Inventory/Item/lamb sandwich.tres")
 	pass # Replace with function body.
 
 
 func _on_beef_sandwich_pressed() -> void:
+	click.play()
+	item = preload("res://Inventory/Item/beef sandwich.tres")
 	pass # Replace with function body.
