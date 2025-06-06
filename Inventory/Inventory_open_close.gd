@@ -49,6 +49,7 @@ func select_slot(index : int):
 			ItemNameLabel.text = item.name
 			print("Selected item:", item.name)
 		else:
+			ItemNameLabel.text = ""
 			print("Selected empty slot", index + 1)
 
 func open():
