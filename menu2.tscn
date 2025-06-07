@@ -69,6 +69,7 @@ theme_override_fonts/font = ExtResource("5_t6dnv")
 text = "WATER"
 
 [node name="Chicken Sandwich4" type="Label" parent="WATER"]
+layout_mode = 0
 offset_left = -34.0
 offset_top = 23.0
 offset_right = 860.0
@@ -82,6 +83,7 @@ text = "1)  Coca Cola
 Coca Cola drink, Ice"
 
 [node name="Chicken Sandwich5" type="Label" parent="WATER"]
+layout_mode = 0
 offset_left = -34.0
 offset_top = 45.0
 offset_right = 1234.0

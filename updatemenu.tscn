@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://jjtkcedp5hyj"]
+[gd_scene load_steps=48 format=3 uid="uid://jjtkcedp5hyj"]
 
 [ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_eupx0"]
@@ -19,10 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://b74bbbpmgb771" path="res://photo/steak.png" id="12_8snal"]
 [ext_resource type="FontFile" uid="uid://bk4cd3hvf031o" path="res://font/PixelatedEleganceRegular-ovyAA.ttf" id="12_cy34d"]
 [ext_resource type="Texture2D" uid="uid://bc1mn1r8tdpor" path="res://photo/carbonara.png" id="12_eupx0"]
-[ext_resource type="Texture2D" uid="uid://srlwjf1gl2g5" path="res://photo/frame.png" id="12_qt1ew"]
 [ext_resource type="Texture2D" uid="uid://c0t2pu6rq7obe" path="res://photo/chicken_steak-removebg-preview.png" id="13_g0luy"]
 [ext_resource type="Texture2D" uid="uid://c40t36g52dwsf" path="res://photo/chicken chop.png" id="14_1vrc5"]
-[ext_resource type="Texture2D" uid="uid://dpgpqabn672pi" path="res://photo/black box.png" id="14_wlpo0"]
 [ext_resource type="Texture2D" uid="uid://ij1dt3t45ifo" path="res://photo/lamb_steak-removebg-preview.png" id="18_002rh"]
 [ext_resource type="Texture2D" uid="uid://dtppohxn7gnc2" path="res://photo/burger-removebg-preview.png" id="18_gqinc"]
 [ext_resource type="Texture2D" uid="uid://duqgjj4pagwpl" path="res://photo/sandwich-removebg-preview.png" id="19_wlpo0"]
@@ -32,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://btswaslmdpc10" path="res://photo/beef_steak-removebg-preview.png" id="24_08tfn"]
 [ext_resource type="Texture2D" uid="uid://hx5kbpuv2wn1" path="res://photo/sparkling.png" id="24_313i5"]
 [ext_resource type="Texture2D" uid="uid://b65gib0x1g1wy" path="res://photo/sprite.png" id="25_cvh4x"]
+[ext_resource type="Texture2D" uid="uid://cj2i16yfv3hpq" path="res://photo/coke-removebg-preview.png" id="27_313i5"]
 [ext_resource type="Texture2D" uid="uid://dyjy4bgwx0lgf" path="res://photo/cancel.png" id="27_dpwdq"]
 [ext_resource type="Texture2D" uid="uid://3kip4ao3w2ho" path="res://photo/cancel pressed.png" id="28_tyfo1"]
 [ext_resource type="Texture2D" uid="uid://tobikanm2drg" path="res://photo/cancel hover.png" id="29_uv10y"]
@@ -46,6 +45,16 @@
 [ext_resource type="Texture2D" uid="uid://bqstpvyioyupd" path="res://photo/chatbox-removebg-preview.png" id="43_3hp0w"]
 [ext_resource type="Script" uid="uid://d1x6tcqwop57s" path="res://money_box.gd" id="43_cvh4x"]
 [ext_resource type="Script" uid="uid://fwycxljunopo" path="res://coin_label.gd" id="44_313i5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cvh4x"]
+line_spacing = 7.0
+paragraph_spacing = 5.0
+font_size = 27
+font_color = Color(0, 0.407843, 1, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_cvh4x"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -93,6 +102,27 @@ position = Vector2(111, 114.281)
 scale = Vector2(0.219, 0.233125)
 texture = ExtResource("43_3hp0w")
 
+[node name="Story" type="Label" parent="Chatbox-removebg-preview"]
+offset_left = -214.612
+offset_top = -215.683
+offset_right = 245.388
+offset_bottom = 123.317
+theme_override_colors/font_color = Color(0, 0.341176, 0.807843, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 29
+text = "Hi, User ServeInEase,
+welcome to our Update
+menu, here is the place
+to let your kitchen to
+be advance, and let our
+customer happy when
+during in our store.
+
+Let us update our menu
+gooooooo............"
+label_settings = SubResource("LabelSettings_cvh4x")
+
 [node name="Button1" type="TextureButton" parent="."]
 texture_filter = 1
 clip_contents = true
@@ -131,50 +161,35 @@ position = Vector2(-3.01044, 70.3588)
 scale = Vector2(3.78345, 3.17409)
 texture = ExtResource("8_26cu5")
 
-[node name="level2" type="Sprite2D" parent="photo1/blue box"]
-position = Vector2(3.0087, -76.8206)
-scale = Vector2(4.14651, 3.29412)
-texture = ExtResource("12_qt1ew")
-
-[node name="BlackBox" type="Sprite2D" parent="photo1/blue box/level2"]
-position = Vector2(-15.9677, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox2" type="Sprite2D" parent="photo1/blue box/level2"]
-visible = false
-position = Vector2(-8.70967, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox3" type="Sprite2D" parent="photo1/blue box/level2"]
-visible = false
-position = Vector2(-1.45161, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox4" type="Sprite2D" parent="photo1/blue box/level2"]
-visible = false
-position = Vector2(5.80646, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox5" type="Sprite2D" parent="photo1/blue box/level2"]
-visible = false
-position = Vector2(13.0645, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Level" type="Label" parent="photo1/blue box"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
 
 [node name="200" type="Label" parent="photo1/blue box"]
-offset_left = -39.1252
-offset_top = 8.61528
-offset_right = 30.8748
+offset_left = -27.0869
+offset_top = 8.61526
+offset_right = 19.9131
 offset_bottom = 40.6153
 theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
-text = "200"
+text = "20"
+
+[node name="Label" type="Label" parent="photo1/blue box"]
+offset_left = -27.0
+offset_top = -95.0
+offset_right = -7.0
+offset_bottom = -67.0
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
 
 [node name="blue box2" type="Sprite2D" parent="photo1"]
 position = Vector2(-28.5121, -32.2379)
@@ -182,14 +197,14 @@ scale = Vector2(0.36895, 0.38378)
 texture = ExtResource("8_6rsue")
 
 [node name="upgrade button 2" type="TextureButton" parent="photo1/blue box2"]
-offset_left = -90.9415
-offset_top = -112.0
-offset_right = 94.0585
+offset_left = -91.0
+offset_top = -109.0
+offset_right = 93.0
 offset_bottom = 111.0
 
 [node name="bolognese" type="Sprite2D" parent="photo1/blue box2"]
-position = Vector2(3.87373, -22.6466)
-scale = Vector2(0.425912, 0.377986)
+position = Vector2(0.815175, -19.7642)
+scale = Vector2(0.363377, 0.292996)
 texture = ExtResource("8_x6bcb")
 
 [node name="bolognese word" type="Label" parent="photo1/blue box2"]
@@ -203,209 +218,214 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "BOLOGNESE"
 
-[node name="level2" type="Sprite2D" parent="photo1/blue box2"]
-position = Vector2(3.0087, -76.8206)
-scale = Vector2(4.14651, 3.29412)
-texture = ExtResource("12_qt1ew")
+[node name="Label 2" type="Label" parent="photo1/blue box2"]
+offset_left = -23.6533
+offset_top = -94.7058
+offset_right = -3.65332
+offset_bottom = -66.7058
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
 
-[node name="BlackBox" type="Sprite2D" parent="photo1/blue box2/level2"]
-position = Vector2(-15.9677, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox2" type="Sprite2D" parent="photo1/blue box2/level2"]
-visible = false
-position = Vector2(-8.70967, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox3" type="Sprite2D" parent="photo1/blue box2/level2"]
-visible = false
-position = Vector2(-1.45161, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox4" type="Sprite2D" parent="photo1/blue box2/level2"]
-visible = false
-position = Vector2(5.80646, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox5" type="Sprite2D" parent="photo1/blue box2/level2"]
-visible = false
-position = Vector2(13.0645, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Level" type="Label" parent="photo1/blue box2"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
 
 [node name="blue box3" type="Sprite2D" parent="photo1"]
 position = Vector2(44.2849, -32.2446)
 scale = Vector2(0.363072, 0.38372)
 texture = ExtResource("8_6rsue")
 
-[node name="upgrade button" type="TextureButton" parent="photo1/blue box3"]
-offset_left = -90.892
-offset_top = -109.117
-offset_right = 93.108
-offset_bottom = 111.883
+[node name="upgrade button 3" type="TextureButton" parent="photo1/blue box3"]
+offset_left = -90.8921
+offset_top = -112.0
+offset_right = 93.1079
+offset_bottom = 109.0
 
 [node name="Cabonara-removebg-preview" type="Sprite2D" parent="photo1/blue box3"]
-position = Vector2(2.35014, -19.7498)
-scale = Vector2(0.432475, 0.396122)
+position = Vector2(-0.757984, -19.7498)
+scale = Vector2(0.363416, 0.306554)
 texture = ExtResource("11_30naw")
 
 [node name="Carbonara word" type="Sprite2D" parent="photo1/blue box3"]
-position = Vector2(5.45815, 52.3207)
-scale = Vector2(2.80836, 6.07795)
+position = Vector2(-3.86599, 66.7347)
+scale = Vector2(2.55861, 3.80773)
 texture = ExtResource("12_eupx0")
 
-[node name="level2" type="Sprite2D" parent="photo1/blue box3"]
-position = Vector2(3.0087, -76.8206)
-scale = Vector2(4.14651, 3.29412)
-texture = ExtResource("12_qt1ew")
+[node name="Level" type="Label" parent="photo1/blue box3"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
 
-[node name="BlackBox" type="Sprite2D" parent="photo1/blue box3/level2"]
-position = Vector2(-15.9677, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox2" type="Sprite2D" parent="photo1/blue box3/level2"]
-visible = false
-position = Vector2(-8.70967, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox3" type="Sprite2D" parent="photo1/blue box3/level2"]
-visible = false
-position = Vector2(-1.45161, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox4" type="Sprite2D" parent="photo1/blue box3/level2"]
-visible = false
-position = Vector2(5.80646, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox5" type="Sprite2D" parent="photo1/blue box3/level2"]
-visible = false
-position = Vector2(13.0645, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label" type="Label" parent="photo1/blue box3"]
+offset_left = -28.7306
+offset_top = -94.7031
+offset_right = -8.73059
+offset_bottom = -66.7031
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
 
 [node name="blue box4" type="Sprite2D" parent="photo1"]
 position = Vector2(115.667, -31.8031)
 scale = Vector2(0.354143, 0.377785)
 texture = ExtResource("8_6rsue")
 
-[node name="upgrade button" type="TextureButton" parent="photo1/blue box4"]
+[node name="upgrade button 4" type="TextureButton" parent="photo1/blue box4"]
 offset_left = -90.8147
-offset_top = -109.072
+offset_top = -114.928
 offset_right = 90.1853
-offset_bottom = 113.928
+offset_bottom = 108.072
 
 [node name="ChickenSteak-removebg-preview" type="Sprite2D" parent="photo1/blue box4"]
-position = Vector2(1.59197, -24.1569)
-scale = Vector2(0.232783, 0.220008)
+position = Vector2(1.59191, -18.3007)
+scale = Vector2(0.209973, 0.174006)
 texture = ExtResource("13_g0luy")
 
 [node name="ChickenChop" type="Sprite2D" parent="photo1/blue box4"]
-position = Vector2(1.59323, 54.902)
-scale = Vector2(3.2703, 4.23302)
+position = Vector2(-1.59444, 57.8301)
+scale = Vector2(2.47369, 2.49844)
 texture = ExtResource("14_1vrc5")
 
-[node name="level2" type="Sprite2D" parent="photo1/blue box4"]
-position = Vector2(3.0087, -76.8206)
-scale = Vector2(4.14651, 3.29412)
-texture = ExtResource("12_qt1ew")
+[node name="Label" type="Label" parent="photo1/blue box4"]
+offset_left = -17.5267
+offset_top = -91.5033
+offset_right = 22.4733
+offset_bottom = -68.5033
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
 
-[node name="BlackBox" type="Sprite2D" parent="photo1/blue box4/level2"]
-position = Vector2(-15.9677, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox2" type="Sprite2D" parent="photo1/blue box4/level2"]
-visible = false
-position = Vector2(-8.70967, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox3" type="Sprite2D" parent="photo1/blue box4/level2"]
-visible = false
-position = Vector2(-1.45161, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox4" type="Sprite2D" parent="photo1/blue box4/level2"]
-visible = false
-position = Vector2(5.80646, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox5" type="Sprite2D" parent="photo1/blue box4/level2"]
-visible = false
-position = Vector2(13.0645, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Level" type="Label" parent="photo1/blue box4"]
+offset_left = -87.6886
+offset_top = -105.117
+offset_right = -46.6886
+offset_bottom = -82.1172
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
 
 [node name="blue box5" type="Sprite2D" parent="photo1"]
 position = Vector2(115.102, 57.5221)
 scale = Vector2(0.347456, 0.36832)
 texture = ExtResource("8_6rsue")
 
-[node name="upgrade button" type="TextureButton" parent="photo1/blue box5"]
-offset_left = -91.0
-offset_top = -108.0
-offset_right = 91.0
-offset_bottom = 111.0
+[node name="Level" type="Label" parent="photo1/blue box5"]
+offset_left = -87.6886
+offset_top = -105.117
+offset_right = -46.6886
+offset_bottom = -82.1172
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="upgrade button 5" type="TextureButton" parent="photo1/blue box5"]
+offset_left = -90.9364
+offset_top = -108.121
+offset_right = 91.0636
+offset_bottom = 110.879
 
 [node name="Sandwich-removebg-preview" type="Sprite2D" parent="photo1/blue box5"]
-position = Vector2(-3.24676, 8.4877e-05)
-scale = Vector2(0.452576, 0.367982)
+position = Vector2(0.00100136, 39.0437)
+scale = Vector2(0.452576, 0.327008)
 texture = ExtResource("19_wlpo0")
 
-[node name="Label" type="Label" parent="photo1/blue box5"]
+[node name="sandwich" type="Label" parent="photo1/blue box5"]
 offset_left = -77.9453
-offset_top = 57.0638
+offset_top = 78.0873
 offset_right = 25.0547
-offset_bottom = 72.0638
+offset_bottom = 93.0873
 scale = Vector2(1.5, 1.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "SANDWICH"
 
-[node name="level2" type="Sprite2D" parent="photo1/blue box5"]
-position = Vector2(3.0087, -76.8206)
-scale = Vector2(4.14651, 3.29412)
-texture = ExtResource("12_qt1ew")
+[node name="Label" type="Label" parent="photo1/blue box5"]
+offset_left = -29.2289
+offset_top = -99.1105
+offset_right = -18.2289
+offset_bottom = -76.1105
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
 
-[node name="BlackBox" type="Sprite2D" parent="photo1/blue box5/level2"]
-position = Vector2(-15.9677, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label" type="Label" parent="photo1/blue box5/Label"]
+layout_mode = 0
+offset_left = 55.2119
+offset_right = 98.2119
+offset_bottom = 23.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "CHIC"
 
-[node name="BlackBox2" type="Sprite2D" parent="photo1/blue box5/level2"]
-visible = false
-position = Vector2(-8.70967, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label2" type="Label" parent="photo1/blue box5"]
+offset_left = -29.2288
+offset_top = -51.0569
+offset_right = -18.2288
+offset_bottom = -28.0569
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
 
-[node name="BlackBox3" type="Sprite2D" parent="photo1/blue box5/level2"]
-visible = false
-position = Vector2(-1.45161, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label" type="Label" parent="photo1/blue box5/Label2"]
+layout_mode = 0
+offset_left = 55.0
+offset_right = 103.0
+offset_bottom = 15.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "BEEF"
 
-[node name="BlackBox4" type="Sprite2D" parent="photo1/blue box5/level2"]
-visible = false
-position = Vector2(5.80646, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label3" type="Label" parent="photo1/blue box5"]
+offset_left = -29.2288
+offset_top = -75.0837
+offset_right = -18.2288
+offset_bottom = -52.0837
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
 
-[node name="BlackBox5" type="Sprite2D" parent="photo1/blue box5/level2"]
-visible = false
-position = Vector2(13.0645, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label" type="Label" parent="photo1/blue box5/Label3"]
+layout_mode = 0
+offset_left = 55.0
+offset_right = 110.0
+offset_bottom = 15.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "LAMB"
+
+[node name="Label4" type="Label" parent="photo1/blue box5"]
+offset_left = -29.2289
+offset_top = -27.0301
+offset_right = -18.2289
+offset_bottom = -4.03008
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
+
+[node name="Label" type="Label" parent="photo1/blue box5/Label4"]
+layout_mode = 0
+offset_left = 55.2119
+offset_right = 96.2119
+offset_bottom = 23.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "EGG"
 
 [node name="blue box6" type="Sprite2D" parent="photo1"]
 position = Vector2(44.0097, 57.5221)
@@ -413,75 +433,127 @@ scale = Vector2(0.359618, 0.3711)
 texture = ExtResource("8_6rsue")
 
 [node name="select button" type="TextureButton" parent="photo1/blue box6"]
-offset_left = -94.1378
-offset_top = -113.272
-offset_right = 89.8621
-offset_bottom = 107.727
+offset_left = -94.1377
+offset_top = -110.291
+offset_right = 89.8622
+offset_bottom = 110.708
 
 [node name="Burger-removebg-preview" type="Sprite2D" parent="photo1/blue box6"]
-position = Vector2(-3.13794, -11.9233)
-scale = Vector2(0.480843, 0.372323)
+position = Vector2(-3.13794, 32.7895)
+scale = Vector2(0.480843, 0.278701)
 texture = ExtResource("18_gqinc")
 
-[node name="Label" type="Label" parent="photo1/blue box6"]
-offset_left = -72.1722
-offset_top = 53.6555
-offset_right = -7.17225
-offset_bottom = 66.6555
+[node name="burger" type="Label" parent="photo1/blue box6"]
+offset_left = -72.1723
+offset_top = 74.5214
+offset_right = -7.1723
+offset_bottom = 87.5214
 scale = Vector2(2.2, 2.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 13
 text = "BURGER"
 
-[node name="level2" type="Sprite2D" parent="photo1/blue box6"]
-position = Vector2(3.0087, -76.8206)
-scale = Vector2(4.14651, 3.29412)
-texture = ExtResource("12_qt1ew")
+[node name="Label" type="Label" parent="photo1/blue box6"]
+offset_left = -28.2414
+offset_top = -98.3681
+offset_right = -17.2414
+offset_bottom = -83.3681
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
 
-[node name="BlackBox" type="Sprite2D" parent="photo1/blue box6/level2"]
-position = Vector2(-15.9677, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label" type="Label" parent="photo1/blue box6/Label"]
+layout_mode = 0
+offset_left = 53.3447
+offset_right = 96.3447
+offset_bottom = 15.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "CHIC"
 
-[node name="BlackBox2" type="Sprite2D" parent="photo1/blue box6/level2"]
-visible = false
-position = Vector2(-8.70967, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label2" type="Label" parent="photo1/blue box6"]
+offset_left = -28.2413
+offset_top = -50.6744
+offset_right = -17.2413
+offset_bottom = -35.6744
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
 
-[node name="BlackBox3" type="Sprite2D" parent="photo1/blue box6/level2"]
-visible = false
-position = Vector2(-1.45161, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label" type="Label" parent="photo1/blue box6/Label2"]
+layout_mode = 0
+offset_left = 53.3447
+offset_top = -23.8468
+offset_right = 101.345
+offset_bottom = -8.84683
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "BEEF"
 
-[node name="BlackBox4" type="Sprite2D" parent="photo1/blue box6/level2"]
-visible = false
-position = Vector2(5.80646, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label3" type="Label" parent="photo1/blue box6"]
+offset_left = -28.2414
+offset_top = -74.5213
+offset_right = -17.2414
+offset_bottom = -59.5213
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
 
-[node name="BlackBox5" type="Sprite2D" parent="photo1/blue box6/level2"]
-visible = false
-position = Vector2(13.0645, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label" type="Label" parent="photo1/blue box6/Label3"]
+layout_mode = 0
+offset_left = 53.3447
+offset_top = 23.8468
+offset_right = 108.345
+offset_bottom = 38.8468
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "LAMB"
+
+[node name="Label4" type="Label" parent="photo1/blue box6"]
+offset_left = -28.2414
+offset_top = -26.8276
+offset_right = -17.2414
+offset_bottom = -11.8276
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
+
+[node name="Label" type="Label" parent="photo1/blue box6/Label4"]
+layout_mode = 0
+offset_left = 53.0
+offset_right = 106.0
+offset_bottom = 15.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "VEGE"
+
+[node name="Level" type="Label" parent="photo1/blue box6"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
 
 [node name="blue box7" type="Sprite2D" parent="photo1"]
 position = Vector2(-28.6346, 57.5221)
 scale = Vector2(0.364647, 0.372847)
 texture = ExtResource("8_6rsue")
 
-[node name="upgrade button" type="TextureButton" parent="photo1/blue box7"]
+[node name="upgrade button 7" type="TextureButton" parent="photo1/blue box7"]
 offset_left = -91.6789
 offset_top = -106.808
 offset_right = 92.3211
 offset_bottom = 114.192
 
 [node name="LambSteak-removebg-preview" type="Sprite2D" parent="photo1/blue box7"]
-position = Vector2(1.16066, -11.8674)
-scale = Vector2(0.243265, 0.235819)
+position = Vector2(0.62875, -1.7615)
+scale = Vector2(0.192988, 0.135546)
 texture = ExtResource("18_002rh")
 
 [node name="Label" type="Label" parent="photo1/blue box7"]
@@ -498,61 +570,46 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="level2" type="Sprite2D" parent="photo1/blue box7"]
-position = Vector2(3.0087, -76.8206)
-scale = Vector2(4.14651, 3.29412)
-texture = ExtResource("12_qt1ew")
+[node name="Label2" type="Label" parent="photo1/blue box7"]
+offset_left = -23.5965
+offset_top = -94.9403
+offset_right = 16.4035
+offset_bottom = -71.9403
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
 
-[node name="BlackBox" type="Sprite2D" parent="photo1/blue box7/level2"]
-position = Vector2(-15.9677, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox2" type="Sprite2D" parent="photo1/blue box7/level2"]
-visible = false
-position = Vector2(-8.70967, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox3" type="Sprite2D" parent="photo1/blue box7/level2"]
-visible = false
-position = Vector2(-1.45161, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox4" type="Sprite2D" parent="photo1/blue box7/level2"]
-visible = false
-position = Vector2(5.80646, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox5" type="Sprite2D" parent="photo1/blue box7/level2"]
-visible = false
-position = Vector2(13.0645, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Level" type="Label" parent="photo1/blue box7"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
 
 [node name="blue box8" type="Sprite2D" parent="photo1"]
 position = Vector2(-102.689, 57.5221)
 scale = Vector2(0.37215, 0.365809)
 texture = ExtResource("8_6rsue")
 
-[node name="upgrade button" type="TextureButton" parent="photo1/blue box8"]
-offset_left = -38.7059
-offset_top = -104.583
-offset_right = 145.294
-offset_bottom = 116.417
+[node name="upgrade button 8" type="TextureButton" parent="photo1/blue box8"]
+offset_left = -94.0008
+offset_top = -111.887
+offset_right = 89.9991
+offset_bottom = 109.113
 
 [node name="BeefSteak-removebg-preview" type="Sprite2D" parent="photo1/blue box8"]
-position = Vector2(-0.000879103, -18.1437)
-scale = Vector2(0.259432, 0.243619)
+position = Vector2(-3.03311, -3.02388)
+scale = Vector2(0.202904, 0.168213)
 texture = ExtResource("24_08tfn")
 
 [node name="Label" type="Label" parent="photo1/blue box8"]
 offset_left = -66.7105
-offset_top = 36.2877
+offset_top = 39.3117
 offset_right = 60.2895
-offset_bottom = 95.2877
+offset_bottom = 98.3117
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
@@ -561,39 +618,24 @@ STEAK"
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[node name="level2" type="Sprite2D" parent="photo1/blue box8"]
-position = Vector2(3.0087, -76.8206)
-scale = Vector2(4.14651, 3.29412)
-texture = ExtResource("12_qt1ew")
+[node name="Level" type="Label" parent="photo1/blue box8"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
 
-[node name="BlackBox" type="Sprite2D" parent="photo1/blue box8/level2"]
-position = Vector2(-15.9677, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox2" type="Sprite2D" parent="photo1/blue box8/level2"]
-visible = false
-position = Vector2(-8.70967, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox3" type="Sprite2D" parent="photo1/blue box8/level2"]
-visible = false
-position = Vector2(-1.45161, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox4" type="Sprite2D" parent="photo1/blue box8/level2"]
-visible = false
-position = Vector2(5.80646, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox5" type="Sprite2D" parent="photo1/blue box8/level2"]
-visible = false
-position = Vector2(13.0645, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label2" type="Label" parent="photo1/blue box8/Level"]
+offset_left = 66.7733
+offset_top = 7.23312
+offset_right = 86.7733
+offset_bottom = 35.2331
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
 
 [node name="Button2" type="TextureButton" parent="."]
 texture_filter = 1
@@ -632,10 +674,24 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 24
 text = "SPARKLING"
 
-[node name="level" type="Sprite2D" parent="photo2/blue box"]
-position = Vector2(3.0087, -74.6667)
-scale = Vector2(4.14651, 2.87179)
-texture = ExtResource("12_qt1ew")
+[node name="Level" type="Label" parent="photo2/blue box"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Label2" type="Label" parent="photo2/blue box/Level"]
+offset_left = 66.7733
+offset_top = 7.23312
+offset_right = 86.7733
+offset_bottom = 35.2331
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
 
 [node name="blue box2" type="Sprite2D" parent="photo2"]
 position = Vector2(-32.7314, -44.2478)
@@ -657,39 +713,24 @@ position = Vector2(-6.11383, -2.83545)
 scale = Vector2(0.720667, 0.461268)
 texture = ExtResource("25_cvh4x")
 
-[node name="level2" type="Sprite2D" parent="photo2/blue box2"]
-position = Vector2(4.37486, -73.1399)
-scale = Vector2(4.15317, 3.26739)
-texture = ExtResource("12_qt1ew")
+[node name="Level" type="Label" parent="photo2/blue box2"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
 
-[node name="BlackBox" type="Sprite2D" parent="photo2/blue box2/level2"]
-position = Vector2(-15.9677, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox2" type="Sprite2D" parent="photo2/blue box2/level2"]
-visible = false
-position = Vector2(-8.70967, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox3" type="Sprite2D" parent="photo2/blue box2/level2"]
-visible = false
-position = Vector2(-1.45161, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox4" type="Sprite2D" parent="photo2/blue box2/level2"]
-visible = false
-position = Vector2(5.80646, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox5" type="Sprite2D" parent="photo2/blue box2/level2"]
-visible = false
-position = Vector2(13.0645, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label2" type="Label" parent="photo2/blue box2/Level"]
+offset_left = 66.7733
+offset_top = 7.23312
+offset_right = 86.7733
+offset_bottom = 35.2331
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
 
 [node name="blue box3" type="Sprite2D" parent="photo2"]
 position = Vector2(39.5034, -44.2478)
@@ -711,44 +752,63 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
 text = "100 PLUS"
 
-[node name="level2" type="Sprite2D" parent="photo2/blue box3"]
-position = Vector2(4.37486, -73.1399)
-scale = Vector2(4.15317, 3.26739)
-texture = ExtResource("12_qt1ew")
+[node name="Level" type="Label" parent="photo2/blue box3"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
 
-[node name="BlackBox" type="Sprite2D" parent="photo2/blue box3/level2"]
-position = Vector2(-15.9677, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox2" type="Sprite2D" parent="photo2/blue box3/level2"]
-visible = false
-position = Vector2(-8.70967, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox3" type="Sprite2D" parent="photo2/blue box3/level2"]
-visible = false
-position = Vector2(-1.45161, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox4" type="Sprite2D" parent="photo2/blue box3/level2"]
-visible = false
-position = Vector2(5.80646, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
-
-[node name="BlackBox5" type="Sprite2D" parent="photo2/blue box3/level2"]
-visible = false
-position = Vector2(13.0645, -0.871796)
-scale = Vector2(0.755663, 1.13527)
-texture = ExtResource("14_wlpo0")
+[node name="Label2" type="Label" parent="photo2/blue box3/Level"]
+offset_left = 66.7733
+offset_top = 7.23312
+offset_right = 86.7733
+offset_bottom = 35.2331
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
 
 [node name="blue box4" type="Sprite2D" parent="photo2"]
-position = Vector2(111.738, -44.2478)
+position = Vector2(110.609, -45.354)
 scale = Vector2(0.369219, 0.390131)
 texture = ExtResource("8_6rsue")
+
+[node name="Coke-removebg-preview" type="Sprite2D" parent="photo2/blue box4"]
+position = Vector2(4.29153e-05, 1.43051e-06)
+scale = Vector2(0.552327, 0.480584)
+texture = ExtResource("27_313i5")
+
+[node name="Coke" type="Label" parent="photo2/blue box4"]
+offset_left = -76.4227
+offset_top = 59.5443
+offset_right = 87.5773
+offset_bottom = 82.5443
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "COCA COLA"
+
+[node name="Level" type="Label" parent="photo2/blue box4"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Label2" type="Label" parent="photo2/blue box4/Level"]
+offset_left = 66.7733
+offset_top = 7.23312
+offset_right = 86.7733
+offset_bottom = 35.2331
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
 
 [node name="blue box5" type="Sprite2D" parent="photo2"]
 position = Vector2(-104.966, 44.2478)
@@ -818,42 +878,6 @@ texture = ExtResource("12_8snal")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Comfirmation" type="Sprite2D" parent="CanvasLayer"]
-visible = false
-position = Vector2(316, 167)
-scale = Vector2(0.351547, 0.407338)
-texture = ExtResource("20_55p65")
-
-[node name="AreUSure" type="Sprite2D" parent="CanvasLayer/Comfirmation"]
-position = Vector2(2.84444, -44.1893)
-scale = Vector2(3.88757, 3.53803)
-texture = ExtResource("21_slpgo")
-
-[node name="cancel button" type="TextureButton" parent="CanvasLayer/Comfirmation"]
-texture_filter = 1
-offset_left = 28.4457
-offset_top = 2.45495
-offset_right = 73.4457
-offset_bottom = 19.4549
-scale = Vector2(3, 3)
-texture_normal = ExtResource("27_dpwdq")
-texture_pressed = ExtResource("28_tyfo1")
-texture_hover = ExtResource("29_uv10y")
-
-[node name="accept button" type="TextureButton" parent="CanvasLayer/Comfirmation"]
-offset_left = -159.296
-offset_right = -114.296
-offset_bottom = 17.0
-scale = Vector2(3, 3)
-texture_normal = ExtResource("30_afstm")
-texture_pressed = ExtResource("31_ologc")
-texture_hover = ExtResource("32_cy34d")
-
-[node name="100Plus" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(247, 48)
-scale = Vector2(0.2125, 0.128968)
-texture = ExtResource("22_30naw")
-
 [node name="burger board" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 position = Vector2(298, 165)
@@ -869,7 +893,7 @@ scale = Vector2(3.5, 3.5)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "1. CHICKEN BURGER"
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/burger board/Label"]
+[node name="Chicken" type="TextureButton" parent="CanvasLayer/burger board/Label"]
 layout_mode = 0
 offset_left = 17.0
 offset_right = 189.0
@@ -920,6 +944,116 @@ offset_left = 21.0
 offset_right = 161.0
 offset_bottom = 15.0
 
+[node name="sandwich" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(298, 165)
+scale = Vector2(0.258186, 0.237624)
+texture = ExtResource("35_wcm3e")
+
+[node name="Chic Sand" type="Label" parent="CanvasLayer/sandwich"]
+offset_left = -314.0
+offset_top = -227.0
+offset_right = -126.0
+offset_bottom = -212.0
+scale = Vector2(3.5, 3.5)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 14
+text = "1. Chicken Sandwich"
+
+[node name="Chicken 01" type="TextureButton" parent="CanvasLayer/sandwich/Chic Sand"]
+layout_mode = 0
+offset_left = 17.0
+offset_right = 189.0
+offset_bottom = 15.0
+
+[node name="Lamb Sand" type="Label" parent="CanvasLayer/sandwich"]
+offset_left = -306.0
+offset_top = -109.0
+offset_right = -142.0
+offset_bottom = -96.0
+scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 14
+text = "2. Lamb Sandwich"
+
+[node name="lamb 01" type="TextureButton" parent="CanvasLayer/sandwich/Lamb Sand"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -2.0
+offset_right = 164.0
+offset_bottom = 13.0
+
+[node name="Beef Sandwich" type="Label" parent="CanvasLayer/sandwich"]
+offset_left = -298.234
+offset_top = 21.0417
+offset_right = -168.234
+offset_bottom = 44.0417
+scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 14
+text = "3. Beef Sandwich "
+
+[node name="beef 01" type="TextureButton" parent="CanvasLayer/sandwich/Beef Sandwich"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -1.0
+offset_right = 158.0
+offset_bottom = 14.0
+
+[node name="EGG MAYO" type="Label" parent="CanvasLayer/sandwich"]
+offset_left = -290.0
+offset_top = 147.0
+offset_right = -188.0
+offset_bottom = 162.0
+scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 14
+text = "4. Egg Mayo"
+
+[node name="egg mayo 01" type="TextureButton" parent="CanvasLayer/sandwich/EGG MAYO"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -2.0
+offset_right = 102.0
+offset_bottom = 13.0
+
+[node name="Comfirmation" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(316, 167)
+scale = Vector2(0.351547, 0.407338)
+texture = ExtResource("20_55p65")
+script = SubResource("GDScript_cvh4x")
+
+[node name="AreUSure" type="Sprite2D" parent="CanvasLayer/Comfirmation"]
+position = Vector2(2.84444, -44.1893)
+scale = Vector2(3.88757, 3.53803)
+texture = ExtResource("21_slpgo")
+
+[node name="cancel button" type="TextureButton" parent="CanvasLayer/Comfirmation"]
+texture_filter = 1
+offset_left = 28.4457
+offset_top = 2.45495
+offset_right = 73.4457
+offset_bottom = 19.4549
+scale = Vector2(3, 3)
+texture_normal = ExtResource("27_dpwdq")
+texture_pressed = ExtResource("28_tyfo1")
+texture_hover = ExtResource("29_uv10y")
+
+[node name="accept button" type="TextureButton" parent="CanvasLayer/Comfirmation"]
+offset_left = -159.296
+offset_right = -114.296
+offset_bottom = 17.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("30_afstm")
+texture_pressed = ExtResource("31_ologc")
+texture_hover = ExtResource("32_cy34d")
+
+[node name="100Plus" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(247, 48)
+scale = Vector2(0.2125, 0.128968)
+texture = ExtResource("22_30naw")
+
 [node name="MoneyBox" type="Sprite2D" parent="."]
 position = Vector2(451, 253)
 scale = Vector2(0.218487, 0.141753)
@@ -939,7 +1073,6 @@ offset_bottom = 32.8363
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 60
-text = "0"
 script = ExtResource("44_313i5")
 
 [node name="Cooked01" type="Sprite2D" parent="."]
@@ -950,17 +1083,29 @@ texture = ExtResource("42_rpnmw")
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="photo1/blue box/upgrade button" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="photo1/blue box2/upgrade button 2" to="." method="_on_upgrade_button_2_pressed"]
-[connection signal="pressed" from="photo1/blue box3/upgrade button" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="photo1/blue box3/upgrade button 3" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="photo1/blue box3/upgrade button 3" to="." method="_on_upgrade_button_3_pressed"]
+[connection signal="pressed" from="photo1/blue box4/upgrade button 4" to="." method="_on_upgrade_button_4_pressed"]
+[connection signal="pressed" from="photo1/blue box5/upgrade button 5" to="." method="_on_upgrade_button_5_pressed"]
 [connection signal="pressed" from="photo1/blue box6/select button" to="." method="_on_select_button_pressed"]
-[connection signal="pressed" from="photo1/blue box6/select button" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="photo1/blue box7/upgrade button 7" to="." method="_on_upgrade_button_7_pressed"]
+[connection signal="pressed" from="photo1/blue box8/upgrade button 8" to="." method="_on_upgrade_button_8_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_cancel_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Comfirmation/accept button" to="." method="_on_accept_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/burger board/Label/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/burger board/Label/Chicken" to="." method="_on_chicken_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label2/lamb" to="." method="_on_lamb_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label3/beef" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label4/vege" to="." method="_on_vege_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_chicken_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Lamb Sand/lamb 01" to="." method="_on_lamb_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Lamb Sand/lamb 01" to="." method="_on_lamb_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/EGG MAYO/egg mayo 01" to="." method="_on_vege_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/EGG MAYO/egg mayo 01" to="." method="_on_egg_mayo_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Comfirmation/accept button" to="." method="_on_accept_button_pressed"]

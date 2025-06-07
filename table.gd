@@ -6,8 +6,42 @@ extends Control
 @onready var sprite_d = $photo4
 @onready var confirm = $CanvasLayer/Comfirmation
 @onready var board = $"CanvasLayer/burger board"
+@onready var board2 =$CanvasLayer/sandwich
 @onready var level =  $"photo1/blue box/level2"
-@onready var coin_label = $"MoneyBox/Coin Label"  # 假设您有一个名为 MoneyLabel 的 Label 节点
+@onready var coin_label = $"MoneyBox/Coin_Label"  # 假设您有一个名为 MoneyLabel 的 Label 节点
+@onready var label = $"photo1/blue box/Label"
+@onready var label2 = $"photo1/blue box2/Label 2"
+@onready var label3 = $"photo1/blue box3/Label"
+@onready var label4 = $"photo1/blue box4/Label"
+@onready var label5 = $"photo1/blue box5/Label"
+@onready var label6 = $"photo1/blue box5/Label2"
+@onready var label7 = $"photo1/blue box5/Label3"
+@onready var label8 = $"photo1/blue box5/Label4"
+@onready var label9 = $"photo1/blue box6/Label"
+@onready var label10 = $"photo1/blue box6/Label2"
+@onready var label11 = $"photo1/blue box6/Label3"
+@onready var label12 = $"photo1/blue box6/Label4"
+@onready var label13 = $"photo1/blue box7/Label2"
+@onready var label14 = $"photo1/blue box8/Label2"
+var id = 0
+var count := 0
+var count2 := 0
+var count3 := 0
+var count4 := 0
+var count5 := 0
+var count6 := 0
+var count7 := 0 
+var count8 := 0
+var count9 := 0
+var count10 := 0
+var count11 := 0
+var count12 := 0
+var count13 := 0
+var count14 := 0
+
+var max := 3
+var text : String = "max"
+
 
 const PlayerData = preload("res://DATA/PlayerData.gd")
 
@@ -31,17 +65,17 @@ func _ready():
 	else:
 		coin_label.text = "none"
 		
-func load_player_data() -> PlayerData:#读取 JSON 并变成 PlayerData
-	var file_path = "res://DATA/Hello.json"
+func load_player_data() -> PlayerData:
+	var file_path = "res://DATA/%s.json" 
 	if FileAccess.file_exists(file_path):
 		var json_string = FileAccess.get_file_as_string(file_path)
 		var player_data = JsonClassConverter.json_string_to_class(PlayerData, json_string)
 		if player_data != null:
 			return player_data
 		else:
-			push_error("无法解析 JSON 数据。")
+			push_error("❌ 无法解析 JSON 数据。")
 	else:
-		push_error("找不到 JSON 文件：%s" % file_path)
+		push_error("❌ 找不到 JSON 文件：%s" % file_path)
 	return null
 
 
@@ -88,43 +122,170 @@ func _on_exit_button_pressed() -> void:
 
 func _on_upgrade_button_pressed() -> void:
 	$ClickSound.play()	
+	id = 1
 	confirm.visible = true
 
 
 func _on_upgrade_button_2_pressed() -> void:
 	$ClickSound.play()	
+	id = 2
 	confirm.visible = true
 
 func _on_cancel_button_pressed() -> void:
 	$ClickSound.play()
+	id = 0 
+	print("reset")
 	confirm.visible = false
 
 
-func _on_accept_button_pressed() -> void:
+
+
+func _on_accept_button_pressed() -> void:	
 	$ClickSound.play()
+	if id == 1:
+		if count < max:
+			count += 1
+			label.text = str(count)
+			if count == 3:
+				label.text = str(text)
+				print("达到最大值")
+
+			print("Aglio Olio")
+		id = 0
+	elif id == 2:
+		if count2 < max:
+			count2 += 1
+			label2.text = str(count2)
+			if count2 == 3:
+				label2.text = str(text)
+				print("达到最大值")
+		id = 0
+	elif id == 3:
+		if count3 < max:
+			count3 += 1
+			label3.text = str(count3)
+			if count3 == 3:
+				label3.text = str(text)
+			print("达到最大值")
+		id = 0
+	elif id == 4:
+		if count4 < max:
+			count4 += 1
+			label4.text = str(count4)
+			if count4 == 3:
+				label4.text = str(text)
+			print("达到最大值")
+		id = 0
+	elif id == 5:
+		if count5 < max:
+			count5 += 1
+			label5.text = str(count5)
+			if count5 == 3:
+				label5.text = str(text)
+			print("达到最大值")
+		id = 0
+	elif id == 6:
+		if count6 < max:
+			count6 += 1
+			label6.text = str(count6)
+			if count6 == 3:
+				label6.text = str(text)
+			print("达到最大值")
+		id = 0
+	elif id == 7:
+		if count7 < max:
+			count7 += 1
+			label7.text = str(count7)
+			if count7 == 3:
+				label7.text = str(text)
+			print("达到最大值")
+		id = 0
+	elif id == 8:
+		if count8 < max:
+			count8 += 1
+			label8.text = str(count8)
+			if count8 == 3:
+				label8.text = str(text)
+			print("达到最大值")
+		id = 0
+	elif id == 9:
+		if count9 < max:
+			count9 += 1
+			label9.text = str(count9)
+			if count9 == 3:
+				label9.text = str(text)
+			print("达到最大值")
+		id = 0
+	elif id == 10:
+		if count10 < max:
+			count10 += 1
+			label10.text = str(count10)
+			if count10 == 3:
+				label10.text = str(text)
+			print("达到最大值")
+		id = 0
+	elif id == 11:
+		if count11 < max:
+			count11 += 1
+			label11.text = str(count11)
+			if count11 == 3:
+				label11.text = str(text)
+			print("达到最大值")
+		id = 0
+	elif id == 12:
+		if count12 < max:
+			count12 += 1
+			label12.text = str(count12)
+			if count12 == 3:
+				label12.text = str(text)
+			print("达到最大值")
+		id = 0
+	elif id == 13:
+		if count13 < max:
+			count13 += 1
+			label13.text = str(count13)
+			if count13 == 3:
+				label13.text = str(text)
+			print("达到最大值")
+		print("Bolognese")
+		id = 0
+	elif id == 14:
+		if count14 < max:
+			count14 += 1
+			label14.text = str(count14)
+			if count14 == 3:
+				label14.text = str(text)
+			print("达到最大值")
+		print("Bolognese")
+		id = 0
+		
 	confirm.visible = false
 
 
 
-func _on_texture_button_pressed() -> void:
+func _on_chicken_pressed() -> void:
 	$ClickSound.play()	
+	id = 9
 	confirm.visible = true
 	board.visible = false
 
 
 func _on_lamb_pressed() -> void:
 	$ClickSound.play()	
+	id = 10
 	confirm.visible = true
 	board.visible = false
 
 
 func _on_beef_pressed() -> void:
 	$ClickSound.play()	
+	id = 11
 	confirm.visible = true
 	board.visible = false
 	
 func _on_vege_pressed() -> void:
 	$ClickSound.play()	
+	id = 12
 	confirm.visible = true
 	board.visible = false
 
@@ -152,3 +313,64 @@ func save_player_data():
 	file.close()
 
 	print("✅ 已保存金币到 JSON：",coin_label)
+
+
+func _on_upgrade_button_3_pressed() -> void:
+	$ClickSound.play()	
+	id = 3
+	confirm.visible = true
+
+
+func _on_upgrade_button_4_pressed() -> void:
+	$ClickSound.play()	
+	id = 4
+	confirm.visible = true
+
+
+func _on_upgrade_button_5_pressed() -> void:
+	$ClickSound.play()	
+	board2.visible = true
+
+
+func _on_upgrade_button_7_pressed() -> void:
+	$ClickSound.play()	
+	id = 13
+	confirm.visible = true
+
+
+func _on_chicken_01_pressed() -> void:
+	$ClickSound.play()	
+	id = 5
+	confirm.visible = true
+	board2.visible = false
+
+
+func _on_lamb_01_pressed() -> void:
+	$ClickSound.play()	
+	id = 6
+	confirm.visible = true
+	board2.visible = false
+
+
+func _on_beef_01_pressed() -> void:
+	$ClickSound.play()	
+	id = 7
+	confirm.visible = true
+	board2.visible = false
+
+
+func _on_egg_mayo_01_pressed() -> void:
+	$ClickSound.play()	
+	id = 8
+	confirm.visible = true
+	board2.visible = false
+
+
+func _on_upgrade_button_8_pressed() -> void:
+	$ClickSound.play()	
+	id = 14
+	confirm.visible = true
+
+
+func _on_button_sparkling_pressed() -> void:
+	pass # Replace with function body.
