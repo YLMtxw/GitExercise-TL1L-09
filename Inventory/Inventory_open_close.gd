@@ -5,6 +5,7 @@ var InvOpen: bool = false
 @onready var slot : Array = $NinePatchRect/GridContainer.get_children()
 @onready var refri = get_node("/root/Playground/CanvasLayer/refri")
 @onready var ItemNameLabel = $InvItemLabel
+@onready var Inv = preload("res://Inventory/inventory.gd")
 
 var selected_index := -1
 
