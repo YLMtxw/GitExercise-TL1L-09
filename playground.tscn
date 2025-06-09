@@ -1225,6 +1225,10 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0.839216)
 
 [node name="Setting" parent="CanvasLayer" instance=ExtResource("27_lraom")]
+offset_left = 189.0
+offset_top = 31.0
+offset_right = -169.0
+offset_bottom = -39.0
 
 [node name="Player_character" parent="." instance=ExtResource("1_rupst")]
 position = Vector2(120, 150)

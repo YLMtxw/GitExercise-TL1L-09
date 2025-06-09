@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxceiapi1cbmt"]
+[gd_scene load_steps=6 format=3 uid="uid://dxceiapi1cbmt"]
 
 [ext_resource type="Script" uid="uid://bevbcc3smu5uw" path="res://setting.gd" id="1_7hpmu"]
 [ext_resource type="Texture2D" uid="uid://bd5t5cfysbhoo" path="res://In-game Setting/Sprite/Setting.png" id="2_lcb0a"]
 [ext_resource type="Script" uid="uid://dboerlcfa0opp" path="res://h_slider.gd" id="3_k0s41"]
+[ext_resource type="Texture2D" uid="uid://0jiwop7k6p7f" path="res://In-game Setting/Sprite/quit.png" id="4_k0s41"]
+[ext_resource type="Texture2D" uid="uid://dttfrvmqfn8fp" path="res://In-game Setting/Sprite/quit-p.png" id="5_skhhd"]
 
 [node name="Setting" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -360.0
+offset_bottom = -71.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7hpmu")
@@ -60,3 +64,16 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="quit" type="TextureButton" parent="Setting"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 228.0
+offset_right = 88.0
+offset_bottom = 237.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_k0s41")
+texture_pressed = ExtResource("5_skhhd")
+
+[connection signal="value_changed" from="Setting/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Setting/quit" to="." method="_on_quit_pressed"]
