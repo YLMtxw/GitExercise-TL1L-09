@@ -23,6 +23,7 @@ extends Control
 @onready var label12 = $"photo1/blue box6/Label4"
 @onready var label13 = $"photo1/blue box7/Label2"
 @onready var label14 = $"photo1/blue box8/Label2"
+@onready var label15 = $"photo2/blue box/Level/Label2"
 var id = 0
 var count := 0
 var count2 := 0
@@ -38,9 +39,11 @@ var count11 := 0
 var count12 := 0
 var count13 := 0
 var count14 := 0
+var count15 := 0
 
 var max := 3
 var text : String = "max"
+var lock_confirm := false
 
 
 const PlayerData = preload("res://DATA/PlayerData.gd")
@@ -258,9 +261,22 @@ func _on_accept_button_pressed() -> void:
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
+	elif id == 15:
+		if count15 < max:
+			count15 += 1
+			label15.text = str(count15)
+			if count15 == 3:
+				label15.text = str(text)
+				lock_confirm = true
+				await $"max sound".finished  # 等待 max 音效完成再显示 confirm
+				confirm.visible = true
+			print("达到最大值")
+		print("Bolognese")
+		id = 0
 		
-	confirm.visible = false
-
+	# 🚫 只有在不是 max 的时候才关闭 confirm
+	if not lock_confirm:
+		confirm.visible = false  # 正常流程下关闭 confirm
 
 
 func _on_chicken_pressed() -> void:
@@ -373,4 +389,10 @@ func _on_upgrade_button_8_pressed() -> void:
 
 
 func _on_button_sparkling_pressed() -> void:
-	pass # Replace with function body.
+	$ClickSound.play()
+	id = 15
+	confirm.visible = true
+
+
+func _on_wrong_pressed() -> void:
+		$"max sound".play()
