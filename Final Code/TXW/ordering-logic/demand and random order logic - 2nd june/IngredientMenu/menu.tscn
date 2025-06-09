@@ -1,0 +1,191 @@
+[gd_scene load_steps=12 format=3 uid="uid://wxx1kdjlh366"]
+
+[ext_resource type="Script" uid="uid://4mymx4swsyb0" path="res://IngredientMenu/menu.gd" id="1_iw7va"]
+[ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="1_wa5ub"]
+[ext_resource type="PackedScene" uid="uid://b8m5u0iygxod5" path="res://Inventory/InvSlots.tscn" id="2_iw7va"]
+[ext_resource type="Texture2D" uid="uid://b8pajxajscifw" path="res://IngredientMenu/Ingredient_Sprite/sliced_vege.png" id="4_s0bbf"]
+[ext_resource type="Texture2D" uid="uid://cig2w265gwksv" path="res://IngredientMenu/Ingredient_Sprite/sliced_tomato.png" id="5_wa1s2"]
+[ext_resource type="Texture2D" uid="uid://b6ak4so8x2rmb" path="res://IngredientMenu/Ingredient_Sprite/mayonaise.png" id="6_gompy"]
+[ext_resource type="Texture2D" uid="uid://da0k050qtbxay" path="res://IngredientMenu/Ingredient_Sprite/tomato_sauce.png" id="7_uwsm1"]
+[ext_resource type="Texture2D" uid="uid://xdmskorrna7b" path="res://IngredientMenu/Ingredient_Sprite/chili_flakes.png" id="8_o0okj"]
+[ext_resource type="Texture2D" uid="uid://boatjmul8j8id" path="res://IngredientMenu/Ingredient_Sprite/oil.png" id="9_gompy"]
+[ext_resource type="Texture2D" uid="uid://cvbswq0p4t8a0" path="res://IngredientMenu/Ingredient_Sprite/selects.png" id="10_uwsm1"]
+[ext_resource type="Texture2D" uid="uid://byy1iwm5st1bl" path="res://IngredientMenu/Ingredient_Sprite/selects_clicked.png" id="11_o0okj"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 130.0
+offset_bottom = 78.0
+script = ExtResource("1_iw7va")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 78.0
+texture = ExtResource("1_wa5ub")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 125.0
+offset_bottom = 27.0
+columns = 5
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer" instance=ExtResource("2_iw7va")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots"]
+layout_mode = 0
+offset_right = 51.0
+offset_bottom = 54.0
+scale = Vector2(0.392393, 0.390589)
+texture = ExtResource("4_s0bbf")
+
+[node name="InvSlots2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_iw7va")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 43.0
+offset_bottom = 51.0
+scale = Vector2(0.392393, 0.390589)
+texture = ExtResource("5_wa1s2")
+
+[node name="InvSlots3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_iw7va")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 40.0
+offset_bottom = 46.0
+scale = Vector2(0.392393, 0.390589)
+texture = ExtResource("6_gompy")
+
+[node name="InvSlots4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_iw7va")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots4"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 36.0
+offset_bottom = 46.0
+scale = Vector2(0.392393, 0.390589)
+texture = ExtResource("7_uwsm1")
+
+[node name="InvSlots5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_iw7va")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots5"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 36.0
+offset_bottom = 46.0
+scale = Vector2(0.392393, 0.390589)
+texture = ExtResource("8_o0okj")
+
+[node name="GridContainer2" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+offset_left = 6.0
+offset_top = 39.0
+offset_right = 124.0
+offset_bottom = 60.0
+columns = 5
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer2" instance=ExtResource("2_iw7va")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer2/InvSlots"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 28.0
+offset_bottom = 52.0
+scale = Vector2(0.392393, 0.390589)
+texture = ExtResource("9_gompy")
+expand_mode = 1
+
+[node name="vege1" type="TextureButton" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 6.0
+offset_top = 27.0
+offset_right = 30.0
+offset_bottom = 36.0
+scale = Vector2(0.9, 1.1)
+texture_normal = ExtResource("10_uwsm1")
+texture_pressed = ExtResource("11_o0okj")
+
+[node name="stomato1" type="TextureButton" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 53.0
+offset_bottom = 36.0
+scale = Vector2(0.9, 1.1)
+texture_normal = ExtResource("10_uwsm1")
+texture_pressed = ExtResource("11_o0okj")
+
+[node name="mayo1" type="TextureButton" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 54.0
+offset_top = 27.0
+offset_right = 78.0
+offset_bottom = 36.0
+scale = Vector2(0.9, 1.1)
+texture_normal = ExtResource("10_uwsm1")
+texture_pressed = ExtResource("11_o0okj")
+
+[node name="tsauce1" type="TextureButton" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 78.0
+offset_top = 27.0
+offset_right = 102.0
+offset_bottom = 36.0
+scale = Vector2(0.9, 1.1)
+texture_normal = ExtResource("10_uwsm1")
+texture_pressed = ExtResource("11_o0okj")
+
+[node name="bbqs" type="TextureButton" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 102.0
+offset_top = 27.0
+offset_right = 126.0
+offset_bottom = 36.0
+scale = Vector2(0.9, 1.1)
+texture_normal = ExtResource("10_uwsm1")
+texture_pressed = ExtResource("11_o0okj")
+
+[node name="oil1" type="TextureButton" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 5.0
+offset_top = 60.0
+offset_right = 29.0
+offset_bottom = 69.0
+scale = Vector2(0.9, 1.1)
+texture_normal = ExtResource("10_uwsm1")
+texture_pressed = ExtResource("11_o0okj")
+
+[connection signal="pressed" from="NinePatchRect/vege1" to="." method="_on_vege_1_pressed"]
+[connection signal="pressed" from="NinePatchRect/stomato1" to="." method="_on_stomato_1_pressed"]
+[connection signal="pressed" from="NinePatchRect/mayo1" to="." method="_on_mayo_1_pressed"]
+[connection signal="pressed" from="NinePatchRect/tsauce1" to="." method="_on_tsauce_1_pressed"]
+[connection signal="pressed" from="NinePatchRect/bbqs" to="." method="_on_bbqs_pressed"]
+[connection signal="pressed" from="NinePatchRect/oil1" to="." method="_on_oil1_pressed"]
+[connection signal="pressed" from="NinePatchRect/oil1" to="." method="_on_oil_1_pressed"]

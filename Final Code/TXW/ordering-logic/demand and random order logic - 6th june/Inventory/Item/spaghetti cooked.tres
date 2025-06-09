@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://s8scxixht258"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_o5kdc"]
+[ext_resource type="Texture2D" uid="uid://br3axtxxam50y" path="res://IngredientMenu/Ingredient_Sprite/spaghetti cooked.png" id="2_tvug1"]
+
+[resource]
+script = ExtResource("1_o5kdc")
+name = "spaghetti cooked"
+texture = ExtResource("2_tvug1")
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

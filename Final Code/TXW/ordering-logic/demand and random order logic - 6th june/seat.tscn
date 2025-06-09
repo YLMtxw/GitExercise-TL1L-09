@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://h51tqc3cxfl4"]
+
+[ext_resource type="Script" uid="uid://gnrwhpd44juu" path="res://seat.gd" id="1_prdfg"]
+[ext_resource type="Texture2D" uid="uid://dgsdrfg6fbmqs" path="res://part-Slice 220.png" id="2_6bnte"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_om38u"]
+size = Vector2(12, 10)
+
+[node name="seat" type="Node2D" groups=["seats"]]
+script = ExtResource("1_prdfg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(27.25, -27)
+scale = Vector2(5.19231, 4.375)
+texture = ExtResource("2_6bnte")
+
+[node name="OccupyArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OccupyArea"]
+position = Vector2(28, -24)
+shape = SubResource("RectangleShape2D_om38u")
+
+[connection signal="body_entered" from="OccupyArea" to="." method="_on_occupy_area_body_entered"]

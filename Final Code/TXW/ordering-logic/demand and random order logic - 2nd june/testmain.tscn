@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://uw0yloqbgyu3"]
+
+[ext_resource type="Script" uid="uid://d14v3df2xk8sb" path="res://testmain.gd" id="1_k0st0"]
+[ext_resource type="PackedScene" uid="uid://jab4cnh7batx" path="res://npc1.tscn" id="1_s57mk"]
+[ext_resource type="PackedScene" uid="uid://dg4k48y46momn" path="res://compile_seat.tscn" id="2_k0st0"]
+[ext_resource type="Script" uid="uid://2mfxf8rseq04" path="res://npc_spawner.gd" id="3_e4sdq"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_k0st0"]
+vertices = PackedVector2Array(292.828, 229.508, 129.219, 263.727, 91.1016, 49.5469, 322.211, 149.422, 373.672, 174.828, 852.352, 271.063, 910.813, 387.977, 772.203, 406.922, 738.469, 290.297, 398, 486.398, 233.297, 476.758, 263.492, 378.672, 398, 374.25, 549.242, 240.531, 422.594, 77.8516, 575.531, 165.25, 598.531, 211.297, 667.18, 122.539, 824.703, 88.0469, 576.789, 339.172, 527.531, 368.703, 687.578, 441.211, 595.172, 468.344, 653.891, 326.313)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(0, 12, 11, 1), PackedInt32Array(13, 4, 3, 14, 15, 16), PackedInt32Array(17, 18, 5, 8, 16, 15), PackedInt32Array(13, 16, 19, 20), PackedInt32Array(21, 22, 20, 19, 23)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(78, 33, 120, 269, 252, 382, 220, 486, 408, 497, 408, 371, 307, 232, 375, 186, 538, 247, 517, 371, 591, 480, 700, 448, 661, 315, 589, 327, 606, 227, 730, 297, 765, 418, 926, 396, 862, 268, 833, 76, 664, 113, 576, 154, 422, 66, 321, 138)])
+
+[node name="NavigationRegion2D" type="NavigationRegion2D"]
+position = Vector2(12, -6)
+navigation_polygon = SubResource("NavigationPolygon_k0st0")
+script = ExtResource("1_k0st0")
+
+[node name="YSort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="CompileSeat" parent="YSort" instance=ExtResource("2_k0st0")]
+position = Vector2(309, 440)
+
+[node name="CompileSeat2" parent="YSort" instance=ExtResource("2_k0st0")]
+position = Vector2(622, 407)
+
+[node name="CompileSeat3" parent="YSort" instance=ExtResource("2_k0st0")]
+position = Vector2(827, 364)
+
+[node name="CompileSeat4" parent="YSort" instance=ExtResource("2_k0st0")]
+position = Vector2(781, 161)
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("3_e4sdq")
+npc_scene = ExtResource("1_s57mk")
+
+[node name="SpawnTimer" type="Timer" parent="Spawner"]
+autostart = true
