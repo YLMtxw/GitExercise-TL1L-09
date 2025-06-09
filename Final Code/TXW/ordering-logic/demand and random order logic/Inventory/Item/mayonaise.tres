@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dcvvtnq58k1wb"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_8rin4"]
+[ext_resource type="Texture2D" uid="uid://b6ak4so8x2rmb" path="res://IngredientMenu/Ingredient_Sprite/mayonaise.png" id="2_2fmgt"]
+
+[resource]
+script = ExtResource("1_8rin4")
+name = "mayonaise"
+texture = ExtResource("2_2fmgt")
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

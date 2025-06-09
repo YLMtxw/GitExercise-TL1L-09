@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://suiaxa280ygb"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_ophn0"]
+[ext_resource type="Texture2D" uid="uid://cx3u0xgrcxpqx" path="res://IngredientMenu/Ingredient_Sprite/bread__1_-removebg-preview.png" id="2_s53xd"]
+
+[resource]
+script = ExtResource("1_ophn0")
+name = "bread"
+texture = ExtResource("2_s53xd")
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

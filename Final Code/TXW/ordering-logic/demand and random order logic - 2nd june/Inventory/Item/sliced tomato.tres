@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://der4e2ux2bwje"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_8y5kt"]
+[ext_resource type="Texture2D" uid="uid://cig2w265gwksv" path="res://IngredientMenu/Ingredient_Sprite/sliced_tomato.png" id="2_mmbs5"]
+
+[resource]
+script = ExtResource("1_8y5kt")
+name = "sliced tomato"
+texture = ExtResource("2_mmbs5")
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

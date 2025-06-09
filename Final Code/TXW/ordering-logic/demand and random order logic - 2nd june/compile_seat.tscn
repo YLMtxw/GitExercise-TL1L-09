@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg4k48y46momn"]
+
+[ext_resource type="PackedScene" uid="uid://c4yjae4cvd4d8" path="res://seats.tscn" id="1_bvw4c"]
+[ext_resource type="Texture2D" uid="uid://bjjc56ys3k0v" path="res://part-Slice 267.png" id="2_1mpem"]
+[ext_resource type="PackedScene" uid="uid://ywd4me65ibqu" path="res://seats2.tscn" id="3_61iie"]
+
+[node name="CompileSeat" type="Node2D"]
+y_sort_enabled = true
+
+[node name="seats2" parent="." instance=ExtResource("1_bvw4c")]
+position = Vector2(21, -10)
+
+[node name="table" type="Sprite2D" parent="."]
+position = Vector2(-1, 2)
+scale = Vector2(2.57143, 2.57143)
+texture = ExtResource("2_1mpem")
+
+[node name="seats" parent="." instance=ExtResource("3_61iie")]
+position = Vector2(-22, 15)
