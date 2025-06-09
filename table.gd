@@ -24,6 +24,10 @@ extends Control
 @onready var label13 = $"photo1/blue box7/Label2"
 @onready var label14 = $"photo1/blue box8/Label2"
 @onready var label15 = $"photo2/blue box/Level/Label2"
+@onready var label16 = $"photo2/blue box2/Level/Label2"
+@onready var label17 = $"photo2/blue box3/Level/Label2"
+@onready var label18 = $"photo2/blue box4/Level/Label2"
+
 var id = 0
 var count := 0
 var count2 := 0
@@ -40,6 +44,9 @@ var count12 := 0
 var count13 := 0
 var count14 := 0
 var count15 := 0
+var count16 := 0
+var count17 := 0
+var count18 := 0
 
 var max := 3
 var text : String = "max"
@@ -267,8 +274,36 @@ func _on_accept_button_pressed() -> void:
 			label15.text = str(count15)
 			if count15 == 3:
 				label15.text = str(text)
-				lock_confirm = true
-				await $"max sound".finished  # 等待 max 音效完成再显示 confirm
+				confirm.visible = true
+			print("达到最大值")
+		print("Bolognese")
+		id = 0
+	elif id == 16:
+		if count16 < max:
+			count16 += 1
+			label16.text = str(count16)
+			if count16 == 3:
+				label16.text = str(text)
+				confirm.visible = true
+			print("达到最大值")
+		print("Bolognese")
+		id = 0
+	elif id == 17:
+		if count17 < max:
+			count17 += 1
+			label17.text = str(count17)
+			if count17 == 3:
+				label17.text = str(text)
+				confirm.visible = true
+			print("达到最大值")
+		print("Bolognese")
+		id = 0
+	elif id == 18:
+		if count18 < max:
+			count18 += 1
+			label18.text = str(count18)
+			if count18 == 3:
+				label18.text = str(text)
 				confirm.visible = true
 			print("达到最大值")
 		print("Bolognese")
@@ -396,3 +431,25 @@ func _on_button_sparkling_pressed() -> void:
 
 func _on_wrong_pressed() -> void:
 		$"max sound".play()
+
+
+func _on_coming_soon_pressed() -> void:
+		$"max sound".play()
+
+
+func _on_button_sprite_pressed() -> void:
+	$ClickSound.play()
+	id = 16
+	confirm.visible = true
+
+
+func _on_plus_pressed() -> void:
+	$ClickSound.play()
+	id = 17
+	confirm.visible = true
+
+
+func _on_coke_pressed() -> void:
+	$ClickSound.play()
+	id = 18
+	confirm.visible = true

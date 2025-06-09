@@ -375,25 +375,6 @@ text = "CHIC"
 
 [node name="Label2" type="Label" parent="photo1/blue box5"]
 offset_left = -29.2288
-offset_top = -51.0569
-offset_right = -18.2288
-offset_bottom = -28.0569
-theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_cy34d")
-text = "0"
-
-[node name="Label" type="Label" parent="photo1/blue box5/Label2"]
-layout_mode = 0
-offset_left = 55.0
-offset_right = 103.0
-offset_bottom = 15.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_cy34d")
-text = "BEEF"
-
-[node name="Label3" type="Label" parent="photo1/blue box5"]
-offset_left = -29.2288
 offset_top = -75.0837
 offset_right = -18.2288
 offset_bottom = -52.0837
@@ -402,11 +383,32 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "0"
 
+[node name="Label" type="Label" parent="photo1/blue box5/Label2"]
+layout_mode = 0
+offset_left = 55.2119
+offset_top = 24.0268
+offset_right = 103.212
+offset_bottom = 39.0268
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "BEEF"
+
+[node name="Label3" type="Label" parent="photo1/blue box5"]
+offset_left = -29.2288
+offset_top = -51.0569
+offset_right = -18.2288
+offset_bottom = -28.0569
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
+
 [node name="Label" type="Label" parent="photo1/blue box5/Label3"]
 layout_mode = 0
-offset_left = 55.0
-offset_right = 110.0
-offset_bottom = 15.0
+offset_left = 55.2119
+offset_top = -24.0268
+offset_right = 110.212
+offset_bottom = -9.02682
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "LAMB"
@@ -436,9 +438,9 @@ scale = Vector2(0.359618, 0.3711)
 texture = ExtResource("8_6rsue")
 
 [node name="select button" type="TextureButton" parent="photo1/blue box6"]
-offset_left = -94.1377
+offset_left = -90.9998
 offset_top = -110.291
-offset_right = 89.8622
+offset_right = 93.0001
 offset_bottom = 110.708
 
 [node name="Burger-removebg-preview" type="Sprite2D" parent="photo1/blue box6"]
@@ -478,9 +480,9 @@ text = "CHIC"
 
 [node name="Label2" type="Label" parent="photo1/blue box6"]
 offset_left = -28.2413
-offset_top = -50.6744
+offset_top = -74.5212
 offset_right = -17.2413
-offset_bottom = -35.6744
+offset_bottom = -59.5212
 theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
@@ -489,18 +491,18 @@ text = "0"
 [node name="Label" type="Label" parent="photo1/blue box6/Label2"]
 layout_mode = 0
 offset_left = 53.3447
-offset_top = -23.8468
+offset_top = 23.8468
 offset_right = 101.345
-offset_bottom = -8.84683
+offset_bottom = 38.8468
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "BEEF"
 
 [node name="Label3" type="Label" parent="photo1/blue box6"]
 offset_left = -28.2414
-offset_top = -74.5213
+offset_top = -50.6744
 offset_right = -17.2414
-offset_bottom = -59.5213
+offset_bottom = -35.6744
 theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
@@ -509,9 +511,9 @@ text = "0"
 [node name="Label" type="Label" parent="photo1/blue box6/Label3"]
 layout_mode = 0
 offset_left = 53.3447
-offset_top = 23.8468
+offset_top = -23.8468
 offset_right = 108.345
-offset_bottom = 38.8468
+offset_bottom = -8.84683
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "LAMB"
@@ -528,8 +530,8 @@ text = "0"
 
 [node name="Label" type="Label" parent="photo1/blue box6/Label4"]
 layout_mode = 0
-offset_left = 53.0
-offset_right = 106.0
+offset_left = 53.3447
+offset_right = 106.345
 offset_bottom = 15.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
@@ -741,6 +743,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
+[node name="button sprite" type="TextureButton" parent="photo2/blue box2"]
+offset_left = -89.0
+offset_top = -108.0
+offset_right = 92.0
+offset_bottom = 108.0
+
 [node name="blue box3" type="Sprite2D" parent="photo2"]
 position = Vector2(39.5034, -44.2478)
 scale = Vector2(0.369219, 0.390131)
@@ -780,6 +788,16 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
+[node name="100plus" type="TextureButton" parent="photo2/blue box3"]
+anchors_preset = -1
+anchor_left = -0.054
+anchor_top = -0.013
+anchor_right = -0.054
+offset_left = -78.848
+offset_top = -105.088
+offset_right = 99.152
+offset_bottom = 108.0
+
 [node name="blue box4" type="Sprite2D" parent="photo2"]
 position = Vector2(110.609, -45.354)
 scale = Vector2(0.369219, 0.390131)
@@ -818,6 +836,12 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
 text = "0"
+
+[node name="coke" type="TextureButton" parent="photo2/blue box4"]
+offset_left = -89.0
+offset_top = -105.0
+offset_right = 88.0
+offset_bottom = 110.0
 
 [node name="blue box5" type="Sprite2D" parent="photo2"]
 position = Vector2(-104.966, 44.2478)
@@ -914,10 +938,48 @@ position = Vector2(39.5034, 44.2478)
 scale = Vector2(0.369219, 0.390131)
 texture = ExtResource("8_6rsue")
 
+[node name="Label" type="Label" parent="photo2/blue box7"]
+offset_left = -58.0812
+offset_top = -25.519
+offset_right = 60.9188
+offset_bottom = 23.481
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "COMING
+SOON"
+horizontal_alignment = 1
+
+[node name="coming_soon" type="TextureButton" parent="photo2/blue box7"]
+offset_left = -89.0
+offset_top = -111.0
+offset_right = 89.0
+offset_bottom = 111.0
+
 [node name="blue box8" type="Sprite2D" parent="photo2"]
 position = Vector2(111.738, 44.2478)
 scale = Vector2(0.369219, 0.390131)
 texture = ExtResource("8_6rsue")
+
+[node name="Label" type="Label" parent="photo2/blue box8"]
+offset_left = -58.0812
+offset_top = -25.519
+offset_right = 60.9188
+offset_bottom = 23.481
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "COMING
+SOON"
+horizontal_alignment = 1
+
+[node name="coming_soon" type="TextureButton" parent="photo2/blue box8"]
+offset_left = -89.0
+offset_top = -111.0
+offset_right = 89.0
+offset_bottom = 111.0
 
 [node name="Button3" type="TextureButton" parent="."]
 texture_filter = 1
@@ -935,6 +997,19 @@ position = Vector2(307, 146)
 scale = Vector2(0.886, 0.904)
 texture = ExtResource("6_8snal")
 
+[node name="Label" type="Label" parent="photo3"]
+offset_left = -68.8488
+offset_top = -15.4867
+offset_right = 122.151
+offset_bottom = 61.5133
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 40
+text = "COMING
+SOON"
+horizontal_alignment = 1
+
 [node name="button4" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 315.3
@@ -950,6 +1025,19 @@ visible = false
 position = Vector2(306, 147)
 scale = Vector2(0.886, 0.904)
 texture = ExtResource("7_x6bcb")
+
+[node name="Label" type="Label" parent="photo4"]
+offset_left = -76.7494
+offset_top = -21.0177
+offset_right = 114.251
+offset_bottom = 55.9823
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 40
+text = "COMING
+SOON"
+horizontal_alignment = 1
 
 [node name="Exit Button" type="TextureButton" parent="."]
 layout_mode = 0
@@ -1185,8 +1273,13 @@ volume_db = 24.0
 [connection signal="pressed" from="photo1/blue box8/upgrade button 8" to="." method="_on_upgrade_button_8_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="photo2/blue box/button sparkling" to="." method="_on_button_sparkling_pressed"]
+[connection signal="pressed" from="photo2/blue box2/button sprite" to="." method="_on_button_sprite_pressed"]
+[connection signal="pressed" from="photo2/blue box3/100plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="photo2/blue box4/coke" to="." method="_on_coke_pressed"]
 [connection signal="pressed" from="photo2/blue box5/wrong" to="." method="_on_wrong_pressed"]
 [connection signal="pressed" from="photo2/blue box6/wrong" to="." method="_on_wrong_pressed"]
+[connection signal="pressed" from="photo2/blue box7/coming_soon" to="." method="_on_coming_soon_pressed"]
+[connection signal="pressed" from="photo2/blue box8/coming_soon" to="." method="_on_coming_soon_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
