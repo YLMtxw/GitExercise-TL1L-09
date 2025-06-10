@@ -22,7 +22,7 @@ extends Control
 @onready var label11 = $"photo1/blue box6/Label3"
 @onready var label12 = $"photo1/blue box6/Label4"
 @onready var label13 = $"photo1/blue box7/Label2"
-@onready var label14 = $"photo1/blue box8/Label2"
+@onready var label14 = $"photo1/blue box8/Level/Label2"
 @onready var label15 = $"photo2/blue box/Level/Label2"
 @onready var label16 = $"photo2/blue box2/Level/Label2"
 @onready var label17 = $"photo2/blue box3/Level/Label2"
@@ -53,7 +53,7 @@ var text : String = "max"
 var lock_confirm := false
 
 
-const PlayerData = preload("res://DATA/PlayerData.gd")
+const PlayerData = preload("res://PlayerData.gd")
 
 func _input(event):
 
@@ -380,6 +380,7 @@ func _on_upgrade_button_4_pressed() -> void:
 
 func _on_upgrade_button_5_pressed() -> void:
 	$ClickSound.play()	
+	id = 8
 	board2.visible = true
 
 

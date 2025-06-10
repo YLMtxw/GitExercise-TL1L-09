@@ -1,6 +1,7 @@
 extends Control
 
 var setting_visibility : bool = false
+var scene = "res://playground.tscn"
 
 func _ready():
 	var bus_index = AudioServer.get_bus_index("Master")
@@ -26,3 +27,8 @@ func _on_volume_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(bus_index, value)
 	AudioServer.set_bus_mute(bus_index, value <= -60)
 	Global.volume_db = value
+
+
+func _on_button_resume_pressed() -> void:
+	visible = false
+	setting_visibility = false

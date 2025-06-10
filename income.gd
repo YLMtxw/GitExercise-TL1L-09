@@ -1,4 +1,5 @@
 extends HBoxContainer
+const PlayerData = preload("res://PlayerData.gd")  # 加在文件最上方
 
 @onready var money_label: Label = $Money
 
