@@ -179,8 +179,8 @@ motion_mirroring = Vector2(574, 0)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
-position = Vector2(287, 172)
-scale = Vector2(0.531017, 0.484375)
+position = Vector2(293, 188.688)
+scale = Vector2(0.531017, 0.529688)
 texture = ExtResource("2_0d5ky")
 
 [node name="setting button" type="TextureButton" parent="."]

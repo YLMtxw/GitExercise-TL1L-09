@@ -13,6 +13,7 @@ extends CanvasLayer
 @onready var income = $"paycheck/paycheckmenu/Income label/Income"
 @onready var overlay = $overlay
 @onready var UM = preload("res://updatemenu.tscn")
+@onready var setting = $Setting
 
 
 func _ready():
@@ -24,6 +25,7 @@ func _ready():
 	Itoaster1.closeToaster1()
 	Itoaster2.closeToaster2()
 	paycheckmenu.close_paycheck()
+	setting.close_setting()
 
 func _process( delta ):
 	if Input.is_action_just_pressed("OpenInv"):
@@ -31,7 +33,12 @@ func _process( delta ):
 			inventory.close()
 		else:
 			inventory.open()
-	
+	elif Input.is_action_just_pressed("quit"):
+		print("esc pressed")
+		if setting.setting_visibility:
+			setting.close_setting()
+		else:
+			setting.open_setting()
 
 func _input(event):
 	if Input.is_action_just_pressed("interact"):

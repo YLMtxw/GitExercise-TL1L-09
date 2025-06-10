@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bmlcjik7mnbd1"]
+[gd_scene load_steps=35 format=4 uid="uid://bmlcjik7mnbd1"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Script" uid="uid://chiaggp51axdq" path="res://playground.gd" id="1_snn6g"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bue5c4maub8v2" path="res://MoneyLabel/MLabel_Sprites/Money.png" id="22_ofol1"]
 [ext_resource type="Texture2D" uid="uid://c643gn8fdagmf" path="res://CLayer/sprite/Next.png" id="24_snn6g"]
 [ext_resource type="Texture2D" uid="uid://c63k5aecrled" path="res://CLayer/sprite/Next_p.png" id="25_lraom"]
+[ext_resource type="PackedScene" uid="uid://dxceiapi1cbmt" path="res://In-game Setting/setting.tscn" id="27_lraom"]
 [ext_resource type="AudioStream" uid="uid://cemm7i42isxxp" path="res://song/jazz-restaurant-cafe-music-334836.mp3" id="27_ofol1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynsuh"]
@@ -1222,6 +1223,12 @@ offset_right = 576.0
 offset_bottom = 352.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0.839216)
+
+[node name="Setting" parent="CanvasLayer" instance=ExtResource("27_lraom")]
+offset_left = 189.0
+offset_top = 31.0
+offset_right = -169.0
+offset_bottom = -39.0
 
 [node name="Player_character" parent="." instance=ExtResource("1_rupst")]
 position = Vector2(120, 150)

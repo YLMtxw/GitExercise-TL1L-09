@@ -20,6 +20,7 @@ var store_direction : Vector2 = Vector2.DOWN
 @export var slots : iSlot
 @onready var paycheckmenu = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/total label/Total")
 @onready var income = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/Income label/Income")
+@onready var setting = get_node("/root/Playground/CanvasLayer/Setting")
 
 const source = 0
 const stove_coord1 = Vector2i(7,28)
@@ -150,9 +151,6 @@ func _physics_process( delta ):
 	UpdateAction()
 	
 func _input(event):
-	
-	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		get_tree().quit()
 	if event.is_action_pressed("sell"):  # q
 		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
 		money_display.add_money(10) 

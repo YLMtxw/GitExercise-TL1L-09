@@ -196,7 +196,7 @@ func _on_carrot_pressed() -> void:
 layout_mode = 3
 anchors_preset = 0
 offset_right = 149.0
-offset_bottom = 158.0
+offset_bottom = 174.0
 script = SubResource("GDScript_3c5yy")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]

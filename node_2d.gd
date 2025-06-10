@@ -3,7 +3,9 @@ extends Node2D
 @onready var Setting = $"Setting"
 
 func _ready():
-	pass
+	var bus_index = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(bus_index, Global.volume_db)
+	$PopupPanel2/Setting/HSlider.value = Global.volume_db
 
 func _input(event):
 
