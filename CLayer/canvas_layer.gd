@@ -97,5 +97,5 @@ func _on_next_pressed() -> void:
 	paycheckmenu.close_paycheck()
 	overlay.visible = false
 	get_tree().paused = false
-	get_tree().change_scene_to_packed(UM)
+	get_tree().change_scene_to_file("res://updatemenu.tscn")
 	pass # Replace with function body.

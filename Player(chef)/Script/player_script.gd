@@ -173,3 +173,4 @@ func _input(event):
 			print("bin")
 		if is_near() == "bm":
 			print("bm")
+			
