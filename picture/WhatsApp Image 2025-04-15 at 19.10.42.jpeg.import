@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://dxaarle8m0nf7"
-=======
-uid="uid://cgdue7nnhxf1t"
->>>>>>> 8894f7ba40a13bffe9de0721ed18e90fb4527aab
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://21cbgspijtpd"
+path="res://.godot/imported/WhatsApp Image 2025-04-15 at 19.10.42.jpeg-cd03b08e549942cdec5946c3208f9dbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://picture/WhatsApp Image 2025-04-15 at 19.10.42.jpeg"
+dest_files=["res://.godot/imported/WhatsApp Image 2025-04-15 at 19.10.42.jpeg-cd03b08e549942cdec5946c3208f9dbd.ctex"]
 
 [params]
 
@@ -36,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
