@@ -2,6 +2,43 @@ extends Control
 
 var menu2 : bool = false
 var is_menu_open : bool = false
+var inventory = preload("res://Inventory/playerInventory.tres")
+@onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+var recipes = {
+	"vegetable (peeled)": ["vegetable"],
+	"tomato (sliced)": ["tomato"],
+	"carrot (sliced)": ["carrot"]
+}
+@onready var click = $Clicksound
+
+func has_ingredients(dish: String) -> bool:
+	if not recipes.has(dish):
+		return false
+
+	var required = recipes[dish]
+	var available = inventory.slots
+
+	for ingredient_name in required:
+		var found = false
+		for slot in available:
+			if slot.item and slot.item.name == ingredient_name and slot.itemNum > 0:
+				found = true
+				break
+		if not found:
+			print("Missing ingredient: ", ingredient_name)
+			return false
+
+	return true
+
+func consume_ingredients(dish: String):
+	if not recipes.has(dish):
+		return
+
+	for ingredient_name in recipes[dish]:
+		for slot in inventory.slots:
+			if slot.item and slot.item.name == ingredient_name:
+				inventory.remove_item(slot.item, 1)
+				break
 
 func openMenu2():
 	visible = true
@@ -20,25 +57,73 @@ func Mclose2():
 	if menu2 == false:
 		is_menu_open = false
 
+func insert(item: InventoryItem) -> void:
+	inventory.add_item(item)
+
 func _on_vege_2_pressed() -> void:
-	print("vege2")
+	click.play()
+	if has_ingredients("vegetable (peeled)"):
+		consume_ingredients("vegetable (peeled)")
+		var item = preload("res://Inventory/Item/sliced vege.tres")
+		insert(item)
+		inventorygui.update()
+		print("Crafted sliced vege")
+	else:
+		print("Not enough ingredients!")
 
 
 func _on_stomato_2_pressed() -> void:
-	print("stomato2")
+	click.play()
+	if has_ingredients("tomato (sliced)"):
+		consume_ingredients("tomato (sliced)")
+		var item = preload("res://Inventory/Item/sliced tomato.tres")
+		insert(item)
+		inventorygui.update()
+		print("Crafted sliced vege")
+	else:
+		print("Not enough ingredients!")
 
 
 func _on_mayo_2_pressed() -> void:
+	click.play()
+	var item = preload("res://Inventory/Item/mayonaise.tres")
 	print("mayo2")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_tsauce_2_pressed() -> void:
+	click.play()
+	var item = preload("res://Inventory/Item/tomato sauce.tres")
 	print("tsauce2")
-
-
-func _on_chili_f_2_pressed() -> void:
-	print("chili_f2")
+	inventorygui.update()
+	insert(item)
 
 
 func _on_oil_2_pressed() -> void:
+	click.play()
+	var item = preload("res://Inventory/Item/oil.tres")
 	print("oil2")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_bbqs_2_pressed() -> void:
+	click.play()
+	var item = preload("res://Inventory/Item/bbqs.tres")
+	print("chili_f2")
+	inventorygui.update()
+	insert(item)
+	pass # Replace with function body.
+
+
+func _on_carrot_pressed() -> void:
+	click.play()
+	if has_ingredients("carrot (sliced)"):
+		consume_ingredients("carrot (sliced)")
+		var item = preload("res://Inventory/Item/carrot (sliced).tres")
+		insert(item)
+		inventorygui.update()
+		print("Crafted sliced carrot")
+	else:
+		print("Not enough ingredients!")

@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_pvevh")
-name = "meat lamb"
+name = "Grilled Lamb Steak"
 texture = ExtResource("2_8ea0v")
 metadata/_custom_type_script = "uid://c2jevq51ijiin"

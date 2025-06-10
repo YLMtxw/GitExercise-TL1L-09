@@ -49,22 +49,35 @@ func _on_texture_button_pressed() -> void:
 		$Control/Label2.text = \"店名不能为空\"
 	else:
 		create_new_player(name)
-		$Control/Label2.text = \"店铺创建成功！\"
+		$Control/Label2.text = \"COMPLETE！\"
 		load_player_data(\"\")
 		await $ClickSound.finished
 		get_tree().change_scene_to_file(\"res://playground.tscn\")
 	
 
 func _on_shop_name_focus_exited() -> void:
-
-	var name = $\"Control/Shop name\".text.strip_edges()
+	var input_name = $\"Control/Shop name\".text.strip_edges()  # 用户输入的文件名
 	
-	if name == \"\":
-		$Control/Label2.text = \"店名不能为空\"
+	if input_name == \"\":
+		print(\"❌ 文件名不能为空\")
+		$ErrorLabel.text = \"请输入店铺名称。\"
+		return
+		
+func create_new_shop_file(path: String) -> void:
+	var default_data = {
+		\"money\": 0,
+		\"shop_name\": $\"Control/Shop name\".text.strip_edges(),
+		\"inventory\": []
+	}
+
+	var json_string = JSON.stringify(default_data, \"\\t\")
+	
+	if FileAccess.file_exists(json_string):
+		print(\"✅ 找到存档文件: \", json_string)
+		get_tree().change_scene_to_file(\"res://playground.tscn\")
 	else:
-		create_new_player(name)
-		$Control/Label2.text = \"店铺创建成功！\"
-		load_player_data(\"\")
+		print(\"❌ 未找到该文件，将自动创建新文件: \", json_string)
+		create_new_player(json_string)
 		get_tree().change_scene_to_file(\"res://playground.tscn\")
 "
 
@@ -164,5 +177,5 @@ uppercase = true
 visible_characters_behavior = 1
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_shop_name_focus_exited"]
 [connection signal="focus_exited" from="Control/Shop name" to="." method="_on_line_edit_focus_exited"]
+[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_shop_name_focus_exited"]
