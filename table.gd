@@ -448,8 +448,8 @@ func _on_plus_pressed() -> void:
 	id = 17
 	confirm.visible = true
 
-
 func _on_coke_pressed() -> void:
 	$ClickSound.play()
-	id = 18
+	id = 18   
 	confirm.visible = true
+  
