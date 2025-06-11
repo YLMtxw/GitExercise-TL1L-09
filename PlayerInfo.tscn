@@ -1,0 +1,181 @@
+[gd_scene load_steps=11 format=3 uid="uid://bh0bnbmse2ai0"]
+
+[ext_resource type="Texture2D" uid="uid://1el28nogvkee" path="res://photo/Player Info.jpg" id="1_ijsdh"]
+[ext_resource type="AudioStream" uid="uid://bbljp5n8dot2x" path="res://song/chinese-new-year-184077.mp3" id="1_w17oj"]
+[ext_resource type="Script" uid="uid://brfvdde8id256" path="res://line_edit.gd" id="2_8ex5c"]
+[ext_resource type="Texture2D" uid="uid://iip3rxa8nrpn" path="res://photo/create-removebg-preview.png" id="3_8ex5c"]
+[ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="3_34t3e"]
+[ext_resource type="Texture2D" uid="uid://dt704kekpyjqx" path="res://photo/create_pressed-removebg-preview.png" id="4_34t3e"]
+
+[sub_resource type="GDScript" id="GDScript_8crf7"]
+script/source = "extends Node
+
+func get_player_file_path(store_name: String) -> String:
+	return \"user://%s.json\" % store_name
+	
+func create_new_player(store_name: String) -> void:
+	var data = {
+		\"store_name\": store_name,
+		\"coins\": 1000,
+		\"spent\": 0,
+	}
+	var file = FileAccess.open(get_player_file_path(store_name), FileAccess.WRITE)
+	file.store_string(JSON.stringify(data))
+	file.close()
+	
+func load_player_data(store_name: String) -> Dictionary:
+	var path = get_player_file_path(store_name)
+	if FileAccess.file_exists(path):
+		var file = FileAccess.open(path, FileAccess.READ)
+		var text = file.get_as_text()
+		file.close()
+		var data = JSON.parse_string(text)
+		if typeof(data) == TYPE_DICTIONARY:
+			return data
+	return {}  # 不存在或读取失败
+
+
+
+func _input(event):
+
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		get_tree().quit()
+
+func _on_texture_button_pressed() -> void:
+	$ClickSound.play() # 等待音效播放完毕	
+	var name = $\"Control/Shop name\".text.strip_edges()
+	
+	if name == \"\":
+		$Control/Label2.text = \"店名不能为空\"
+	else:
+		Global.current_store_name = name          
+		Global.save_game(name)  
+		$Control/Label2.text = \"COMPLETE！\"
+		await $ClickSound.finished
+		get_tree().change_scene_to_file(\"res://playground.tscn\")
+	
+
+func _on_shop_name_focus_exited() -> void:
+	var input_name = $\"Control/Shop name\".text.strip_edges()  # 用户输入的文件名
+	
+	if input_name == \"\":
+		print(\"❌ 文件名不能为空\")
+		$ErrorLabel.text = \"请输入店铺名称。\"
+		return
+		
+func create_new_shop_file(path: String) -> void:
+	var default_data = {
+		\"money\": 0,
+		\"shop_name\": $\"Control/Shop name\".text.strip_edges(),
+		\"inventory\": []
+	}
+
+	var json_string = JSON.stringify(default_data, \"\\t\")
+	
+	if FileAccess.file_exists(json_string):
+		print(\"✅ 找到存档文件: \", json_string)
+		get_tree().change_scene_to_file(\"res://playground.tscn\")
+	else:
+		print(\"❌ 未找到该文件，将自动创建新文件: \", json_string)
+		create_new_player(json_string)
+		get_tree().change_scene_to_file(\"res://playground.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_wbq6p"]
+script/source = "extends Control
+"
+
+[sub_resource type="FontVariation" id="FontVariation_8crf7"]
+variation_embolden = 0.67
+
+[sub_resource type="LabelSettings" id="LabelSettings_ijsdh"]
+font_size = 20
+font_color = Color(1, 0.0392157, 0.054902, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="PlayerInfo" type="Node2D"]
+script = SubResource("GDScript_8crf7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_w17oj")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_34t3e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(287.5, 175.5)
+scale = Vector2(0.530556, 0.4875)
+texture = ExtResource("1_ijsdh")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+clip_contents = true
+offset_left = 406.0
+offset_top = 158.0
+offset_right = 454.0
+offset_bottom = 178.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_8ex5c")
+texture_pressed = ExtResource("4_34t3e")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_wbq6p")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.082
+anchor_bottom = 0.131
+offset_left = 82.0
+offset_top = -94.0
+offset_right = 445.72
+offset_bottom = 215.76
+theme_override_colors/font_color = Color(0.980392, 0.854902, 0.552941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.329412, 0.235294, 0.262745, 1)
+theme_override_fonts/font = SubResource("FontVariation_8crf7")
+theme_override_font_sizes/font_size = 30
+text = "CREATE PROFILE"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Shop name" type="LineEdit" parent="Control"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 109.0
+offset_right = 364.0
+offset_bottom = 150.0
+placeholder_text = "Input your Shop Name"
+script = ExtResource("2_8ex5c")
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.153
+anchor_top = 0.116
+anchor_right = 0.888
+anchor_bottom = 0.373
+offset_left = 126.88
+offset_top = 222.36
+offset_right = 261.48
+offset_bottom = 240.08
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 40
+text = "------"
+label_settings = SubResource("LabelSettings_ijsdh")
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+visible_characters_behavior = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_shop_name_focus_exited"]
+[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_line_edit_focus_exited"]

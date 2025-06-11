@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://blbj7tqyl6mi8"]
+
+[ext_resource type="Texture2D" uid="uid://bue5c4maub8v2" path="res://MoneyLabel/MLabel_Sprites/Money.png" id="1_8s8nn"]
+
+[sub_resource type="GDScript" id="GDScript_mynxe"]
+script/source = "extends HBoxContainer
+
+@onready var money_label: Label = $Money
+
+var money: int = 0
+
+func add_money(amount: int) -> void:
+	money += amount
+	money_label.text = str(money)
+	
+	
+func upgrade(amount: int) -> bool:
+	if money >= amount:
+		money -= amount
+		money_label.text = str(money)
+		return true  
+	else:
+		return false  
+		
+"
+
+[node name="MoneyLabel" type="HBoxContainer"]
+custom_minimum_size = Vector2(77, 40)
+offset_right = 77.0
+offset_bottom = 40.0
+script = SubResource("GDScript_mynxe")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1_8s8nn")
+expand_mode = 2
+
+[node name="Money" type="Label" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(10, 23)
+layout_mode = 2
+text = "0"

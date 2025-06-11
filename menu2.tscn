@@ -1,0 +1,210 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfq2apfhur3sl"]
+
+[ext_resource type="Script" uid="uid://bw6wjv8uyovkw" path="res://menu.gd" id="1_2u7t2"]
+[ext_resource type="Texture2D" uid="uid://bkdo3b5s7g4ev" path="res://photo/sky.png" id="2_t6dnv"]
+[ext_resource type="Texture2D" uid="uid://b4xetlk7ar7gw" path="res://photo/WhatsApp_图像2025-05-14于00.15.21_e46d42ba-removebg-preview.png" id="3_pfu3g"]
+[ext_resource type="Texture2D" uid="uid://b3yi6o0n0usrt" path="res://photo/WhatsApp_图像2025-05-14于00.15.20_db979e95-removebg-preview.png" id="4_ooxj4"]
+[ext_resource type="FontFile" uid="uid://bk4cd3hvf031o" path="res://font/PixelatedEleganceRegular-ovyAA.ttf" id="5_t6dnv"]
+[ext_resource type="Texture2D" uid="uid://152xryh4s8uh" path="res://photo/back.png" id="6_sgx18"]
+[ext_resource type="Script" uid="uid://1c5f76ve04ur" path="res://back_button.gd" id="6_ss8hp"]
+[ext_resource type="Texture2D" uid="uid://cio8da1uh154" path="res://photo/back pressed.png" id="7_ss8hp"]
+[ext_resource type="Texture2D" uid="uid://y300ae0xokcs" path="res://photo/back hover.png" id="8_23yp1"]
+
+[node name="Menu2" type="Node2D"]
+script = ExtResource("1_2u7t2")
+
+[node name="Sky" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(287, 180.373)
+scale = Vector2(1.02857, 1.11715)
+texture = ExtResource("2_t6dnv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+position = Vector2(-6.80554, -11.9708)
+scale = Vector2(0.746897, 0.630366)
+texture = ExtResource("3_pfu3g")
+
+[node name="WhatsApp图像2025-05-14于00_15_20Db979e95-removebg-preview" type="Sprite2D" parent="Sky"]
+position = Vector2(-120.556, -8.39024)
+scale = Vector2(0.810389, 0.69919)
+texture = ExtResource("4_ooxj4")
+
+[node name="WhatsApp图像2025-05-14于00_15_20Db979e95-removebg-preview2" type="Sprite2D" parent="Sky"]
+position = Vector2(95.2779, -5.7047)
+scale = Vector2(0.811975, 0.679397)
+texture = ExtResource("4_ooxj4")
+
+[node name="Chicken Sandwich3" type="Label" parent="."]
+offset_left = 79.0
+offset_top = 150.0
+offset_right = 1685.0
+offset_bottom = 359.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 55
+text = "14)  Vege Sandwich
+Bread, Vegetable (Peeled), Tomato (Sliced), 
+Mayonnaise, Bread"
+
+[node name="egg mayo" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 181.0
+offset_right = 1493.0
+offset_bottom = 390.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 55
+text = "15)  Egg & Mayo Sandwich
+Bread, Fried egg, Vegetable (Peeled), 
+Tomato (Sliced), Cheese, Mayonnaise, 
+Bread"
+
+[node name="WATER" type="Label" parent="."]
+offset_left = 129.0
+offset_top = 226.0
+offset_right = 202.0
+offset_bottom = 249.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+text = "WATER"
+
+[node name="Chicken Sandwich4" type="Label" parent="WATER"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = 31.0
+offset_right = 895.0
+offset_bottom = 160.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 70
+text = "1)  Coco Caca
+Coco caca drink, Ice"
+
+[node name="Chicken Sandwich5" type="Label" parent="WATER"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = -147.0
+offset_right = 1456.0
+offset_bottom = 48.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 70
+text = "2)  Sparkling Water
+Sparkling water drink, Ice
+"
+
+[node name="Chicken Sandwich6" type="Label" parent="WATER"]
+offset_left = 188.0
+offset_top = -115.0
+offset_right = 1456.0
+offset_bottom = 80.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 70
+text = "3)  Sprint
+Sprint drink, Ice
+"
+
+[node name="Chicken Sandwich7" type="Label" parent="WATER"]
+offset_left = 188.0
+offset_top = -84.0
+offset_right = 1456.0
+offset_bottom = 111.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 70
+text = "4)  1000 Minus
+1000 minus drink, Ice
+"
+
+[node name="Chicken Sandwich8" type="Label" parent="WATER"]
+offset_left = 188.0
+offset_top = -45.0
+offset_right = 1456.0
+offset_bottom = 150.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 70
+text = "5)  Hot Water
+Hot water
+"
+
+[node name="Chicken Sandwich9" type="Label" parent="WATER"]
+offset_left = 188.0
+offset_top = -9.99999
+offset_right = 842.0
+offset_bottom = 317.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 70
+text = "6)  Cold Water
+Water, Ice
+
+
+"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_ss8hp")
+
+[node name="TextureButton2" type="TextureButton" parent="Control"]
+offset_left = 417.0
+offset_top = 265.0
+offset_right = 447.0
+offset_bottom = 279.0
+scale = Vector2(1.7, 1.275)
+texture_normal = ExtResource("6_sgx18")
+texture_pressed = ExtResource("7_ss8hp")
+texture_hover = ExtResource("8_23yp1")
+
+[node name="lamb sandwich" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 111.0
+offset_right = 1450.0
+offset_bottom = 320.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 55
+text = "13)  Lamb Sandwich
+Bread, Lamb (Cut), Lettuce (Peeled), 
+Tomato (Sliced), Cheese (Sliced), 
+Mayonnaise, Bread"
+
+[node name="beef sandwich" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 69.0
+offset_right = 1425.0
+offset_bottom = 278.0
+scale = Vector2(0.116, 0.116)
+pivot_offset = Vector2(0.1, 0)
+theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
+theme_override_fonts/font = ExtResource("5_t6dnv")
+theme_override_font_sizes/font_size = 55
+text = "12)  Beef Sandwich
+Bread, Beef (Cut), Lettuce (Peeled), 
+Tomato (Sliced), Cheese (Sliced), 
+Mayonnaise, Bread"
+
+[connection signal="pressed" from="Control/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Control/TextureButton2" to="Control" method="_on_texture_button_2_pressed"]

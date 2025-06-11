@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://ccrd4uy1h0n1r"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_5t0w5"]
+[ext_resource type="Texture2D" uid="uid://bkrsxvd6fdeoj" path="res://IngredientMenu/Ingredient_Sprite/fried egg.png" id="2_ycdjb"]
+
+[resource]
+script = ExtResource("1_5t0w5")
+name = "fried egg"
+texture = ExtResource("2_ycdjb")
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

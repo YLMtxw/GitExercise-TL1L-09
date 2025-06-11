@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cugaaxdfnwgb8"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_0k5xv"]
+[ext_resource type="Texture2D" uid="uid://d1kvqlj4ko8t6" path="res://IngredientMenu/Ingredient_Sprite/patty cooked.png" id="2_rqfda"]
+
+[resource]
+script = ExtResource("1_0k5xv")
+name = "beef patty (grilled)"
+texture = ExtResource("2_rqfda")
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

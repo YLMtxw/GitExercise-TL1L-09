@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bonvew3b01s2e"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_qiwwe"]
+[ext_resource type="Texture2D" uid="uid://c8kaxdqf2l3jp" path="res://IngredientMenu/Ingredient_Sprite/lamb raw.png" id="2_oa6vr"]
+
+[resource]
+script = ExtResource("1_qiwwe")
+name = "lamb (raw)"
+texture = ExtResource("2_oa6vr")
+metadata/_custom_type_script = "uid://c2jevq51ijiin"
