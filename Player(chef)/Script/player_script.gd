@@ -41,6 +41,7 @@ const k2_coord = Vector2i(14,40)
 const k3_coord = Vector2i(13,40)
 const k4_coord = Vector2i(14,39)
 
+
 func _process(delta):
 	if menuOpen.Mopen():
 		return
