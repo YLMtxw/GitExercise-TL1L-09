@@ -131,17 +131,20 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_upgrade_button_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 1
 	confirm.visible = true
 
 
 func _on_upgrade_button_2_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 2
 	confirm.visible = true
 
 func _on_cancel_button_pressed() -> void:
+	get_tree().paused = false
 	$ClickSound.play()
 	id = 0 
 	print("reset")
@@ -151,6 +154,7 @@ func _on_cancel_button_pressed() -> void:
 
 
 func _on_accept_button_pressed() -> void:	
+	get_tree().paused = false
 	$ClickSound.play()
 	if id == 1:
 		if count < max:
@@ -315,6 +319,7 @@ func _on_accept_button_pressed() -> void:
 
 
 func _on_chicken_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 9
 	confirm.visible = true
@@ -322,6 +327,7 @@ func _on_chicken_pressed() -> void:
 
 
 func _on_lamb_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 10
 	confirm.visible = true
@@ -329,12 +335,14 @@ func _on_lamb_pressed() -> void:
 
 
 func _on_beef_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 11
 	confirm.visible = true
 	board.visible = false
 	
 func _on_vege_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 12
 	confirm.visible = true
@@ -367,12 +375,14 @@ func save_player_data():
 
 
 func _on_upgrade_button_3_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 3
 	confirm.visible = true
 
 
 func _on_upgrade_button_4_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 4
 	confirm.visible = true
@@ -385,12 +395,14 @@ func _on_upgrade_button_5_pressed() -> void:
 
 
 func _on_upgrade_button_7_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 13
 	confirm.visible = true
 
 
 func _on_chicken_01_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 5
 	confirm.visible = true
@@ -398,6 +410,7 @@ func _on_chicken_01_pressed() -> void:
 
 
 func _on_lamb_01_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 6
 	confirm.visible = true
@@ -405,6 +418,7 @@ func _on_lamb_01_pressed() -> void:
 
 
 func _on_beef_01_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 7
 	confirm.visible = true
@@ -412,6 +426,7 @@ func _on_beef_01_pressed() -> void:
 
 
 func _on_egg_mayo_01_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 8
 	confirm.visible = true
@@ -419,12 +434,14 @@ func _on_egg_mayo_01_pressed() -> void:
 
 
 func _on_upgrade_button_8_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()	
 	id = 14
 	confirm.visible = true
 
 
 func _on_button_sparkling_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()
 	id = 15
 	confirm.visible = true
@@ -439,17 +456,20 @@ func _on_coming_soon_pressed() -> void:
 
 
 func _on_button_sprite_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()
 	id = 16
 	confirm.visible = true
 
 
 func _on_plus_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()
 	id = 17
 	confirm.visible = true
 
 func _on_coke_pressed() -> void:
+	get_tree().paused = true
 	$ClickSound.play()
 	id = 18   
 	confirm.visible = true
