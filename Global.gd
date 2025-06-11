@@ -1,7 +1,7 @@
 extends Node
 
 var volume_db: float = 0.0
-var money: int = 1000
+var money: int = 0
 var position: Vector2 = Vector2(120, 150)
 var upgrade = {
 	"count1": 0,
