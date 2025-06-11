@@ -6,7 +6,7 @@ extends Control
 @onready var sprite_d = $photo4
 @onready var confirm = $CanvasLayer/Comfirmation
 @onready var board = $"CanvasLayer/burger board"
-@onready var board2 =$CanvasLayer/sandwich
+@onready var board2 = $CanvasLayer/sandwich
 @onready var level =  $"photo1/blue box/level2"
 @onready var coin_label = $"MoneyBox/Coin_Label"  
 @onready var label = $"photo1/blue box/Label"
@@ -486,6 +486,7 @@ func _on_plus_pressed() -> void:
 	$ClickSound.play()
 	id = 17
 	confirm.visible = true
+
 
 func _on_coke_pressed() -> void:
 	get_tree().paused = true
