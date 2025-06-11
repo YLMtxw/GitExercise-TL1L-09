@@ -172,17 +172,6 @@ offset_bottom = -81.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Level :"
 
-[node name="200" type="Label" parent="photo1/blue box"]
-offset_left = -27.0869
-offset_top = 8.61526
-offset_right = 19.9131
-offset_bottom = 40.6153
-theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_cy34d")
-theme_override_font_sizes/font_size = 35
-text = "20"
-
 [node name="Label" type="Label" parent="photo1/blue box"]
 offset_left = -27.0
 offset_top = -95.0
