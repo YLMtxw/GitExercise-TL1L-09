@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh0bnbmse2ai0"]
+[gd_scene load_steps=13 format=3 uid="uid://bh0bnbmse2ai0"]
 
 [ext_resource type="Texture2D" uid="uid://1el28nogvkee" path="res://photo/Player Info.jpg" id="1_ijsdh"]
 [ext_resource type="AudioStream" uid="uid://bbljp5n8dot2x" path="res://song/chinese-new-year-184077.mp3" id="1_w17oj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://iip3rxa8nrpn" path="res://photo/create-removebg-preview.png" id="3_8ex5c"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="3_34t3e"]
 [ext_resource type="Texture2D" uid="uid://dt704kekpyjqx" path="res://photo/create_pressed-removebg-preview.png" id="4_34t3e"]
+[ext_resource type="FontFile" uid="uid://bk4cd3hvf031o" path="res://font/PixelatedEleganceRegular-ovyAA.ttf" id="6_1dwlc"]
 
 [sub_resource type="GDScript" id="GDScript_8crf7"]
 script/source = "extends Node
@@ -131,6 +132,17 @@ func load():
 [sub_resource type="FontVariation" id="FontVariation_8crf7"]
 variation_embolden = 0.67
 
+[sub_resource type="LabelSettings" id="LabelSettings_vd5x7"]
+line_spacing = 8.0
+paragraph_spacing = 8.0
+font = ExtResource("6_1dwlc")
+font_size = 30
+font_color = Color(1, 1, 0.545098, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0.00392157, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_ijsdh"]
 font_size = 20
 font_color = Color(1, 0.0392157, 0.054902, 1)
@@ -174,16 +186,17 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.082
 anchor_bottom = 0.131
-offset_left = 82.0
-offset_top = -94.0
-offset_right = 445.72
-offset_bottom = 215.76
+offset_left = 113.0
+offset_top = 52.0
+offset_right = 426.72
+offset_bottom = 74.76
 theme_override_colors/font_color = Color(0.980392, 0.854902, 0.552941, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.329412, 0.235294, 0.262745, 1)
 theme_override_fonts/font = SubResource("FontVariation_8crf7")
 theme_override_font_sizes/font_size = 30
 text = "CREATE PROFILE"
+label_settings = SubResource("LabelSettings_vd5x7")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -220,5 +233,5 @@ uppercase = true
 visible_characters_behavior = 1
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_shop_name_focus_exited"]
 [connection signal="focus_exited" from="Control/Shop name" to="." method="_on_line_edit_focus_exited"]
+[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_shop_name_focus_exited"]
