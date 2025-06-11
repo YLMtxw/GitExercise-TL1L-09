@@ -58,6 +58,11 @@ shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="GDScript" id="GDScript_cvh4x"]
+script/source = "extends Sprite2D
+
+func _ready() -> void:
+	process_mode = PROCESS_MODE_ALWAYS
+"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -171,17 +176,6 @@ offset_right = -39.0
 offset_bottom = -81.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Level :"
-
-[node name="200" type="Label" parent="photo1/blue box"]
-offset_left = -27.0869
-offset_top = 8.61526
-offset_right = 19.9131
-offset_bottom = 40.6153
-theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_cy34d")
-theme_override_font_sizes/font_size = 35
-text = "20"
 
 [node name="Label" type="Label" parent="photo1/blue box"]
 offset_left = -27.0
@@ -1293,13 +1287,12 @@ volume_db = 24.0
 [connection signal="pressed" from="CanvasLayer/burger board/Label2/lamb" to="." method="_on_lamb_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label3/beef" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label4/vege" to="." method="_on_vege_pressed"]
-[connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_chicken_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Lamb Sand/lamb 01" to="." method="_on_lamb_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Lamb Sand/lamb 01" to="." method="_on_lamb_01_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_01_pressed"]
-[connection signal="pressed" from="CanvasLayer/sandwich/EGG MAYO/egg mayo 01" to="." method="_on_vege_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/EGG MAYO/egg mayo 01" to="." method="_on_egg_mayo_01_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_cancel_button_pressed"]

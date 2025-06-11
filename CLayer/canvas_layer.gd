@@ -37,8 +37,10 @@ func _process( delta ):
 		print("esc pressed")
 		if setting.setting_visibility:
 			setting.close_setting()
+			get_tree().paused = false
 		else:
 			setting.open_setting()
+			get_tree().paused = true
 
 func _input(event):
 	if Input.is_action_just_pressed("interact"):

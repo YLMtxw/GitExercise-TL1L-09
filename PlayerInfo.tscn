@@ -10,6 +10,31 @@
 [sub_resource type="GDScript" id="GDScript_8crf7"]
 script/source = "extends Node
 
+const SAVE_PATH := \"user://profile.json\"
+const SCN_PLAYGROUND := preload(\"res://playground.tscn\")
+const SCN_PROFILE := preload(\"res://PlayerInfo.tscn\")
+
+func _ready() -> void:
+	if FileAccess.file_exists(SAVE_PATH):
+		call_deferred(\"_goto_playground\")
+	else:
+		call_deferred(\"_goto_profile\")
+		
+func _goto_playground() -> void:
+	var err := get_tree().change_scene_to_packed(SCN_PLAYGROUND)
+	if err != OK:
+		push_error(\"❌ 载入 playground 失败: %s\" % err)
+
+func _goto_profile() -> void:
+	var err := get_tree().change_scene_to_packed(SCN_PROFILE)
+	if err != OK:
+		push_error(\"❌ 载入 PlayerInfo 失败: %s\" % err)
+		
+func save_profile(data: Dictionary) -> void:
+	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	file.store_string(JSON.stringify(data))
+	file.close()
+
 func get_player_file_path(store_name: String) -> String:
 	return \"user://%s.json\" % store_name
 	
@@ -34,8 +59,6 @@ func load_player_data(store_name: String) -> Dictionary:
 			return data
 	return {}  # 不存在或读取失败
 
-
-
 func _input(event):
 
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
@@ -54,7 +77,6 @@ func _on_texture_button_pressed() -> void:
 		await $ClickSound.finished
 		get_tree().change_scene_to_file(\"res://playground.tscn\")
 	
-
 func _on_shop_name_focus_exited() -> void:
 	var input_name = $\"Control/Shop name\".text.strip_edges()  # 用户输入的文件名
 	
@@ -83,6 +105,27 @@ func create_new_shop_file(path: String) -> void:
 
 [sub_resource type="GDScript" id="GDScript_wbq6p"]
 script/source = "extends Control
+
+const SAVE_PATH := \"res://DATA//player_progress.cfg\"
+
+var coins := 0
+var upgrade_level := 0
+var current_round := 0
+
+func save():
+	var cfg := ConfigFile.new()
+	cfg.set_value(\"Progress\", \"coins\", coins)
+	cfg.set_value(\"Progress\", \"upgrade_level\", upgrade_level)
+	cfg.set_value(\"Progress\", \"current_round\", current_round)
+	cfg.save(SAVE_PATH)
+
+func load():
+	var cfg := ConfigFile.new()
+	if cfg.load(SAVE_PATH) != OK:
+		return  # 无存档可加载
+	coins = cfg.get_value(\"Progress\", \"coins\", 0)
+	upgrade_level = cfg.get_value(\"Progress\", \"upgrade_level\", 1)
+	current_round = cfg.get_value(\"Progress\", \"current_round\", 1)
 "
 
 [sub_resource type="FontVariation" id="FontVariation_8crf7"]
