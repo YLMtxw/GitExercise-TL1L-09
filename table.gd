@@ -8,7 +8,7 @@ extends Control
 @onready var board = $"CanvasLayer/burger board"
 @onready var board2 =$CanvasLayer/sandwich
 @onready var level =  $"photo1/blue box/level2"
-@onready var coin_label = $"MoneyBox/Coin_Label"  # 假设您有一个名为 MoneyLabel 的 Label 节点
+@onready var coin_label = $"MoneyBox/Coin_Label"  
 @onready var label = $"photo1/blue box/Label"
 @onready var label2 = $"photo1/blue box2/Label 2"
 @onready var label3 = $"photo1/blue box3/Label"
@@ -27,6 +27,7 @@ extends Control
 @onready var label16 = $"photo2/blue box2/Level/Label2"
 @onready var label17 = $"photo2/blue box3/Level/Label2"
 @onready var label18 = $"photo2/blue box4/Level/Label2"
+
 
 var id = 0
 var count := 0
@@ -52,13 +53,12 @@ var max := 3
 var text : String = "max"
 var lock_confirm := false
 
-
 const PlayerData = preload("res://PlayerData.gd")
 
 func _input(event):
-
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		get_tree().quit()
+	
 	
 func _ready():
 	# 给所有按钮连接 signal
@@ -74,7 +74,8 @@ func _ready():
 		coin_label.text = str(money)
 	else:
 		coin_label.text = "none"
-		
+
+
 func load_player_data() -> PlayerData:
 	var file_path = "res://DATA/%s.json" 
 	if FileAccess.file_exists(file_path):
@@ -99,13 +100,15 @@ func _on_button_2_pressed() -> void:
 	
 "res://song/G.E.M.鄧紫棋無雙的王者Peerless KingOfficial Music Video.mp3"
 
+
 func _on_button_1_pressed() -> void:
 	$ClickSound.play()
-		# 显示 A，隐藏 B
+		# show A，visibleB
 	sprite_a.visible = true
 	sprite_b.visible = false
 	sprite_c.visible = false
 	sprite_d.visible = false
+
 
 func _on_button_3_pressed() -> void:
 	$ClickSound.play()
@@ -143,13 +146,13 @@ func _on_upgrade_button_2_pressed() -> void:
 	id = 2
 	confirm.visible = true
 
+
 func _on_cancel_button_pressed() -> void:
 	get_tree().paused = false
 	$ClickSound.play()
 	id = 0 
 	print("reset")
 	confirm.visible = false
-
 
 
 
@@ -166,6 +169,7 @@ func _on_accept_button_pressed() -> void:
 
 			print("Aglio Olio")
 		id = 0
+		
 	elif id == 2:
 		if count2 < max:
 			count2 += 1
@@ -174,6 +178,7 @@ func _on_accept_button_pressed() -> void:
 				label2.text = str(text)
 				print("达到最大值")
 		id = 0
+		
 	elif id == 3:
 		if count3 < max:
 			count3 += 1
@@ -182,6 +187,7 @@ func _on_accept_button_pressed() -> void:
 				label3.text = str(text)
 			print("达到最大值")
 		id = 0
+		
 	elif id == 4:
 		if count4 < max:
 			count4 += 1
@@ -190,6 +196,7 @@ func _on_accept_button_pressed() -> void:
 				label4.text = str(text)
 			print("达到最大值")
 		id = 0
+		
 	elif id == 5:
 		if count5 < max:
 			count5 += 1
@@ -198,6 +205,7 @@ func _on_accept_button_pressed() -> void:
 				label5.text = str(text)
 			print("达到最大值")
 		id = 0
+		
 	elif id == 6:
 		if count6 < max:
 			count6 += 1
@@ -206,6 +214,7 @@ func _on_accept_button_pressed() -> void:
 				label6.text = str(text)
 			print("达到最大值")
 		id = 0
+		
 	elif id == 7:
 		if count7 < max:
 			count7 += 1
@@ -214,6 +223,7 @@ func _on_accept_button_pressed() -> void:
 				label7.text = str(text)
 			print("达到最大值")
 		id = 0
+		
 	elif id == 8:
 		if count8 < max:
 			count8 += 1
@@ -222,6 +232,7 @@ func _on_accept_button_pressed() -> void:
 				label8.text = str(text)
 			print("达到最大值")
 		id = 0
+		
 	elif id == 9:
 		if count9 < max:
 			count9 += 1
@@ -230,6 +241,7 @@ func _on_accept_button_pressed() -> void:
 				label9.text = str(text)
 			print("达到最大值")
 		id = 0
+		
 	elif id == 10:
 		if count10 < max:
 			count10 += 1
@@ -238,6 +250,7 @@ func _on_accept_button_pressed() -> void:
 				label10.text = str(text)
 			print("达到最大值")
 		id = 0
+		
 	elif id == 11:
 		if count11 < max:
 			count11 += 1
@@ -246,6 +259,7 @@ func _on_accept_button_pressed() -> void:
 				label11.text = str(text)
 			print("达到最大值")
 		id = 0
+		
 	elif id == 12:
 		if count12 < max:
 			count12 += 1
@@ -254,6 +268,7 @@ func _on_accept_button_pressed() -> void:
 				label12.text = str(text)
 			print("达到最大值")
 		id = 0
+		
 	elif id == 13:
 		if count13 < max:
 			count13 += 1
@@ -263,6 +278,7 @@ func _on_accept_button_pressed() -> void:
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
+		
 	elif id == 14:
 		if count14 < max:
 			count14 += 1
@@ -272,6 +288,7 @@ func _on_accept_button_pressed() -> void:
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
+		
 	elif id == 15:
 		if count15 < max:
 			count15 += 1
@@ -282,6 +299,7 @@ func _on_accept_button_pressed() -> void:
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
+		
 	elif id == 16:
 		if count16 < max:
 			count16 += 1
@@ -292,6 +310,7 @@ func _on_accept_button_pressed() -> void:
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
+		
 	elif id == 17:
 		if count17 < max:
 			count17 += 1
@@ -302,6 +321,7 @@ func _on_accept_button_pressed() -> void:
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
+		
 	elif id == 18:
 		if count18 < max:
 			count18 += 1
@@ -313,7 +333,6 @@ func _on_accept_button_pressed() -> void:
 		print("Bolognese")
 		id = 0
 		
-	# 🚫 只有在不是 max 的时候才关闭 confirm
 	if not lock_confirm:
 		confirm.visible = false  # 正常流程下关闭 confirm
 
@@ -341,6 +360,7 @@ func _on_beef_pressed() -> void:
 	confirm.visible = true
 	board.visible = false
 	
+	
 func _on_vege_pressed() -> void:
 	get_tree().paused = true
 	$ClickSound.play()	
@@ -352,7 +372,6 @@ func _on_vege_pressed() -> void:
 func _on_select_button_pressed() -> void:
 	$ClickSound.play()	
 	board.visible = true
-
 
 
 func save_player_data():
