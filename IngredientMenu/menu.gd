@@ -112,7 +112,7 @@ func _on_bbqs_pressed() -> void:
 	print("chili_f1")
 	inventorygui.update()
 	insert(item)
-
+ 
 
 func _on_carrot_pressed() -> void:
 	click.play()

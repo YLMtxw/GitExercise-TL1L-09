@@ -66,7 +66,64 @@ func _ready():
 	for button in $Button2.get_children():
 		if button is Button or button is TextureButton:
 			button.pressed.connect(_on_button_2_pressed)
-			
+		
+	Global.load_game(Global.current_store_name)
+
+	# Apply loaded upgrade levels to UI
+	count = Global.upgrade.get("count1", 0)
+	label.text = str(count if count < max else text)
+	
+	count2 = Global.upgrade.get("count2", 0)
+	label2.text = str(count2 if count2 < max else text)
+	
+	count3 = Global.upgrade.get("count3", 0)
+	label3.text = str(count3 if count3 < max else text)
+	
+	count4 = Global.upgrade.get("count4", 0)
+	label4.text = str(count4 if count4 < max else text)
+	
+	count5 = Global.upgrade.get("count5", 0)
+	label5.text = str(count5 if count5 < max else text)
+	
+	count6 = Global.upgrade.get("count6", 0)
+	label6.text = str(count6 if count6 < max else text)
+	
+	count7 = Global.upgrade.get("count7", 0)
+	label7.text = str(count7 if count7 < max else text)
+	
+	count8 = Global.upgrade.get("count8", 0)
+	label8.text = str(count8 if count8 < max else text)
+	
+	count9 = Global.upgrade.get("count9", 0)
+	label9.text = str(count9 if count9 < max else text)
+	
+	count10 = Global.upgrade.get("count10", 0)
+	label10.text = str(count10 if count10 < max else text)
+	
+	count11 = Global.upgrade.get("count11", 0)
+	label11.text = str(count11 if count11 < max else text)
+	
+	count12 = Global.upgrade.get("count12", 0)
+	label12.text = str(count12 if count12 < max else text)
+	
+	count13 = Global.upgrade.get("count13", 0)
+	label13.text = str(count13 if count13 < max else text)
+	
+	count14 = Global.upgrade.get("count14", 0)
+	$"photo1/blue box8/Level/Label2".text = str(count14 if count14 < max else text)
+	
+	count15 = Global.upgrade.get("count15", 0)
+	label15.text = str(count15 if count15 < max else text)
+	
+	count16 = Global.upgrade.get("count16", 0)
+	label16.text = str(count16 if count16 < max else text)
+	
+	count17 = Global.upgrade.get("count17", 0)
+	label17.text = str(count17 if count17 < max else text)
+	
+	count18 = Global.upgrade.get("count18", 0)
+	label18.text = str(count18 if count18 < max else text)
+	
 	var money = 0  # 改成你真实路径
 
 	var player_data = load_player_data()
@@ -76,45 +133,6 @@ func _ready():
 	else:
 		coin_label.text = "none"
 		
-	if Global.load_game(Global.current_store_name):
-		var upgrades = Global.player_data.upgrades
-		count = upgrades.get("count", 0)
-		count2 = upgrades.get("count2", 0)
-		count3 = upgrades.get("count3", 0)
-		count4 = upgrades.get("count4", 0)
-		count5 = upgrades.get("count5", 0)
-		count6 = upgrades.get("count6", 0)
-		count7 = upgrades.get("count7", 0)
-		count8 = upgrades.get("count8", 0)
-		count9 = upgrades.get("count9", 0)
-		count10 = upgrades.get("count10", 0)
-		count11 = upgrades.get("count11", 0)
-		count12 = upgrades.get("count12", 0)
-		count13 = upgrades.get("count13", 0)
-		count14 = upgrades.get("count14", 0)
-		count15 = upgrades.get("count15", 0)
-		count16 = upgrades.get("count16", 0)
-		count17 = upgrades.get("count17", 0)
-		count18 = upgrades.get("count18", 0)
-		
-		label.text = str(count) if count < max else text
-		label2.text = str(count2) if count2 < max else text
-		label3.text = str(count3) if count3 < max else text
-		label4.text = str(count4) if count4 < max else text
-		label5.text = str(count5) if count5 < max else text
-		label6.text = str(count6) if count6 < max else text
-		label7.text = str(count7) if count7 < max else text
-		label8.text = str(count8) if count8 < max else text
-		label9.text = str(count9) if count9 < max else text
-		label10.text = str(count10) if count10 < max else text
-		label11.text = str(count11) if count11 < max else text
-		label12.text = str(count12) if count12 < max else text
-		label13.text = str(count13) if count13 < max else text
-		label14.text = str(count14) if count14 < max else text
-		label15.text = str(count15) if count15 < max else text
-		label16.text = str(count16) if count16 < max else text
-		label17.text = str(count17) if count17 < max else text
-		label18.text = str(count18) if count18 < max else text
 		
 func load_player_data() -> PlayerData:
 	var file_path = "res://DATA/%s.json" 
@@ -128,7 +146,6 @@ func load_player_data() -> PlayerData:
 	else:
 		push_error("❌ 找不到 JSON 文件：%s" % file_path)
 	return null
-
 
 func _on_button_2_pressed() -> void:
 	$ClickSound.play()
@@ -178,7 +195,6 @@ func _on_exit_button_pressed() -> void:
 	Global.player_data = {
 		"position": player.global_position,
 	}  
-	Global.save_data()
 	get_tree().change_scene_to_file("res://playground.tscn")
 
 func _on_upgrade_button_pressed() -> void:
@@ -207,158 +223,175 @@ func _on_accept_button_pressed() -> void:
 		if count < max:
 			count += 1
 			label.text = str(count)
+			Global.upgrade["count1"] = count
+			Global.save_game(Global.current_store_name)
 			if count == 3:
 				label.text = str(text)
 				print("达到最大值")
-
-			print("Aglio Olio")
-		id = 0
 	elif id == 2:
 		if count2 < max:
 			count2 += 1
 			label2.text = str(count2)
+			Global.upgrade["count2"] = count2
+			Global.save_game(Global.current_store_name)
 			if count2 == 3:
 				label2.text = str(text)
 				print("达到最大值")
-		id = 0
 	elif id == 3:
 		if count3 < max:
 			count3 += 1
 			label3.text = str(count3)
+			Global.upgrade["count3"] = count3
+			Global.save_game(Global.current_store_name)
 			if count3 == 3:
 				label3.text = str(text)
 			print("达到最大值")
-		id = 0
 	elif id == 4:
 		if count4 < max:
 			count4 += 1
 			label4.text = str(count4)
+			Global.upgrade["count4"] = count4
+			Global.save_game(Global.current_store_name)
 			if count4 == 3:
 				label4.text = str(text)
 			print("达到最大值")
-		id = 0
 	elif id == 5:
 		if count5 < max:
 			count5 += 1
 			label5.text = str(count5)
+			Global.upgrade["count5"] = count5
+			Global.save_game(Global.current_store_name)
 			if count5 == 3:
 				label5.text = str(text)
 			print("达到最大值")
-		id = 0
 	elif id == 6:
 		if count6 < max:
 			count6 += 1
 			label6.text = str(count6)
+			Global.upgrade["count6"] = count6
+			Global.save_game(Global.current_store_name)
 			if count6 == 3:
 				label6.text = str(text)
 			print("达到最大值")
-		id = 0
 	elif id == 7:
 		if count7 < max:
 			count7 += 1
 			label7.text = str(count7)
+			Global.upgrade["count7"] = count7
+			Global.save_game(Global.current_store_name)
 			if count7 == 3:
 				label7.text = str(text)
 			print("达到最大值")
-		id = 0
 	elif id == 8:
 		if count8 < max:
 			count8 += 1
 			label8.text = str(count8)
+			Global.upgrade["count8"] = count8
+			Global.save_game(Global.current_store_name)
 			if count8 == 3:
 				label8.text = str(text)
 			print("达到最大值")
-		id = 0
 	elif id == 9:
 		if count9 < max:
 			count9 += 1
 			label9.text = str(count9)
+			Global.upgrade["count9"] = count9
+			Global.save_game(Global.current_store_name)
 			if count9 == 3:
 				label9.text = str(text)
 			print("达到最大值")
-		id = 0
 	elif id == 10:
 		if count10 < max:
 			count10 += 1
 			label10.text = str(count10)
+			Global.upgrade["count10"] = count10
+			Global.save_game(Global.current_store_name)
 			if count10 == 3:
 				label10.text = str(text)
 			print("达到最大值")
-		id = 0
 	elif id == 11:
 		if count11 < max:
 			count11 += 1
 			label11.text = str(count11)
+			Global.upgrade["count11"] = count11
+			Global.save_game(Global.current_store_name)
 			if count11 == 3:
 				label11.text = str(text)
 			print("达到最大值")
-		id = 0
 	elif id == 12:
 		if count12 < max:
 			count12 += 1
 			label12.text = str(count12)
+			Global.upgrade["count12"] = count12
+			Global.save_game(Global.current_store_name)
 			if count12 == 3:
 				label12.text = str(text)
 			print("达到最大值")
-		id = 0
 	elif id == 13:
 		if count13 < max:
 			count13 += 1
 			label13.text = str(count13)
+			Global.upgrade["count13"] = count13
+			Global.save_game(Global.current_store_name)
 			if count13 == 3:
 				label13.text = str(text)
 			print("达到最大值")
 		print("Bolognese")
-		id = 0
 	elif id == 14:
 		if count14 < max:
 			count14 += 1
 			$"photo1/blue box8/Level/Label2".text = str(count14)
+			Global.upgrade["count14"] = count14
+			Global.save_game(Global.current_store_name)
 			if count14 == 3:
 				label14.text = str(text)
 			print("达到最大值")
 		print("Bolognese")
-		id = 0
 	elif id == 15:
 		if count15 < max:
 			count15 += 1
 			label15.text = str(count15)
+			Global.upgrade["count15"] = count15
+			Global.save_game(Global.current_store_name)
 			if count15 == 3:
 				label15.text = str(text)
 				confirm.visible = true
 			print("达到最大值")
 		print("Bolognese")
-		id = 0
 	elif id == 16:
 		if count16 < max:
 			count16 += 1
 			label16.text = str(count16)
+			Global.upgrade["count16"] = count16
+			Global.save_game(Global.current_store_name)
 			if count16 == 3:
 				label16.text = str(text)
 				confirm.visible = true
 			print("达到最大值")
 		print("Bolognese")
-		id = 0
 	elif id == 17:
 		if count17 < max:
 			count17 += 1
 			label17.text = str(count17)
+			Global.upgrade["count17"] = count17
+			Global.save_game(Global.current_store_name)
 			if count17 == 3:
 				label17.text = str(text)
 				confirm.visible = true
 			print("达到最大值")
 		print("Bolognese")
-		id = 0
 	elif id == 18:
 		if count18 < max:
 			count18 += 1
 			label18.text = str(count18)
+			Global.upgrade["count18"] = count18
+			Global.save_game(Global.current_store_name)
 			if count18 == 3:
 				label18.text = str(text)
 				confirm.visible = true
 			print("达到最大值")
 		print("Bolognese")
-		id = 0
+		
 		
 	# 🚫 只有在不是 max 的时候才关闭 confirm
 	if not lock_confirm:
