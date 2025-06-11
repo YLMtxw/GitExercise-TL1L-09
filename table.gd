@@ -168,47 +168,15 @@ func _on_exit_button_pressed() -> void:
 	$ClickSound01.play()
 	await $ClickSound01.finished
 	
-	var money_display = get_node_or_null("/root/Playground/CanvasLayer/MoneyLabel")
 	var player = get_node_or_null("/root/Playground/Player_character")
-	
-	if money_display == null:
-		push_error("MoneyLabel not found at: /root/Playground/CanvasLayer/MoneyLabel")
-		get_tree().change_scene_to_file("res://playground.tscn")
-		return
 	   
 	if player == null:
 		push_error("Player_character not found at: /root/Playground/Player_character")
 		get_tree().change_scene_to_file("res://playground.tscn")
 		return
-	
-	if not money_display.has("money"):
-		push_error("MoneyLabel has no 'money' property")
-		get_tree().change_scene_to_file("res://playground.tscn")
-		return
-	
+		
 	Global.player_data = {
-		"money": money_display.money,
 		"position": player.global_position,
-		"upgrades": {
-			"count": count,
-			"count2": count2,
-			"count3": count3,
-			"count4": count4,
-			"count5": count5,
-			"count6": count6,
-			"count7": count7,
-			"count8": count8,
-			"count9": count9,
-			"count10": count10,
-			"count11": count11,
-			"count12": count12,
-			"count13": count13,
-			"count14": count14,
-			"count15": count15,
-			"count16": count16,
-			"count17": count17,
-			"count18": count18
-		}
 	}  
 	Global.save_data()
 	get_tree().change_scene_to_file("res://playground.tscn")
