@@ -54,6 +54,7 @@ var lock_confirm := false
 
 
 const PlayerData = preload("res://DATA/PlayerData.gd")
+@onready var Global = get_node("/root/Global")
 
 func _input(event):
 
@@ -74,6 +75,46 @@ func _ready():
 		coin_label.text = str(money)
 	else:
 		coin_label.text = "none"
+		
+	if Global.load_game(Global.current_store_name):
+		var upgrades = Global.player_data.upgrades
+		count = upgrades.get("count", 0)
+		count2 = upgrades.get("count2", 0)
+		count3 = upgrades.get("count3", 0)
+		count4 = upgrades.get("count4", 0)
+		count5 = upgrades.get("count5", 0)
+		count6 = upgrades.get("count6", 0)
+		count7 = upgrades.get("count7", 0)
+		count8 = upgrades.get("count8", 0)
+		count9 = upgrades.get("count9", 0)
+		count10 = upgrades.get("count10", 0)
+		count11 = upgrades.get("count11", 0)
+		count12 = upgrades.get("count12", 0)
+		count13 = upgrades.get("count13", 0)
+		count14 = upgrades.get("count14", 0)
+		count15 = upgrades.get("count15", 0)
+		count16 = upgrades.get("count16", 0)
+		count17 = upgrades.get("count17", 0)
+		count18 = upgrades.get("count18", 0)
+		
+		label.text = str(count) if count < max else text
+		label2.text = str(count2) if count2 < max else text
+		label3.text = str(count3) if count3 < max else text
+		label4.text = str(count4) if count4 < max else text
+		label5.text = str(count5) if count5 < max else text
+		label6.text = str(count6) if count6 < max else text
+		label7.text = str(count7) if count7 < max else text
+		label8.text = str(count8) if count8 < max else text
+		label9.text = str(count9) if count9 < max else text
+		label10.text = str(count10) if count10 < max else text
+		label11.text = str(count11) if count11 < max else text
+		label12.text = str(count12) if count12 < max else text
+		label13.text = str(count13) if count13 < max else text
+		label14.text = str(count14) if count14 < max else text
+		label15.text = str(count15) if count15 < max else text
+		label16.text = str(count16) if count16 < max else text
+		label17.text = str(count17) if count17 < max else text
+		label18.text = str(count18) if count18 < max else text
 		
 func load_player_data() -> PlayerData:
 	var file_path = "res://DATA/%s.json" 
@@ -97,7 +138,6 @@ func _on_button_2_pressed() -> void:
 	sprite_c.visible = false
 	sprite_d.visible = false
 	
-"res://song/G.E.M.鄧紫棋無雙的王者Peerless KingOfficial Music Video.mp3"
 
 func _on_button_1_pressed() -> void:
 	$ClickSound.play()
@@ -127,8 +167,51 @@ func _on_button_4_pressed() -> void:
 func _on_exit_button_pressed() -> void:
 	$ClickSound01.play()
 	await $ClickSound01.finished
+	
+	var money_display = get_node_or_null("/root/Playground/CanvasLayer/MoneyLabel")
+	var player = get_node_or_null("/root/Playground/Player_character")
+	
+	if money_display == null:
+		push_error("MoneyLabel not found at: /root/Playground/CanvasLayer/MoneyLabel")
+		get_tree().change_scene_to_file("res://playground.tscn")
+		return
+	   
+	if player == null:
+		push_error("Player_character not found at: /root/Playground/Player_character")
+		get_tree().change_scene_to_file("res://playground.tscn")
+		return
+	
+	if not money_display.has("money"):
+		push_error("MoneyLabel has no 'money' property")
+		get_tree().change_scene_to_file("res://playground.tscn")
+		return
+	
+	Global.player_data = {
+		"money": money_display.money,
+		"position": player.global_position,
+		"upgrades": {
+			"count": count,
+			"count2": count2,
+			"count3": count3,
+			"count4": count4,
+			"count5": count5,
+			"count6": count6,
+			"count7": count7,
+			"count8": count8,
+			"count9": count9,
+			"count10": count10,
+			"count11": count11,
+			"count12": count12,
+			"count13": count13,
+			"count14": count14,
+			"count15": count15,
+			"count16": count16,
+			"count17": count17,
+			"count18": count18
+		}
+	}  
+	Global.save_data()
 	get_tree().change_scene_to_file("res://playground.tscn")
-
 
 func _on_upgrade_button_pressed() -> void:
 	$ClickSound.play()	
@@ -262,7 +345,7 @@ func _on_accept_button_pressed() -> void:
 	elif id == 14:
 		if count14 < max:
 			count14 += 1
-			label14.text = str(count14)
+			$"photo1/blue box8/Level/Label2".text = str(count14)
 			if count14 == 3:
 				label14.text = str(text)
 			print("达到最大值")

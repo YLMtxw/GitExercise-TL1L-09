@@ -12,7 +12,8 @@ var money: int = 0
 func add_money(amount: int) -> void:
 	money += amount
 	money_label.text = str(money)
-
+	
+	
 func upgrade(amount: int) -> bool:
 	if money >= amount:
 		money -= amount

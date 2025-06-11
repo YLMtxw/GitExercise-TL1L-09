@@ -48,9 +48,9 @@ func _on_texture_button_pressed() -> void:
 	if name == \"\":
 		$Control/Label2.text = \"店名不能为空\"
 	else:
-		create_new_player(name)
+		Global.current_store_name = name          
+		Global.save_game(name)  
 		$Control/Label2.text = \"COMPLETE！\"
-		load_player_data(\"\")
 		await $ClickSound.finished
 		get_tree().change_scene_to_file(\"res://playground.tscn\")
 	
@@ -177,5 +177,5 @@ uppercase = true
 visible_characters_behavior = 1
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_line_edit_focus_exited"]
 [connection signal="focus_exited" from="Control/Shop name" to="." method="_on_shop_name_focus_exited"]
+[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_line_edit_focus_exited"]
