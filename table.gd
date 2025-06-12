@@ -191,15 +191,22 @@ func _on_exit_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://playground.tscn")
 
 func _on_upgrade_button_pressed() -> void:
-	$ClickSound.play()	
-	id = 1
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+		print("not enough money")
+	else:
+		$ClickSound.play()	
+		id = 1
+		confirm.visible = true
 
 
 func _on_upgrade_button_2_pressed() -> void:
-	$ClickSound.play()	
-	id = 2
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 2
+		confirm.visible = true
 
 func _on_cancel_button_pressed() -> void:
 	$ClickSound.play()
@@ -217,6 +224,8 @@ func _on_accept_button_pressed() -> void:
 			count += 1
 			label.text = str(count)
 			Global.upgrade["count1"] = count
+			Global.money -= 100
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count == 3:
 				label.text = str(text)
@@ -226,6 +235,8 @@ func _on_accept_button_pressed() -> void:
 			count2 += 1
 			label2.text = str(count2)
 			Global.upgrade["count2"] = count2
+			Global.money -= 100
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count2 == 3:
 				label2.text = str(text)
@@ -235,6 +246,8 @@ func _on_accept_button_pressed() -> void:
 			count3 += 1
 			label3.text = str(count3)
 			Global.upgrade["count3"] = count3
+			Global.money -= 100
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count3 == 3:
 				label3.text = str(text)
@@ -244,6 +257,8 @@ func _on_accept_button_pressed() -> void:
 			count4 += 1
 			label4.text = str(count4)
 			Global.upgrade["count4"] = count4
+			Global.money -= 200
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count4 == 3:
 				label4.text = str(text)
@@ -253,6 +268,8 @@ func _on_accept_button_pressed() -> void:
 			count5 += 1
 			label5.text = str(count5)
 			Global.upgrade["count5"] = count5
+			Global.money -= 150
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count5 == 3:
 				label5.text = str(text)
@@ -262,6 +279,8 @@ func _on_accept_button_pressed() -> void:
 			count6 += 1
 			label6.text = str(count6)
 			Global.upgrade["count6"] = count6
+			Global.money -= 150
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count6 == 3:
 				label6.text = str(text)
@@ -271,6 +290,8 @@ func _on_accept_button_pressed() -> void:
 			count7 += 1
 			label7.text = str(count7)
 			Global.upgrade["count7"] = count7
+			Global.money -= 150
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count7 == 3:
 				label7.text = str(text)
@@ -280,6 +301,8 @@ func _on_accept_button_pressed() -> void:
 			count8 += 1
 			label8.text = str(count8)
 			Global.upgrade["count8"] = count8
+			Global.money -= 150
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count8 == 3:
 				label8.text = str(text)
@@ -289,6 +312,8 @@ func _on_accept_button_pressed() -> void:
 			count9 += 1
 			label9.text = str(count9)
 			Global.upgrade["count9"] = count9
+			Global.money -= 150
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count9 == 3:
 				label9.text = str(text)
@@ -298,6 +323,8 @@ func _on_accept_button_pressed() -> void:
 			count10 += 1
 			label10.text = str(count10)
 			Global.upgrade["count10"] = count10
+			Global.money -= 150
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count10 == 3:
 				label10.text = str(text)
@@ -307,6 +334,8 @@ func _on_accept_button_pressed() -> void:
 			count11 += 1
 			label11.text = str(count11)
 			Global.upgrade["count11"] = count11
+			Global.money -= 150
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count11 == 3:
 				label11.text = str(text)
@@ -316,6 +345,8 @@ func _on_accept_button_pressed() -> void:
 			count12 += 1
 			label12.text = str(count12)
 			Global.upgrade["count12"] = count12
+			Global.money -= 150
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count12 == 3:
 				label12.text = str(text)
@@ -325,6 +356,8 @@ func _on_accept_button_pressed() -> void:
 			count13 += 1
 			label13.text = str(count13)
 			Global.upgrade["count13"] = count13
+			Global.money -= 200
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count13 == 3:
 				label13.text = str(text)
@@ -335,6 +368,8 @@ func _on_accept_button_pressed() -> void:
 			count14 += 1
 			$"photo1/blue box8/Level/Label2".text = str(count14)
 			Global.upgrade["count14"] = count14
+			Global.money -= 200
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count14 == 3:
 				label14.text = str(text)
@@ -345,6 +380,8 @@ func _on_accept_button_pressed() -> void:
 			count15 += 1
 			label15.text = str(count15)
 			Global.upgrade["count15"] = count15
+			Global.money -= 100
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count15 == 3:
 				label15.text = str(text)
@@ -356,6 +393,8 @@ func _on_accept_button_pressed() -> void:
 			count16 += 1
 			label16.text = str(count16)
 			Global.upgrade["count16"] = count16
+			Global.money -= 100
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count16 == 3:
 				label16.text = str(text)
@@ -367,6 +406,8 @@ func _on_accept_button_pressed() -> void:
 			count17 += 1
 			label17.text = str(count17)
 			Global.upgrade["count17"] = count17
+			Global.money -= 100
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count17 == 3:
 				label17.text = str(text)
@@ -378,6 +419,8 @@ func _on_accept_button_pressed() -> void:
 			count18 += 1
 			label18.text = str(count18)
 			Global.upgrade["count18"] = count18
+			Global.money -= 100
+			coin_label.text = str(Global.money)
 			Global.save_game(Global.current_store_name)
 			if count18 == 3:
 				label18.text = str(text)
@@ -392,35 +435,50 @@ func _on_accept_button_pressed() -> void:
 
 
 func _on_chicken_pressed() -> void:
-	$ClickSound.play()	
-	id = 9
-	confirm.visible = true
-	board.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 9
+		confirm.visible = true
+		board.visible = false
 
 
 func _on_lamb_pressed() -> void:
-	$ClickSound.play()	
-	id = 10
-	confirm.visible = true
-	board.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 10
+		confirm.visible = true
+		board.visible = false
 
 
 func _on_beef_pressed() -> void:
-	$ClickSound.play()	
-	id = 11
-	confirm.visible = true
-	board.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 11
+		confirm.visible = true
+		board.visible = false
 	
 func _on_vege_pressed() -> void:
-	$ClickSound.play()	
-	id = 12
-	confirm.visible = true
-	board.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 12
+		confirm.visible = true
+		board.visible = false
 
 
 func _on_select_button_pressed() -> void:
-	$ClickSound.play()	
-	board.visible = true
+	if Global.money >= 100:
+		$ClickSound.play()	
+		board.visible = true
+	else:
+		pass
 
 
 
@@ -444,66 +502,94 @@ func save_player_data():
 
 
 func _on_upgrade_button_3_pressed() -> void:
-	$ClickSound.play()	
-	id = 3
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 3
+		confirm.visible = true
 
 
 func _on_upgrade_button_4_pressed() -> void:
-	$ClickSound.play()	
-	id = 4
-	confirm.visible = true
+	if Global.money < 200:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 4
+		confirm.visible = true
 
 
 func _on_upgrade_button_5_pressed() -> void:
-	$ClickSound.play()	
-	board2.visible = true
+	if Global.money >= 150:
+		$ClickSound.play()	
+		board2.visible = true
 
 
 func _on_upgrade_button_7_pressed() -> void:
-	$ClickSound.play()	
-	id = 13
-	confirm.visible = true
+	if Global.money < 200:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 13
+		confirm.visible = true
 
 
 func _on_chicken_01_pressed() -> void:
-	$ClickSound.play()	
-	id = 5
-	confirm.visible = true
-	board2.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 5
+		confirm.visible = true
+		board2.visible = false
 
 
 func _on_lamb_01_pressed() -> void:
-	$ClickSound.play()	
-	id = 6
-	confirm.visible = true
-	board2.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 6
+		confirm.visible = true
+		board2.visible = false
 
 
 func _on_beef_01_pressed() -> void:
-	$ClickSound.play()	
-	id = 7
-	confirm.visible = true
-	board2.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 7
+		confirm.visible = true
+		board2.visible = false
 
 
 func _on_egg_mayo_01_pressed() -> void:
-	$ClickSound.play()	
-	id = 8
-	confirm.visible = true
-	board2.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 8
+		confirm.visible = true
+		board2.visible = false
 
 
 func _on_upgrade_button_8_pressed() -> void:
-	$ClickSound.play()	
-	id = 14
-	confirm.visible = true
+	if Global.money < 200:
+		id = 0
+	else:
+		$ClickSound.play()	
+		id = 14
+		confirm.visible = true
 
 
 func _on_button_sparkling_pressed() -> void:
-	$ClickSound.play()
-	id = 15
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+	else:
+		$ClickSound.play()
+		id = 15
+		confirm.visible = true
 
 
 func _on_wrong_pressed() -> void:
@@ -515,18 +601,27 @@ func _on_coming_soon_pressed() -> void:
 
 
 func _on_button_sprite_pressed() -> void:
-	$ClickSound.play()
-	id = 16
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+	else:
+		$ClickSound.play()
+		id = 16
+		confirm.visible = true
 
 
 func _on_plus_pressed() -> void:
-	$ClickSound.play()
-	id = 17
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+	else:
+		$ClickSound.play()
+		id = 17
+		confirm.visible = true
 
 
 func _on_coke_pressed() -> void:
-	$ClickSound.play()
-	id = 18
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+	else:
+		$ClickSound.play()
+		id = 18
+		confirm.visible = true

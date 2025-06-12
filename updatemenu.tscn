@@ -655,7 +655,6 @@ scale = Vector2(0.125, 0.13)
 texture_normal = ExtResource("3_k1gfb")
 
 [node name="photo2" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(308, 147)
 scale = Vector2(0.886, 0.904)
 texture = ExtResource("5_ax1vu")
@@ -1294,13 +1293,9 @@ volume_db = 24.0
 [connection signal="pressed" from="CanvasLayer/burger board/Label3/beef" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label4/vege" to="." method="_on_vege_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_chicken_01_pressed"]
-[connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/sandwich/Lamb Sand/lamb 01" to="." method="_on_lamb_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Lamb Sand/lamb 01" to="." method="_on_lamb_01_pressed"]
-[connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_01_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/EGG MAYO/egg mayo 01" to="." method="_on_egg_mayo_01_pressed"]
-[connection signal="pressed" from="CanvasLayer/sandwich/EGG MAYO/egg mayo 01" to="." method="_on_vege_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_cancel_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/accept button" to="." method="_on_accept_button_pressed"]
