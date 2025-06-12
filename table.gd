@@ -124,14 +124,7 @@ func _ready():
 	count18 = Global.upgrade.get("count18", 0)
 	label18.text = str(count18 if count18 < max else text)
 	
-	var money = 0  # 改成你真实路径
-
-	var player_data = load_player_data()
-	if player_data:
-		money = player_data.money
-		coin_label.text = str(money)
-	else:
-		coin_label.text = "none"
+	coin_label.text = str(Global.money)
 		
 		
 func load_player_data() -> PlayerData:
