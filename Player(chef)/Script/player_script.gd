@@ -5,8 +5,10 @@ const run_speed : int = 225
 #vector2 contain 2 num, x and y
 var direction : Vector2 = Vector2.ZERO
 var store_direction : Vector2 = Vector2.DOWN
+var npc_at_counter: bool = false
+var npc_node_at_counter: Node = null
 @onready var animation = $AnimationPlayer
-@onready var tilemap = $"../TileMapLayer3"
+@onready var tilemap = get_node("../TileMapLayer3")
 @onready var menuOpen = get_node("/root/Playground/CanvasLayer/menu")
 @onready var menuOpen2 = get_node("/root/Playground/CanvasLayer/menu2")
 @onready var refriOpen = get_node("/root/Playground/CanvasLayer/refri")
@@ -19,7 +21,6 @@ var store_direction : Vector2 = Vector2.DOWN
 @export var inventory : Inventory
 @export var slots : iSlot
 @onready var paycheckmenu = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/total label/Total")
-@onready var counter_marker: Marker2D = $"../CounterMarker"
 
 const MAX_INTERACT_DISTANCE = 32.0  # Or any value that feels right
 const source = 0
@@ -40,9 +41,20 @@ const k1_coord = Vector2i(13,39)
 const k2_coord = Vector2i(14,40)
 const k3_coord = Vector2i(13,40)
 const k4_coord = Vector2i(14,39)
+const COUNTER_POSITION1 = Vector2i(9,14)
+const COUNTER_POSITION2 = Vector2i(10,14)
+const source3 =3
+const npc_pos = Vector2i(4,8)
+func _ready():
+	# Assuming NPCs are in group "npcs"
+	var npcs = get_tree().get_nodes_in_group("npcs")
+	for npc in npcs:
+		npc.connect("at_counter", Callable(self, "_on_npc_at_counter").bind(npc))
+		npc.connect("left_counter", Callable(self, "_on_npc_left_counter").bind(npc))
 
 func is_near_counter() -> bool:
-	return global_position.distance_to(counter_marker.global_position) <= MAX_INTERACT_DISTANCE
+	var current_tile = tilemap.local_to_map(global_position)
+	return current_tile == COUNTER_POSITION1 or current_tile == COUNTER_POSITION2
 
 func _process(delta):
 	if menuOpen.Mopen():
@@ -101,13 +113,6 @@ func is_near() -> String:
 			return "bm"
 	return ""
 	
-var near_npc_counter = false
-
-func _on_npc_counter_player_entered():
-	near_npc_counter = true
-
-func _on_npc_counter_player_exited():
-	near_npc_counter = false
 
 func is_on() -> String :
 	var offset = Vector2i(0,0)
@@ -122,6 +127,8 @@ func is_on() -> String :
 		return "3"
 	if source_id == source and coords == k4_coord:
 		return "4"
+	if source_id == source and (coords == COUNTER_POSITION1 or coords == COUNTER_POSITION2):
+		return "5"
 	return ""
 
 func UpdateAction():
@@ -160,6 +167,8 @@ func _physics_process( delta ):
 	velocity = direction * current_speed
 	move_and_slide()
 	UpdateAction()
+	var player_tile = tilemap.local_to_map(global_position)
+	print("Player atlas coord:", player_tile)
 	
 func get_selected_inventory_item():
 	var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
@@ -194,14 +203,28 @@ func _input(event):
 				print("bin")
 			"bm": print("bm")
 			
-	if Input.is_action_just_pressed("give"):
-		if is_near_counter():  # Already in your player script
-			var npcs = get_tree().get_nodes_in_group("npcs")
-			var counter_pos = counter_marker.global_position
-			var npc_at_counter = null
-			for npc in npcs:
-				if npc.is_near_counter():
-					npc_at_counter = npc
-					break
-			if npc_at_counter:
-				npc_at_counter.move_to_seat()
+	if event.is_action_pressed("serve"):
+		var current_tile = tilemap.local_to_map(global_position)
+		print("Current player tile atlas coord:", current_tile)
+		if (current_tile == COUNTER_POSITION1 or current_tile == COUNTER_POSITION2) and npc_at_counter and npc_node_at_counter:
+			npc_node_at_counter.move_to_seat()
+			print("Served NPC at counter")
+		else:
+			print("Cannot serve: not on counter tile or no NPC at counter")
+				
+func _on_npc_at_counter(npc):
+	npc_at_counter = true
+	npc_node_at_counter = npc
+
+func _on_npc_left_counter(npc):
+	if npc_node_at_counter == npc:
+		npc_at_counter = false
+		npc_node_at_counter = null
+
+func is_on_interact_tile() -> bool:
+	var allowed_tiles = [
+		Vector2i(5, 43),
+		Vector2i(6, 43)
+	]
+	var player_tile = tilemap.local_to_map(global_position)
+	return player_tile in allowed_tiles

@@ -5,6 +5,7 @@ extends Node2D
 @onready var counter_marker: Marker2D = $CounterPoint
 @onready var spawn_marker: Marker2D = $SpawnPoint
 @onready var order_manager = $OrderManager  # Adjust path if needed
+@onready var player: CharacterBody2D = $"../../Player_character"
 
 var assigned_seats := {}
 var waiting_npc: CharacterBody2D = null
@@ -41,9 +42,13 @@ func try_spawn_npc():
 			waiting_npc = npc
 			can_spawn = false
 
-			# Connect signals
+			# Connect signals for spawner logic
 			npc.npc_left.connect(_on_npc_left)
 			npc.started_moving_to_seat.connect(_on_npc_started_moving)
+
+			# Connect signals for PLAYER logic (so player gets notified)
+			npc.at_counter.connect(player._on_npc_at_counter.bind(npc))
+			npc.left_counter.connect(player._on_npc_left_counter.bind(npc))
 
 			get_tree().current_scene.add_child(npc)
 			return
@@ -59,3 +64,11 @@ func _on_npc_started_moving():
 
 func _on_npc_left(seat):
 	assigned_seats.erase(seat)
+
+
+func _on_counter_area_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_counter_area_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

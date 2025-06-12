@@ -1,9 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://jab4cnh7batx"]
+[gd_scene load_steps=21 format=3 uid="uid://jab4cnh7batx"]
 
 [ext_resource type="Script" uid="uid://jlppjd4u51dh" path="res://body.gd" id="1_f7vnm"]
 [ext_resource type="Texture2D" uid="uid://co3yn6oj054oa" path="res://walk.png" id="2_f7vnm"]
 [ext_resource type="Texture2D" uid="uid://c4opwjfxnas8t" path="res://idle.png" id="2_i8u8t"]
-[ext_resource type="PackedScene" uid="uid://bm6xj073wce2i" path="res://npc_counter_area.tscn" id="4_w27f0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ne2x"]
 atlas = ExtResource("2_i8u8t")
@@ -126,9 +125,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_i8u8t"]
 radius = 5.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_357jt"]
-radius = 40.05
-
 [node name="NPC" type="CharacterBody2D" groups=["npcs"]]
 y_sort_enabled = true
 script = ExtResource("1_f7vnm")
@@ -166,8 +162,3 @@ scale = Vector2(0.635, 0.635)
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-
-[node name="InteractionArea" parent="." groups=["npcs"] instance=ExtResource("4_w27f0")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-shape = SubResource("CircleShape2D_357jt")

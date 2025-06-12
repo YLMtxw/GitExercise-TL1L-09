@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 signal npc_left(seat: Node2D)
 signal started_moving_to_seat
+signal at_counter
+signal left_counter
 
 @export var speed := 100
 
@@ -17,6 +19,7 @@ var seated: bool = false
 var waiting_at_counter: bool = true
 var has_shown_text: bool = false
 var order_recipe_name : String = ""
+var at_counter_flag := false
 
 func _ready():
 	leave_timer.timeout.connect(_on_leave_timer_timeout)
@@ -30,6 +33,8 @@ func _ready():
 func move_to_seat():
 	if target_seat:
 		waiting_at_counter = false
+		at_counter_flag = false
+		emit_signal("left_counter")
 		agent.target_position = target_seat.global_position
 		emit_signal("started_moving_to_seat")
 		_play_walk_animation()
@@ -68,7 +73,11 @@ func _physics_process(_delta):
 		move_and_slide()
 		_play_idle_animation()
 		leave_timer.start()
-
+	if waiting_at_counter and not at_counter_flag:
+		# NPC has just arrived at counter
+		at_counter_flag = true
+		emit_signal("at_counter")
+		
 func _on_leave_timer_timeout():
 	if target_seat:
 		target_seat.occupied = false
@@ -93,13 +102,4 @@ func _hide_speech():
 	speech_label.visible = false
 
 func is_near_counter() -> bool:
-	return global_position.distance_to(counter_position) < agent.target_desired_distance
-
-# ================================
-# ✅ NEW: Static method to check NPC proximity to counter
-# ================================
-static func get_npc_at_counter(all_npcs: Array, counter_pos: Vector2, threshold: float = 32.0) -> Node:
-	for npc in all_npcs:
-		if npc.waiting_at_counter and npc.global_position.distance_to(counter_pos) <= threshold:
-			return npc
-	return null
+	return position.distance_to(counter_position) < 32

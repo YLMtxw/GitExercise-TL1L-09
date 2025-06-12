@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bmlcjik7mnbd1"]
+[gd_scene load_steps=42 format=4 uid="uid://bmlcjik7mnbd1"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Texture2D" uid="uid://cujpni7aqak6q" path="res://Restaurant_map/restaurant_sprite/kitchen16_tan.png" id="2_is3ju"]
@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://cxswasa6cflkc" path="res://CLayer/sprite/frame.png" id="20_vnugj"]
 [ext_resource type="Texture2D" uid="uid://u2qomjwlkjt3" path="res://CLayer/sprite/paycheck label.png" id="21_2yo0f"]
 [ext_resource type="PackedScene" uid="uid://dg4k48y46momn" path="res://compile_seat.tscn" id="23_snn6g"]
-[ext_resource type="PackedScene" uid="uid://bm6xj073wce2i" path="res://npc_counter_area.tscn" id="27_ofol1"]
 [ext_resource type="Script" uid="uid://ccewg1iool6ij" path="res://spawner.gd" id="29_lraom"]
 [ext_resource type="PackedScene" uid="uid://jab4cnh7batx" path="res://npc1.tscn" id="30_g64nf"]
 
@@ -1057,8 +1056,8 @@ vertices = PackedVector2Array(386, 56.2031, 386, 8.84375, 463.797, 51.2813, 443,
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(19, 20, 21, 22, 23), PackedInt32Array(22, 24, 25, 26), PackedInt32Array(23, 27, 28, 9, 19), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(33, 34, 35, 36), PackedInt32Array(2, 6, 11, 36, 3), PackedInt32Array(36, 11, 14, 33), PackedInt32Array(33, 14, 15, 32), PackedInt32Array(32, 15, 18, 29), PackedInt32Array(29, 18, 10, 28), PackedInt32Array(28, 10, 9), PackedInt32Array(23, 22, 26)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(136, 256, 136, 360, 560, 360, 560, 272, 512, 272, 512, 256, 560, 256.371, 560, -8, 464, 40, 376, -8, 376, 256, 376, 288, 336, 288, 336, 256)])
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ofol1"]
-radius = 24.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_3i8ot"]
+radius = 16.0
 
 [node name="Playground" type="Node2D"]
 
@@ -1317,17 +1316,14 @@ autostart = true
 [node name="CounterPoint" type="Marker2D" parent="NavigationRegion2D/Spawner"]
 position = Vector2(160, 272)
 
+[node name="CounterArea" type="Area2D" parent="NavigationRegion2D/Spawner/CounterPoint"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Spawner/CounterPoint/CounterArea"]
+shape = SubResource("CircleShape2D_3i8ot")
+
 [node name="SpawnPoint" type="Marker2D" parent="NavigationRegion2D/Spawner"]
 position = Vector2(160, 336)
 
-[node name="CounterMarker" type="Marker2D" parent="."]
-position = Vector2(88, 232)
-
-[node name="NpcCounterArea" parent="." instance=ExtResource("27_ofol1")]
-position = Vector2(160, 232)
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NpcCounterArea"]
-shape = SubResource("CircleShape2D_ofol1")
-
 [connection signal="pressed" from="CanvasLayer/closeButton" to="CanvasLayer" method="_on_close_button_pressed"]
+[connection signal="body_entered" from="NavigationRegion2D/Spawner/CounterPoint/CounterArea" to="NavigationRegion2D/Spawner" method="_on_counter_area_body_entered"]
+[connection signal="body_exited" from="NavigationRegion2D/Spawner/CounterPoint/CounterArea" to="NavigationRegion2D/Spawner" method="_on_counter_area_body_exited"]
