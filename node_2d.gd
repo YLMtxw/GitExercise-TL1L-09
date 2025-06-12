@@ -37,7 +37,14 @@ func _on_tutorial_button_pressed() -> void:
 func _on_start_button_2_pressed() -> void:
 	$ClickSound.play()
 	await $ClickSound.finished
-	get_tree().change_scene_to_file("res://PlayerInfo.tscn")
+	if FileAccess.file_exists("user://profile.json"):
+		print("✅ 检测到已存在玩家资料，直接跳转主游戏")
+		get_tree().change_scene_to_file("res://playground.tscn")
+	else:
+		print("🆕 第一次启动游戏，进入创建资料页面")
+		get_tree().change_scene_to_file("res://PlayerInfo.tscn")
+
+
 
 
 func _on_setting_button_pressed() -> void:

@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmhla7sag35as"]
+[gd_scene load_steps=11 format=3 uid="uid://bmhla7sag35as"]
 
 [ext_resource type="Texture2D" uid="uid://bkdo3b5s7g4ev" path="res://photo/sky.png" id="1_4hy44"]
 [ext_resource type="Script" uid="uid://bw6wjv8uyovkw" path="res://menu.gd" id="1_ytr4m"]
-[ext_resource type="PackedScene" uid="uid://bfq2apfhur3sl" path="res://menu2.tscn" id="2_dwrpx"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_nrnbx"]
 [ext_resource type="Texture2D" uid="uid://b4xetlk7ar7gw" path="res://photo/WhatsApp_图像2025-05-14于00.15.21_e46d42ba-removebg-preview.png" id="2_ytr4m"]
 [ext_resource type="Texture2D" uid="uid://b3yi6o0n0usrt" path="res://photo/WhatsApp_图像2025-05-14于00.15.20_db979e95-removebg-preview.png" id="3_l48gv"]
@@ -15,11 +14,9 @@
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_ytr4m")
 
-[node name="Menu2" parent="." instance=ExtResource("2_dwrpx")]
-
 [node name="Sky" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(287, 180.373)
+position = Vector2(289, 171)
 scale = Vector2(1.02857, 1.11715)
 texture = ExtResource("1_4hy44")
 
@@ -223,3 +220,4 @@ stream = ExtResource("2_nrnbx")
 volume_db = 10.0
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

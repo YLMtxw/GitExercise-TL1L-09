@@ -54,7 +54,7 @@ var text : String = "max"
 var lock_confirm := false
 
 
-const PlayerData = preload("res://DATA/PlayerData.gd")
+const PlayerData = preload("user://H.json")
 @onready var Global = get_node("/root/Global")
 
 func _input(event):
@@ -71,11 +71,6 @@ func _ready():
 	var money = 0  # 改成你真实路径
 
 	var player_data = load_player_data()
-	if player_data:
-		money = player_data.money
-		coin_label.text = str(money)
-	else:
-		coin_label.text = "none"
 		
 	if Global.load_game(Global.current_store_name):
 		var upgrades = Global.player_data.upgrades
@@ -117,13 +112,12 @@ func _ready():
 		label17.text = str(count17) if count17 < max else text
 		label18.text = str(count18) if count18 < max else text
 		
-func load_player_data() -> PlayerData:
-	var file_path = "res://DATA/%s.json" 
+func load_player_data() -> Object:
+	var file_path = "user://profile.json" 
 	if FileAccess.file_exists(file_path):
 		var json_string = FileAccess.get_file_as_string(file_path)
-		var player_data = JsonClassConverter.json_string_to_class(PlayerData, json_string)
-		if player_data != null:
-			return player_data
+		if PlayerData != null:
+			return PlayerData
 		else:
 			push_error("❌ 无法解析 JSON 数据。")
 	else:

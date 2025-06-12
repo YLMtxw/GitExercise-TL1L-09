@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://jjtkcedp5hyj"]
+[gd_scene load_steps=52 format=3 uid="uid://jjtkcedp5hyj"]
 
 [ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_eupx0"]
@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://dt5ewslwai5la" path="res://photo/cooked 01.png" id="42_rpnmw"]
 [ext_resource type="Texture2D" uid="uid://bqstpvyioyupd" path="res://photo/chatbox-removebg-preview.png" id="43_3hp0w"]
 [ext_resource type="Script" uid="uid://d1x6tcqwop57s" path="res://money_box.gd" id="43_cvh4x"]
+[ext_resource type="Texture2D" uid="uid://rvs2g47puntu" path="res://photo/water_fountain.png" id="43_rpnmw"]
 [ext_resource type="Script" uid="uid://fwycxljunopo" path="res://coin_label.gd" id="44_313i5"]
 [ext_resource type="AudioStream" uid="uid://b8etp3s1kt86j" path="res://song/wrong-answer-126515.mp3" id="46_cvh4x"]
 
@@ -326,12 +327,14 @@ offset_right = -46.6886
 offset_bottom = -82.1172
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Level :"
+metadata/_edit_use_anchors_ = true
 
 [node name="upgrade button 5" type="TextureButton" parent="photo1/blue box5"]
 offset_left = -90.9364
 offset_top = -108.121
 offset_right = 91.0636
 offset_bottom = 110.879
+metadata/_edit_use_anchors_ = true
 
 [node name="Sandwich-removebg-preview" type="Sprite2D" parent="photo1/blue box5"]
 position = Vector2(0.00100136, 39.0437)
@@ -347,6 +350,7 @@ scale = Vector2(1.5, 1.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "SANDWICH"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="photo1/blue box5"]
 offset_left = -29.2289
@@ -357,6 +361,7 @@ theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "0"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="photo1/blue box5/Label"]
 layout_mode = 0
@@ -366,6 +371,7 @@ offset_bottom = 23.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "CHIC"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="photo1/blue box5"]
 offset_left = -29.2288
@@ -376,6 +382,7 @@ theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "0"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="photo1/blue box5/Label2"]
 layout_mode = 0
@@ -386,6 +393,7 @@ offset_bottom = 39.0268
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "BEEF"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="photo1/blue box5"]
 offset_left = -29.2288
@@ -396,6 +404,7 @@ theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "0"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="photo1/blue box5/Label3"]
 layout_mode = 0
@@ -406,6 +415,7 @@ offset_bottom = -9.02682
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "LAMB"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="photo1/blue box5"]
 offset_left = -29.2289
@@ -416,6 +426,7 @@ theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "0"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="photo1/blue box5/Label4"]
 layout_mode = 0
@@ -425,6 +436,7 @@ offset_bottom = 23.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "EGG"
+metadata/_edit_use_anchors_ = true
 
 [node name="blue box6" type="Sprite2D" parent="photo1"]
 position = Vector2(44.0097, 57.5221)
@@ -1232,6 +1244,15 @@ position = Vector2(247, 48)
 scale = Vector2(0.2125, 0.128968)
 texture = ExtResource("22_30naw")
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+
+[node name="water fountain" type="Sprite2D" parent="CanvasLayer"]
+
+[node name="WaterFountain" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(291, 47)
+scale = Vector2(0.068, 0.052)
+texture = ExtResource("43_rpnmw")
+
 [node name="MoneyBox" type="Sprite2D" parent="."]
 position = Vector2(451, 253)
 scale = Vector2(0.218487, 0.141753)
@@ -1252,6 +1273,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 60
 script = ExtResource("44_313i5")
+metadata/_edit_use_anchors_ = true
 
 [node name="Cooked01" type="Sprite2D" parent="."]
 position = Vector2(109, 215)
