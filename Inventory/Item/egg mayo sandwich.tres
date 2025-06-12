@@ -7,4 +7,5 @@
 script = ExtResource("1_ixo3n")
 name = "egg mayo sandwich"
 texture = ExtResource("2_8wiat")
+price = 10
 metadata/_custom_type_script = "uid://c2jevq51ijiin"
