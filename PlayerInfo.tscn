@@ -52,6 +52,7 @@ offset_top = 158.0
 offset_right = 454.0
 offset_bottom = 178.0
 scale = Vector2(2, 2)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_8ex5c")
 texture_pressed = ExtResource("4_34t3e")
 

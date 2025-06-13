@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://jjtkcedp5hyj"]
+[gd_scene load_steps=62 format=3 uid="uid://jjtkcedp5hyj"]
 
 [ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_eupx0"]
@@ -38,9 +38,18 @@
 [ext_resource type="Texture2D" uid="uid://tobikanm2drg" path="res://photo/cancel hover.png" id="29_uv10y"]
 [ext_resource type="Texture2D" uid="uid://i5iwv38djvqf" path="res://photo/accept.png" id="30_afstm"]
 [ext_resource type="Texture2D" uid="uid://iscppd8e1cp0" path="res://photo/accept pressed.png" id="31_ologc"]
+[ext_resource type="Texture2D" uid="uid://bup63qirancjl" path="res://photo/cactus.png" id="31_rkwh0"]
 [ext_resource type="Texture2D" uid="uid://bl81ya34pa2bq" path="res://photo/accept hover.png" id="32_cy34d"]
+[ext_resource type="Texture2D" uid="uid://c3n6eh7lobgqh" path="res://photo/cactus lock.jpg" id="32_nt5q0"]
+[ext_resource type="Texture2D" uid="uid://d2kr5yuri0qm5" path="res://photo/pot_shell.png" id="33_ah72k"]
+[ext_resource type="Texture2D" uid="uid://chiv0nef2dd1o" path="res://photo/padlock-removebg-preview.png" id="33_uxvje"]
+[ext_resource type="Texture2D" uid="uid://cjlxldy7cwqad" path="res://photo/bin-removebg-preview.png" id="34_by4wh"]
 [ext_resource type="Texture2D" uid="uid://de81fljuplytx" path="res://photo/paper.png" id="35_wcm3e"]
 [ext_resource type="AudioStream" uid="uid://cqn1vk21dnclo" path="res://song/jazz-background-music-325355.mp3" id="36_gqinc"]
+[ext_resource type="Texture2D" uid="uid://mkerffylv5sm" path="res://photo/signboard-removebg-preview.png" id="37_02g0u"]
+[ext_resource type="Texture2D" uid="uid://dm7ldkjrpllsj" path="res://photo/plant pot lock.jpg" id="37_lfxla"]
+[ext_resource type="Texture2D" uid="uid://ciqh3araxi03o" path="res://photo/water fountain lock.jpg" id="38_lfxla"]
+[ext_resource type="Texture2D" uid="uid://dhlajgf7dscoc" path="res://photo/bin lock.jpg" id="39_qrdaw"]
 [ext_resource type="Texture2D" uid="uid://bse38qb3812rg" path="res://photo/money_box-removebg-preview.png" id="40_7p0w4"]
 [ext_resource type="Texture2D" uid="uid://bue5c4maub8v2" path="res://MoneyLabel/MLabel_Sprites/Money.png" id="41_2ta2v"]
 [ext_resource type="Texture2D" uid="uid://dt5ewslwai5la" path="res://photo/cooked 01.png" id="42_rpnmw"]
@@ -49,6 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://rvs2g47puntu" path="res://photo/water_fountain.png" id="43_rpnmw"]
 [ext_resource type="Script" uid="uid://fwycxljunopo" path="res://coin_label.gd" id="44_313i5"]
 [ext_resource type="AudioStream" uid="uid://b8etp3s1kt86j" path="res://song/wrong-answer-126515.mp3" id="46_cvh4x"]
+[ext_resource type="Texture2D" uid="uid://rba0np5jsl4e" path="res://photo/cant_pressed.png" id="59_slmgn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cvh4x"]
 line_spacing = 7.0
@@ -145,6 +155,7 @@ texture_normal = ExtResource("3_k1gfb")
 stretch_mode = 0
 
 [node name="photo1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(306, 146)
 scale = Vector2(0.886168, 0.904)
 texture = ExtResource("4_0whe8")
@@ -1005,23 +1016,180 @@ scale = Vector2(0.125, 0.13)
 texture_normal = ExtResource("3_k1gfb")
 
 [node name="photo3" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(307, 146)
 scale = Vector2(0.886, 0.904)
 texture = ExtResource("6_8snal")
 
-[node name="Label" type="Label" parent="photo3"]
-offset_left = -68.8488
-offset_top = -15.4867
-offset_right = 122.151
-offset_bottom = 61.5133
-theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+[node name="box 1" type="Sprite2D" parent="photo3"]
+position = Vector2(-106.095, -44.2478)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Cactus" type="Sprite2D" parent="photo3/box 1"]
+position = Vector2(7.62939e-06, -25.8997)
+scale = Vector2(0.346256, 0.309051)
+texture = ExtResource("31_rkwh0")
+
+[node name="Label" type="Label" parent="photo3/box 1"]
+offset_left = -69.184
+offset_top = 48.5095
+offset_right = 72.816
+offset_bottom = 85.5096
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
-theme_override_font_sizes/font_size = 40
-text = "COMING
-SOON"
+theme_override_font_sizes/font_size = 32
+text = "Cactus"
+
+[node name="CactusLock" type="Sprite2D" parent="photo3/box 1"]
+position = Vector2(-1.50403, 1.42673)
+scale = Vector2(0.669664, 0.624204)
+texture = ExtResource("32_nt5q0")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/box 1/CactusLock"]
+position = Vector2(2.24597, -2.28571)
+scale = Vector2(0.399439, 0.292359)
+texture = ExtResource("33_uxvje")
+
+[node name="box 2" type="Sprite2D" parent="photo3"]
+position = Vector2(-106.095, 45.354)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="WaterFountain" type="Sprite2D" parent="photo3/box 2"]
+position = Vector2(-1.14441e-05, -25.6815)
+scale = Vector2(0.347424, 0.27679)
+texture = ExtResource("43_rpnmw")
+
+[node name="Label" type="Label" parent="photo3/box 2"]
+offset_left = -78.208
+offset_top = 42.8025
+offset_right = 79.792
+offset_bottom = 91.8025
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "Water 
+Fountain"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaterFountainLock" type="Sprite2D" parent="photo3/box 2"]
+position = Vector2(-1.87695, 0)
+scale = Vector2(0.67733, 0.63231)
+texture = ExtResource("38_lfxla")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/box 2/WaterFountainLock"]
+position = Vector2(2.77112, -40.6154)
+scale = Vector2(0.397066, 0.288358)
+texture = ExtResource("33_uxvje")
+
+[node name="box 3" type="Sprite2D" parent="photo3"]
+position = Vector2(-30.474, -44.2478)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Label" type="Label" parent="photo3/box 3"]
+offset_left = -81.216
+offset_top = 54.2166
+offset_right = 77.784
+offset_bottom = 77.2166
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "Plant Pot"
+
+[node name="PotShell" type="Sprite2D" parent="photo3/box 3"]
+position = Vector2(-1.21593e-05, -22.828)
+scale = Vector2(0.283088, 0.261414)
+texture = ExtResource("33_ah72k")
+
+[node name="PlantPotLock" type="Sprite2D" parent="photo3/box 3"]
+position = Vector2(-0.706055, 0.570709)
+scale = Vector2(0.688309, 0.632662)
+texture = ExtResource("37_lfxla")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/box 3/PlantPotLock"]
+position = Vector2(-3.34446, -0.902077)
+scale = Vector2(0.399439, 0.292359)
+texture = ExtResource("33_uxvje")
+
+[node name="box 4" type="Sprite2D" parent="photo3"]
+position = Vector2(-30.474, 45.354)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Bin-removebg-preview" type="Sprite2D" parent="photo3/box 4"]
+position = Vector2(3.91006e-05, -22.828)
+scale = Vector2(0.301424, 0.287548)
+texture = ExtResource("34_by4wh")
+
+[node name="Label" type="Label" parent="photo3/box 4"]
+offset_left = -36.096
+offset_top = 45.656
+offset_right = 41.904
+offset_bottom = 77.6561
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "Bin"
+
+[node name="BinLock" type="Sprite2D" parent="photo3/box 4"]
+position = Vector2(1.52588e-05, 4.76837e-06)
+scale = Vector2(0.95492, 0.927388)
+texture = ExtResource("39_qrdaw")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/box 4/BinLock"]
+position = Vector2(-3.15003, -27.6923)
+scale = Vector2(0.305859, 0.208341)
+texture = ExtResource("33_uxvje")
+
+[node name="box 5" type="Sprite2D" parent="photo3"]
+position = Vector2(45.1467, -44.2478)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Signboard-removebg-preview" type="Sprite2D" parent="photo3/box 5"]
+position = Vector2(5.72205e-06, -16.2464)
+scale = Vector2(0.259378, 0.236669)
+texture = ExtResource("37_02g0u")
+
+[node name="Label" type="Label" parent="photo3/box 5"]
+offset_left = -66.176
+offset_top = 54.2166
+offset_right = 69.824
+offset_bottom = 77.2166
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 20
+text = "Signboard"
+
+[node name="box 6" type="Sprite2D" parent="photo3"]
+position = Vector2(45.1467, 45.354)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="box 7" type="Sprite2D" parent="photo3"]
+position = Vector2(120.767, -44.2478)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="box 8" type="Sprite2D" parent="photo3"]
+position = Vector2(120.767, 45.354)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="photo3"]
+
+[node name="TextureButton" type="TextureButton" parent="photo3/CanvasLayer"]
+offset_left = 183.0
+offset_top = 73.0
+offset_right = 244.0
+offset_bottom = 150.0
 
 [node name="button4" type="TextureButton" parent="."]
 layout_mode = 0
@@ -1283,6 +1451,11 @@ texture = ExtResource("42_rpnmw")
 [node name="max sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("46_cvh4x")
 volume_db = 24.0
+
+[node name="CantPressed" type="Sprite2D" parent="."]
+position = Vector2(334.25, 43.25)
+scale = Vector2(3.76667, 2.73077)
+texture = ExtResource("59_slmgn")
 
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="photo1/blue box/upgrade button" to="." method="_on_upgrade_button_pressed"]
