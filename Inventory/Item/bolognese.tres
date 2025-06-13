@@ -7,4 +7,5 @@
 script = ExtResource("1_n5m51")
 name = "bolognese"
 texture = ExtResource("2_vewfe")
+price = 20
 metadata/_custom_type_script = "uid://c2jevq51ijiin"

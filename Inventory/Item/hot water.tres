@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cp4f5ltrlkwff"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_wvpa2"]
+[ext_resource type="Texture2D" uid="uid://ddbxm6f5ymv4g" path="res://IngredientMenu/Ingredient_Sprite/water-h.png" id="2_htubp"]
+
+[resource]
+script = ExtResource("1_wvpa2")
+name = "hot water"
+texture = ExtResource("2_htubp")
+price = 5
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

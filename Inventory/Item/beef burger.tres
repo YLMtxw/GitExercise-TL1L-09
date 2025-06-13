@@ -7,4 +7,5 @@
 script = ExtResource("1_ms7km")
 name = "beef burger"
 texture = ExtResource("2_w5o8m")
+price = 15
 metadata/_custom_type_script = "uid://c2jevq51ijiin"

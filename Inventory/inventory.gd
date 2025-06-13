@@ -24,3 +24,9 @@ func remove_item(item: InventoryItem, amount: int = 1):
 				slot.itemNum = 0
 			updated.emit()
 			return
+
+func clear():
+	for slot in slots:
+		slot.item = null
+		slot.itemNum = 0
+	updated.emit()
