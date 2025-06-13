@@ -92,6 +92,7 @@ theme_override_font_sizes/font_size = 14
 text = "Resume :"
 
 [node name="button resume" type="TextureButton" parent="Setting/Resume"]
+layout_mode = 0
 offset_left = 96.0
 offset_top = -12.0
 offset_right = 110.0

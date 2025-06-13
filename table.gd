@@ -8,7 +8,9 @@ extends Control
 @onready var board = $"CanvasLayer/burger board"
 @onready var board2 = $CanvasLayer/sandwich
 @onready var level =  $"photo1/blue box/level2"
-@onready var coin_label = $"MoneyBox/Coin_Label"  
+@onready var coin_label = $"MoneyBox/Coin_Label"
+
+  
 @onready var label = $"photo1/blue box/Label"
 @onready var label2 = $"photo1/blue box2/Label 2"
 @onready var label3 = $"photo1/blue box3/Label"
@@ -27,6 +29,18 @@ extends Control
 @onready var label16 = $"photo2/blue box2/Level/Label2"
 @onready var label17 = $"photo2/blue box3/Level/Label2"
 @onready var label18 = $"photo2/blue box4/Level/Label2"
+@onready var label19 = $"photo3/box 1"
+@onready var label20 = $"photo3/box 2"
+@onready var label21 = $"photo3/box 3"
+@onready var label22 = $"photo3/box 4"
+@onready var label23 = $"photo3/box 5"
+
+
+@onready var lock19 = $photo3/CactusLock
+@onready var lock20 = $photo3/aterFountainLock
+@onready var lock21 = $photo3/PlantPotLock
+@onready var lock22 = $photo3/BinLock
+@onready var lock23 = $photo3/SignboardLock
 
 
 var id = 0
@@ -54,7 +68,7 @@ var text : String = "max"
 var lock_confirm := false
 
 
-const PlayerData = preload("res://DATA/PlayerData.gd")
+const PlayerData = preload("user://H.json")
 @onready var Global = get_node("/root/Global")
 
 func _input(event):
@@ -71,11 +85,6 @@ func _ready():
 	var money = 0  # 改成你真实路径
 
 	var player_data = load_player_data()
-	if player_data:
-		money = player_data.money
-		coin_label.text = str(money)
-	else:
-		coin_label.text = "none"
 		
 	if Global.load_game(Global.current_store_name):
 		var upgrades = Global.player_data.upgrades
@@ -117,13 +126,12 @@ func _ready():
 		label17.text = str(count17) if count17 < max else text
 		label18.text = str(count18) if count18 < max else text
 		
-func load_player_data() -> PlayerData:
-	var file_path = "res://DATA/%s.json" 
+func load_player_data() -> Object:
+	var file_path = "user://profile.json" 
 	if FileAccess.file_exists(file_path):
 		var json_string = FileAccess.get_file_as_string(file_path)
-		var player_data = JsonClassConverter.json_string_to_class(PlayerData, json_string)
-		if player_data != null:
-			return player_data
+		if PlayerData != null:
+			return PlayerData
 		else:
 			push_error("❌ 无法解析 JSON 数据。")
 	else:
@@ -414,10 +422,40 @@ func _on_accept_button_pressed() -> void:
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
+	
+	elif id == 19:
+		label19.visible = true
+		lock19.visible = false
+		confirm.visible = true
+		id = 0
+	
+	elif id == 20:
+		label20.visible = true
+		lock20.visible = false
+		confirm.visible = true
+		id = 0
 		
+	elif id == 21:
+		label21.visible = true
+		lock21.visible = false
+		confirm.visible = true
+		id = 0
+		
+	elif id == 22:
+		label22.visible = true
+		lock22.visible = false
+		confirm.visible = true
+		id = 0
+
+	elif id == 23:
+		label23.visible = true
+		lock23.visible = false
+		confirm.visible = true
+		id = 0
+
 	if not lock_confirm:
 		confirm.visible = false  # 正常流程下关闭 confirm
-
+		
 
 func _on_chicken_pressed() -> void:
 	get_tree().paused = true
@@ -576,3 +614,38 @@ func _on_coke_pressed() -> void:
 	id = 18   
 	confirm.visible = true
   
+
+
+func _on_cactus_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 19
+	confirm.visible = true
+
+
+func _on_water_fountain_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 20
+	confirm.visible = true
+
+
+func _on_plant_pot_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 21
+	confirm.visible = true
+
+
+func _on_bin_lock_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 22
+	confirm.visible = true
+
+
+func _on_signboard_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 23
+	confirm.visible = true
