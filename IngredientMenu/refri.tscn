@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cy1d6xhr11qgy"]
+[gd_scene load_steps=29 format=3 uid="uid://cy1d6xhr11qgy"]
 
 [ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="2_fu6ni"]
 [ext_resource type="Texture2D" uid="uid://b10vfo3m8noe3" path="res://IngredientMenu/Ingredient_Sprite/BeefLabel.png" id="3_dft21"]
@@ -23,8 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://bx1qm5blh1co8" path="res://IngredientMenu/Ingredient_Sprite/100plus.png" id="20_tb2no"]
 [ext_resource type="Texture2D" uid="uid://0sjanjo5bw45" path="res://IngredientMenu/Ingredient_Sprite/7up.png" id="21_wyqo1"]
 [ext_resource type="Texture2D" uid="uid://bbxqbulql4nuw" path="res://IngredientMenu/Ingredient_Sprite/Sprite.png" id="22_lmx7x"]
+[ext_resource type="Texture2D" uid="uid://0f83fylocngw" path="res://IngredientMenu/Ingredient_Sprite/water-c.png" id="24_3gfc6"]
 [ext_resource type="AudioStream" uid="uid://dwnomvmsq8402" path="res://song/mixkit-game-click-1114.wav" id="24_tb2no"]
 [ext_resource type="Texture2D" uid="uid://b7i5jn1i1a7wy" path="res://IngredientMenu/Ingredient_Sprite/carrot.png" id="24_wyqo1"]
+[ext_resource type="Texture2D" uid="uid://b4qcjgo58sb1u" path="res://IngredientMenu/Ingredient_Sprite/raw egg.png" id="25_lmx7x"]
 
 [sub_resource type="GDScript" id="GDScript_3c5yy"]
 script/source = "extends Control
@@ -187,9 +189,27 @@ func _on_bread_pressed() -> void:
 func _on_carrot_pressed() -> void:
 	click.play()
 	var item = preload(\"res://Inventory/Item/carrot.tres\")
-	print(\"bread\")
+	print(\"carrot\")
 	inventorygui.update()
 	insert(item)
+
+
+func _on_egg_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/raw egg.tres\")
+	print(\"egg\")
+	inventorygui.update()
+	insert(item)
+	pass # Replace with function body.
+
+
+func _on_cold_water_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/cold water.tres\")
+	print(\"cold water\")
+	inventorygui.update()
+	insert(item)
+	pass # Replace with function body.
 "
 
 [node name="refri" type="Control"]
@@ -518,9 +538,9 @@ texture = ExtResource("18_h7tpu")
 layout_mode = 0
 offset_left = 6.0
 offset_top = 136.0
-offset_right = 98.0
+offset_right = 136.0
 offset_bottom = 156.0
-columns = 4
+columns = 5
 
 [node name="InvSlots" parent="NinePatchRect/GridContainer5" instance=ExtResource("4_i2w46")]
 layout_mode = 2
@@ -566,6 +586,18 @@ offset_top = 1.0
 offset_right = 15.0
 offset_bottom = 19.0
 texture = ExtResource("22_lmx7x")
+expand_mode = 1
+
+[node name="InvSlots5" parent="NinePatchRect/GridContainer5" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer5/InvSlots5"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = ExtResource("24_3gfc6")
 expand_mode = 1
 
 [node name="coke" type="TextureButton" parent="NinePatchRect"]
@@ -639,12 +671,44 @@ offset_bottom = 20.0
 texture = ExtResource("24_wyqo1")
 expand_mode = 1
 
+[node name="InvSlots3" parent="NinePatchRect" instance=ExtResource("4_i2w46")]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 94.0
+offset_right = 50.0
+offset_bottom = 114.0
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/InvSlots3"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 20.0
+texture = ExtResource("25_lmx7x")
+expand_mode = 1
+
 [node name="carrot" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 115.0
 offset_right = 28.0
 offset_bottom = 124.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="egg" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 115.0
+offset_right = 52.0
+offset_bottom = 124.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="cold water" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 157.0
+offset_right = 124.0
+offset_bottom = 166.0
 texture_normal = ExtResource("11_h7tpu")
 texture_pressed = ExtResource("12_gkade")
 
@@ -668,3 +732,5 @@ stream = ExtResource("24_tb2no")
 [connection signal="pressed" from="NinePatchRect/bun" to="." method="_on_bun_pressed"]
 [connection signal="pressed" from="NinePatchRect/bread" to="." method="_on_bread_pressed"]
 [connection signal="pressed" from="NinePatchRect/carrot" to="." method="_on_carrot_pressed"]
+[connection signal="pressed" from="NinePatchRect/egg" to="." method="_on_egg_pressed"]
+[connection signal="pressed" from="NinePatchRect/cold water" to="." method="_on_cold_water_pressed"]
