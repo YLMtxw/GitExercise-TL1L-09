@@ -185,7 +185,6 @@ texture_normal = ExtResource("3_k1gfb")
 stretch_mode = 0
 
 [node name="photo1" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(306, 146)
 scale = Vector2(0.886168, 0.904)
 texture = ExtResource("4_0whe8")
@@ -1142,6 +1141,7 @@ scale = Vector2(0.125, 0.13)
 texture_normal = ExtResource("3_k1gfb")
 
 [node name="photo3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(307, 146)
 scale = Vector2(0.886, 0.904)
 texture = ExtResource("6_8snal")
@@ -1900,7 +1900,7 @@ scale = Vector2(0.241525, 0.283009)
 texture = ExtResource("42_rpnmw")
 
 [node name="PointLight2D" type="PointLight2D" parent="Cooked01"]
-position = Vector2(122.141, 165.239)
+position = Vector2(124.211, 166.072)
 scale = Vector2(2.65242, 2.07194)
 shadow_enabled = true
 shadow_filter_smooth = 14.2

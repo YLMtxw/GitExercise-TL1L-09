@@ -49,9 +49,7 @@ extends Control
 @onready var lock26 = $"photo3/VVIP carpet"
 
 
-const PlaygroundScene = preload("res://playground.tscn")
-var playground_instance = PlaygroundScene.instantiate()
-var cactus = playground_instance.get_node("Playground/cactus")
+@onready var cactus = get_node("/root/Cactus")
 
 
 var id = 0
@@ -90,8 +88,7 @@ func _input(event):
 	
 	
 func _ready():
-	add_child(playground_instance)
-
+		
 	# 给所有按钮连接 signal
 	for button in $Button2.get_children():
 		if button is Button or button is TextureButton:
@@ -445,50 +442,56 @@ func _on_accept_button_pressed() -> void:
 		label19.visible = true
 		lock19.visible = false
 		confirm.visible = true
-		cactus.visible = true
+		Cactus.is_visible = true
 		id = 0
 		
 	elif id == 20:
 		label20.visible = true
 		lock20.visible = false
 		confirm.visible = true
+		Frame01.frame_visible = true
 		id = 0
 		
 	elif id == 21:
 		label21.visible = true
 		lock21.visible = false
 		confirm.visible = true
+		Pot01.pot_visible = true
 		id = 0
 		
 	elif id == 22:
 		label22.visible = true
 		lock22.visible = false
 		confirm.visible = true
+		Bin01.bin_visible = true
 		id = 0
 
 	elif id == 23:
 		label23.visible = true
 		lock23.visible = false
 		confirm.visible = true
-		
+		Signboard01.signboard_visible = true
 		id = 0
 
 	elif id == 24:
 		label24.visible = true
 		lock24.visible = false
 		confirm.visible = true
+		Td01.td_visible = true
 		id = 0
 
 	elif id == 25:
 		label25.visible = true
 		lock25.visible = false
 		confirm.visible = true
+		Tt01.tt_visible = true
 		id = 0
 		
 	elif id == 26:
 		label26.visible = true
 		lock26.visible = false
 		confirm.visible = true
+		Vvip.vvip_visible = true
 		id = 0
 
 	if not lock_confirm:

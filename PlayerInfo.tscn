@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bh0bnbmse2ai0"]
+[gd_scene load_steps=16 format=3 uid="uid://bh0bnbmse2ai0"]
 
 [ext_resource type="Texture2D" uid="uid://1el28nogvkee" path="res://photo/Player Info.jpg" id="1_ijsdh"]
 [ext_resource type="Script" uid="uid://cci8osghkg70h" path="res://player_info.gd" id="1_vd5x7"]
@@ -9,6 +9,19 @@
 [ext_resource type="Texture2D" uid="uid://dt704kekpyjqx" path="res://photo/create_pressed-removebg-preview.png" id="4_34t3e"]
 [ext_resource type="FontFile" uid="uid://bk4cd3hvf031o" path="res://font/PixelatedEleganceRegular-ovyAA.ttf" id="6_1dwlc"]
 [ext_resource type="Script" uid="uid://cw4k6uhhyts77" path="res://control.gd" id="7_gc3c1"]
+
+[sub_resource type="Gradient" id="Gradient_gc3c1"]
+offsets = PackedFloat32Array(0.0454545, 0.545455, 0.831169)
+colors = PackedColorArray(0.172549, 0.815686, 1, 1, 0.666667, 0.666667, 0.666667, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eks2d"]
+gradient = SubResource("Gradient_gc3c1")
+fill = 1
+fill_from = Vector2(0.486239, 0.5)
+fill_to = Vector2(0.986239, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1l5un"]
+polygon = PackedVector2Array(240.314, -31.7949, 240.314, 44.1026, 396.754, 40, 396.754, -31.7949)
 
 [sub_resource type="FontVariation" id="FontVariation_8crf7"]
 variation_embolden = 0.67
@@ -37,6 +50,19 @@ script = ExtResource("1_vd5x7")
 position = Vector2(287.5, 175.5)
 scale = Vector2(0.530556, 0.4875)
 texture = ExtResource("1_ijsdh")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+position = Vector2(-6.59688, -15.3846)
+scale = Vector2(17.5523, 10.4808)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 4.5
+texture = SubResource("GradientTexture2D_eks2d")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D/PointLight2D"]
+position = Vector2(0.375837, 1.46789)
+scale = Vector2(0.0569725, 0.0954129)
+occluder = SubResource("OccluderPolygon2D_1l5un")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_w17oj")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b46wulkigsalp"]
+
+[ext_resource type="Texture2D" uid="uid://cjlxldy7cwqad" path="res://photo/bin-removebg-preview.png" id="1_bawqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vg1ep"]
+size = Vector2(18.75, 24.5)
+
+[node name="Bin" type="Node2D"]
+
+[node name="Bin" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Bin"]
+position = Vector2(342, 272)
+scale = Vector2(0.0794088, 0.0806614)
+texture = ExtResource("1_bawqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bin"]
+position = Vector2(342.375, 272.25)
+shape = SubResource("RectangleShape2D_vg1ep")
