@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://jjtkcedp5hyj"]
+[gd_scene load_steps=75 format=3 uid="uid://jjtkcedp5hyj"]
 
 [ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_eupx0"]
@@ -77,12 +77,32 @@ font_color = Color(0, 0.407843, 1, 1)
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Gradient" id="Gradient_nq8pj"]
+offsets = PackedFloat32Array(0.162338, 0.5, 0.805195)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0.47451, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fkgnt"]
+gradient = SubResource("Gradient_nq8pj")
+use_hdr = true
+
 [sub_resource type="GDScript" id="GDScript_cvh4x"]
 script/source = "extends Sprite2D
 
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 "
+
+[sub_resource type="Gradient" id="Gradient_br5ie"]
+interpolation_mode = 2
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0, 1)
+colors = PackedColorArray(0.188235, 0, 0, 1, 0, 0, 0, 1, 1, 0.17, 0.17, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4gyba"]
+gradient = SubResource("Gradient_br5ie")
+use_hdr = true
+fill_from = Vector2(0.963303, 0)
+fill_to = Vector2(1, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -165,6 +185,7 @@ texture_normal = ExtResource("3_k1gfb")
 stretch_mode = 0
 
 [node name="photo1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(306, 146)
 scale = Vector2(0.886168, 0.904)
 texture = ExtResource("4_0whe8")
@@ -208,6 +229,12 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
 text = "0"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="blue box2" type="Sprite2D" parent="photo1"]
 position = Vector2(-28.5121, -32.2379)
@@ -255,6 +282,12 @@ offset_bottom = -81.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Level :"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box2"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box3" type="Sprite2D" parent="photo1"]
 position = Vector2(44.2849, -32.2446)
 scale = Vector2(0.363072, 0.38372)
@@ -295,6 +328,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box3"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box4" type="Sprite2D" parent="photo1"]
 position = Vector2(115.667, -31.8031)
 scale = Vector2(0.354143, 0.377785)
@@ -334,6 +373,12 @@ offset_right = -46.6886
 offset_bottom = -82.1172
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Level :"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box4"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="blue box5" type="Sprite2D" parent="photo1"]
 position = Vector2(115.102, 57.5221)
@@ -458,6 +503,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 text = "EGG"
 metadata/_edit_use_anchors_ = true
 
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box5"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box6" type="Sprite2D" parent="photo1"]
 position = Vector2(44.0097, 57.5221)
 scale = Vector2(0.359618, 0.3711)
@@ -571,6 +622,12 @@ offset_bottom = -81.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Level :"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box6"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box7" type="Sprite2D" parent="photo1"]
 position = Vector2(-28.6346, 57.5221)
 scale = Vector2(0.364647, 0.372847)
@@ -620,6 +677,12 @@ offset_bottom = -81.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Level :"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box7"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box8" type="Sprite2D" parent="photo1"]
 position = Vector2(-102.689, 57.5221)
 scale = Vector2(0.37215, 0.365809)
@@ -668,6 +731,12 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
 text = "0"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box8"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="Button2" type="TextureButton" parent="."]
 texture_filter = 1
@@ -732,6 +801,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box2" type="Sprite2D" parent="photo2"]
 position = Vector2(-32.7314, -44.2478)
 scale = Vector2(0.369219, 0.390131)
@@ -777,6 +852,12 @@ offset_left = -89.0
 offset_top = -108.0
 offset_right = 92.0
 offset_bottom = 108.0
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box2"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="blue box3" type="Sprite2D" parent="photo2"]
 position = Vector2(39.5034, -44.2478)
@@ -828,6 +909,12 @@ offset_top = -105.088
 offset_right = 99.152
 offset_bottom = 108.0
 
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box3"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box4" type="Sprite2D" parent="photo2"]
 position = Vector2(110.609, -45.354)
 scale = Vector2(0.369219, 0.390131)
@@ -873,6 +960,12 @@ offset_left = -92.0
 offset_top = -108.0
 offset_right = 91.0
 offset_bottom = 108.0
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box4"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="blue box5" type="Sprite2D" parent="photo2"]
 position = Vector2(-104.966, 44.2478)
@@ -920,6 +1013,12 @@ offset_top = -111.0
 offset_right = 92.0
 offset_bottom = 111.0
 
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box5"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box6" type="Sprite2D" parent="photo2"]
 position = Vector2(-32.7314, 44.2478)
 scale = Vector2(0.369219, 0.390131)
@@ -966,6 +1065,12 @@ offset_top = -111.0
 offset_right = 92.0
 offset_bottom = 111.0
 
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box6"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box7" type="Sprite2D" parent="photo2"]
 position = Vector2(39.5034, 44.2478)
 scale = Vector2(0.369219, 0.390131)
@@ -989,6 +1094,12 @@ offset_left = -89.0
 offset_top = -111.0
 offset_right = 89.0
 offset_bottom = 111.0
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box7"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="blue box8" type="Sprite2D" parent="photo2"]
 position = Vector2(111.738, 44.2478)
@@ -1014,6 +1125,12 @@ offset_top = -111.0
 offset_right = 89.0
 offset_bottom = 111.0
 
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box8"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="Button3" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 0
@@ -1025,7 +1142,6 @@ scale = Vector2(0.125, 0.13)
 texture_normal = ExtResource("3_k1gfb")
 
 [node name="photo3" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(307, 146)
 scale = Vector2(0.886, 0.904)
 texture = ExtResource("6_8snal")
@@ -1067,6 +1183,12 @@ theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 16
 text = "Owned"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 1"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="box 2" type="Sprite2D" parent="photo3"]
 visible = false
 position = Vector2(-106.095, 45.354)
@@ -1106,6 +1228,12 @@ theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 16
 text = "Owned"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 2"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="box 3" type="Sprite2D" parent="photo3"]
 visible = false
 position = Vector2(-30.474, -44.2478)
@@ -1142,6 +1270,12 @@ theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 16
 text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 3"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="box 4" type="Sprite2D" parent="photo3"]
 visible = false
@@ -1180,6 +1314,12 @@ theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 16
 text = "Owned"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 4"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="box 5" type="Sprite2D" parent="photo3"]
 visible = false
 position = Vector2(45.1467, -44.2478)
@@ -1216,6 +1356,12 @@ theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 16
 text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 5"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="box 6" type="Sprite2D" parent="photo3"]
 visible = false
@@ -1256,6 +1402,12 @@ theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 16
 text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 6"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="box 7" type="Sprite2D" parent="photo3"]
 visible = false
@@ -1301,6 +1453,12 @@ theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 16
 text = "Owned"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 7"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="box 8" type="Sprite2D" parent="photo3"]
 visible = false
 position = Vector2(120.767, 45.354)
@@ -1342,6 +1500,12 @@ theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 16
 text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 8"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="CactusLock" type="Sprite2D" parent="photo3"]
 position = Vector2(-106.659, -43.6947)
@@ -1734,6 +1898,13 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(109, 215)
 scale = Vector2(0.241525, 0.283009)
 texture = ExtResource("42_rpnmw")
+
+[node name="PointLight2D" type="PointLight2D" parent="Cooked01"]
+position = Vector2(122.141, 165.239)
+scale = Vector2(2.65242, 2.07194)
+shadow_enabled = true
+shadow_filter_smooth = 14.2
+texture = SubResource("GradientTexture2D_4gyba")
 
 [node name="max sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("46_cvh4x")

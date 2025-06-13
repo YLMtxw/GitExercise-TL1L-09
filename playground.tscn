@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://bmlcjik7mnbd1"]
+[gd_scene load_steps=58 format=4 uid="uid://bmlcjik7mnbd1"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Script" uid="uid://chiaggp51axdq" path="res://playground.gd" id="1_snn6g"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://236x4npymqqg" path="res://photo/door_1__1_-removebg-preview.png" id="32_ewi0c"]
 [ext_resource type="Texture2D" uid="uid://mkerffylv5sm" path="res://photo/signboard-removebg-preview.png" id="32_rngk1"]
 [ext_resource type="Texture2D" uid="uid://bb0v3jlxyv6lg" path="res://photo/door-removebg-preview.png" id="33_md5nv"]
+[ext_resource type="Texture2D" uid="uid://cd8xttvy8y4py" path="res://photo/lamp-removebg-preview.png" id="35_j7gj2"]
 [ext_resource type="Texture2D" uid="uid://cjlxldy7cwqad" path="res://photo/bin-removebg-preview.png" id="36_1nsp6"]
 [ext_resource type="Texture2D" uid="uid://bobj1av54kdck" path="res://photo/table.png" id="40_rngk1"]
 [ext_resource type="Texture2D" uid="uid://dy8msosm3ujxx" path="res://photo/red line.png" id="42_lu5cr"]
@@ -981,6 +982,22 @@ sources/2 = SubResource("TileSetAtlasSource_pi42a")
 sources/3 = SubResource("TileSetAtlasSource_h1jm5")
 sources/0 = SubResource("TileSetAtlasSource_ynsuh")
 
+[sub_resource type="Gradient" id="Gradient_1nsp6"]
+offsets = PackedFloat32Array(0, 0.935065)
+colors = PackedColorArray(1, 0.484, 0.14, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n1lva"]
+gradient = SubResource("Gradient_1nsp6")
+fill = 1
+fill_from = Vector2(0.486239, 0.486239)
+fill_to = Vector2(1, 0.0366972)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2075e"]
+polygon = PackedVector2Array(30, -53, 30, -53, 14, -53, 4, -53, 4, -21, 30, -21)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lu5cr"]
+polygon = PackedVector2Array(-12, -31, -12, -31, -12, 47, -27, 47, -27, -31)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7gj2"]
 size = Vector2(26, 80)
 
@@ -1313,6 +1330,34 @@ offset_right = 504.0
 offset_bottom = 345.0
 texture = ExtResource("33_md5nv")
 expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Decoration"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 203.0
+offset_right = 369.0
+offset_bottom = 221.0
+texture = ExtResource("35_j7gj2")
+expand_mode = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="Decoration/TextureRect"]
+position = Vector2(10, 9)
+color = Color(1, 0.66, 0.66, 1)
+energy = 1.61
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 20.0
+texture = SubResource("GradientTexture2D_n1lva")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Decoration/TextureRect/PointLight2D"]
+position = Vector2(-10, -9)
+occluder = SubResource("OccluderPolygon2D_2075e")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Decoration/TextureRect/PointLight2D"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(1, -10)
+occluder = SubResource("OccluderPolygon2D_lu5cr")
 
 [node name="table tresure" type="StaticBody2D" parent="."]
 

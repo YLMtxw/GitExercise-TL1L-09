@@ -52,7 +52,7 @@ extends Control
 const PlaygroundScene = preload("res://playground.tscn")
 var playground_instance = PlaygroundScene.instantiate()
 var cactus = playground_instance.get_node("Playground/cactus")
-cactus.visible = true
+
 
 var id = 0
 var count := 0
