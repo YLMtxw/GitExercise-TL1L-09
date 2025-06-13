@@ -49,7 +49,10 @@ extends Control
 @onready var lock26 = $"photo3/VVIP carpet"
 
 
-
+const PlaygroundScene = preload("res://playground.tscn")
+var playground_instance = PlaygroundScene.instantiate()
+var cactus = playground_instance.get_node("Playground/cactus")
+cactus.visible = true
 
 var id = 0
 var count := 0
@@ -71,6 +74,7 @@ var count16 := 0
 var count17 := 0
 var count18 := 0
 
+
 var max := 3
 var text : String = "max"
 var lock_confirm := false
@@ -79,17 +83,20 @@ var lock_confirm := false
 const PlayerData = preload("user://H.json")
 @onready var Global = get_node("/root/Global")
 
+
 func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		get_tree().quit()
 	
 	
 func _ready():
+	add_child(playground_instance)
+
 	# 给所有按钮连接 signal
 	for button in $Button2.get_children():
 		if button is Button or button is TextureButton:
 			button.pressed.connect(_on_button_2_pressed)
-			
+	
 	var money = 0  # 改成你真实路径
 
 	var player_data = load_player_data()
@@ -255,6 +262,9 @@ func _on_cancel_button_pressed() -> void:
 
 
 func _on_accept_button_pressed() -> void:	
+	
+	var cactus = get_node_or_null("/root/Playground/cactus")
+	
 	get_tree().paused = false
 	$ClickSound.play()
 	if id == 1:
@@ -435,8 +445,9 @@ func _on_accept_button_pressed() -> void:
 		label19.visible = true
 		lock19.visible = false
 		confirm.visible = true
+		cactus.visible = true
 		id = 0
-	
+		
 	elif id == 20:
 		label20.visible = true
 		lock20.visible = false
