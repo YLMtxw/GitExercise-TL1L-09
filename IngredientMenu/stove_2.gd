@@ -17,7 +17,7 @@ var recipes = {
 	"chicken patty (grilled)": ["chicken patty (raw)", "oil"],
 	"beef patty (grilled)": ["beef patty (raw)", "oil"],
 	"lamb patty (grilled)": ["lamb patty (raw)", "oil"],
-	"Aglio Olio": ["spaghetti (cooked)", "oil"],
+	"Aglio Olio": ["spaghetti (cooked)", "oil","chili flake","chicken (grilled)"],
 	"carbonara": ["spaghetti (cooked)", "fried egg", "chicken (grilled)","cheese"],
 	"bolognese": ["spaghetti (cooked)", "tomato sauce", "beef (grilled)"],
 	"beef (grilled)": ["beef (raw)"],
