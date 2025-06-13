@@ -34,13 +34,21 @@ extends Control
 @onready var label21 = $"photo3/box 3"
 @onready var label22 = $"photo3/box 4"
 @onready var label23 = $"photo3/box 5"
+@onready var label24 = $"photo3/box 6"
+@onready var label25 = $"photo3/box 7"
+@onready var label26 = $"photo3/box 8"
 
 
 @onready var lock19 = $photo3/CactusLock
-@onready var lock20 = $photo3/aterFountainLock
+@onready var lock20 = $"photo3/Frame lock"
 @onready var lock21 = $photo3/PlantPotLock
 @onready var lock22 = $photo3/BinLock
 @onready var lock23 = $photo3/SignboardLock
+@onready var lock24 = $"photo3/Table deco"
+@onready var lock25 = $"photo3/table tresure"
+@onready var lock26 = $"photo3/VVIP carpet"
+
+
 
 
 var id = 0
@@ -451,6 +459,25 @@ func _on_accept_button_pressed() -> void:
 		label23.visible = true
 		lock23.visible = false
 		confirm.visible = true
+		
+		id = 0
+
+	elif id == 24:
+		label24.visible = true
+		lock24.visible = false
+		confirm.visible = true
+		id = 0
+
+	elif id == 25:
+		label25.visible = true
+		lock25.visible = false
+		confirm.visible = true
+		id = 0
+		
+	elif id == 26:
+		label26.visible = true
+		lock26.visible = false
+		confirm.visible = true
 		id = 0
 
 	if not lock_confirm:
@@ -623,7 +650,7 @@ func _on_cactus_button_pressed() -> void:
 	confirm.visible = true
 
 
-func _on_water_fountain_button_pressed() -> void:
+func _on_frame_button_pressed() -> void:
 	get_tree().paused = true
 	$ClickSound.play()
 	id = 20
@@ -648,4 +675,25 @@ func _on_signboard_button_pressed() -> void:
 	get_tree().paused = true
 	$ClickSound.play()
 	id = 23
+	confirm.visible = true
+
+
+func _on_table_deco_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 24
+	confirm.visible = true
+
+
+func _on_table_tresure_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 25
+	confirm.visible = true
+
+
+func _on_vvip_carpet_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 26
 	confirm.visible = true

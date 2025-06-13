@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bmlcjik7mnbd1"]
+[gd_scene load_steps=52 format=4 uid="uid://bmlcjik7mnbd1"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Script" uid="uid://chiaggp51axdq" path="res://playground.gd" id="1_snn6g"]
@@ -29,7 +29,17 @@
 [ext_resource type="Texture2D" uid="uid://c63k5aecrled" path="res://CLayer/sprite/Next_p.png" id="25_lraom"]
 [ext_resource type="PackedScene" uid="uid://dxceiapi1cbmt" path="res://In-game Setting/setting.tscn" id="27_lraom"]
 [ext_resource type="AudioStream" uid="uid://cemm7i42isxxp" path="res://song/jazz-restaurant-cafe-music-334836.mp3" id="27_ofol1"]
+[ext_resource type="Texture2D" uid="uid://bup63qirancjl" path="res://photo/cactus.png" id="28_17637"]
+[ext_resource type="Texture2D" uid="uid://dvcvgi3xcpckt" path="res://photo/Daco_3273962-removebg-preview.png" id="29_dv3cb"]
+[ext_resource type="Texture2D" uid="uid://dwpssfid7p6v3" path="res://photo/deco frame.png" id="30_ewi0c"]
 [ext_resource type="Script" uid="uid://dmsel8ln7c5os" path="res://audio_stream_player.gd" id="30_g64nf"]
+[ext_resource type="Texture2D" uid="uid://d2kr5yuri0qm5" path="res://photo/pot_shell.png" id="31_md5nv"]
+[ext_resource type="Texture2D" uid="uid://236x4npymqqg" path="res://photo/door_1__1_-removebg-preview.png" id="32_ewi0c"]
+[ext_resource type="Texture2D" uid="uid://mkerffylv5sm" path="res://photo/signboard-removebg-preview.png" id="32_rngk1"]
+[ext_resource type="Texture2D" uid="uid://bb0v3jlxyv6lg" path="res://photo/door-removebg-preview.png" id="33_md5nv"]
+[ext_resource type="Texture2D" uid="uid://cjlxldy7cwqad" path="res://photo/bin-removebg-preview.png" id="36_1nsp6"]
+[ext_resource type="Texture2D" uid="uid://bobj1av54kdck" path="res://photo/table.png" id="40_rngk1"]
+[ext_resource type="Texture2D" uid="uid://dy8msosm3ujxx" path="res://photo/red line.png" id="42_lu5cr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynsuh"]
 texture = ExtResource("2_is3ju")
@@ -971,6 +981,24 @@ sources/2 = SubResource("TileSetAtlasSource_pi42a")
 sources/3 = SubResource("TileSetAtlasSource_h1jm5")
 sources/0 = SubResource("TileSetAtlasSource_ynsuh")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7gj2"]
+size = Vector2(26, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rngk1"]
+size = Vector2(34, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nsp6"]
+size = Vector2(18, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1lva"]
+size = Vector2(33, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2075e"]
+size = Vector2(18.75, 24.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu5cr"]
+size = Vector2(41, 16)
+
 [node name="Playground" type="Node2D"]
 script = ExtResource("1_snn6g")
 
@@ -1226,19 +1254,128 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0.839216)
 
 [node name="Setting" parent="CanvasLayer" instance=ExtResource("27_lraom")]
+visible = false
 offset_left = 189.0
 offset_top = 31.0
-offset_right = -169.0
-offset_bottom = -39.0
-
-[node name="Player_character" parent="." instance=ExtResource("1_rupst")]
-position = Vector2(120, 150)
-scale = Vector2(1, 1)
+offset_right = 189.0
+offset_bottom = 31.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("27_ofol1")
 parameters/looping = true
 script = ExtResource("30_g64nf")
+
+[node name="Player_character" parent="." instance=ExtResource("1_rupst")]
+position = Vector2(120, 150)
+scale = Vector2(1, 1)
+
+[node name="Decoration" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="pot shell deco" type="TextureRect" parent="Decoration"]
+visible = false
+layout_mode = 0
+offset_left = 369.0
+offset_top = 1.0
+offset_right = 422.0
+offset_bottom = 36.0
+texture = ExtResource("31_md5nv")
+expand_mode = 1
+
+[node name="VVIP carpet" type="TextureRect" parent="Decoration"]
+visible = false
+layout_mode = 0
+offset_left = 445.0
+offset_top = 272.0
+offset_right = 485.0
+offset_bottom = 350.0
+texture = ExtResource("42_lu5cr")
+
+[node name="Door left" type="TextureRect" parent="Decoration"]
+offset_left = 412.0
+offset_top = 316.0
+offset_right = 474.0
+offset_bottom = 356.0
+texture = ExtResource("32_ewi0c")
+expand_mode = 1
+
+[node name="Door right" type="TextureRect" parent="Decoration"]
+offset_left = 460.0
+offset_top = 328.0
+offset_right = 504.0
+offset_bottom = 345.0
+texture = ExtResource("33_md5nv")
+expand_mode = 1
+
+[node name="table tresure" type="StaticBody2D" parent="."]
+
+[node name="table tresure" type="Sprite2D" parent="table tresure"]
+position = Vector2(370.238, 142.083)
+rotation = 4.71239
+scale = Vector2(0.143651, 0.15218)
+texture = ExtResource("40_rngk1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table tresure"]
+position = Vector2(370, 142)
+shape = SubResource("RectangleShape2D_j7gj2")
+
+[node name="signboard" type="StaticBody2D" parent="."]
+
+[node name="sigboard" type="Sprite2D" parent="signboard"]
+position = Vector2(143, 273)
+scale = Vector2(0.0726453, 0.0736474)
+texture = ExtResource("32_rngk1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="signboard"]
+position = Vector2(143, 273)
+shape = SubResource("RectangleShape2D_rngk1")
+
+[node name="cactus" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="cactus"]
+position = Vector2(59, 268)
+scale = Vector2(0.082, 0.0865)
+texture = ExtResource("28_17637")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cactus"]
+position = Vector2(59, 268)
+shape = SubResource("RectangleShape2D_1nsp6")
+
+[node name="table deco" type="StaticBody2D" parent="."]
+
+[node name="table deco" type="Sprite2D" parent="table deco"]
+position = Vector2(17, 312)
+scale = Vector2(0.107087, 0.0866624)
+texture = ExtResource("29_dv3cb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table deco"]
+position = Vector2(16.5, 312)
+shape = SubResource("RectangleShape2D_n1lva")
+
+[node name="Bin" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Bin"]
+position = Vector2(342, 272)
+scale = Vector2(0.0794088, 0.0806614)
+texture = ExtResource("36_1nsp6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bin"]
+position = Vector2(342.375, 272.25)
+shape = SubResource("RectangleShape2D_2075e")
+
+[node name="Frame" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Frame"]
+position = Vector2(474, 10)
+scale = Vector2(0.330645, 0.258065)
+texture = ExtResource("30_ewi0c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame"]
+position = Vector2(474.5, 10)
+shape = SubResource("RectangleShape2D_lu5cr")
 
 [connection signal="pressed" from="CanvasLayer/closeButton" to="CanvasLayer" method="_on_close_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/paycheck/paycheckmenu/next" to="CanvasLayer" method="_on_next_pressed"]
