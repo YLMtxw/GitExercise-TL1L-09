@@ -68,8 +68,9 @@ var text : String = "max"
 var lock_confirm := false
 
 
-const PlayerData = preload("user://H.json")
+const PlayerData = preload("user://profile.json")
 @onready var Global = get_node("/root/Global")
+@onready var pInventory : Inventory = preload("res://Inventory/playerInventory.tres")
 
 func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
@@ -193,6 +194,8 @@ func _on_exit_button_pressed() -> void:
 	$ClickSound01.play()
 	await $ClickSound01.finished
 	
+	pInventory.clear()
+	
 	var player = get_node_or_null("/root/Playground/Player_character")
 	   
 	if player == null:
@@ -202,7 +205,8 @@ func _on_exit_button_pressed() -> void:
 		
 	Global.player_data = {
 		"position": player.global_position,
-	}  
+	} 
+	
 	get_tree().change_scene_to_file("res://playground.tscn")
 
 func _on_upgrade_button_pressed() -> void:

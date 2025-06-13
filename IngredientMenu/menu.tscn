@@ -233,6 +233,7 @@ texture_normal = ExtResource("10_uwsm1")
 texture_pressed = ExtResource("11_o0okj")
 
 [node name="hot water" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
 offset_left = 53.0
 offset_top = 60.0
 offset_right = 77.0

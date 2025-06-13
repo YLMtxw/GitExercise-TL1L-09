@@ -25,16 +25,17 @@ var upgrade = {
 }
 var current_store_name: String = ""
 
+
 func save() -> Dictionary:
 	return {
 		"volume_db": volume_db,
 		"money": money,
 		"position": { "x": position.x, "y": position.y },
-		"upgrade": upgrade
+		"upgrade": upgrade,
 	}
 
-func save_game(store_name: String):
-	var file_path = "user://%s.json" % store_name
+func save_game(store_name: String = ""):
+	var file_path = "user://profile.json"
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	if file:
 		var json_string = JSON.stringify(save(), "\t")
@@ -42,24 +43,21 @@ func save_game(store_name: String):
 		file.close()
 		print(" Game data saved to: %s" % file_path)
 	else:
-		print(" Failed to save game for store: ", store_name)
+		print(" Failed to save game")
 
 func load_game(store_name: String):
-	var file_path = "user://%s.json" % store_name
+	var file_path = "user://profile.json"
 	if not FileAccess.file_exists(file_path):
 		print(" Save file not found: ", file_path)
 		return
-	
+
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	var text = file.get_as_text()
 	var data = JSON.parse_string(text)
-	
+
 	if typeof(data) == TYPE_DICTIONARY:
 		volume_db = data.get("volume_db", 0.0)
 		money = data.get("money", 0)
 		var pos_data = data.get("position", {"x": 0, "y": 0})
-		position = Vector2(pos_data["x"], pos_data["y"])  
+		position = Vector2(pos_data["x"], pos_data["y"])
 		upgrade = data.get("upgrade", {})
-		print(" Loaded data: ", data)
-	else:
-		print(" Failed to parse JSON data.")
