@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://jjtkcedp5hyj"]
+[gd_scene load_steps=64 format=3 uid="uid://jjtkcedp5hyj"]
 
 [ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_eupx0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://f6157ah74bx3" path="res://photo/menu01-removebg-preview.png" id="2_rc1au"]
 [ext_resource type="AudioStream" uid="uid://8pwv4v0iata" path="res://song/door-open-close-45475.mp3" id="3_g0luy"]
 [ext_resource type="Texture2D" uid="uid://dleod6oi06gyu" path="res://photo/WhatsApp_图像2025-05-14于00.15.16_9bdf4754-removebg-preview (1).png" id="3_k1gfb"]
+[ext_resource type="Script" uid="uid://i8iokgmrcl7t" path="res://bgm.gd" id="3_slmgn"]
 [ext_resource type="Texture2D" uid="uid://brwdj4lim6gvp" path="res://photo/WhatsApp_图像2025-05-14于00.15.16_b55d65e7-removebg-preview.png" id="4_0whe8"]
 [ext_resource type="Texture2D" uid="uid://cpe7flaxc7wqu" path="res://photo/WhatsApp_图像2025-05-14于00.15.17_72a5ef38-removebg-preview.png" id="5_ax1vu"]
 [ext_resource type="Texture2D" uid="uid://cluqgich4icd6" path="res://photo/WhatsApp_图像2025-05-14于00.15.17_6bd5c3b7-removebg-preview.png" id="6_8snal"]
@@ -46,6 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://cjlxldy7cwqad" path="res://photo/bin-removebg-preview.png" id="34_by4wh"]
 [ext_resource type="Texture2D" uid="uid://de81fljuplytx" path="res://photo/paper.png" id="35_wcm3e"]
 [ext_resource type="AudioStream" uid="uid://cqn1vk21dnclo" path="res://song/jazz-background-music-325355.mp3" id="36_gqinc"]
+[ext_resource type="Texture2D" uid="uid://c6wq8rfc2mea" path="res://photo/signboard lock.jpg" id="36_qrdaw"]
 [ext_resource type="Texture2D" uid="uid://mkerffylv5sm" path="res://photo/signboard-removebg-preview.png" id="37_02g0u"]
 [ext_resource type="Texture2D" uid="uid://dm7ldkjrpllsj" path="res://photo/plant pot lock.jpg" id="37_lfxla"]
 [ext_resource type="Texture2D" uid="uid://ciqh3araxi03o" path="res://photo/water fountain lock.jpg" id="38_lfxla"]
@@ -90,12 +92,13 @@ script = ExtResource("1_ra00y")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("36_gqinc")
-volume_db = 20.0
+volume_db = 10.0
 autoplay = true
 max_distance = 4096.0
 attenuation = 0.366022
 max_polyphony = 4
 parameters/looping = false
+script = ExtResource("3_slmgn")
 
 [node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_eupx0")
@@ -155,7 +158,6 @@ texture_normal = ExtResource("3_k1gfb")
 stretch_mode = 0
 
 [node name="photo1" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(306, 146)
 scale = Vector2(0.886168, 0.904)
 texture = ExtResource("4_0whe8")
@@ -736,7 +738,7 @@ offset_bottom = 79.038
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
-text = "SPRITE"
+text = "SPRINT"
 
 [node name="Sprite" type="Sprite2D" parent="photo2/blue box2"]
 position = Vector2(-6.11383, -2.83545)
@@ -780,14 +782,14 @@ scale = Vector2(0.63917, 0.504454)
 texture = ExtResource("22_30naw")
 
 [node name="Label" type="Label" parent="photo2/blue box3"]
-offset_left = -79.4796
-offset_top = 56.7089
-offset_right = 83.5204
-offset_bottom = 84.7089
+offset_left = -82.5365
+offset_top = 59.5443
+offset_right = 82.4635
+offset_bottom = 83.5443
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
-theme_override_font_sizes/font_size = 30
-text = "100 PLUS"
+theme_override_font_sizes/font_size = 27
+text = "1000 PLUS"
 
 [node name="Level" type="Label" parent="photo2/blue box3"]
 offset_left = -88.0
@@ -830,14 +832,14 @@ scale = Vector2(0.552327, 0.480584)
 texture = ExtResource("27_313i5")
 
 [node name="Coke" type="Label" parent="photo2/blue box4"]
-offset_left = -76.4227
-offset_top = 59.5443
-offset_right = 87.5773
-offset_bottom = 82.5443
+offset_left = -82.5352
+offset_top = 59.5444
+offset_right = 81.4648
+offset_bottom = 82.5444
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 25
-text = "COCA COLA"
+text = "COCO CACA"
 
 [node name="Level" type="Label" parent="photo2/blue box4"]
 offset_left = -88.0
@@ -860,10 +862,10 @@ theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="coke" type="TextureButton" parent="photo2/blue box4"]
-offset_left = -89.0
-offset_top = -105.0
-offset_right = 88.0
-offset_bottom = 110.0
+offset_left = -92.0
+offset_top = -108.0
+offset_right = 91.0
+offset_bottom = 108.0
 
 [node name="blue box5" type="Sprite2D" parent="photo2"]
 position = Vector2(-104.966, 44.2478)
@@ -1016,11 +1018,13 @@ scale = Vector2(0.125, 0.13)
 texture_normal = ExtResource("3_k1gfb")
 
 [node name="photo3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(307, 146)
 scale = Vector2(0.886, 0.904)
 texture = ExtResource("6_8snal")
 
 [node name="box 1" type="Sprite2D" parent="photo3"]
+visible = false
 position = Vector2(-106.095, -44.2478)
 scale = Vector2(0.375222, 0.387662)
 texture = ExtResource("8_6rsue")
@@ -1041,17 +1045,8 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 32
 text = "Cactus"
 
-[node name="CactusLock" type="Sprite2D" parent="photo3/box 1"]
-position = Vector2(-1.50403, 1.42673)
-scale = Vector2(0.669664, 0.624204)
-texture = ExtResource("32_nt5q0")
-
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/box 1/CactusLock"]
-position = Vector2(2.24597, -2.28571)
-scale = Vector2(0.399439, 0.292359)
-texture = ExtResource("33_uxvje")
-
 [node name="box 2" type="Sprite2D" parent="photo3"]
+visible = false
 position = Vector2(-106.095, 45.354)
 scale = Vector2(0.375222, 0.387662)
 texture = ExtResource("8_6rsue")
@@ -1075,17 +1070,8 @@ Fountain"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="WaterFountainLock" type="Sprite2D" parent="photo3/box 2"]
-position = Vector2(-1.87695, 0)
-scale = Vector2(0.67733, 0.63231)
-texture = ExtResource("38_lfxla")
-
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/box 2/WaterFountainLock"]
-position = Vector2(2.77112, -40.6154)
-scale = Vector2(0.397066, 0.288358)
-texture = ExtResource("33_uxvje")
-
 [node name="box 3" type="Sprite2D" parent="photo3"]
+visible = false
 position = Vector2(-30.474, -44.2478)
 scale = Vector2(0.375222, 0.387662)
 texture = ExtResource("8_6rsue")
@@ -1106,17 +1092,8 @@ position = Vector2(-1.21593e-05, -22.828)
 scale = Vector2(0.283088, 0.261414)
 texture = ExtResource("33_ah72k")
 
-[node name="PlantPotLock" type="Sprite2D" parent="photo3/box 3"]
-position = Vector2(-0.706055, 0.570709)
-scale = Vector2(0.688309, 0.632662)
-texture = ExtResource("37_lfxla")
-
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/box 3/PlantPotLock"]
-position = Vector2(-3.34446, -0.902077)
-scale = Vector2(0.399439, 0.292359)
-texture = ExtResource("33_uxvje")
-
 [node name="box 4" type="Sprite2D" parent="photo3"]
+visible = false
 position = Vector2(-30.474, 45.354)
 scale = Vector2(0.375222, 0.387662)
 texture = ExtResource("8_6rsue")
@@ -1137,17 +1114,8 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "Bin"
 
-[node name="BinLock" type="Sprite2D" parent="photo3/box 4"]
-position = Vector2(1.52588e-05, 4.76837e-06)
-scale = Vector2(0.95492, 0.927388)
-texture = ExtResource("39_qrdaw")
-
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/box 4/BinLock"]
-position = Vector2(-3.15003, -27.6923)
-scale = Vector2(0.305859, 0.208341)
-texture = ExtResource("33_uxvje")
-
 [node name="box 5" type="Sprite2D" parent="photo3"]
+visible = false
 position = Vector2(45.1467, -44.2478)
 scale = Vector2(0.375222, 0.387662)
 texture = ExtResource("8_6rsue")
@@ -1173,23 +1141,140 @@ position = Vector2(45.1467, 45.354)
 scale = Vector2(0.375222, 0.387662)
 texture = ExtResource("8_6rsue")
 
+[node name="Label" type="Label" parent="photo3/box 6"]
+offset_left = -58.0812
+offset_top = -25.519
+offset_right = 60.9188
+offset_bottom = 23.481
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "COMING
+SOON"
+horizontal_alignment = 1
+
 [node name="box 7" type="Sprite2D" parent="photo3"]
 position = Vector2(120.767, -44.2478)
 scale = Vector2(0.375222, 0.387662)
 texture = ExtResource("8_6rsue")
+
+[node name="Label" type="Label" parent="photo3/box 7"]
+offset_left = -58.0812
+offset_top = -25.519
+offset_right = 60.9188
+offset_bottom = 23.481
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "COMING
+SOON"
+horizontal_alignment = 1
 
 [node name="box 8" type="Sprite2D" parent="photo3"]
 position = Vector2(120.767, 45.354)
 scale = Vector2(0.375222, 0.387662)
 texture = ExtResource("8_6rsue")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="photo3"]
+[node name="Label" type="Label" parent="photo3/box 8"]
+offset_left = -58.0812
+offset_top = -25.519
+offset_right = 60.9188
+offset_bottom = 23.481
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "COMING
+SOON"
+horizontal_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="photo3/CanvasLayer"]
-offset_left = 183.0
-offset_top = 73.0
-offset_right = 244.0
-offset_bottom = 150.0
+[node name="CactusLock" type="Sprite2D" parent="photo3"]
+position = Vector2(-106.659, -43.6947)
+scale = Vector2(0.251273, 0.24198)
+texture = ExtResource("32_nt5q0")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/CactusLock"]
+position = Vector2(2.24597, -2.28571)
+scale = Vector2(0.399439, 0.292359)
+texture = ExtResource("33_uxvje")
+
+[node name="cactus button" type="TextureButton" parent="photo3/CactusLock"]
+offset_left = -137.0
+offset_top = -176.0
+offset_right = 133.0
+offset_bottom = 176.0
+mouse_default_cursor_shape = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="photo3"]
+visible = false
+
+[node name="WaterFountainLock" type="Sprite2D" parent="photo3"]
+position = Vector2(-106.799, 45.354)
+scale = Vector2(0.254149, 0.245123)
+texture = ExtResource("38_lfxla")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/WaterFountainLock"]
+position = Vector2(2.77112, -40.6153)
+scale = Vector2(0.397066, 0.288358)
+texture = ExtResource("33_uxvje")
+
+[node name="water fountain button" type="TextureButton" parent="photo3/WaterFountainLock"]
+offset_left = -135.0
+offset_top = -176.0
+offset_right = 136.0
+offset_bottom = 176.0
+mouse_default_cursor_shape = 2
+
+[node name="SignboardLock" type="Sprite2D" parent="photo3"]
+position = Vector2(45.1467, -43.5287)
+scale = Vector2(0.431338, 0.424226)
+texture = ExtResource("36_qrdaw")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/SignboardLock"]
+position = Vector2(2.61676, -1.69492)
+scale = Vector2(0.248179, 0.170339)
+texture = ExtResource("33_uxvje")
+
+[node name="signboard button" type="TextureButton" parent="photo3/SignboardLock"]
+offset_left = -78.0
+offset_top = -98.0
+offset_right = 81.0
+offset_bottom = 100.0
+
+[node name="PlantPotLock" type="Sprite2D" parent="photo3"]
+position = Vector2(-30.739, -44.0266)
+scale = Vector2(0.258269, 0.245259)
+texture = ExtResource("37_lfxla")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/PlantPotLock"]
+position = Vector2(-3.34446, -0.902077)
+scale = Vector2(0.399439, 0.292359)
+texture = ExtResource("33_uxvje")
+
+[node name="plant pot button" type="TextureButton" parent="photo3/PlantPotLock"]
+offset_left = -134.0
+offset_top = -172.0
+offset_right = 137.0
+offset_bottom = 171.0
+mouse_default_cursor_shape = 2
+
+[node name="BinLock" type="Sprite2D" parent="photo3"]
+position = Vector2(-30.474, 45.354)
+scale = Vector2(0.358307, 0.359513)
+texture = ExtResource("39_qrdaw")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/BinLock"]
+position = Vector2(-3.15003, -27.6923)
+scale = Vector2(0.305859, 0.208341)
+texture = ExtResource("33_uxvje")
+
+[node name="bin lock button" type="TextureButton" parent="photo3/BinLock"]
+offset_left = -94.0
+offset_top = -120.0
+offset_right = 98.0
+offset_bottom = 120.0
 
 [node name="button4" type="TextureButton" parent="."]
 layout_mode = 0
@@ -1476,6 +1561,11 @@ texture = ExtResource("59_slmgn")
 [connection signal="pressed" from="photo2/blue box7/coming_soon" to="." method="_on_coming_soon_pressed"]
 [connection signal="pressed" from="photo2/blue box8/coming_soon" to="." method="_on_coming_soon_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="photo3/CactusLock/cactus button" to="." method="_on_cactus_button_pressed"]
+[connection signal="pressed" from="photo3/WaterFountainLock/water fountain button" to="." method="_on_water_fountain_button_pressed"]
+[connection signal="pressed" from="photo3/SignboardLock/signboard button" to="." method="_on_signboard_button_pressed"]
+[connection signal="pressed" from="photo3/PlantPotLock/plant pot button" to="." method="_on_plant_pot_button_pressed"]
+[connection signal="pressed" from="photo3/BinLock/bin lock button" to="." method="_on_bin_lock_button_pressed"]
 [connection signal="pressed" from="button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label/Chicken" to="." method="_on_chicken_pressed"]

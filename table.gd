@@ -8,7 +8,9 @@ extends Control
 @onready var board = $"CanvasLayer/burger board"
 @onready var board2 = $CanvasLayer/sandwich
 @onready var level =  $"photo1/blue box/level2"
-@onready var coin_label = $"MoneyBox/Coin_Label"  
+@onready var coin_label = $"MoneyBox/Coin_Label"
+
+  
 @onready var label = $"photo1/blue box/Label"
 @onready var label2 = $"photo1/blue box2/Label 2"
 @onready var label3 = $"photo1/blue box3/Label"
@@ -27,6 +29,18 @@ extends Control
 @onready var label16 = $"photo2/blue box2/Level/Label2"
 @onready var label17 = $"photo2/blue box3/Level/Label2"
 @onready var label18 = $"photo2/blue box4/Level/Label2"
+@onready var label19 = $"photo3/box 1"
+@onready var label20 = $"photo3/box 2"
+@onready var label21 = $"photo3/box 3"
+@onready var label22 = $"photo3/box 4"
+@onready var label23 = $"photo3/box 5"
+
+
+@onready var lock19 = $photo3/CactusLock
+@onready var lock20 = $photo3/aterFountainLock
+@onready var lock21 = $photo3/PlantPotLock
+@onready var lock22 = $photo3/BinLock
+@onready var lock23 = $photo3/SignboardLock
 
 
 var id = 0
@@ -408,10 +422,40 @@ func _on_accept_button_pressed() -> void:
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
+	
+	elif id == 19:
+		label19.visible = true
+		lock19.visible = false
+		confirm.visible = true
+		id = 0
+	
+	elif id == 20:
+		label20.visible = true
+		lock20.visible = false
+		confirm.visible = true
+		id = 0
 		
+	elif id == 21:
+		label21.visible = true
+		lock21.visible = false
+		confirm.visible = true
+		id = 0
+		
+	elif id == 22:
+		label22.visible = true
+		lock22.visible = false
+		confirm.visible = true
+		id = 0
+
+	elif id == 23:
+		label23.visible = true
+		lock23.visible = false
+		confirm.visible = true
+		id = 0
+
 	if not lock_confirm:
 		confirm.visible = false  # 正常流程下关闭 confirm
-
+		
 
 func _on_chicken_pressed() -> void:
 	get_tree().paused = true
@@ -570,3 +614,38 @@ func _on_coke_pressed() -> void:
 	id = 18   
 	confirm.visible = true
   
+
+
+func _on_cactus_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 19
+	confirm.visible = true
+
+
+func _on_water_fountain_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 20
+	confirm.visible = true
+
+
+func _on_plant_pot_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 21
+	confirm.visible = true
+
+
+func _on_bin_lock_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 22
+	confirm.visible = true
+
+
+func _on_signboard_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 23
+	confirm.visible = true
