@@ -6,9 +6,11 @@ extends Control
 @onready var sprite_d = $photo4
 @onready var confirm = $CanvasLayer/Comfirmation
 @onready var board = $"CanvasLayer/burger board"
-@onready var board2 =$CanvasLayer/sandwich
+@onready var board2 = $CanvasLayer/sandwich
 @onready var level =  $"photo1/blue box/level2"
-@onready var coin_label = $"MoneyBox/Coin_Label"  # 假设您有一个名为 MoneyLabel 的 Label 节点
+@onready var coin_label = $"MoneyBox/Coin_Label"
+
+  
 @onready var label = $"photo1/blue box/Label"
 @onready var label2 = $"photo1/blue box2/Label 2"
 @onready var label3 = $"photo1/blue box3/Label"
@@ -22,11 +24,24 @@ extends Control
 @onready var label11 = $"photo1/blue box6/Label3"
 @onready var label12 = $"photo1/blue box6/Label4"
 @onready var label13 = $"photo1/blue box7/Label2"
-@onready var label14 = $"photo1/blue box8/Label2"
+@onready var label14 = $"photo1/blue box8/Level/Label2"
 @onready var label15 = $"photo2/blue box/Level/Label2"
 @onready var label16 = $"photo2/blue box2/Level/Label2"
 @onready var label17 = $"photo2/blue box3/Level/Label2"
 @onready var label18 = $"photo2/blue box4/Level/Label2"
+@onready var label19 = $"photo3/box 1"
+@onready var label20 = $"photo3/box 2"
+@onready var label21 = $"photo3/box 3"
+@onready var label22 = $"photo3/box 4"
+@onready var label23 = $"photo3/box 5"
+
+
+@onready var lock19 = $photo3/CactusLock
+@onready var lock20 = $photo3/aterFountainLock
+@onready var lock21 = $photo3/PlantPotLock
+@onready var lock22 = $photo3/BinLock
+@onready var lock23 = $photo3/SignboardLock
+
 
 var id = 0
 var count := 0
@@ -53,13 +68,13 @@ var text : String = "max"
 var lock_confirm := false
 
 
-const PlayerData = preload("res://DATA/PlayerData.gd")
+const PlayerData = preload("user://H.json")
 @onready var Global = get_node("/root/Global")
 
 func _input(event):
-
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		get_tree().quit()
+	
 	
 func _ready():
 	# 给所有按钮连接 signal
@@ -127,13 +142,12 @@ func _ready():
 	coin_label.text = str(Global.money)
 		
 		
-func load_player_data() -> PlayerData:
-	var file_path = "res://DATA/%s.json" 
+func load_player_data() -> Object:
+	var file_path = "user://profile.json" 
 	if FileAccess.file_exists(file_path):
 		var json_string = FileAccess.get_file_as_string(file_path)
-		var player_data = JsonClassConverter.json_string_to_class(PlayerData, json_string)
-		if player_data != null:
-			return player_data
+		if PlayerData != null:
+			return PlayerData
 		else:
 			push_error("❌ 无法解析 JSON 数据。")
 	else:
@@ -151,11 +165,12 @@ func _on_button_2_pressed() -> void:
 
 func _on_button_1_pressed() -> void:
 	$ClickSound.play()
-		# 显示 A，隐藏 B
+		# show A，visibleB
 	sprite_a.visible = true
 	sprite_b.visible = false
 	sprite_c.visible = false
 	sprite_d.visible = false
+
 
 func _on_button_3_pressed() -> void:
 	$ClickSound.play()
@@ -195,6 +210,7 @@ func _on_upgrade_button_pressed() -> void:
 		id = 0
 		print("not enough money")
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 1
 		confirm.visible = true
@@ -204,11 +220,14 @@ func _on_upgrade_button_2_pressed() -> void:
 	if Global.money < 100:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 2
 		confirm.visible = true
 
+
 func _on_cancel_button_pressed() -> void:
+	get_tree().paused = false
 	$ClickSound.play()
 	id = 0 
 	print("reset")
@@ -216,8 +235,8 @@ func _on_cancel_button_pressed() -> void:
 
 
 
-
 func _on_accept_button_pressed() -> void:	
+	get_tree().paused = false
 	$ClickSound.play()
 	if id == 1:
 		if count < max:
@@ -230,6 +249,7 @@ func _on_accept_button_pressed() -> void:
 			if count == 3:
 				label.text = str(text)
 				print("达到最大值")
+		
 	elif id == 2:
 		if count2 < max:
 			count2 += 1
@@ -241,6 +261,7 @@ func _on_accept_button_pressed() -> void:
 			if count2 == 3:
 				label2.text = str(text)
 				print("达到最大值")
+		
 	elif id == 3:
 		if count3 < max:
 			count3 += 1
@@ -252,6 +273,7 @@ func _on_accept_button_pressed() -> void:
 			if count3 == 3:
 				label3.text = str(text)
 			print("达到最大值")
+		
 	elif id == 4:
 		if count4 < max:
 			count4 += 1
@@ -263,6 +285,7 @@ func _on_accept_button_pressed() -> void:
 			if count4 == 3:
 				label4.text = str(text)
 			print("达到最大值")
+		
 	elif id == 5:
 		if count5 < max:
 			count5 += 1
@@ -274,6 +297,7 @@ func _on_accept_button_pressed() -> void:
 			if count5 == 3:
 				label5.text = str(text)
 			print("达到最大值")
+		
 	elif id == 6:
 		if count6 < max:
 			count6 += 1
@@ -285,6 +309,7 @@ func _on_accept_button_pressed() -> void:
 			if count6 == 3:
 				label6.text = str(text)
 			print("达到最大值")
+		
 	elif id == 7:
 		if count7 < max:
 			count7 += 1
@@ -296,6 +321,7 @@ func _on_accept_button_pressed() -> void:
 			if count7 == 3:
 				label7.text = str(text)
 			print("达到最大值")
+		
 	elif id == 8:
 		if count8 < max:
 			count8 += 1
@@ -307,6 +333,7 @@ func _on_accept_button_pressed() -> void:
 			if count8 == 3:
 				label8.text = str(text)
 			print("达到最大值")
+		
 	elif id == 9:
 		if count9 < max:
 			count9 += 1
@@ -318,6 +345,7 @@ func _on_accept_button_pressed() -> void:
 			if count9 == 3:
 				label9.text = str(text)
 			print("达到最大值")
+		
 	elif id == 10:
 		if count10 < max:
 			count10 += 1
@@ -329,6 +357,7 @@ func _on_accept_button_pressed() -> void:
 			if count10 == 3:
 				label10.text = str(text)
 			print("达到最大值")
+		
 	elif id == 11:
 		if count11 < max:
 			count11 += 1
@@ -340,6 +369,7 @@ func _on_accept_button_pressed() -> void:
 			if count11 == 3:
 				label11.text = str(text)
 			print("达到最大值")
+		
 	elif id == 12:
 		if count12 < max:
 			count12 += 1
@@ -351,6 +381,7 @@ func _on_accept_button_pressed() -> void:
 			if count12 == 3:
 				label12.text = str(text)
 			print("达到最大值")
+		
 	elif id == 13:
 		if count13 < max:
 			count13 += 1
@@ -363,6 +394,7 @@ func _on_accept_button_pressed() -> void:
 				label13.text = str(text)
 			print("达到最大值")
 		print("Bolognese")
+		
 	elif id == 14:
 		if count14 < max:
 			count14 += 1
@@ -375,6 +407,7 @@ func _on_accept_button_pressed() -> void:
 				label14.text = str(text)
 			print("达到最大值")
 		print("Bolognese")
+		
 	elif id == 15:
 		if count15 < max:
 			count15 += 1
@@ -388,6 +421,7 @@ func _on_accept_button_pressed() -> void:
 				confirm.visible = true
 			print("达到最大值")
 		print("Bolognese")
+		
 	elif id == 16:
 		if count16 < max:
 			count16 += 1
@@ -401,6 +435,7 @@ func _on_accept_button_pressed() -> void:
 				confirm.visible = true
 			print("达到最大值")
 		print("Bolognese")
+		
 	elif id == 17:
 		if count17 < max:
 			count17 += 1
@@ -414,6 +449,7 @@ func _on_accept_button_pressed() -> void:
 				confirm.visible = true
 			print("达到最大值")
 		print("Bolognese")
+		
 	elif id == 18:
 		if count18 < max:
 			count18 += 1
@@ -428,16 +464,46 @@ func _on_accept_button_pressed() -> void:
 			print("达到最大值")
 		print("Bolognese")
 		
+	
+	elif id == 19:
+		label19.visible = true
+		lock19.visible = false
+		confirm.visible = true
+		id = 0
+	
+	elif id == 20:
+		label20.visible = true
+		lock20.visible = false
+		confirm.visible = true
+		id = 0
 		
-	# 🚫 只有在不是 max 的时候才关闭 confirm
+	elif id == 21:
+		label21.visible = true
+		lock21.visible = false
+		confirm.visible = true
+		id = 0
+		
+	elif id == 22:
+		label22.visible = true
+		lock22.visible = false
+		confirm.visible = true
+		id = 0
+
+	elif id == 23:
+		label23.visible = true
+		lock23.visible = false
+		confirm.visible = true
+		id = 0
+
 	if not lock_confirm:
 		confirm.visible = false  # 正常流程下关闭 confirm
-
+		
 
 func _on_chicken_pressed() -> void:
 	if Global.money < 150:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 9
 		confirm.visible = true
@@ -448,6 +514,7 @@ func _on_lamb_pressed() -> void:
 	if Global.money < 150:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 10
 		confirm.visible = true
@@ -458,15 +525,18 @@ func _on_beef_pressed() -> void:
 	if Global.money < 150:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 11
 		confirm.visible = true
 		board.visible = false
 	
+	
 func _on_vege_pressed() -> void:
 	if Global.money < 150:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 12
 		confirm.visible = true
@@ -474,12 +544,8 @@ func _on_vege_pressed() -> void:
 
 
 func _on_select_button_pressed() -> void:
-	if Global.money >= 100:
-		$ClickSound.play()	
-		board.visible = true
-	else:
-		pass
-
+	$ClickSound.play()	
+	board.visible = true
 
 
 func save_player_data():
@@ -505,6 +571,7 @@ func _on_upgrade_button_3_pressed() -> void:
 	if Global.money < 100:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 3
 		confirm.visible = true
@@ -514,6 +581,7 @@ func _on_upgrade_button_4_pressed() -> void:
 	if Global.money < 200:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 4
 		confirm.visible = true
@@ -522,6 +590,7 @@ func _on_upgrade_button_4_pressed() -> void:
 func _on_upgrade_button_5_pressed() -> void:
 	if Global.money >= 150:
 		$ClickSound.play()	
+		id = 8
 		board2.visible = true
 
 
@@ -529,6 +598,7 @@ func _on_upgrade_button_7_pressed() -> void:
 	if Global.money < 200:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 13
 		confirm.visible = true
@@ -538,6 +608,7 @@ func _on_chicken_01_pressed() -> void:
 	if Global.money < 150:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 5
 		confirm.visible = true
@@ -548,6 +619,7 @@ func _on_lamb_01_pressed() -> void:
 	if Global.money < 150:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 6
 		confirm.visible = true
@@ -558,6 +630,7 @@ func _on_beef_01_pressed() -> void:
 	if Global.money < 150:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 7
 		confirm.visible = true
@@ -568,6 +641,7 @@ func _on_egg_mayo_01_pressed() -> void:
 	if Global.money < 150:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 8
 		confirm.visible = true
@@ -578,6 +652,7 @@ func _on_upgrade_button_8_pressed() -> void:
 	if Global.money < 200:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()	
 		id = 14
 		confirm.visible = true
@@ -587,6 +662,7 @@ func _on_button_sparkling_pressed() -> void:
 	if Global.money < 100:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()
 		id = 15
 		confirm.visible = true
@@ -604,6 +680,7 @@ func _on_button_sprite_pressed() -> void:
 	if Global.money < 100:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()
 		id = 16
 		confirm.visible = true
@@ -613,6 +690,7 @@ func _on_plus_pressed() -> void:
 	if Global.money < 100:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()
 		id = 17
 		confirm.visible = true
@@ -622,6 +700,43 @@ func _on_coke_pressed() -> void:
 	if Global.money < 100:
 		id = 0
 	else:
+		get_tree().paused = true
 		$ClickSound.play()
-		id = 18
+		id = 18   
 		confirm.visible = true
+  
+
+
+func _on_cactus_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 19
+	confirm.visible = true
+
+
+func _on_water_fountain_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 20
+	confirm.visible = true
+
+
+func _on_plant_pot_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 21
+	confirm.visible = true
+
+
+func _on_bin_lock_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 22
+	confirm.visible = true
+
+
+func _on_signboard_button_pressed() -> void:
+	get_tree().paused = true
+	$ClickSound.play()
+	id = 23
+	confirm.visible = true

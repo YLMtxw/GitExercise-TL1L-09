@@ -93,6 +93,7 @@ offset_right = 169.0
 offset_bottom = 275.0
 scale = Vector2(3, 3.5)
 tooltip_auto_translate_mode = 1
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_ht3pi")
 texture_pressed = ExtResource("3_ms31j")
 
@@ -107,6 +108,7 @@ offset_top = 255.0
 offset_right = 364.0
 offset_bottom = 275.0
 scale = Vector2(3, 3.5)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_ht3pi")
 texture_pressed = ExtResource("5_ms31j")
 script = ExtResource("5_ht3pi")
@@ -179,8 +181,8 @@ motion_mirroring = Vector2(574, 0)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
-position = Vector2(293, 188.688)
-scale = Vector2(0.531017, 0.529688)
+position = Vector2(287, 171.656)
+scale = Vector2(0.531017, 0.484288)
 texture = ExtResource("2_0d5ky")
 
 [node name="setting button" type="TextureButton" parent="."]
@@ -189,6 +191,7 @@ offset_top = 17.0
 offset_right = 532.0
 offset_bottom = 39.0
 scale = Vector2(2, 2)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("11_ms31j")
 texture_pressed = ExtResource("12_xuc80")
 texture_hover = ExtResource("13_aa878")
@@ -250,7 +253,7 @@ tooltip_auto_translate_mode = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "
-Audio Change"
+VOLUME"
 horizontal_alignment = 1
 autowrap_mode = 2
 justification_flags = 160

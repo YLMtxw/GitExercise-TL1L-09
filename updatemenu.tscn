@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://jjtkcedp5hyj"]
+[gd_scene load_steps=64 format=3 uid="uid://jjtkcedp5hyj"]
 
 [ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_eupx0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://f6157ah74bx3" path="res://photo/menu01-removebg-preview.png" id="2_rc1au"]
 [ext_resource type="AudioStream" uid="uid://8pwv4v0iata" path="res://song/door-open-close-45475.mp3" id="3_g0luy"]
 [ext_resource type="Texture2D" uid="uid://dleod6oi06gyu" path="res://photo/WhatsApp_图像2025-05-14于00.15.16_9bdf4754-removebg-preview (1).png" id="3_k1gfb"]
+[ext_resource type="Script" uid="uid://i8iokgmrcl7t" path="res://bgm.gd" id="3_slmgn"]
 [ext_resource type="Texture2D" uid="uid://brwdj4lim6gvp" path="res://photo/WhatsApp_图像2025-05-14于00.15.16_b55d65e7-removebg-preview.png" id="4_0whe8"]
 [ext_resource type="Texture2D" uid="uid://cpe7flaxc7wqu" path="res://photo/WhatsApp_图像2025-05-14于00.15.17_72a5ef38-removebg-preview.png" id="5_ax1vu"]
 [ext_resource type="Texture2D" uid="uid://cluqgich4icd6" path="res://photo/WhatsApp_图像2025-05-14于00.15.17_6bd5c3b7-removebg-preview.png" id="6_8snal"]
@@ -38,16 +39,28 @@
 [ext_resource type="Texture2D" uid="uid://tobikanm2drg" path="res://photo/cancel hover.png" id="29_uv10y"]
 [ext_resource type="Texture2D" uid="uid://i5iwv38djvqf" path="res://photo/accept.png" id="30_afstm"]
 [ext_resource type="Texture2D" uid="uid://iscppd8e1cp0" path="res://photo/accept pressed.png" id="31_ologc"]
+[ext_resource type="Texture2D" uid="uid://bup63qirancjl" path="res://photo/cactus.png" id="31_rkwh0"]
 [ext_resource type="Texture2D" uid="uid://bl81ya34pa2bq" path="res://photo/accept hover.png" id="32_cy34d"]
+[ext_resource type="Texture2D" uid="uid://c3n6eh7lobgqh" path="res://photo/cactus lock.jpg" id="32_nt5q0"]
+[ext_resource type="Texture2D" uid="uid://d2kr5yuri0qm5" path="res://photo/pot_shell.png" id="33_ah72k"]
+[ext_resource type="Texture2D" uid="uid://chiv0nef2dd1o" path="res://photo/padlock-removebg-preview.png" id="33_uxvje"]
+[ext_resource type="Texture2D" uid="uid://cjlxldy7cwqad" path="res://photo/bin-removebg-preview.png" id="34_by4wh"]
 [ext_resource type="Texture2D" uid="uid://de81fljuplytx" path="res://photo/paper.png" id="35_wcm3e"]
 [ext_resource type="AudioStream" uid="uid://cqn1vk21dnclo" path="res://song/jazz-background-music-325355.mp3" id="36_gqinc"]
+[ext_resource type="Texture2D" uid="uid://c6wq8rfc2mea" path="res://photo/signboard lock.jpg" id="36_qrdaw"]
+[ext_resource type="Texture2D" uid="uid://mkerffylv5sm" path="res://photo/signboard-removebg-preview.png" id="37_02g0u"]
+[ext_resource type="Texture2D" uid="uid://dm7ldkjrpllsj" path="res://photo/plant pot lock.jpg" id="37_lfxla"]
+[ext_resource type="Texture2D" uid="uid://ciqh3araxi03o" path="res://photo/water fountain lock.jpg" id="38_lfxla"]
+[ext_resource type="Texture2D" uid="uid://dhlajgf7dscoc" path="res://photo/bin lock.jpg" id="39_qrdaw"]
 [ext_resource type="Texture2D" uid="uid://bse38qb3812rg" path="res://photo/money_box-removebg-preview.png" id="40_7p0w4"]
 [ext_resource type="Texture2D" uid="uid://bue5c4maub8v2" path="res://MoneyLabel/MLabel_Sprites/Money.png" id="41_2ta2v"]
 [ext_resource type="Texture2D" uid="uid://dt5ewslwai5la" path="res://photo/cooked 01.png" id="42_rpnmw"]
 [ext_resource type="Texture2D" uid="uid://bqstpvyioyupd" path="res://photo/chatbox-removebg-preview.png" id="43_3hp0w"]
 [ext_resource type="Script" uid="uid://d1x6tcqwop57s" path="res://money_box.gd" id="43_cvh4x"]
+[ext_resource type="Texture2D" uid="uid://rvs2g47puntu" path="res://photo/water_fountain.png" id="43_rpnmw"]
 [ext_resource type="Script" uid="uid://fwycxljunopo" path="res://coin_label.gd" id="44_313i5"]
 [ext_resource type="AudioStream" uid="uid://b8etp3s1kt86j" path="res://song/wrong-answer-126515.mp3" id="46_cvh4x"]
+[ext_resource type="Texture2D" uid="uid://rba0np5jsl4e" path="res://photo/cant_pressed.png" id="59_slmgn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cvh4x"]
 line_spacing = 7.0
@@ -58,6 +71,11 @@ shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="GDScript" id="GDScript_cvh4x"]
+script/source = "extends Sprite2D
+
+func _ready() -> void:
+	process_mode = PROCESS_MODE_ALWAYS
+"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -74,12 +92,13 @@ script = ExtResource("1_ra00y")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("36_gqinc")
-volume_db = 20.0
+volume_db = 10.0
 autoplay = true
 max_distance = 4096.0
 attenuation = 0.366022
 max_polyphony = 4
 parameters/looping = false
+script = ExtResource("3_slmgn")
 
 [node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_eupx0")
@@ -365,12 +384,14 @@ offset_right = -46.6886
 offset_bottom = -82.1172
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Level :"
+metadata/_edit_use_anchors_ = true
 
 [node name="upgrade button 5" type="TextureButton" parent="photo1/blue box5"]
 offset_left = -90.9364
 offset_top = -108.121
 offset_right = 91.0636
 offset_bottom = 110.879
+metadata/_edit_use_anchors_ = true
 
 [node name="Sandwich-removebg-preview" type="Sprite2D" parent="photo1/blue box5"]
 position = Vector2(-46.1682, 33.8892)
@@ -386,6 +407,7 @@ scale = Vector2(1.5, 1.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "SANDWICH"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="photo1/blue box5"]
 offset_left = -29.2289
@@ -396,6 +418,7 @@ theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "0"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="photo1/blue box5/Label"]
 layout_mode = 0
@@ -405,6 +428,7 @@ offset_bottom = 23.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "CHIC"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="photo1/blue box5"]
 offset_left = -29.2288
@@ -415,6 +439,7 @@ theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "0"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="photo1/blue box5/Label2"]
 layout_mode = 0
@@ -425,6 +450,7 @@ offset_bottom = 39.0268
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "BEEF"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="photo1/blue box5"]
 offset_left = -29.2288
@@ -435,6 +461,7 @@ theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "0"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="photo1/blue box5/Label3"]
 layout_mode = 0
@@ -445,6 +472,7 @@ offset_bottom = -9.02682
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "LAMB"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="photo1/blue box5"]
 offset_left = -29.2289
@@ -455,6 +483,7 @@ theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "0"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="photo1/blue box5/Label4"]
 layout_mode = 0
@@ -464,6 +493,7 @@ offset_bottom = 23.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 text = "EGG"
+metadata/_edit_use_anchors_ = true
 
 [node name="Up_price8" type="Label" parent="photo1/blue box5"]
 offset_left = -6.49463
@@ -807,7 +837,7 @@ offset_bottom = 107.392
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
-text = "SPRITE"
+text = "SPRINT"
 
 [node name="Sprite" type="Sprite2D" parent="photo2/blue box2"]
 position = Vector2(-6.11383, -2.83545)
@@ -863,14 +893,14 @@ scale = Vector2(0.63917, 0.504454)
 texture = ExtResource("22_30naw")
 
 [node name="Label" type="Label" parent="photo2/blue box3"]
-offset_left = -79.4796
-offset_top = 76.557
-offset_right = 83.5204
-offset_bottom = 104.557
+offset_left = -82.5365
+offset_top = 59.5443
+offset_right = 82.4635
+offset_bottom = 83.5443
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
-theme_override_font_sizes/font_size = 30
-text = "100 PLUS"
+theme_override_font_sizes/font_size = 27
+text = "1000 PLUS"
 
 [node name="Level" type="Label" parent="photo2/blue box3"]
 offset_left = -88.0
@@ -924,14 +954,14 @@ scale = Vector2(0.552327, 0.480584)
 texture = ExtResource("27_313i5")
 
 [node name="Coke" type="Label" parent="photo2/blue box4"]
-offset_left = -79.4783
-offset_top = 85.0634
-offset_right = 84.5217
-offset_bottom = 108.063
+offset_left = -82.5352
+offset_top = 59.5444
+offset_right = 81.4648
+offset_bottom = 82.5444
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 25
-text = "COCA COLA"
+text = "COCO CACA"
 
 [node name="Level" type="Label" parent="photo2/blue box4"]
 offset_left = -88.0
@@ -954,10 +984,10 @@ theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="coke" type="TextureButton" parent="photo2/blue box4"]
-offset_left = -89.0
-offset_top = -105.0
-offset_right = 88.0
-offset_bottom = 110.0
+offset_left = -92.0
+offset_top = -108.0
+offset_right = 91.0
+offset_bottom = 108.0
 
 [node name="Up_price5" type="Label" parent="photo2/blue box4"]
 offset_left = -45.8523
@@ -1126,18 +1156,258 @@ position = Vector2(307, 146)
 scale = Vector2(0.886, 0.904)
 texture = ExtResource("6_8snal")
 
-[node name="Label" type="Label" parent="photo3"]
-offset_left = -68.8488
-offset_top = -15.4867
-offset_right = 122.151
-offset_bottom = 61.5133
+[node name="box 1" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(-106.095, -44.2478)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Cactus" type="Sprite2D" parent="photo3/box 1"]
+position = Vector2(7.62939e-06, -25.8997)
+scale = Vector2(0.346256, 0.309051)
+texture = ExtResource("31_rkwh0")
+
+[node name="Label" type="Label" parent="photo3/box 1"]
+offset_left = -69.184
+offset_top = 48.5095
+offset_right = 72.816
+offset_bottom = 85.5096
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 32
+text = "Cactus"
+
+[node name="box 2" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(-106.095, 45.354)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="WaterFountain" type="Sprite2D" parent="photo3/box 2"]
+position = Vector2(-1.14441e-05, -25.6815)
+scale = Vector2(0.347424, 0.27679)
+texture = ExtResource("43_rpnmw")
+
+[node name="Label" type="Label" parent="photo3/box 2"]
+offset_left = -78.208
+offset_top = 42.8025
+offset_right = 79.792
+offset_bottom = 91.8025
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "Water 
+Fountain"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box 3" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(-30.474, -44.2478)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Label" type="Label" parent="photo3/box 3"]
+offset_left = -81.216
+offset_top = 54.2166
+offset_right = 77.784
+offset_bottom = 77.2166
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "Plant Pot"
+
+[node name="PotShell" type="Sprite2D" parent="photo3/box 3"]
+position = Vector2(-1.21593e-05, -22.828)
+scale = Vector2(0.283088, 0.261414)
+texture = ExtResource("33_ah72k")
+
+[node name="box 4" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(-30.474, 45.354)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Bin-removebg-preview" type="Sprite2D" parent="photo3/box 4"]
+position = Vector2(3.91006e-05, -22.828)
+scale = Vector2(0.301424, 0.287548)
+texture = ExtResource("34_by4wh")
+
+[node name="Label" type="Label" parent="photo3/box 4"]
+offset_left = -36.096
+offset_top = 45.656
+offset_right = 41.904
+offset_bottom = 77.6561
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "Bin"
+
+[node name="box 5" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(45.1467, -44.2478)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Signboard-removebg-preview" type="Sprite2D" parent="photo3/box 5"]
+position = Vector2(5.72205e-06, -16.2464)
+scale = Vector2(0.259378, 0.236669)
+texture = ExtResource("37_02g0u")
+
+[node name="Label" type="Label" parent="photo3/box 5"]
+offset_left = -66.176
+offset_top = 54.2166
+offset_right = 69.824
+offset_bottom = 77.2166
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 20
+text = "Signboard"
+
+[node name="box 6" type="Sprite2D" parent="photo3"]
+position = Vector2(45.1467, 45.354)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Label" type="Label" parent="photo3/box 6"]
+offset_left = -58.0812
+offset_top = -25.519
+offset_right = 60.9188
+offset_bottom = 23.481
 theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 25
 text = "COMING
 SOON"
 horizontal_alignment = 1
+
+[node name="box 7" type="Sprite2D" parent="photo3"]
+position = Vector2(120.767, -44.2478)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Label" type="Label" parent="photo3/box 7"]
+offset_left = -58.0812
+offset_top = -25.519
+offset_right = 60.9188
+offset_bottom = 23.481
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "COMING
+SOON"
+horizontal_alignment = 1
+
+[node name="box 8" type="Sprite2D" parent="photo3"]
+position = Vector2(120.767, 45.354)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Label" type="Label" parent="photo3/box 8"]
+offset_left = -58.0812
+offset_top = -25.519
+offset_right = 60.9188
+offset_bottom = 23.481
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "COMING
+SOON"
+horizontal_alignment = 1
+
+[node name="CactusLock" type="Sprite2D" parent="photo3"]
+position = Vector2(-106.659, -43.6947)
+scale = Vector2(0.251273, 0.24198)
+texture = ExtResource("32_nt5q0")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/CactusLock"]
+position = Vector2(2.24597, -2.28571)
+scale = Vector2(0.399439, 0.292359)
+texture = ExtResource("33_uxvje")
+
+[node name="cactus button" type="TextureButton" parent="photo3/CactusLock"]
+offset_left = -137.0
+offset_top = -176.0
+offset_right = 133.0
+offset_bottom = 176.0
+mouse_default_cursor_shape = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="photo3"]
+visible = false
+
+[node name="WaterFountainLock" type="Sprite2D" parent="photo3"]
+position = Vector2(-106.799, 45.354)
+scale = Vector2(0.254149, 0.245123)
+texture = ExtResource("38_lfxla")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/WaterFountainLock"]
+position = Vector2(2.77112, -40.6153)
+scale = Vector2(0.397066, 0.288358)
+texture = ExtResource("33_uxvje")
+
+[node name="water fountain button" type="TextureButton" parent="photo3/WaterFountainLock"]
+offset_left = -135.0
+offset_top = -176.0
+offset_right = 136.0
+offset_bottom = 176.0
+mouse_default_cursor_shape = 2
+
+[node name="SignboardLock" type="Sprite2D" parent="photo3"]
+position = Vector2(45.1467, -43.5287)
+scale = Vector2(0.431338, 0.424226)
+texture = ExtResource("36_qrdaw")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/SignboardLock"]
+position = Vector2(2.61676, -1.69492)
+scale = Vector2(0.248179, 0.170339)
+texture = ExtResource("33_uxvje")
+
+[node name="signboard button" type="TextureButton" parent="photo3/SignboardLock"]
+offset_left = -78.0
+offset_top = -98.0
+offset_right = 81.0
+offset_bottom = 100.0
+
+[node name="PlantPotLock" type="Sprite2D" parent="photo3"]
+position = Vector2(-30.739, -44.0266)
+scale = Vector2(0.258269, 0.245259)
+texture = ExtResource("37_lfxla")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/PlantPotLock"]
+position = Vector2(-3.34446, -0.902077)
+scale = Vector2(0.399439, 0.292359)
+texture = ExtResource("33_uxvje")
+
+[node name="plant pot button" type="TextureButton" parent="photo3/PlantPotLock"]
+offset_left = -134.0
+offset_top = -172.0
+offset_right = 137.0
+offset_bottom = 171.0
+mouse_default_cursor_shape = 2
+
+[node name="BinLock" type="Sprite2D" parent="photo3"]
+position = Vector2(-30.474, 45.354)
+scale = Vector2(0.358307, 0.359513)
+texture = ExtResource("39_qrdaw")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/BinLock"]
+position = Vector2(-3.15003, -27.6923)
+scale = Vector2(0.305859, 0.208341)
+texture = ExtResource("33_uxvje")
+
+[node name="bin lock button" type="TextureButton" parent="photo3/BinLock"]
+offset_left = -94.0
+offset_top = -120.0
+offset_right = 98.0
+offset_bottom = 120.0
 
 [node name="button4" type="TextureButton" parent="."]
 layout_mode = 0
@@ -1360,6 +1630,15 @@ position = Vector2(247, 48)
 scale = Vector2(0.2125, 0.128968)
 texture = ExtResource("22_30naw")
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+
+[node name="water fountain" type="Sprite2D" parent="CanvasLayer"]
+
+[node name="WaterFountain" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(291, 47)
+scale = Vector2(0.068, 0.052)
+texture = ExtResource("43_rpnmw")
+
 [node name="MoneyBox" type="Sprite2D" parent="."]
 position = Vector2(451, 253)
 scale = Vector2(0.218487, 0.141753)
@@ -1380,6 +1659,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 60
 script = ExtResource("44_313i5")
+metadata/_edit_use_anchors_ = true
 
 [node name="Cooked01" type="Sprite2D" parent="."]
 position = Vector2(109, 215)
@@ -1389,6 +1669,11 @@ texture = ExtResource("42_rpnmw")
 [node name="max sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("46_cvh4x")
 volume_db = 24.0
+
+[node name="CantPressed" type="Sprite2D" parent="."]
+position = Vector2(334.25, 43.25)
+scale = Vector2(3.76667, 2.73077)
+texture = ExtResource("59_slmgn")
 
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="photo1/blue box/upgrade button" to="." method="_on_upgrade_button_pressed"]
@@ -1409,6 +1694,11 @@ volume_db = 24.0
 [connection signal="pressed" from="photo2/blue box7/coming_soon" to="." method="_on_coming_soon_pressed"]
 [connection signal="pressed" from="photo2/blue box8/coming_soon" to="." method="_on_coming_soon_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="photo3/CactusLock/cactus button" to="." method="_on_cactus_button_pressed"]
+[connection signal="pressed" from="photo3/WaterFountainLock/water fountain button" to="." method="_on_water_fountain_button_pressed"]
+[connection signal="pressed" from="photo3/SignboardLock/signboard button" to="." method="_on_signboard_button_pressed"]
+[connection signal="pressed" from="photo3/PlantPotLock/plant pot button" to="." method="_on_plant_pot_button_pressed"]
+[connection signal="pressed" from="photo3/BinLock/bin lock button" to="." method="_on_bin_lock_button_pressed"]
 [connection signal="pressed" from="button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label/Chicken" to="." method="_on_chicken_pressed"]
@@ -1416,8 +1706,10 @@ volume_db = 24.0
 [connection signal="pressed" from="CanvasLayer/burger board/Label3/beef" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label4/vege" to="." method="_on_vege_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_chicken_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Lamb Sand/lamb 01" to="." method="_on_lamb_01_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/EGG MAYO/egg mayo 01" to="." method="_on_egg_mayo_01_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_cancel_button_pressed"]

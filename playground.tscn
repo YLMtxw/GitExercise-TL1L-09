@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bmlcjik7mnbd1"]
+[gd_scene load_steps=36 format=4 uid="uid://bmlcjik7mnbd1"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Script" uid="uid://chiaggp51axdq" path="res://playground.gd" id="1_snn6g"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://c63k5aecrled" path="res://CLayer/sprite/Next_p.png" id="25_lraom"]
 [ext_resource type="PackedScene" uid="uid://dxceiapi1cbmt" path="res://In-game Setting/setting.tscn" id="27_lraom"]
 [ext_resource type="AudioStream" uid="uid://cemm7i42isxxp" path="res://song/jazz-restaurant-cafe-music-334836.mp3" id="27_ofol1"]
+[ext_resource type="Script" uid="uid://dmsel8ln7c5os" path="res://audio_stream_player.gd" id="30_g64nf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynsuh"]
 texture = ExtResource("2_is3ju")
@@ -1238,6 +1239,7 @@ scale = Vector2(1, 1)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("27_ofol1")
 parameters/looping = true
+script = ExtResource("30_g64nf")
 
 [connection signal="pressed" from="CanvasLayer/closeButton" to="CanvasLayer" method="_on_close_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/paycheck/paycheckmenu/next" to="CanvasLayer" method="_on_next_pressed"]

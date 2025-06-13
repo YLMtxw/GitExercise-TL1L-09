@@ -102,6 +102,7 @@ Sparkling water drink, Ice
 "
 
 [node name="Chicken Sandwich6" type="Label" parent="WATER"]
+layout_mode = 0
 offset_left = 188.0
 offset_top = -115.0
 offset_right = 1456.0
@@ -116,6 +117,7 @@ Sprint drink, Ice
 "
 
 [node name="Chicken Sandwich7" type="Label" parent="WATER"]
+layout_mode = 0
 offset_left = 188.0
 offset_top = -84.0
 offset_right = 1456.0
@@ -130,6 +132,7 @@ text = "4)  1000 Minus
 "
 
 [node name="Chicken Sandwich8" type="Label" parent="WATER"]
+layout_mode = 0
 offset_left = 188.0
 offset_top = -45.0
 offset_right = 1456.0
@@ -144,6 +147,7 @@ Hot water
 "
 
 [node name="Chicken Sandwich9" type="Label" parent="WATER"]
+layout_mode = 0
 offset_left = 188.0
 offset_top = -9.99999
 offset_right = 842.0
@@ -167,6 +171,7 @@ offset_bottom = 40.0
 script = ExtResource("6_ss8hp")
 
 [node name="TextureButton2" type="TextureButton" parent="Control"]
+layout_mode = 0
 offset_left = 417.0
 offset_top = 265.0
 offset_right = 447.0

@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxceiapi1cbmt"]
+[gd_scene load_steps=9 format=3 uid="uid://dxceiapi1cbmt"]
 
 [ext_resource type="Script" uid="uid://bevbcc3smu5uw" path="res://setting.gd" id="1_7hpmu"]
 [ext_resource type="Texture2D" uid="uid://bd5t5cfysbhoo" path="res://In-game Setting/Sprite/Setting.png" id="2_lcb0a"]
+[ext_resource type="FontFile" uid="uid://bk4cd3hvf031o" path="res://font/PixelatedEleganceRegular-ovyAA.ttf" id="3_by7w8"]
 [ext_resource type="Script" uid="uid://dboerlcfa0opp" path="res://h_slider.gd" id="3_k0s41"]
 [ext_resource type="Texture2D" uid="uid://0jiwop7k6p7f" path="res://In-game Setting/Sprite/quit.png" id="4_k0s41"]
 [ext_resource type="Texture2D" uid="uid://dttfrvmqfn8fp" path="res://In-game Setting/Sprite/quit-p.png" id="5_skhhd"]
+[ext_resource type="Texture2D" uid="uid://dk8jlcrgfc213" path="res://photo/resume.png" id="9_v7ohr"]
+[ext_resource type="Texture2D" uid="uid://dt78hldfsvl2c" path="res://photo/resume pressed.png" id="10_118os"]
 
 [node name="Setting" type="Control"]
 layout_mode = 3
@@ -26,12 +29,13 @@ texture = ExtResource("2_lcb0a")
 [node name="Label" type="Label" parent="Setting"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 54.0
-offset_top = 21.0
-offset_right = 109.0
-offset_bottom = 44.0
+offset_left = 22.0
+offset_top = 37.0
+offset_right = 107.0
+offset_bottom = 53.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_by7w8")
 text = "Setting"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -41,10 +45,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.223
 anchor_right = 0.223
-offset_left = 7.717
-offset_top = 91.0
-offset_right = 116.717
-offset_bottom = 107.0
+offset_left = -8.283
+offset_top = 108.0
+offset_right = 120.717
+offset_bottom = 124.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.9, 0.9)
@@ -56,11 +60,12 @@ script = ExtResource("3_k0s41")
 [node name="Volume" type="Label" parent="Setting"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 78.0
-offset_top = 68.0
-offset_right = 137.0
-offset_bottom = 91.0
+offset_left = 58.0
+offset_top = 83.0
+offset_right = 134.0
+offset_bottom = 106.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_by7w8")
 text = "Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -75,5 +80,28 @@ scale = Vector2(4, 4)
 texture_normal = ExtResource("4_k0s41")
 texture_pressed = ExtResource("5_skhhd")
 
+[node name="Resume" type="Label" parent="Setting"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 165.0
+offset_right = 114.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_by7w8")
+theme_override_font_sizes/font_size = 14
+text = "Resume :"
+
+[node name="button resume" type="TextureButton" parent="Setting/Resume"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = -12.0
+offset_right = 110.0
+offset_bottom = 2.0
+scale = Vector2(3, 3)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_v7ohr")
+texture_pressed = ExtResource("10_118os")
+
 [connection signal="value_changed" from="Setting/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="Setting/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Setting/Resume/button resume" to="." method="_on_button_resume_pressed"]
