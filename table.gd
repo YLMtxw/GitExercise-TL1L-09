@@ -9,6 +9,7 @@ extends Control
 @onready var board2 = $CanvasLayer/sandwich
 @onready var level =  $"photo1/blue box/level2"
 @onready var coin_label = $"MoneyBox/Coin_Label"
+@onready var accept_button = $"AcceptButton"
 
   
 @onready var label = $"photo1/blue box/Label"
@@ -71,12 +72,13 @@ var count15 := 0
 var count16 := 0
 var count17 := 0
 var count18 := 0
+var count19 := 0
 
 
 var max := 3
 var text : String = "max"
 var lock_confirm := false
-
+var accept_button_disabled = false
 
 const PlayerData = preload("user://H.json")
 @onready var Global = get_node("/root/Global")
@@ -262,188 +264,246 @@ func _on_accept_button_pressed() -> void:
 	
 	var cactus = get_node_or_null("/root/Playground/cactus")
 	
+
+	
+
+	 
 	get_tree().paused = false
 	$ClickSound.play()
 	if id == 1:
+		if count >= 3:
+			return  
 		if count < max:
 			count += 1
 			label.text = str(count)
 			if count == 3:
 				label.text = str(text)
+				accept_button_disabled = true
 				print("达到最大值")
 
 			print("Aglio Olio")
 		id = 0
 		
 	elif id == 2:
+		if count2 >= 3:
+			return 
 		if count2 < max:
 			count2 += 1
 			label2.text = str(count2)
 			if count2 == 3:
 				label2.text = str(text)
+				accept_button_disabled = true
 				print("达到最大值")
 		id = 0
 		
 	elif id == 3:
+		if count3 >= 3:
+			return 
 		if count3 < max:
 			count3 += 1
 			label3.text = str(count3)
 			if count3 == 3:
 				label3.text = str(text)
+				accept_button_disabled = true
 			print("达到最大值")
 		id = 0
 		
 	elif id == 4:
+		if count4 >= 3:
+			return 
 		if count4 < max:
 			count4 += 1
 			label4.text = str(count4)
 			if count4 == 3:
 				label4.text = str(text)
+				accept_button_disabled = true
 			print("达到最大值")
 		id = 0
 		
 	elif id == 5:
+		if count5 >= 3:
+			return 
 		if count5 < max:
 			count5 += 1
 			label5.text = str(count5)
 			if count5 == 3:
 				label5.text = str(text)
+				accept_button_disabled = true
 			print("达到最大值")
 		id = 0
 		
 	elif id == 6:
+		if count6 >= 3:
+			return 
 		if count6 < max:
 			count6 += 1
 			label6.text = str(count6)
 			if count6 == 3:
 				label6.text = str(text)
+				accept_button_disabled = true
 			print("达到最大值")
 		id = 0
 		
 	elif id == 7:
+		if count7 >= 3:
+			return 
 		if count7 < max:
 			count7 += 1
 			label7.text = str(count7)
 			if count7 == 3:
 				label7.text = str(text)
+				accept_button_disabled = true
 			print("达到最大值")
 		id = 0
 		
 	elif id == 8:
+		if count8 >= 3:
+			return 
 		if count8 < max:
 			count8 += 1
 			label8.text = str(count8)
 			if count8 == 3:
 				label8.text = str(text)
+				accept_button_disabled = true
 			print("达到最大值")
 		id = 0
 		
 	elif id == 9:
+		if count9 >= 3:
+			return 
 		if count9 < max:
 			count9 += 1
 			label9.text = str(count9)
 			if count9 == 3:
 				label9.text = str(text)
+				accept_button_disabled = true
 			print("达到最大值")
 		id = 0
 		
 	elif id == 10:
+		if count10 >= 3:
+			return 
 		if count10 < max:
 			count10 += 1
 			label10.text = str(count10)
 			if count10 == 3:
 				label10.text = str(text)
+				accept_button_disabled = true
 			print("达到最大值")
 		id = 0
 		
 	elif id == 11:
+		if count11 >= 3:
+			return 
 		if count11 < max:
 			count11 += 1
 			label11.text = str(count11)
 			if count11 == 3:
 				label11.text = str(text)
+				accept_button_disabled = true
 			print("达到最大值")
 		id = 0
 		
 	elif id == 12:
+		if count12 >= 3:
+			return 
 		if count12 < max:
 			count12 += 1
 			label12.text = str(count12)
 			if count12 == 3:
 				label12.text = str(text)
+				accept_button_disabled = true
 			print("达到最大值")
 		id = 0
 		
 	elif id == 13:
+		if count13 >= 3:
+			return 
 		if count13 < max:
 			count13 += 1
 			label13.text = str(count13)
 			if count13 == 3:
 				label13.text = str(text)
+				accept_button_disabled = true
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
 		
 	elif id == 14:
+		if count4 >= 3:
+			return 
 		if count14 < max:
 			count14 += 1
 			$"photo1/blue box8/Level/Label2".text = str(count14)
 			if count14 == 3:
 				label14.text = str(text)
+				accept_button_disabled = true
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
 		
 	elif id == 15:
+		if count15 >= 3:
+			return 
 		if count15 < max:
 			count15 += 1
 			label15.text = str(count15)
 			if count15 == 3:
 				label15.text = str(text)
 				confirm.visible = true
+				accept_button_disabled = true
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
 		
 	elif id == 16:
+		if count16 >= 3:
+			return 
 		if count16 < max:
 			count16 += 1
 			label16.text = str(count16)
 			if count16 == 3:
 				label16.text = str(text)
 				confirm.visible = true
+				accept_button_disabled = true
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
 		
 	elif id == 17:
+		if count17 >= 3:
+			return 
 		if count17 < max:
 			count17 += 1
 			label17.text = str(count17)
 			if count17 == 3:
 				label17.text = str(text)
 				confirm.visible = true
+				accept_button_disabled = true
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
 		
 	elif id == 18:
+		if count18 >= 3:
+			return 
 		if count18 < max:
 			count18 += 1
 			label18.text = str(count18)
 			if count18 == 3:
 				label18.text = str(text)
 				confirm.visible = true
+				accept_button_disabled = true
 			print("达到最大值")
 		print("Bolognese")
 		id = 0
 	
 	elif id == 19:
-		label19.visible = true
-		lock19.visible = false
-		confirm.visible = true
-		Cactus.is_visible = true
-		id = 0
+			lock19.visible = false
+			label19.visible = true
+			confirm.visible = true
+			Cactus.is_visible = true
+			id = 0
 		
 	elif id == 20:
 		label20.visible = true
