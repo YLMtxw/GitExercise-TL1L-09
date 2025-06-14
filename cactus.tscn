@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba71lpyhjrlgo"]
+[gd_scene load_steps=5 format=3 uid="uid://ba71lpyhjrlgo"]
 
 [ext_resource type="Texture2D" uid="uid://bup63qirancjl" path="res://photo/cactus.png" id="1_arctj"]
+[ext_resource type="Script" uid="uid://bv0nqk5hpk3gb" path="res://cactus02.gd" id="1_v3bmc"]
 
 [sub_resource type="GDScript" id="GDScript_v3bmc"]
 script/source = "extends StaticBody2D
@@ -10,6 +11,7 @@ script/source = "extends StaticBody2D
 size = Vector2(18, 32)
 
 [node name="cactus" type="Node2D"]
+script = ExtResource("1_v3bmc")
 
 [node name="cactus" type="StaticBody2D" parent="."]
 script = SubResource("GDScript_v3bmc")

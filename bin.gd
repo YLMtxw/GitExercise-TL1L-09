@@ -10,3 +10,5 @@ func _ready() -> void:
 
 func _process(_delta):
 	bin_node.visible = Bin01.bin_visible
+	if Bin01.bin_visible == false:
+		$Bin/CollisionShape2D.disabled = true

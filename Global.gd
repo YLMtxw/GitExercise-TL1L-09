@@ -22,6 +22,15 @@ var upgrade = {
 	"count16": 0,
 	"count17": 0,
 	"count18": 0,
+	"count19": 0,
+	"count20": 0,
+	"count21": 0,
+	"count22": 0,
+	"count23": 0,
+	"count24": 0,
+	"count25": 0,
+	"count26": 0
+	
 }
 var current_store_name: String = ""
 #food price
@@ -51,7 +60,6 @@ func save() -> Dictionary:
 	return {
 		"volume_db": volume_db,
 		"money": money,
-		"position": { "x": position.x, "y": position.y },
 		"upgrade": upgrade,
 		"prices": {
 			"aglio": aglio.price,
@@ -99,8 +107,6 @@ func load_game(store_name: String):
 	if typeof(data) == TYPE_DICTIONARY:
 		volume_db = data.get("volume_db", 0.0)
 		money = data.get("money", 0)
-		var pos_data = data.get("position", {"x": 0, "y": 0})
-		position = Vector2(pos_data["x"], pos_data["y"])
 		upgrade = data.get("upgrade", {})
 		var prices = data.get("prices", {})
 		aglio.price = prices.get("aglio", aglio.price)
