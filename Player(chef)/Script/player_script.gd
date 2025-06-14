@@ -45,12 +45,14 @@ const COUNTER_POSITION1 = Vector2i(9,14)
 const COUNTER_POSITION2 = Vector2i(10,14)
 const source3 =3
 const npc_pos = Vector2i(4,8)
+
 func _ready():
 	# Assuming NPCs are in group "npcs"
 	var npcs = get_tree().get_nodes_in_group("npcs")
 	for npc in npcs:
 		npc.connect("at_counter", Callable(self, "_on_npc_at_counter").bind(npc))
 		npc.connect("left_counter", Callable(self, "_on_npc_left_counter").bind(npc))
+		npc.connect("order_accepted", Callable(self, "_on_npc_order_accepted"))
 
 func is_near_counter() -> bool:
 	var current_tile = tilemap.local_to_map(global_position)
@@ -168,7 +170,6 @@ func _physics_process( delta ):
 	move_and_slide()
 	UpdateAction()
 	var player_tile = tilemap.local_to_map(global_position)
-	print("Player atlas coord:", player_tile)
 	
 func get_selected_inventory_item():
 	var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
@@ -205,13 +206,16 @@ func _input(event):
 			
 	if event.is_action_pressed("serve"):
 		var current_tile = tilemap.local_to_map(global_position)
-		print("Current player tile atlas coord:", current_tile)
 		if (current_tile == COUNTER_POSITION1 or current_tile == COUNTER_POSITION2) and npc_at_counter and npc_node_at_counter:
-			npc_node_at_counter.move_to_seat()
-			print("Served NPC at counter")
+			var held_item = get_selected_inventory_item()
+			if held_item != "":
+				npc_node_at_counter.receive_served_item(held_item)
+				remove_selected_item()
+			else:
+				print("You are not holding any food!")
 		else:
 			print("Cannot serve: not on counter tile or no NPC at counter")
-				
+
 func _on_npc_at_counter(npc):
 	npc_at_counter = true
 	npc_node_at_counter = npc
@@ -228,3 +232,12 @@ func is_on_interact_tile() -> bool:
 	]
 	var player_tile = tilemap.local_to_map(global_position)
 	return player_tile in allowed_tiles
+	
+func _on_npc_order_accepted(dish_name):
+	var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+	if inv and inv is InvOpenClose:
+		for slot in inventory.slots:
+			if slot.item and slot.item.name == dish_name and slot.itemNum > 0:
+				inventory.remove_item(slot.item, 1)
+				print("Removed served item from inventory:", dish_name)
+				return

@@ -4,6 +4,7 @@ signal npc_left(seat: Node2D)
 signal started_moving_to_seat
 signal at_counter
 signal left_counter
+signal order_accepted(dish_name)
 
 @export var speed := 100
 
@@ -12,24 +13,22 @@ signal left_counter
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var speech_label = $SpeechLabel
 
-var order_data: Dictionary
+var order_data: Dictionary # Set by spawner!
 var target_seat: Node2D = null
 var counter_position: Vector2 = Vector2.ZERO
 var seated: bool = false
 var waiting_at_counter: bool = true
 var has_shown_text: bool = false
-var order_recipe_name : String = ""
 var at_counter_flag := false
 
 func _ready():
 	leave_timer.timeout.connect(_on_leave_timer_timeout)
-
 	if counter_position != Vector2.ZERO:
 		agent.target_position = counter_position
 		_play_walk_animation()
-		
+		# Always set current order in OrderManager for reference/debug (optional)
 		OrderManager.set_current_order(self, order_data)
-		
+
 func move_to_seat():
 	if target_seat:
 		waiting_at_counter = false
@@ -56,14 +55,7 @@ func _physics_process(_delta):
 
 		# ✅ Show order text once at counter
 		if waiting_at_counter and not has_shown_text:
-			var food_name = order_data.get("name", "???")
-			var mods = order_data.get("modifications", [])
-
-			var full_text = "I'd like a " + food_name
-			if mods.size() > 0:
-				full_text += " (" + ", ".join(mods) + ")"
-
-			_show_speech(full_text)
+			_show_speech(OrderManager.format_order_text(order_data))
 
 	# ✅ Seat detection
 	if not waiting_at_counter and global_position.distance_to(target_seat.global_position) < agent.target_desired_distance:
@@ -73,11 +65,12 @@ func _physics_process(_delta):
 		move_and_slide()
 		_play_idle_animation()
 		leave_timer.start()
+
 	if waiting_at_counter and not at_counter_flag:
 		# NPC has just arrived at counter
 		at_counter_flag = true
 		emit_signal("at_counter")
-		
+
 func _on_leave_timer_timeout():
 	if target_seat:
 		target_seat.occupied = false
@@ -103,3 +96,22 @@ func _hide_speech():
 
 func is_near_counter() -> bool:
 	return position.distance_to(counter_position) < 32
+	
+func receive_served_item(served_dish_name: String):
+	if not RecipeDatabase.recipes.has(served_dish_name):
+		print("❌ This food is not recognized.")
+		return
+
+	var served_ingredients = RecipeDatabase.recipes[served_dish_name].duplicate()
+	served_ingredients.sort()
+	var expected_ingredients = order_data.get("ingredients", []).duplicate()
+	expected_ingredients.sort()
+
+	if served_ingredients == expected_ingredients:
+		print("✅ Correct dish served! Thank you!")
+		_hide_speech()
+		emit_signal("order_accepted", served_dish_name) # <- Add this
+		move_to_seat()
+	else:
+		print("❌ Wrong order! I wanted:", expected_ingredients, "but got:", served_ingredients)
+		_show_speech("That's not what I ordered!")

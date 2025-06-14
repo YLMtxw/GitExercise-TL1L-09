@@ -32,8 +32,6 @@ var is_menu_open : bool = false
 var inventory = preload(\"res://Inventory/playerInventory.tres\")
 @onready var inventorygui = get_node(\"/root/Playground/CanvasLayer/InventoryGUI\")
 
-
-
 func openRefri():
 	visible = true
 	refri = true
