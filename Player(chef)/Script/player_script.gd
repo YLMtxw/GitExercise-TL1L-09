@@ -41,10 +41,6 @@ const k2_coord = Vector2i(14,40)
 const k3_coord = Vector2i(13,40)
 const k4_coord = Vector2i(14,39)
 
-var last_saved_position := Vector2.ZERO
-func _ready():
-	global_position = Global.position
-
 func _process(delta):
 	if menuOpen.Mopen():
 		return
@@ -147,6 +143,7 @@ func remove_selected_item():
 		print("Inventory UI not found or not loaded.")
 
 func _physics_process( delta ):
+	
 	var current_speed = movement_speed
 	if Input.is_key_pressed(KEY_SHIFT): 
 		current_speed = run_speed
@@ -154,10 +151,6 @@ func _physics_process( delta ):
 	move_and_slide()
 	UpdateAction()
 	
-	if global_position != last_saved_position:
-		last_saved_position = global_position
-		Global.position = global_position
-		Global.save_game(Global.current_store_name)
 	
 func _input(event):
 	if event.is_action_pressed("sell"):  # q
