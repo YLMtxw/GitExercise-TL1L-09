@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://p4noyk3twc1e"]
+
+[ext_resource type="Texture2D" uid="uid://d2kr5yuri0qm5" path="res://photo/pot_shell.png" id="1_tpmvx"]
+
+[node name="Pot" type="Node2D"]
+
+[node name="pot" type="Sprite2D" parent="."]
+position = Vector2(27, 18)
+scale = Vector2(0.109, 0.072)
+texture = ExtResource("1_tpmvx")

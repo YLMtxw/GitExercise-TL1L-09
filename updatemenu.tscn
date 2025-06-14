@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://jjtkcedp5hyj"]
+[gd_scene load_steps=75 format=3 uid="uid://jjtkcedp5hyj"]
 
 [ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_eupx0"]
@@ -43,23 +43,30 @@
 [ext_resource type="Texture2D" uid="uid://bl81ya34pa2bq" path="res://photo/accept hover.png" id="32_cy34d"]
 [ext_resource type="Texture2D" uid="uid://c3n6eh7lobgqh" path="res://photo/cactus lock.jpg" id="32_nt5q0"]
 [ext_resource type="Texture2D" uid="uid://d2kr5yuri0qm5" path="res://photo/pot_shell.png" id="33_ah72k"]
+[ext_resource type="Texture2D" uid="uid://dwpssfid7p6v3" path="res://photo/deco frame.png" id="33_linxu"]
 [ext_resource type="Texture2D" uid="uid://chiv0nef2dd1o" path="res://photo/padlock-removebg-preview.png" id="33_uxvje"]
 [ext_resource type="Texture2D" uid="uid://cjlxldy7cwqad" path="res://photo/bin-removebg-preview.png" id="34_by4wh"]
 [ext_resource type="Texture2D" uid="uid://de81fljuplytx" path="res://photo/paper.png" id="35_wcm3e"]
 [ext_resource type="AudioStream" uid="uid://cqn1vk21dnclo" path="res://song/jazz-background-music-325355.mp3" id="36_gqinc"]
 [ext_resource type="Texture2D" uid="uid://c6wq8rfc2mea" path="res://photo/signboard lock.jpg" id="36_qrdaw"]
+[ext_resource type="Texture2D" uid="uid://cateqyff17j1j" path="res://photo/Daco.png" id="37_1qjyb"]
 [ext_resource type="Texture2D" uid="uid://mkerffylv5sm" path="res://photo/signboard-removebg-preview.png" id="37_02g0u"]
 [ext_resource type="Texture2D" uid="uid://dm7ldkjrpllsj" path="res://photo/plant pot lock.jpg" id="37_lfxla"]
-[ext_resource type="Texture2D" uid="uid://ciqh3araxi03o" path="res://photo/water fountain lock.jpg" id="38_lfxla"]
+[ext_resource type="Texture2D" uid="uid://bobj1av54kdck" path="res://photo/table.png" id="38_txm7q"]
+[ext_resource type="Texture2D" uid="uid://dy8msosm3ujxx" path="res://photo/red line.png" id="39_nq8pj"]
 [ext_resource type="Texture2D" uid="uid://dhlajgf7dscoc" path="res://photo/bin lock.jpg" id="39_qrdaw"]
 [ext_resource type="Texture2D" uid="uid://bse38qb3812rg" path="res://photo/money_box-removebg-preview.png" id="40_7p0w4"]
 [ext_resource type="Texture2D" uid="uid://bue5c4maub8v2" path="res://MoneyLabel/MLabel_Sprites/Money.png" id="41_2ta2v"]
+[ext_resource type="Texture2D" uid="uid://dvn130sbcti2q" path="res://photo/frame lock.jpg" id="42_4gyba"]
 [ext_resource type="Texture2D" uid="uid://dt5ewslwai5la" path="res://photo/cooked 01.png" id="42_rpnmw"]
 [ext_resource type="Texture2D" uid="uid://bqstpvyioyupd" path="res://photo/chatbox-removebg-preview.png" id="43_3hp0w"]
 [ext_resource type="Script" uid="uid://d1x6tcqwop57s" path="res://money_box.gd" id="43_cvh4x"]
 [ext_resource type="Texture2D" uid="uid://rvs2g47puntu" path="res://photo/water_fountain.png" id="43_rpnmw"]
 [ext_resource type="Script" uid="uid://fwycxljunopo" path="res://coin_label.gd" id="44_313i5"]
 [ext_resource type="AudioStream" uid="uid://b8etp3s1kt86j" path="res://song/wrong-answer-126515.mp3" id="46_cvh4x"]
+[ext_resource type="Texture2D" uid="uid://dnyua62jds6yp" path="res://photo/table deco lock.jpg" id="46_fkgnt"]
+[ext_resource type="Texture2D" uid="uid://bw6a62rngh2a0" path="res://photo/table tresure lock .jpg" id="47_nq8pj"]
+[ext_resource type="Texture2D" uid="uid://dmsuu22phiims" path="res://photo/vvip carpet lock.jpg" id="48_4gyba"]
 [ext_resource type="Texture2D" uid="uid://rba0np5jsl4e" path="res://photo/cant_pressed.png" id="59_slmgn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cvh4x"]
@@ -70,12 +77,32 @@ font_color = Color(0, 0.407843, 1, 1)
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Gradient" id="Gradient_nq8pj"]
+offsets = PackedFloat32Array(0.162338, 0.5, 0.805195)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0.47451, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fkgnt"]
+gradient = SubResource("Gradient_nq8pj")
+use_hdr = true
+
 [sub_resource type="GDScript" id="GDScript_cvh4x"]
 script/source = "extends Sprite2D
 
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 "
+
+[sub_resource type="Gradient" id="Gradient_br5ie"]
+interpolation_mode = 2
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0, 1)
+colors = PackedColorArray(0.188235, 0, 0, 1, 0, 0, 0, 1, 1, 0.17, 0.17, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4gyba"]
+gradient = SubResource("Gradient_br5ie")
+use_hdr = true
+fill_from = Vector2(0.963303, 0)
+fill_to = Vector2(1, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -89,6 +116,11 @@ offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ra00y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(286.5, 168.45)
+scale = Vector2(0.532407, 0.533792)
+texture = ExtResource("2_k1gfb")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("36_gqinc")
@@ -108,11 +140,6 @@ volume_db = 10.0
 stream = ExtResource("3_g0luy")
 volume_db = 24.0
 pitch_scale = 1.3
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(286.5, 168.45)
-scale = Vector2(0.532407, 0.533792)
-texture = ExtResource("2_k1gfb")
 
 [node name="PlanningScreen" type="Sprite2D" parent="."]
 position = Vector2(315, 150)
@@ -213,6 +240,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box2" type="Sprite2D" parent="photo1"]
 position = Vector2(-28.5121, -32.2379)
 scale = Vector2(0.36895, 0.38378)
@@ -270,6 +303,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "$100"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box2"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box3" type="Sprite2D" parent="photo1"]
 position = Vector2(44.2849, -32.2446)
 scale = Vector2(0.363072, 0.38372)
@@ -321,6 +360,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "$100"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box3"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box4" type="Sprite2D" parent="photo1"]
 position = Vector2(115.667, -31.8031)
 scale = Vector2(0.354143, 0.377785)
@@ -371,6 +416,12 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "$200"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box4"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="blue box5" type="Sprite2D" parent="photo1"]
 position = Vector2(115.102, 57.5221)
@@ -506,6 +557,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "$150"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box5"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box6" type="Sprite2D" parent="photo1"]
 position = Vector2(44.0097, 57.5221)
 scale = Vector2(0.359618, 0.3711)
@@ -630,6 +687,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "$150"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box6"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box7" type="Sprite2D" parent="photo1"]
 position = Vector2(-28.6346, 57.5221)
 scale = Vector2(0.364647, 0.372847)
@@ -690,6 +753,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "$200"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box7"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box8" type="Sprite2D" parent="photo1"]
 position = Vector2(-102.689, 57.5221)
 scale = Vector2(0.37215, 0.365809)
@@ -749,6 +818,12 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "$200"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box8"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="Button2" type="TextureButton" parent="."]
 texture_filter = 1
@@ -824,6 +899,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "$100"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box2" type="Sprite2D" parent="photo2"]
 position = Vector2(-32.7314, -44.2478)
 scale = Vector2(0.369219, 0.390131)
@@ -881,6 +962,12 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "$100"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box2"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="blue box3" type="Sprite2D" parent="photo2"]
 position = Vector2(39.5034, -44.2478)
@@ -943,6 +1030,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "$100"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box3"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box4" type="Sprite2D" parent="photo2"]
 position = Vector2(110.609, -45.354)
 scale = Vector2(0.369219, 0.390131)
@@ -1000,6 +1093,12 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "$100"
 
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box4"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box5" type="Sprite2D" parent="photo2"]
 position = Vector2(-104.966, 44.2478)
 scale = Vector2(0.369219, 0.390131)
@@ -1045,6 +1144,12 @@ offset_left = -92.0
 offset_top = -111.0
 offset_right = 92.0
 offset_bottom = 111.0
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box5"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="blue box6" type="Sprite2D" parent="photo2"]
 position = Vector2(-32.7314, 44.2478)
@@ -1092,6 +1197,12 @@ offset_top = -111.0
 offset_right = 92.0
 offset_bottom = 111.0
 
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box6"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box7" type="Sprite2D" parent="photo2"]
 position = Vector2(39.5034, 44.2478)
 scale = Vector2(0.369219, 0.390131)
@@ -1116,6 +1227,12 @@ offset_top = -111.0
 offset_right = 89.0
 offset_bottom = 111.0
 
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box7"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="blue box8" type="Sprite2D" parent="photo2"]
 position = Vector2(111.738, 44.2478)
 scale = Vector2(0.369219, 0.390131)
@@ -1139,6 +1256,12 @@ offset_left = -89.0
 offset_top = -111.0
 offset_right = 89.0
 offset_bottom = 111.0
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box8"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="Button3" type="TextureButton" parent="."]
 texture_filter = 1
@@ -1178,30 +1301,71 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 32
 text = "Cactus"
 
+[node name="Owned" type="Label" parent="photo3/box 1"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 1"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="box 2" type="Sprite2D" parent="photo3"]
 visible = false
 position = Vector2(-106.095, 45.354)
 scale = Vector2(0.375222, 0.387662)
 texture = ExtResource("8_6rsue")
 
-[node name="WaterFountain" type="Sprite2D" parent="photo3/box 2"]
-position = Vector2(-1.14441e-05, -25.6815)
-scale = Vector2(0.347424, 0.27679)
-texture = ExtResource("43_rpnmw")
+[node name="Frame" type="Sprite2D" parent="photo3/box 2"]
+position = Vector2(0.000518799, -17.1211)
+scale = Vector2(1.03292, 1.08173)
+texture = ExtResource("33_linxu")
 
 [node name="Label" type="Label" parent="photo3/box 2"]
-offset_left = -78.208
-offset_top = 42.8025
-offset_right = 79.792
-offset_bottom = 91.8025
+offset_left = -78.2075
+offset_top = 37.0955
+offset_right = 79.7925
+offset_bottom = 86.0955
 theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 25
-text = "Water 
-Fountain"
+text = "Frame"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Owned" type="Label" parent="photo3/box 2"]
+offset_left = -33.0875
+offset_top = 79.898
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 2"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="box 3" type="Sprite2D" parent="photo3"]
 visible = false
@@ -1225,6 +1389,27 @@ position = Vector2(-1.21593e-05, -22.828)
 scale = Vector2(0.283088, 0.261414)
 texture = ExtResource("33_ah72k")
 
+[node name="Owned" type="Label" parent="photo3/box 3"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 3"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="box 4" type="Sprite2D" parent="photo3"]
 visible = false
 position = Vector2(-30.474, 45.354)
@@ -1246,6 +1431,27 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 35
 text = "Bin"
+
+[node name="Owned" type="Label" parent="photo3/box 4"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 4"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="box 5" type="Sprite2D" parent="photo3"]
 visible = false
@@ -1269,59 +1475,170 @@ theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 20
 text = "Signboard"
 
+[node name="Owned" type="Label" parent="photo3/box 5"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 5"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
 [node name="box 6" type="Sprite2D" parent="photo3"]
+visible = false
 position = Vector2(45.1467, 45.354)
 scale = Vector2(0.375222, 0.387662)
 texture = ExtResource("8_6rsue")
 
-[node name="Label" type="Label" parent="photo3/box 6"]
-offset_left = -58.0812
-offset_top = -25.519
-offset_right = 60.9188
-offset_bottom = 23.481
-theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+[node name="TextureRect" type="TextureRect" parent="photo3/box 6"]
+offset_left = -66.0
+offset_top = -49.0
+offset_right = 66.0
+offset_bottom = 17.0
+texture = ExtResource("37_1qjyb")
+expand_mode = 1
+
+[node name="table deco" type="Label" parent="photo3/box 6"]
+offset_left = -69.1839
+offset_top = 54.2165
+offset_right = 70.8161
+offset_bottom = 77.2165
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
-theme_override_font_sizes/font_size = 25
-text = "COMING
-SOON"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+text = "Table Deco"
+
+[node name="Owned" type="Label" parent="photo3/box 6"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 6"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="box 7" type="Sprite2D" parent="photo3"]
+visible = false
 position = Vector2(120.767, -44.2478)
 scale = Vector2(0.375222, 0.387662)
 texture = ExtResource("8_6rsue")
 
+[node name="TextureRect" type="TextureRect" parent="photo3/box 7"]
+offset_left = -63.0
+offset_top = -43.0
+offset_right = 60.0
+offset_bottom = 6.0
+texture = ExtResource("38_txm7q")
+expand_mode = 1
+
 [node name="Label" type="Label" parent="photo3/box 7"]
-offset_left = -58.0812
-offset_top = -25.519
-offset_right = 60.9188
-offset_bottom = 23.481
-theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+offset_left = -54.1427
+offset_top = 37.0956
+offset_right = 56.8573
+offset_bottom = 76.0956
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
 theme_override_fonts/font = ExtResource("12_cy34d")
-theme_override_font_sizes/font_size = 25
-text = "COMING
-SOON"
+theme_override_font_sizes/font_size = 20
+text = "Table 
+Tresure"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Owned" type="Label" parent="photo3/box 7"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 7"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="box 8" type="Sprite2D" parent="photo3"]
+visible = false
 position = Vector2(120.767, 45.354)
 scale = Vector2(0.375222, 0.387662)
 texture = ExtResource("8_6rsue")
 
+[node name="TextureRect" type="TextureRect" parent="photo3/box 8"]
+offset_left = -45.1188
+offset_top = -51.3631
+offset_right = 42.8812
+offset_bottom = 28.6369
+texture = ExtResource("39_nq8pj")
+expand_mode = 1
+
 [node name="Label" type="Label" parent="photo3/box 8"]
-offset_left = -58.0812
-offset_top = -25.519
-offset_right = 60.9188
-offset_bottom = 23.481
-theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+offset_left = -45.1187
+offset_top = 37.0955
+offset_right = 43.8813
+offset_bottom = 78.0955
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
-theme_override_font_sizes/font_size = 25
-text = "COMING
-SOON"
+theme_override_font_sizes/font_size = 20
+text = "VVIP
+Carpet"
 horizontal_alignment = 1
+
+[node name="Owned" type="Label" parent="photo3/box 8"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 8"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
 
 [node name="CactusLock" type="Sprite2D" parent="photo3"]
 position = Vector2(-106.659, -43.6947)
@@ -1340,24 +1657,21 @@ offset_right = 133.0
 offset_bottom = 176.0
 mouse_default_cursor_shape = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="photo3"]
-visible = false
+[node name="Frame lock" type="Sprite2D" parent="photo3"]
+position = Vector2(-106.659, 45.354)
+scale = Vector2(0.223535, 0.221239)
+texture = ExtResource("42_4gyba")
 
-[node name="WaterFountainLock" type="Sprite2D" parent="photo3"]
-position = Vector2(-106.799, 45.354)
-scale = Vector2(0.254149, 0.245123)
-texture = ExtResource("38_lfxla")
-
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/WaterFountainLock"]
-position = Vector2(2.77112, -40.6153)
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/Frame lock"]
+position = Vector2(2.52458, -39.9999)
 scale = Vector2(0.397066, 0.288358)
 texture = ExtResource("33_uxvje")
 
-[node name="water fountain button" type="TextureButton" parent="photo3/WaterFountainLock"]
-offset_left = -135.0
-offset_top = -176.0
-offset_right = 136.0
-offset_bottom = 176.0
+[node name="Frame button" type="TextureButton" parent="photo3/Frame lock"]
+offset_left = -154.0
+offset_top = -195.0
+offset_right = 154.0
+offset_bottom = 195.0
 mouse_default_cursor_shape = 2
 
 [node name="SignboardLock" type="Sprite2D" parent="photo3"]
@@ -1399,15 +1713,67 @@ scale = Vector2(0.358307, 0.359513)
 texture = ExtResource("39_qrdaw")
 
 [node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/BinLock"]
-position = Vector2(-3.15003, -27.6923)
-scale = Vector2(0.305859, 0.208341)
+position = Vector2(-0.000102997, -24.6154)
+scale = Vector2(0.24788, 0.18154)
 texture = ExtResource("33_uxvje")
 
 [node name="bin lock button" type="TextureButton" parent="photo3/BinLock"]
 offset_left = -94.0
 offset_top = -120.0
-offset_right = 98.0
+offset_right = 95.0
 offset_bottom = 120.0
+
+[node name="Table deco" type="Sprite2D" parent="photo3"]
+position = Vector2(45.1467, 45.354)
+scale = Vector2(0.202149, 0.200659)
+texture = ExtResource("46_fkgnt")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/Table deco"]
+position = Vector2(-5.58331, -44.1025)
+scale = Vector2(0.439696, 0.317027)
+texture = ExtResource("33_uxvje")
+
+[node name="table deco button" type="TextureButton" parent="photo3/Table deco"]
+anchors_preset = -1
+anchor_top = -0.006
+anchor_bottom = -0.006
+offset_left = -173.083
+offset_top = -212.42
+offset_right = 166.917
+offset_bottom = 217.58
+mouse_default_cursor_shape = 2
+
+[node name="table tresure" type="Sprite2D" parent="photo3"]
+position = Vector2(120.767, -43.6947)
+scale = Vector2(0.217749, 0.216185)
+texture = ExtResource("47_nq8pj")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/table tresure"]
+position = Vector2(-5.72205e-05, -2.55845)
+scale = Vector2(0.435982, 0.320688)
+texture = ExtResource("33_uxvje")
+
+[node name="table tresure button" type="TextureButton" parent="photo3/table tresure"]
+offset_left = -155.0
+offset_top = -197.0
+offset_right = 155.0
+offset_bottom = 192.0
+
+[node name="VVIP carpet" type="Sprite2D" parent="photo3"]
+position = Vector2(120.203, 45.354)
+scale = Vector2(0.220669, 0.221239)
+texture = ExtResource("48_4gyba")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/VVIP carpet"]
+position = Vector2(-7.67216, -40)
+scale = Vector2(0.414369, 0.292682)
+texture = ExtResource("33_uxvje")
+
+[node name="VVIP carpet" type="TextureButton" parent="photo3/VVIP carpet"]
+offset_left = -156.0
+offset_top = -195.0
+offset_right = 156.0
+offset_bottom = 195.0
 
 [node name="button4" type="TextureButton" parent="."]
 layout_mode = 0
@@ -1666,6 +2032,13 @@ position = Vector2(109, 215)
 scale = Vector2(0.241525, 0.283009)
 texture = ExtResource("42_rpnmw")
 
+[node name="PointLight2D" type="PointLight2D" parent="Cooked01"]
+position = Vector2(124.211, 166.072)
+scale = Vector2(2.65242, 2.07194)
+shadow_enabled = true
+shadow_filter_smooth = 14.2
+texture = SubResource("GradientTexture2D_4gyba")
+
 [node name="max sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("46_cvh4x")
 volume_db = 24.0
@@ -1695,10 +2068,13 @@ texture = ExtResource("59_slmgn")
 [connection signal="pressed" from="photo2/blue box8/coming_soon" to="." method="_on_coming_soon_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="photo3/CactusLock/cactus button" to="." method="_on_cactus_button_pressed"]
-[connection signal="pressed" from="photo3/WaterFountainLock/water fountain button" to="." method="_on_water_fountain_button_pressed"]
+[connection signal="pressed" from="photo3/Frame lock/Frame button" to="." method="_on_frame_button_pressed"]
 [connection signal="pressed" from="photo3/SignboardLock/signboard button" to="." method="_on_signboard_button_pressed"]
 [connection signal="pressed" from="photo3/PlantPotLock/plant pot button" to="." method="_on_plant_pot_button_pressed"]
 [connection signal="pressed" from="photo3/BinLock/bin lock button" to="." method="_on_bin_lock_button_pressed"]
+[connection signal="pressed" from="photo3/Table deco/table deco button" to="." method="_on_table_deco_button_pressed"]
+[connection signal="pressed" from="photo3/table tresure/table tresure button" to="." method="_on_table_tresure_button_pressed"]
+[connection signal="pressed" from="photo3/VVIP carpet/VVIP carpet" to="." method="_on_vvip_carpet_pressed"]
 [connection signal="pressed" from="button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label/Chicken" to="." method="_on_chicken_pressed"]
@@ -1711,6 +2087,6 @@ texture = ExtResource("59_slmgn")
 [connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_01_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/EGG MAYO/egg mayo 01" to="." method="_on_egg_mayo_01_pressed"]
-[connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/accept button" to="." method="_on_accept_button_pressed"]
