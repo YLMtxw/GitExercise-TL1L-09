@@ -21,7 +21,7 @@ var recipes = {
 	"grilled chicken steak": ["chicken raw", "oil", "barbecue sauce", "sliced vege", "carrot (sliced)"],
 	"grilled lamb steak": ["lamb raw", "oil", "barbecue sauce", "sliced vege", "carrot (sliced)"],
 
-	# ==== Sandwiches (Toaster) ====
+	# ==== Toaster ====
 	"egg mayo sandwich": ["fried egg", "mayonaise", "sliced vege", "sliced tomato", "cheese", "bread", "bread"],
 	"chicken sandwich": ["chicken cooked", "sliced vege", "sliced tomato", "mayonaise", "cheese", "bread", "bread"],
 	"lamb sandwich": ["lamb cooked", "sliced vege", "sliced tomato", "mayonaise", "cheese", "bread", "bread"],

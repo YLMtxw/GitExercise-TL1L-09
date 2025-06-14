@@ -43,12 +43,11 @@ func generate_random_order():
 				modifications.append("extra " + mod)
 			# else normal: do nothing
 
-	# Compose a display name if there are modifications
+	# Use just the recipe name (not with mods!) as order["name"]
 	var display_name = recipe_name
-	if modifications.size() > 0:
-		display_name += " (" + ", ".join(modifications) + ")"
 
 	# Register this modified recipe for the cooking station to see
+	# (You may still need a unique key for internal lookup, but not for UI)
 	RecipeDatabase.recipes[display_name] = base_ingredients.duplicate()
 
 	var order = {
