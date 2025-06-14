@@ -8,6 +8,8 @@ var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
 var item = null
 
+@onready var click = $Clicksound
+
 func _ready():
 	for button in get_tree().get_nodes_in_group("toaster1"):
 		if button is TextureButton:
@@ -48,7 +50,6 @@ func consume_ingredients(dish: String):
 				inventory.remove_item(slot.item, remove_now)
 				to_remove -= remove_now
 				
-# Add to your toaster2.gd (and toaster1.gd)
 func get_current_order_name(base_name: String) -> String:
 	# If there's an NPC at the counter with a modified order for this sandwich, return that
 	if OrderManager.current_order_data.has("base_name") and OrderManager.current_order_data["base_name"] == base_name:
@@ -69,11 +70,16 @@ func _on_loading_finished():
 	if locked:
 		locked = false
 		print("Loading finished")
+		
 		if item:
 			insert(item)
-			inventorygui.update()
+			inventorygui.update()  # ← Make sure this updates the UI
 			print("Added item to inventory: ", item.name)
 			item = null
+
+
+func _on_timer_timeout(button):
+	print("Timer for ", button.name, "finished!")
 
 func insert(item: InventoryItem) -> void:
 	inventory.add_item(item)
@@ -98,19 +104,27 @@ func t1close():
 	if toaster1 == false:
 		is_menu_open = false
 
-# Sandwich selection handlers
 func _on_vege_sandwich_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/vege sandwich.tres").duplicate()
 	item.name = get_current_order_name("vege sandwich")
+
 func _on_egg_mayo_sandwich_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/egg mayo sandwich.tres").duplicate()
 	item.name = get_current_order_name("egg mayo sandwich")
+
 func _on_chic_sandwich_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/chicken sandwich.tres").duplicate()
 	item.name = get_current_order_name("chicken sandwich")
+
 func _on_lamb_sandwich_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/lamb sandwich.tres").duplicate()
 	item.name = get_current_order_name("lamb sandwich")
+
 func _on_beef_sandwich_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/beef sandwich.tres").duplicate()
 	item.name = get_current_order_name("beef sandwich")

@@ -21,8 +21,9 @@ var npc_node_at_counter: Node = null
 @export var inventory : Inventory
 @export var slots : iSlot
 @onready var paycheckmenu = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/total label/Total")
+@onready var income = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/Income label/Income")
+@onready var setting = get_node("/root/Playground/CanvasLayer/Setting")
 
-const MAX_INTERACT_DISTANCE = 32.0  # Or any value that feels right
 const source = 0
 const stove_coord1 = Vector2i(7,28)
 const stove_coord2 = Vector2i(8,28)
@@ -45,19 +46,19 @@ const COUNTER_POSITION1 = Vector2i(9,14)
 const COUNTER_POSITION2 = Vector2i(10,14)
 const source3 =3
 const npc_pos = Vector2i(4,8)
-
+var last_saved_position := Vector2.ZERO
 func _ready():
-	# Assuming NPCs are in group "npcs"
+	global_position = Global.position
 	var npcs = get_tree().get_nodes_in_group("npcs")
 	for npc in npcs:
 		npc.connect("at_counter", Callable(self, "_on_npc_at_counter").bind(npc))
 		npc.connect("left_counter", Callable(self, "_on_npc_left_counter").bind(npc))
 		npc.connect("order_accepted", Callable(self, "_on_npc_order_accepted"))
-
+		
 func is_near_counter() -> bool:
 	var current_tile = tilemap.local_to_map(global_position)
 	return current_tile == COUNTER_POSITION1 or current_tile == COUNTER_POSITION2
-
+	
 func _process(delta):
 	if menuOpen.Mopen():
 		return
@@ -82,7 +83,7 @@ func movement(delta):
 	if direction != Vector2.ZERO:
 		#to store player direction so when player is not moving, it will face to where its stop
 		store_direction = direction
-	
+		
 	var near = is_near()
 	if near == "stove" or near == "refri" or near == "knive" or near == "bin" or near == "bm":
 		$InteractE.showE()
@@ -114,7 +115,6 @@ func is_near() -> String:
 		if (source_id == source or source_id == source2) and (coords == bm_coord1 or coords == bm_coord2 or coords == bm_coord3):
 			return "bm"
 	return ""
-	
 
 func is_on() -> String :
 	var offset = Vector2i(0,0)
@@ -129,8 +129,6 @@ func is_on() -> String :
 		return "3"
 	if source_id == source and coords == k4_coord:
 		return "4"
-	if source_id == source and (coords == COUNTER_POSITION1 or coords == COUNTER_POSITION2):
-		return "5"
 	return ""
 
 func UpdateAction():
@@ -169,40 +167,35 @@ func _physics_process( delta ):
 	velocity = direction * current_speed
 	move_and_slide()
 	UpdateAction()
-	var player_tile = tilemap.local_to_map(global_position)
 	
-func get_selected_inventory_item():
-	var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
-	if inv and inv is InvOpenClose:
-		if inv.selected_index >= 0 and inv.selected_index < inventory.slots.size():
-			var slot = inventory.slots[inv.selected_index]
-			if slot.item:
-				return slot.item.name
-	return ""
-
+	if global_position != last_saved_position:
+		last_saved_position = global_position
+		Global.position = global_position
+		Global.save_game(Global.current_store_name)
+	
 func _input(event):
 	if event.is_action_pressed("sell"):  # q
 		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
-		money_display.add_money(10) 
-		paycheckmenu.add_money(10)
-		
+		money_display.add_money(100) 
+		paycheckmenu.add_money(100)
+		income.add_money(100)
 	if event.is_action_pressed("upgrade"): # r
 		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
 		money_display.upgrade(20)
 		paycheckmenu.upgrade(20)
-		
 	if event.is_action_pressed("interact"): # e
 		var near = is_near()
-		
-		# 🍳 Interactable tilemap stuff
-		match near:
-			"stove": print("stove")
-			"knive": print("knive")
-			"refri": print("refri")
-			"bin":
-				remove_selected_item()
-				print("bin")
-			"bm": print("bm")
+		if is_near() == "stove":
+			print("stove")
+		if is_near() == "knive":
+			print("knive")
+		if is_near() == "refri":
+			print("refri")
+		if is_near() == "bin":
+			remove_selected_item()
+			print("bin")
+		if is_near() == "bm":
+			print("bm")
 			
 	if event.is_action_pressed("serve"):
 		var current_tile = tilemap.local_to_map(global_position)
@@ -240,3 +233,12 @@ func _on_npc_order_accepted(dish_name):
 				inventory.remove_item(slot.item, 1)
 				print("Removed served item from inventory:", dish_name)
 				return
+				
+func get_selected_inventory_item():
+	var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+	if inv and inv is InvOpenClose:
+		if inv.selected_index >= 0 and inv.selected_index < inventory.slots.size():
+			var slot = inventory.slots[inv.selected_index]
+			if slot.item:
+				return slot.item.name
+	return ""

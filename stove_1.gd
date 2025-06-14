@@ -7,6 +7,7 @@ var locked : bool = false
 var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
 var item = null
+@onready var click = $Clicksound
 
 func _ready():
 	for button in get_tree().get_nodes_in_group("stove1"):
@@ -47,13 +48,13 @@ func consume_ingredients(dish: String):
 				var remove_now = min(slot.itemNum, to_remove)
 				inventory.remove_item(slot.item, remove_now)
 				to_remove -= remove_now
-				
+
 func get_current_order_name(base_name: String) -> String:
 	# If there's an NPC at the counter with a modified order for this dish, use that name
 	if OrderManager.current_order_data.has("base_name") and OrderManager.current_order_data["base_name"] == base_name:
 		return OrderManager.current_order_data["name"]
 	return base_name
-	
+
 func _on_stove1_button_pressed(button: TextureButton):
 	if item and has_ingredients(item.name):
 		locked = true
@@ -74,11 +75,14 @@ func _on_loading_finished():
 			print("Added item to inventory: ", item.name)
 			item = null
 
+func _on_timer_timeout(button):
+	print("Timer for ", button.name, "finished!")
+	
 func insert(item: InventoryItem) -> void:
 	inventory.add_item(item)
 
 func openStove1():
-	if locked:
+	if locked == true:
 		return
 	else:
 		visible = true
@@ -97,90 +101,106 @@ func S1close():
 	if stove1 == false:
 		is_menu_open = false
 
+
+func _on_vege_burger_pressed():
+	click.play()
+	item = preload("res://Inventory/Item/vege burger.tres")
+	item.name = get_current_order_name("vege burger")
+
 func _on_egg_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/fried egg.tres")
 	item.name = get_current_order_name("fried egg")
 
 func _on_spaghetti_cooked_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/spaghetti cooked.tres")
 	item.name = get_current_order_name("spaghetti cooked")
 
+
+func _on_aglio_olio_pressed() -> void:
+	click.play()
+	item = preload("res://Inventory/Item/aglio olio.tres")
+	item.name = get_current_order_name("aglio olio")
+
+
 func _on_carbo_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/carbonara.tres")
 	item.name = get_current_order_name("carbonara")
 
+
+func _on_bolognese_pressed() -> void:
+	click.play()
+	item = preload("res://Inventory/Item/bolognese.tres")
+	item.name = get_current_order_name("bolognese")
+
+
 func _on_beef_cooked_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/beef cooked.tres")
 	item.name = get_current_order_name("beef cooked")
 
+
 func _on_pattyb_cooked_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/beef patty cooked.tres")
 	item.name = get_current_order_name("beef patty cooked")
 
+
 func _on_lamb_cooked_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/lamb cooked.tres")
 	item.name = get_current_order_name("lamb cooked")
 
+
 func _on_pattyl_cooked_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/lamb patty cooked.tres")
 	item.name = get_current_order_name("lamb patty cooked")
 
+
 func _on_chicken_cooked_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/chicken cooked.tres")
 	item.name = get_current_order_name("chicken cooked")
 
+
 func _on_pattyc_cooked_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/chicken patty cooked.tres")
 	item.name = get_current_order_name("chicken patty cooked")
 
 func _on_beef_steak_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/meat beef.tres")
 	item.name = get_current_order_name("grilled beef steak")
 
-func _on_lamb_pressed() -> void:
-	item = preload("res://Inventory/Item/meat lamb.tres")
-	item.name = get_current_order_name("grilled lamb steak")
-
-func _on_chicken_pressed() -> void:
-	item = preload("res://Inventory/Item/meat chicken.tres")
-	item.name = get_current_order_name("grilled chicken steak")
-
-func _on_vege_burger_pressed() -> void:
-	item = preload("res://Inventory/Item/vege burger.tres")
-	item.name = get_current_order_name("vege burger")
-
 func _on_beef_burger_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/beef burger.tres")
 	item.name = get_current_order_name("beef burger")
 
-func _on_chicken_burger_pressed() -> void:
-	item = preload("res://Inventory/Item/chicken burger.tres")
-	item.name = get_current_order_name("chicken burger")
+
+func _on_lamb_pressed() -> void:
+	click.play()
+	item = preload("res://Inventory/Item/meat lamb.tres")
+	item.name = get_current_order_name("grilled lamb steak")
+
 
 func _on_lamb_burger_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/lamb burger.tres")
 	item.name = get_current_order_name("lamb burger")
 
-func _on_carbonara_pressed() -> void:
-	item = preload("res://Inventory/Item/carbonara.tres")
-	item.name = get_current_order_name("carbonara")
 
-func _on_bolognese_pressed() -> void:
-	item = preload("res://Inventory/Item/bolognese.tres")
-	item.name = get_current_order_name("bolognese")
-
-func _on_aglio_olio_pressed() -> void:
-	item = preload("res://Inventory/Item/aglio olio.tres")
-	item.name = get_current_order_name("aglio olio")
-
-func _on_grilled_beef_steak_pressed() -> void:
-	item = preload("res://Inventory/Item/meat beef.tres")
-	item.name = get_current_order_name("grilled beef steak")
-
-func _on_grilled_chicken_steak_pressed() -> void:
+func _on_chicken_pressed() -> void:
+	click.play()
 	item = preload("res://Inventory/Item/meat chicken.tres")
 	item.name = get_current_order_name("grilled chicken steak")
 
-func _on_grilled_lamb_steak_pressed() -> void:
-	item = preload("res://Inventory/Item/meat lamb.tres")
-	item.name = get_current_order_name("grilled lamb steak")
+
+func _on_chicken_burger_pressed() -> void:
+	click.play()
+	item = preload("res://Inventory/Item/chicken burger.tres")
+	item.name = get_current_order_name("chicken burger")

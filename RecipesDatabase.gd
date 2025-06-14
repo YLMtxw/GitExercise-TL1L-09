@@ -3,7 +3,7 @@ extends Node
 var recipes = {
 	# ==== Stove ====
 	"spaghetti cooked": ["spaghetti raw"],
-	"fried egg": ["egg (raw)", "oil"],
+	"fried egg": ["egg", "oil"],
 	"vege burger": ["bun", "sliced vege", "cheese", "sliced tomato", "mayonaise"],
 	"beef burger": ["bun", "cheese", "sliced vege", "beef patty cooked", "mayonaise"],
 	"chicken burger": ["bun", "cheese", "sliced vege", "chicken patty cooked", "mayonaise"],
@@ -33,10 +33,12 @@ var recipes = {
 	"100plus": ["100plus"],
 	"sprite": ["sprite"],
 	"7up": ["7up"],
+	"cold water": ["cold water"],   # Only add if you intend to use/serve this!
 
 	# ==== Prep ingredients ====
 	"sliced vege": ["vegetable"],
 	"sliced tomato": ["tomato"],
+	"carrot (sliced)": ["carrot"],
 
 	# ==== Sauces ====
 	"mayonaise": ["mayonaise"],
@@ -45,5 +47,5 @@ var recipes = {
 
 	# ==== Other ====
 	"oil": ["oil"],
-	"ice": ["ice"],
+	"ice": ["ice"],  # You can craft/obtain ice directly
 }

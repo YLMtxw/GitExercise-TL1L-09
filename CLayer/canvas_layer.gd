@@ -10,6 +10,10 @@ extends CanvasLayer
 @onready var Itoaster2 = $toaster2
 @onready var player = get_node("/root/Playground/Player_character")
 @onready var paycheckmenu = $paycheck
+@onready var income = $"paycheck/paycheckmenu/Income label/Income"
+@onready var overlay = $overlay
+@onready var UM = preload("res://updatemenu.tscn")
+@onready var setting = $Setting
 
 
 func _ready():
@@ -21,6 +25,7 @@ func _ready():
 	Itoaster1.closeToaster1()
 	Itoaster2.closeToaster2()
 	paycheckmenu.close_paycheck()
+	setting.close_setting()
 
 func _process( delta ):
 	if Input.is_action_just_pressed("OpenInv"):
@@ -28,7 +33,14 @@ func _process( delta ):
 			inventory.close()
 		else:
 			inventory.open()
-	
+	elif Input.is_action_just_pressed("quit"):
+		print("esc pressed")
+		if setting.setting_visibility:
+			setting.close_setting()
+			get_tree().paused = false
+		else:
+			setting.open_setting()
+			get_tree().paused = true
 
 func _input(event):
 	if Input.is_action_just_pressed("interact"):
@@ -68,7 +80,24 @@ func _input(event):
 			else:
 				Itoaster2.openToaster2()
 
+func set_pause_mode_recursive(node: Node, mode: int) -> void:
+	if "process_mode" in node:
+		node.process_mode = mode
+	for child in node.get_children():
+		if child is Node:
+			set_pause_mode_recursive(child, mode)
 
 func _on_close_button_pressed() -> void:
 	paycheckmenu.open_paycheck()
+	overlay.visible = true
+	get_tree().paused = true
+	
+	set_pause_mode_recursive(paycheckmenu, Node.PROCESS_MODE_ALWAYS)
+
+func _on_next_pressed() -> void:
+	income.reset()
+	paycheckmenu.close_paycheck()
+	overlay.visible = false
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://updatemenu.tscn")
 	pass # Replace with function body.

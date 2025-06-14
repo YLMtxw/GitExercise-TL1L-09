@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_8y5kt")
-name = "sliced tomato"
+name = "tomato (sliced)"
 texture = ExtResource("2_mmbs5")
+price = 0
 metadata/_custom_type_script = "uid://c2jevq51ijiin"

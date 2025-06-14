@@ -135,7 +135,7 @@ _data = {
 &"walk_up": SubResource("Animation_fpgim")
 }
 
-[node name="Player_character" type="CharacterBody2D" groups=["player"]]
+[node name="Player_character" type="CharacterBody2D"]
 z_index = 1
 texture_filter = 1
 position = Vector2(100, 100)

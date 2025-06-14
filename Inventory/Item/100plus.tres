@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_rp7wg")
-name = "100plus"
+name = "1000plus"
 texture = ExtResource("2_rp7wg")
+price = 10
 metadata/_custom_type_script = "uid://c2jevq51ijiin"
