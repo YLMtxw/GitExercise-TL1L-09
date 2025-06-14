@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyf5s2jbiyp48"]
+
+[ext_resource type="Texture2D" uid="uid://dwpssfid7p6v3" path="res://photo/deco frame.png" id="1_m7nv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs1d3"]
+size = Vector2(41, 16)
+
+[node name="Frame" type="Node2D"]
+
+[node name="Frame" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Frame"]
+position = Vector2(474, 10)
+scale = Vector2(0.330645, 0.258065)
+texture = ExtResource("1_m7nv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame"]
+position = Vector2(474.5, 10)
+shape = SubResource("RectangleShape2D_bs1d3")

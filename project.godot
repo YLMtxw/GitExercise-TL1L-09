@@ -19,6 +19,14 @@ config/icon="res://icon.svg"
 
 ItemLists="*res://Inventory/ItemList.gd"
 Global="*res://Global.gd"
+Cactus="*res://cactus.gd"
+Bin01="*res://bin01.gd"
+Frame01="*res://frame01.gd"
+Pot01="*res://pot01.gd"
+Signboard01="*res://signboard01.gd"
+Td01="*res://td01.gd"
+Tt01="*res://tt01.gd"
+Vvip="*res://vvip.gd"
 
 [display]
 

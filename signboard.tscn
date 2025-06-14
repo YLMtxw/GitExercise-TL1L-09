@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dut7vdwvmn2m7"]
+
+[ext_resource type="Texture2D" uid="uid://mkerffylv5sm" path="res://photo/signboard-removebg-preview.png" id="1_31gs7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvjog"]
+size = Vector2(34, 28)
+
+[node name="signboard" type="Node2D"]
+
+[node name="signboard" type="StaticBody2D" parent="."]
+
+[node name="sigboard" type="Sprite2D" parent="signboard"]
+position = Vector2(143, 273)
+scale = Vector2(0.0726453, 0.0736474)
+texture = ExtResource("1_31gs7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="signboard"]
+position = Vector2(143, 273)
+shape = SubResource("RectangleShape2D_kvjog")
