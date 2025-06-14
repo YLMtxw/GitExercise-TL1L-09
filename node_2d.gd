@@ -8,6 +8,7 @@ func _ready():
 	AudioServer.set_bus_volume_db(bus_index, Global.volume_db)
 	$PopupPanel2/Setting/HSlider.value = Global.volume_db
 
+
 func _input(event):
 
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
