@@ -1275,6 +1275,7 @@ scale = Vector2(0.125, 0.13)
 texture_normal = ExtResource("3_k1gfb")
 
 [node name="photo3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(307, 146)
 scale = Vector2(0.886, 0.904)
 texture = ExtResource("6_8snal")

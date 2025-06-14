@@ -69,7 +69,6 @@ func movement(delta):
 		#to store player direction so when player is not moving, it will face to where its stop
 		store_direction = direction
 		
-	
 	var near = is_near()
 	if near == "stove" or near == "refri" or near == "knive" or near == "bin" or near == "bm":
 		$InteractE.showE()
