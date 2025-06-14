@@ -649,8 +649,11 @@ func _on_vege_pressed() -> void:
 
 
 func _on_select_button_pressed() -> void:
-	$ClickSound.play()	
-	board.visible = true
+	if Global.money < 150:
+		id = 0
+	else:
+		$ClickSound.play()	
+		board.visible = true
 
 
 func save_player_data():
@@ -693,7 +696,9 @@ func _on_upgrade_button_4_pressed() -> void:
 
 
 func _on_upgrade_button_5_pressed() -> void:
-	if Global.money >= 150:
+	if Global.money < 150:
+		id = 0
+	else:
 		$ClickSound.play()	
 		id = 8
 		board2.visible = true

@@ -81,10 +81,6 @@ func create_new_shop_file(path: String) -> void:
 		get_tree().change_scene_to_file(\"res://playground.tscn\")
 "
 
-[sub_resource type="GDScript" id="GDScript_wbq6p"]
-script/source = "extends Control
-"
-
 [sub_resource type="Gradient" id="Gradient_gc3c1"]
 offsets = PackedFloat32Array(0.0454545, 0.545455, 0.831169)
 colors = PackedColorArray(0.172549, 0.815686, 1, 1, 0.666667, 0.666667, 0.666667, 1, 0, 0, 0, 1)
@@ -97,6 +93,10 @@ fill_to = Vector2(0.986239, 0)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1l5un"]
 polygon = PackedVector2Array(240.314, -31.7949, 240.314, 44.1026, 396.754, 40, 396.754, -31.7949)
+
+[sub_resource type="GDScript" id="GDScript_wbq6p"]
+script/source = "extends Control
+"
 
 [sub_resource type="FontVariation" id="FontVariation_8crf7"]
 variation_embolden = 0.67
@@ -221,5 +221,5 @@ uppercase = true
 visible_characters_behavior = 1
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_shop_name_focus_exited"]
 [connection signal="focus_exited" from="Control/Shop name" to="." method="_on_line_edit_focus_exited"]
+[connection signal="focus_exited" from="Control/Shop name" to="." method="_on_shop_name_focus_exited"]
