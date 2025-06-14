@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://uw0yloqbgyu3"]
+
+[ext_resource type="Script" uid="uid://d14v3df2xk8sb" path="res://testmain.gd" id="1_k0st0"]
+[ext_resource type="PackedScene" uid="uid://jab4cnh7batx" path="res://npc1.tscn" id="1_s57mk"]
+[ext_resource type="PackedScene" uid="uid://dg4k48y46momn" path="res://compile_seat.tscn" id="2_k0st0"]
+[ext_resource type="Script" uid="uid://2mfxf8rseq04" path="res://npc_spawner.gd" id="3_e4sdq"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_k0st0"]
+vertices = PackedVector2Array(824.703, 88.0469, 852.352, 271.063, 821, 177, 821, 145, 867, 380, 910.813, 387.977, 772.203, 406.922, 787, 380, 349, 456, 398, 486.398, 233.297, 476.758, 269, 456, 263.492, 378.672, 269, 424, 738.469, 290.297, 787, 348, 662, 423, 687.578, 441.211, 595.172, 468.344, 582, 423, 527.531, 368.703, 582, 391, 549.242, 240.531, 576.789, 339.172, 292.828, 229.508, 129.219, 263.727, 91.1016, 49.5469, 322.211, 149.422, 373.672, 174.828, 398, 374.25, 349, 424, 667.18, 122.539, 741, 145, 422.594, 77.8516, 575.531, 165.25, 598.531, 211.297, 867, 348, 741, 177, 653.891, 326.313, 662, 391)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(11, 10, 12, 13), PackedInt32Array(7, 6, 14, 15), PackedInt32Array(16, 17, 18, 19), PackedInt32Array(19, 18, 20), PackedInt32Array(21, 19, 20, 22, 23), PackedInt32Array(24, 25, 26, 27, 28), PackedInt32Array(29, 9, 8, 30), PackedInt32Array(31, 0, 3, 32), PackedInt32Array(30, 13, 12, 24, 29), PackedInt32Array(24, 12, 25), PackedInt32Array(22, 28, 27, 33, 34, 35), PackedInt32Array(5, 4, 36), PackedInt32Array(1, 5, 36), PackedInt32Array(2, 1, 36, 15, 14, 37), PackedInt32Array(31, 32, 37, 14, 35, 34), PackedInt32Array(22, 35, 23), PackedInt32Array(21, 23, 38, 39), PackedInt32Array(39, 38, 17), PackedInt32Array(39, 17, 16)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(78, 33, 120, 269, 252, 382, 220, 486, 408, 497, 408, 371, 307, 232, 375, 186, 538, 247, 517, 371, 591, 480, 700, 448, 661, 315, 589, 327, 606, 227, 730, 297, 765, 418, 926, 396, 862, 268, 833, 76, 664, 113, 576, 154, 422, 66, 321, 138)])
+
+[node name="NavigationRegion2D" type="NavigationRegion2D"]
+position = Vector2(12, -6)
+navigation_polygon = SubResource("NavigationPolygon_k0st0")
+script = ExtResource("1_k0st0")
+
+[node name="YSort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="CompileSeat" parent="YSort" instance=ExtResource("2_k0st0")]
+position = Vector2(309, 440)
+
+[node name="CompileSeat2" parent="YSort" instance=ExtResource("2_k0st0")]
+position = Vector2(622, 407)
+
+[node name="CompileSeat3" parent="YSort" instance=ExtResource("2_k0st0")]
+position = Vector2(827, 364)
+
+[node name="CompileSeat4" parent="YSort" instance=ExtResource("2_k0st0")]
+position = Vector2(781, 161)
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("3_e4sdq")
+npc_scene = ExtResource("1_s57mk")
+
+[node name="SpawnTimer" type="Timer" parent="Spawner"]
+autostart = true
