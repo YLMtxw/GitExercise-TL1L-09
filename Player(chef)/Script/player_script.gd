@@ -5,8 +5,10 @@ const run_speed : int = 225
 #vector2 contain 2 num, x and y
 var direction : Vector2 = Vector2.ZERO
 var store_direction : Vector2 = Vector2.DOWN
+var npc_at_counter: bool = false
+var npc_node_at_counter: Node = null
 @onready var animation = $AnimationPlayer
-@onready var tilemap = $"../TileMapLayer3"
+@onready var tilemap = get_node("../TileMapLayer3")
 @onready var menuOpen = get_node("/root/Playground/CanvasLayer/menu")
 @onready var menuOpen2 = get_node("/root/Playground/CanvasLayer/menu2")
 @onready var refriOpen = get_node("/root/Playground/CanvasLayer/refri")
@@ -40,10 +42,22 @@ const k1_coord = Vector2i(13,39)
 const k2_coord = Vector2i(14,40)
 const k3_coord = Vector2i(13,40)
 const k4_coord = Vector2i(14,39)
-
+const COUNTER_POSITION1 = Vector2i(9,14)
+const COUNTER_POSITION2 = Vector2i(10,14)
+const source3 =3
+const npc_pos = Vector2i(4,8)
 var last_saved_position := Vector2.ZERO
 func _ready():
 	global_position = Global.position
+	var npcs = get_tree().get_nodes_in_group("npcs")
+	for npc in npcs:
+		npc.connect("at_counter", Callable(self, "_on_npc_at_counter").bind(npc))
+		npc.connect("left_counter", Callable(self, "_on_npc_left_counter").bind(npc))
+		npc.connect("order_accepted", Callable(self, "_on_npc_order_accepted"))
+		
+func is_near_counter() -> bool:
+	var current_tile = tilemap.local_to_map(global_position)
+	return current_tile == COUNTER_POSITION1 or current_tile == COUNTER_POSITION2
 
 func _process(delta):
 	if menuOpen.Mopen():
@@ -183,3 +197,48 @@ func _input(event):
 		if is_near() == "bm":
 			print("bm")
 			
+	if event.is_action_pressed("serve"):
+		var current_tile = tilemap.local_to_map(global_position)
+		if (current_tile == COUNTER_POSITION1 or current_tile == COUNTER_POSITION2) and npc_at_counter and npc_node_at_counter:
+			var held_item = get_selected_inventory_item()
+			if held_item != "":
+				npc_node_at_counter.receive_served_item(held_item)
+			else:
+				print("You are not holding any food!")
+		else:
+			print("Cannot serve: not on counter tile or no NPC at counter")
+
+func _on_npc_at_counter(npc):
+	npc_at_counter = true
+	npc_node_at_counter = npc
+
+func _on_npc_left_counter(npc):
+	if npc_node_at_counter == npc:
+		npc_at_counter = false
+		npc_node_at_counter = null
+
+func is_on_interact_tile() -> bool:
+	var allowed_tiles = [
+		Vector2i(5, 43),
+		Vector2i(6, 43)
+	]
+	var player_tile = tilemap.local_to_map(global_position)
+	return player_tile in allowed_tiles
+	
+func _on_npc_order_accepted(dish_name):
+	var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+	if inv and inv is InvOpenClose:
+		for slot in inventory.slots:
+			if slot.item and slot.item.name == dish_name and slot.itemNum > 0:
+				inventory.remove_item(slot.item, 1)
+				print("Removed served item from inventory:", dish_name)
+				return
+				
+func get_selected_inventory_item():
+	var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+	if inv and inv is InvOpenClose:
+		if inv.selected_index >= 0 and inv.selected_index < inventory.slots.size():
+			var slot = inventory.slots[inv.selected_index]
+			if slot.item:
+				return slot.item.name
+	return ""

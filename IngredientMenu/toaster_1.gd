@@ -7,50 +7,54 @@ var locked : bool = false
 var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
 var item = null
-var recipes = {
-	"egg mayo sandwich": ["fried egg", "mayonaise", "vegetable (peeled)", "tomato (sliced)", "cheese", "bread", "bread"],
-	"chicken sandwich": ["chicken (grilled)", "vegetable (peeled)", "tomato (sliced)", "mayonaise", "cheese", "bread", "bread"],
-	"lamb sandwich": ["lamb (grilled)", "vegetable (peeled)", "tomato (sliced)", "mayonaise", "cheese", "bread", "bread"],
-	"beef sandwich": ["beef (grilled)", "vegetable (peeled)", "tomato (sliced)", "mayonaise", "cheese", "bread", "bread"],
-	"vegetable sandwich": ["vegetable (peeled)", "vegetable (peeled)", "tomato (sliced)", "tomato (sliced)", "mayonaise", "bread", "bread"]
-}
+
 @onready var click = $Clicksound
 
-func _ready() :
+func _ready():
 	for button in get_tree().get_nodes_in_group("toaster1"):
 		if button is TextureButton:
 			button.pressed.connect(_on_toaster1_button_pressed.bind(button))
 			print("texture button")
-	
 	toasterBar.connect("loading_finished", Callable(self, "_on_loading_finished"))
 
 func has_ingredients(dish: String) -> bool:
-	if not recipes.has(dish):
+	# ... (keep debug print code here as before)
+	if not RecipeDatabase.recipes.has(dish):
 		return false
-	
-	var required = recipes[dish]
-	var available = inventory.slots
-	
-	for ingredient_name in required:
-		var found = false
-		for slot in available:
-			if slot.item and slot.item.name == ingredient_name and slot.itemNum > 0:
-				found = true
-				break
-		if not found:
-			print("Missing ingredient: ", ingredient_name)
+	var required_counts := {}
+	for name in RecipeDatabase.recipes[dish]:
+		required_counts[name] = required_counts.get(name, 0) + 1
+	var available_counts := {}
+	for slot in inventory.slots:
+		if slot.item and slot.itemNum > 0:
+			available_counts[slot.item.name] = available_counts.get(slot.item.name, 0) + slot.itemNum
+	for name in required_counts.keys():
+		if available_counts.get(name, 0) < required_counts[name]:
+			print("Missing ingredient:", name)
 			return false
 	return true
 
 func consume_ingredients(dish: String):
-	if not recipes.has(dish):
+	if not RecipeDatabase.recipes.has(dish):
 		return
-
-	for ingredient_name in recipes[dish]:
+	var required_counts := {}
+	for name in RecipeDatabase.recipes[dish]:
+		required_counts[name] = required_counts.get(name, 0) + 1
+	for name in required_counts.keys():
+		var to_remove = required_counts[name]
 		for slot in inventory.slots:
-			if slot.item and slot.item.name == ingredient_name:
-				inventory.remove_item(slot.item, 1)
+			if to_remove == 0:
 				break
+			if slot.item and slot.item.name == name:
+				var remove_now = min(slot.itemNum, to_remove)
+				inventory.remove_item(slot.item, remove_now)
+				to_remove -= remove_now
+				
+func get_current_order_name(base_name: String) -> String:
+	# If there's an NPC at the counter with a modified order for this sandwich, return that
+	if OrderManager.current_order_data.has("base_name") and OrderManager.current_order_data["base_name"] == base_name:
+		return OrderManager.current_order_data["name"]
+	return base_name
 
 func _on_toaster1_button_pressed(button: TextureButton):
 	if item and has_ingredients(item.name):
@@ -99,32 +103,27 @@ func t1close():
 	if toaster1 == false:
 		is_menu_open = false
 
-
 func _on_vege_sandwich_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/vege sandwich.tres")
-	pass # Replace with function body.
-
+	item = preload("res://Inventory/Item/vege sandwich.tres").duplicate()
+	item.name = get_current_order_name("vege sandwich")
 
 func _on_egg_mayo_sandwich_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/egg mayo sandwich.tres")
-	pass # Replace with function body.
-
+	item = preload("res://Inventory/Item/egg mayo sandwich.tres").duplicate()
+	item.name = get_current_order_name("egg mayo sandwich")
 
 func _on_chic_sandwich_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/chicken sandwich.tres")
-	pass # Replace with function body.
-
+	item = preload("res://Inventory/Item/chicken sandwich.tres").duplicate()
+	item.name = get_current_order_name("chicken sandwich")
 
 func _on_lamb_sandwich_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/lamb sandwich.tres")
-	pass # Replace with function body.
-
+	item = preload("res://Inventory/Item/lamb sandwich.tres").duplicate()
+	item.name = get_current_order_name("lamb sandwich")
 
 func _on_beef_sandwich_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/beef sandwich.tres")
-	pass # Replace with function body.
+	item = preload("res://Inventory/Item/beef sandwich.tres").duplicate()
+	item.name = get_current_order_name("beef sandwich")
