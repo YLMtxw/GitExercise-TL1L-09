@@ -27,6 +27,7 @@ Signboard01="*res://signboard01.gd"
 Td01="*res://td01.gd"
 Tt01="*res://tt01.gd"
 Vvip="*res://vvip.gd"
+VolumeSetting="*res://volume_setting.gd"
 
 [display]
 

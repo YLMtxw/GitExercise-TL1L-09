@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://jjtkcedp5hyj"]
+[gd_scene load_steps=74 format=3 uid="uid://jjtkcedp5hyj"]
 
 [ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_eupx0"]
@@ -44,7 +44,6 @@
 [ext_resource type="Texture2D" uid="uid://c3n6eh7lobgqh" path="res://photo/cactus lock.jpg" id="32_nt5q0"]
 [ext_resource type="Texture2D" uid="uid://d2kr5yuri0qm5" path="res://photo/pot_shell.png" id="33_ah72k"]
 [ext_resource type="Texture2D" uid="uid://cedue2ejdc1wr" path="res://photo/deco frame.png" id="33_linxu"]
-[ext_resource type="Texture2D" uid="uid://chiv0nef2dd1o" path="res://photo/padlock-removebg-preview.png" id="33_uxvje"]
 [ext_resource type="Texture2D" uid="uid://cjlxldy7cwqad" path="res://photo/bin-removebg-preview.png" id="34_by4wh"]
 [ext_resource type="Texture2D" uid="uid://de81fljuplytx" path="res://photo/paper.png" id="35_wcm3e"]
 [ext_resource type="AudioStream" uid="uid://cqn1vk21dnclo" path="res://song/jazz-background-music-325355.mp3" id="36_gqinc"]
@@ -1645,11 +1644,6 @@ position = Vector2(-106.659, -43.6947)
 scale = Vector2(0.251273, 0.24198)
 texture = ExtResource("32_nt5q0")
 
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/CactusLock"]
-position = Vector2(2.24597, -2.28571)
-scale = Vector2(0.399439, 0.292359)
-texture = ExtResource("33_uxvje")
-
 [node name="cactus button" type="TextureButton" parent="photo3/CactusLock"]
 offset_left = -137.0
 offset_top = -176.0
@@ -1661,11 +1655,6 @@ mouse_default_cursor_shape = 2
 position = Vector2(-106.659, 45.354)
 scale = Vector2(0.223535, 0.221239)
 texture = ExtResource("42_4gyba")
-
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/Frame lock"]
-position = Vector2(2.52458, -39.9999)
-scale = Vector2(0.397066, 0.288358)
-texture = ExtResource("33_uxvje")
 
 [node name="Frame button" type="TextureButton" parent="photo3/Frame lock"]
 offset_left = -154.0
@@ -1679,11 +1668,6 @@ position = Vector2(45.1467, -43.5287)
 scale = Vector2(0.431338, 0.424226)
 texture = ExtResource("36_qrdaw")
 
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/SignboardLock"]
-position = Vector2(2.61676, -1.69492)
-scale = Vector2(0.248179, 0.170339)
-texture = ExtResource("33_uxvje")
-
 [node name="signboard button" type="TextureButton" parent="photo3/SignboardLock"]
 offset_left = -78.0
 offset_top = -98.0
@@ -1694,11 +1678,6 @@ offset_bottom = 100.0
 position = Vector2(-30.739, -44.0266)
 scale = Vector2(0.258269, 0.245259)
 texture = ExtResource("37_lfxla")
-
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/PlantPotLock"]
-position = Vector2(-3.34446, -0.902077)
-scale = Vector2(0.399439, 0.292359)
-texture = ExtResource("33_uxvje")
 
 [node name="plant pot button" type="TextureButton" parent="photo3/PlantPotLock"]
 offset_left = -134.0
@@ -1712,11 +1691,6 @@ position = Vector2(-30.474, 45.354)
 scale = Vector2(0.358307, 0.359513)
 texture = ExtResource("39_qrdaw")
 
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/BinLock"]
-position = Vector2(-0.000102997, -24.6154)
-scale = Vector2(0.24788, 0.18154)
-texture = ExtResource("33_uxvje")
-
 [node name="bin lock button" type="TextureButton" parent="photo3/BinLock"]
 offset_left = -94.0
 offset_top = -120.0
@@ -1727,11 +1701,6 @@ offset_bottom = 120.0
 position = Vector2(45.1467, 45.354)
 scale = Vector2(0.202149, 0.200659)
 texture = ExtResource("46_fkgnt")
-
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/Table deco"]
-position = Vector2(-5.58331, -44.1025)
-scale = Vector2(0.439696, 0.317027)
-texture = ExtResource("33_uxvje")
 
 [node name="table deco button" type="TextureButton" parent="photo3/Table deco"]
 anchors_preset = -1
@@ -1748,11 +1717,6 @@ position = Vector2(120.767, -43.6947)
 scale = Vector2(0.217749, 0.216185)
 texture = ExtResource("47_nq8pj")
 
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/table tresure"]
-position = Vector2(-5.72205e-05, -2.55845)
-scale = Vector2(0.435982, 0.320688)
-texture = ExtResource("33_uxvje")
-
 [node name="table tresure button" type="TextureButton" parent="photo3/table tresure"]
 offset_left = -155.0
 offset_top = -197.0
@@ -1763,11 +1727,6 @@ offset_bottom = 192.0
 position = Vector2(120.203, 45.354)
 scale = Vector2(0.220669, 0.221239)
 texture = ExtResource("48_4gyba")
-
-[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/VVIP carpet"]
-position = Vector2(-7.67216, -40)
-scale = Vector2(0.414369, 0.292682)
-texture = ExtResource("33_uxvje")
 
 [node name="VVIP carpet" type="TextureButton" parent="photo3/VVIP carpet"]
 offset_left = -156.0

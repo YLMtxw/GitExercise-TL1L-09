@@ -91,6 +91,10 @@ func _input(event):
 	
 	
 func _ready():
+	Global.load_volume()
+
+	# 应用到音频总线
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), Global.volume_db)
 		
 	# 给所有按钮连接 signal
 	for button in $Button2.get_children():
@@ -265,6 +269,7 @@ func _on_accept_button_pressed() -> void:
 	$ClickSound.play()
 	if id == 1:
 		if count >= 3:
+			$"max sound".play()
 			return  
 		if count < max:
 			count += 1
@@ -277,9 +282,11 @@ func _on_accept_button_pressed() -> void:
 				label.text = str(text)
 				accept_button_disabled = true
 				print("达到最大值")
+				
 		
 	elif id == 2:
 		if count2 >= 3:
+			$"max sound".play()
 			return 
 		if count2 < max:
 			count2 += 1
@@ -295,6 +302,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 3:
 		if count3 >= 3:
+			$"max sound".play()
 			return 
 		if count3 < max:
 			count3 += 1
@@ -310,6 +318,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 4:
 		if count4 >= 3:
+			$"max sound".play()
 			return 
 		if count4 < max:
 			count4 += 1
@@ -325,6 +334,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 5:
 		if count5 >= 3:
+			$"max sound".play()
 			return 
 		if count5 < max:
 			count5 += 1
@@ -340,6 +350,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 6:
 		if count6 >= 3:
+			$"max sound".play()
 			return 
 		if count6 < max:
 			count6 += 1
@@ -355,6 +366,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 7:
 		if count7 >= 3:
+			$"max sound".play()
 			return 
 		if count7 < max:
 			count7 += 1
@@ -370,6 +382,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 8:
 		if count8 >= 3:
+			$"max sound".play()
 			return 
 		if count8 < max:
 			count8 += 1
@@ -385,6 +398,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 9:
 		if count9 >= 3:
+			$"max sound".play()
 			return 
 		if count9 < max:
 			count9 += 1
@@ -400,6 +414,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 10:
 		if count10 >= 3:
+			$"max sound".play()
 			return 
 		if count10 < max:
 			count10 += 1
@@ -415,6 +430,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 11:
 		if count11 >= 3:
+			$"max sound".play()
 			return 
 		if count11 < max:
 			count11 += 1
@@ -430,6 +446,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 12:
 		if count12 >= 3:
+			$"max sound".play()
 			return 
 		if count12 < max:
 			count12 += 1
@@ -445,6 +462,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 13:
 		if count13 >= 3:
+			$"max sound".play()
 			return 
 		if count13 < max:
 			count13 += 1
@@ -460,7 +478,8 @@ func _on_accept_button_pressed() -> void:
 		print("Bolognese")
 		
 	elif id == 14:
-		if count4 >= 3:
+		if count14 >= 3:
+			$"max sound".play()
 			return 
 		if count14 < max:
 			count14 += 1
@@ -477,6 +496,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 15:
 		if count15 >= 3:
+			$"max sound".play()
 			return 
 		if count15 < max:
 			count15 += 1
@@ -494,6 +514,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 16:
 		if count16 >= 3:
+			$"max sound".play()
 			return 
 		if count16 < max:
 			count16 += 1
@@ -511,6 +532,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 17:
 		if count17 >= 3:
+			$"max sound".play()
 			return 
 		if count17 < max:
 			count17 += 1
@@ -528,6 +550,7 @@ func _on_accept_button_pressed() -> void:
 		
 	elif id == 18:
 		if count18 >= 3:
+			$"max sound".play()
 			return 
 		if count18 < max:
 			count18 += 1
@@ -547,61 +570,56 @@ func _on_accept_button_pressed() -> void:
 	elif id == 19:
 			lock19.visible = false
 			label19.visible = true
-			confirm.visible = true
+			confirm.visible = false
 			Cactus.is_visible = true
 			id = 0
 		
 	elif id == 20:
 		label20.visible = true
 		lock20.visible = false
-		confirm.visible = true
 		Frame01.frame_visible = true
 		id = 0
 		
 	elif id == 21:
 		label21.visible = true
 		lock21.visible = false
-		confirm.visible = true
 		Pot01.pot_visible = true
 		id = 0
 		
 	elif id == 22:
 		label22.visible = true
 		lock22.visible = false
-		confirm.visible = true
 		Bin01.bin_visible = true
 		id = 0
 
 	elif id == 23:
 		label23.visible = true
 		lock23.visible = false
-		confirm.visible = true
 		Signboard01.signboard_visible = true
 		id = 0
 
 	elif id == 24:
 		label24.visible = true
 		lock24.visible = false
-		confirm.visible = true
 		Td01.td_visible = true
 		id = 0
 
 	elif id == 25:
 		label25.visible = true
 		lock25.visible = false
-		confirm.visible = true
 		Tt01.tt_visible = true
 		id = 0
 		
 	elif id == 26:
 		label26.visible = true
 		lock26.visible = false
-		confirm.visible = true
 		Vvip.vvip_visible = true
 		id = 0
-
+	
 	if not lock_confirm:
-		confirm.visible = false  # 正常流程下关闭 confirm
+		get_tree().paused = false
+		confirm.visible = false
+  # 正常流程下关闭 confirm
 		
 
 func _on_chicken_pressed() -> void:

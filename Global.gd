@@ -1,6 +1,6 @@
 extends Node
 
-var volume_db: float = 0.0
+
 var money: int = 0
 var position: Vector2 = Vector2(120, 150)
 var upgrade = {
@@ -61,3 +61,30 @@ func load_game(store_name: String):
 		var pos_data = data.get("position", {"x": 0, "y": 0})
 		position = Vector2(pos_data["x"], pos_data["y"])
 		upgrade = data.get("upgrade", {})
+
+
+
+
+signal volume_changed(new_volume)
+
+var volume_db: float = -10.0
+
+func apply_volume():
+	var bus_index = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(bus_index, volume_db)
+	AudioServer.set_bus_mute(bus_index, volume_db <= -60)
+	emit_signal("volume_changed", volume_db)
+	
+
+# 可选：保存到文件
+func save_volume():
+	var file = FileAccess.open("user://settings.cfg", FileAccess.WRITE)
+	file.store_line(str(volume_db))
+	file.close()
+
+# 可选：从文件加载
+func load_volume():
+	if FileAccess.file_exists("user://settings.cfg"):
+		var file = FileAccess.open("user://settings.cfg", FileAccess.READ)
+		volume_db = float(file.get_line())
+		file.close()

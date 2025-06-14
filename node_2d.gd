@@ -1,16 +1,32 @@
 extends Node2D
 
-@onready var Setting = $"Setting"
-
-func _ready():
-	var bus_index = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_volume_db(bus_index, Global.volume_db)
-	$PopupPanel2/Setting/HSlider.value = Global.volume_db
+@onready var setting = $Setting
+@onready var slider = $PopupPanel2/Setting/HSlider
+const data = preload("res://Global.gd")
 
 func _input(event):
 
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		get_tree().quit()
+
+
+func _ready():
+	# 可选：每次进入场景先加载一次
+	Global.load_volume()
+
+	# 初始化滑块
+	slider.value = Global.volume_db
+
+	# 信号
+	slider.value_changed.connect(_on_h_slider_value_changed)
+	
+	
+
+func _on_h_slider_value_changed(value):
+	Global.volume_db = value
+	Global.save_volume()
+	# 应用到音频总线（假设使用 "Master" 总线）
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "fade_out":
@@ -51,14 +67,3 @@ func _on_start_button_2_pressed() -> void:
 func _on_setting_button_pressed() -> void:
 	$ClickSound.play()
 	$PopupPanel2.popup_centered()
-
-
-
-func _on_h_slider_value_changed(value: float) -> void:
-	var bus_index = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_volume_db(bus_index, value)
-	AudioServer.set_bus_mute(bus_index, value <= -60)
-	Global.volume_db = value
-
-
-		

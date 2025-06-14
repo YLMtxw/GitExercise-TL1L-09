@@ -60,3 +60,4 @@ func open():
 func close():
 	visible = false
 	InvOpen = false
+	

@@ -12,3 +12,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_menu_pressed_pressed() -> void:
+	$"Sound Effect".play()
+	get_tree().change_scene_to_file("res://menu.tscn")
+
+func _on_hslider_value_changed(value):
+	Global.volume_db = value
+	Global.apply_volume()
