@@ -4,6 +4,7 @@ extends Node2D
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var counter_marker: Marker2D = $CounterPoint
 @onready var spawn_marker: Marker2D = $SpawnPoint
+@onready var exit_marker: Marker2D = $ExitPoint
 @onready var order_manager = $OrderManager  # Adjust path if needed
 @onready var player: CharacterBody2D = $"../../Player_character"
 
@@ -31,6 +32,7 @@ func try_spawn_npc():
 			var npc = npc_scene.instantiate()
 			npc.global_position = spawn_marker.global_position
 			npc.counter_position = counter_marker.global_position
+			npc.exit_position = exit_marker.global_position    # <<--- NEW!
 			npc.target_seat = seat
 
 			# Generate random order
@@ -64,10 +66,8 @@ func _on_npc_started_moving():
 func _on_npc_left(seat):
 	assigned_seats.erase(seat)
 
-
 func _on_counter_area_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
-
 
 func _on_counter_area_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.

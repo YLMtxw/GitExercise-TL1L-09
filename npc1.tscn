@@ -147,7 +147,6 @@ simplify_path = true
 debug_enabled = true
 
 [node name="LeaveTimer" type="Timer" parent="."]
-wait_time = 15.0
 one_shot = true
 
 [node name="PatienceTimer" type="Timer" parent="."]

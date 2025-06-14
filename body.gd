@@ -16,10 +16,13 @@ signal order_accepted(dish_name)
 var order_data: Dictionary # Set by spawner!
 var target_seat: Node2D = null
 var counter_position: Vector2 = Vector2.ZERO
+var exit_position: Vector2 = Vector2.ZERO # Set by spawner!
 var seated: bool = false
 var waiting_at_counter: bool = true
 var has_shown_text: bool = false
 var at_counter_flag := false
+
+var leaving := false  # <<-- tracks if NPC is leaving to ExitPoint
 
 func _ready():
 	leave_timer.timeout.connect(_on_leave_timer_timeout)
@@ -39,43 +42,53 @@ func move_to_seat():
 		_play_walk_animation()
 		_hide_speech()
 
+func leave_restaurant():
+	leaving = true
+	agent.target_position = exit_position
+	_play_walk_animation()
+	_hide_speech()
+
 func _physics_process(_delta):
 	if seated or target_seat == null:
-		return
-
-	if not agent.is_navigation_finished():
-		var next = agent.get_next_path_position()
-		velocity = (next - global_position).normalized() * speed
-		move_and_slide()
-		_play_walk_animation()
+		pass  # Let leave_timer handle when to leave seat
 	else:
-		velocity = Vector2.ZERO
-		move_and_slide()
-		_play_idle_animation()
+		if not agent.is_navigation_finished():
+			var next = agent.get_next_path_position()
+			velocity = (next - global_position).normalized() * speed
+			move_and_slide()
+			_play_walk_animation()
+		else:
+			velocity = Vector2.ZERO
+			move_and_slide()
+			_play_idle_animation()
 
-		# ✅ Show order text once at counter
-		if waiting_at_counter and not has_shown_text:
-			_show_speech(OrderManager.format_order_text(order_data))
+			# ✅ Show order text once at counter
+			if waiting_at_counter and not has_shown_text:
+				_show_speech(OrderManager.format_order_text(order_data))
 
-	# ✅ Seat detection
-	if not waiting_at_counter and global_position.distance_to(target_seat.global_position) < agent.target_desired_distance:
-		target_seat._on_OccupyArea_body_entered(self)
-		seated = true
-		velocity = Vector2.ZERO
-		move_and_slide()
-		_play_idle_animation()
-		leave_timer.start()
+		# ✅ Seat detection
+		if not waiting_at_counter and global_position.distance_to(target_seat.global_position) < agent.target_desired_distance and not leaving:
+			target_seat._on_OccupyArea_body_entered(self)
+			seated = true
+			velocity = Vector2.ZERO
+			move_and_slide()
+			_play_idle_animation()
+			leave_timer.start()
 
-	if waiting_at_counter and not at_counter_flag:
-		# NPC has just arrived at counter
-		at_counter_flag = true
-		emit_signal("at_counter")
+		if waiting_at_counter and not at_counter_flag:
+			# NPC has just arrived at counter
+			at_counter_flag = true
+			emit_signal("at_counter")
+
+	# Leaving logic: If we're heading to exit, despawn when close
+	if leaving and global_position.distance_to(exit_position) < agent.target_desired_distance:
+		emit_signal("npc_left", target_seat)
+		queue_free()
 
 func _on_leave_timer_timeout():
 	if target_seat:
 		target_seat.occupied = false
-	emit_signal("npc_left", target_seat)
-	queue_free()
+	leave_restaurant()
 
 func _play_walk_animation():
 	if not animated_sprite.is_playing() or animated_sprite.animation != "walk":
