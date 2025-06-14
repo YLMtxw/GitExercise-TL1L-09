@@ -17,11 +17,12 @@ func add_item(item: InventoryItem) -> void:
 	
 func remove_item(item: InventoryItem, amount: int = 1):
 	for slot in slots:
-		if slot.item == item:
+		if slot.item and slot.item.name == item.name: 
 			slot.itemNum -= amount
 			if slot.itemNum <= 0:
 				slot.item = null
 				slot.itemNum = 0
+			print("Removed item:", item.name)
 			updated.emit()
 			return
 

@@ -224,11 +224,24 @@ func is_on_interact_tile() -> bool:
 	
 func _on_npc_order_accepted(dish_name):
 	var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+	var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
+	var paycheckmenu = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/total label/Total")
+	var income = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/Income label/Income")
+
 	if inv and inv is InvOpenClose:
 		for slot in inventory.slots:
 			if slot.item and slot.item.name == dish_name and slot.itemNum > 0:
+				var item_price = slot.item.price
+				Global.money += item_price
+				print("price +", item_price)
+
+				money_display.add_money(item_price)
+				paycheckmenu.add_money(item_price)
+				income.add_money(item_price)
+				
 				inventory.remove_item(slot.item, 1)
 				print("Removed served item from inventory:", dish_name)
+				
 				return
 				
 func get_selected_inventory_item():

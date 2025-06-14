@@ -1,4 +1,3 @@
-
 [gd_scene load_steps=60 format=4 uid="uid://bmlcjik7mnbd1"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
@@ -43,7 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://dyf5s2jbiyp48" path="res://frame.tscn" id="42_n1lva"]
 [ext_resource type="Script" uid="uid://dh5ha8cg2hhiu" path="res://frame.gd" id="43_2075e"]
 [ext_resource type="PackedScene" uid="uid://dg4k48y46momn" path="res://compile_seat.tscn" id="45_lu5cr"]
-[ext_resource type="Script" uid="uid://ccewg1iool6ij" path="res://spawner.gd" id="46_x557p"]
+[ext_resource type="Script" path="res://spawner.gd" id="46_x557p"]
 [ext_resource type="PackedScene" uid="uid://by8yo2u4pw38m" path="res://signboard.tscn" id="47_gixy8"]
 [ext_resource type="PackedScene" uid="uid://jab4cnh7batx" path="res://npc1.tscn" id="47_sq44e"]
 [ext_resource type="PackedScene" uid="uid://c78br7turw5qm" path="res://vvip_carpet.tscn" id="48_vevnq"]
@@ -1017,6 +1016,7 @@ fill_to = Vector2(0, 1)
 vertices = PackedVector2Array(410, 59.2031, 410, 36.2031, 480, 50.2031, 464, 59.2031, 550, 36.2031, 550, 59.2031, 496, 59.2031, 496, 84.7969, 550, 84.7969, 550, 123.203, 496, 123.203, 496, 148.797, 550, 148.797, 550, 187.203, 496, 187.203, 496, 212.797, 550, 212.797, 550, 238, 486, 238, 486, 350, -6, 350, -6, 266, 206.094, 298, 410, 298, 410, 212.797, 464, 212.797, 464, 187.203, 410, 187.203, 410, 148.797, 464, 148.797, 464, 123.203, 410, 123.203, 410, 84.7969, 464, 84.7969, 205.813, 266)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(19, 20, 21, 22), PackedInt32Array(23, 24, 25, 18, 19), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(30, 31, 32, 33), PackedInt32Array(21, 34, 22), PackedInt32Array(19, 22, 23), PackedInt32Array(14, 15, 18, 25, 26), PackedInt32Array(11, 14, 26, 29), PackedInt32Array(10, 11, 29, 30), PackedInt32Array(7, 10, 30, 33), PackedInt32Array(6, 7, 33, 3, 2)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, 256, -16, 360, 496, 360, 496, 248, 560, 248, 560, 24, 480, 40, 400, 24, 400, 288, 216, 288, 215.718, 256)])
+
 [node name="Playground" type="Node2D"]
 script = ExtResource("1_snn6g")
 
@@ -1119,7 +1119,6 @@ offset_right = 253.0
 offset_bottom = 163.0
 
 [node name="loadingBar1" parent="CanvasLayer" instance=ExtResource("15_dk0co")]
-visible = false
 z_index = -1
 offset_left = 163.0
 offset_top = 9.0
@@ -1127,7 +1126,6 @@ offset_right = -385.0
 offset_bottom = -337.0
 
 [node name="loadingBar2" parent="CanvasLayer" instance=ExtResource("15_dk0co")]
-visible = false
 z_index = -1
 offset_left = 243.0
 offset_top = 9.0
@@ -1135,7 +1133,6 @@ offset_right = -305.0
 offset_bottom = -336.0
 
 [node name="loadingBar3" parent="CanvasLayer" instance=ExtResource("15_dk0co")]
-visible = false
 z_index = -1
 offset_left = 57.0
 offset_top = 110.0
@@ -1143,7 +1140,6 @@ offset_right = -491.0
 offset_bottom = -235.0
 
 [node name="loadingBar4" parent="CanvasLayer" instance=ExtResource("15_dk0co")]
-visible = false
 z_index = -1
 offset_left = 73.0
 offset_top = 132.0
