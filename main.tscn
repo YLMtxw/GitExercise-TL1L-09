@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnxu65so86kvl"]
+
+[ext_resource type="PackedScene" uid="uid://h51tqc3cxfl4" path="res://seat.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://btkakixgpiy1b" path="res://npc.tscn" id="2_h2yge"]
+
+[node name="main" type="Node2D"]
+
+[node name="seat" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(223, 100)
+
+[node name="seat2" parent="." groups=["npc"] instance=ExtResource("1_0xm2m")]
+position = Vector2(135, 54)
+
+[node name="npc" parent="." groups=["seats"] instance=ExtResource("2_h2yge")]
+position = Vector2(23, 79)
+
+[node name="npc2" parent="." groups=["seats"] instance=ExtResource("2_h2yge")]
+position = Vector2(28, 28)
+
+[node name="npc3" parent="." groups=["seats"] instance=ExtResource("2_h2yge")]
+position = Vector2(71, 98)

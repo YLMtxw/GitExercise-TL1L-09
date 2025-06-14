@@ -1,44 +1,43 @@
 extends Control
 
 var menu2 : bool = false
-var is_menu_open : bool = false
+var is_menu_open = false
 var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
-var recipes = {
-	"vegetable (peeled)": ["vegetable"],
-	"tomato (sliced)": ["tomato"],
-	"carrot (sliced)": ["carrot"]
-}
 @onready var click = $Clicksound
 
 func has_ingredients(dish: String) -> bool:
-	if not recipes.has(dish):
+	# ... (copy the debug code and ingredient logic from other stations)
+	if not RecipeDatabase.recipes.has(dish):
 		return false
-
-	var required = recipes[dish]
-	var available = inventory.slots
-
-	for ingredient_name in required:
-		var found = false
-		for slot in available:
-			if slot.item and slot.item.name == ingredient_name and slot.itemNum > 0:
-				found = true
-				break
-		if not found:
-			print("Missing ingredient: ", ingredient_name)
+	var required_counts := {}
+	for name in RecipeDatabase.recipes[dish]:
+		required_counts[name] = required_counts.get(name, 0) + 1
+	var available_counts := {}
+	for slot in inventory.slots:
+		if slot.item and slot.itemNum > 0:
+			available_counts[slot.item.name] = available_counts.get(slot.item.name, 0) + slot.itemNum
+	for name in required_counts.keys():
+		if available_counts.get(name, 0) < required_counts[name]:
+			print("Missing ingredient:", name)
 			return false
-
 	return true
 
 func consume_ingredients(dish: String):
-	if not recipes.has(dish):
+	if not RecipeDatabase.recipes.has(dish):
 		return
-
-	for ingredient_name in recipes[dish]:
+	var required_counts := {}
+	for name in RecipeDatabase.recipes[dish]:
+		required_counts[name] = required_counts.get(name, 0) + 1
+	for name in required_counts.keys():
+		var to_remove = required_counts[name]
 		for slot in inventory.slots:
-			if slot.item and slot.item.name == ingredient_name:
-				inventory.remove_item(slot.item, 1)
+			if to_remove == 0:
 				break
+			if slot.item and slot.item.name == name:
+				var remove_now = min(slot.itemNum, to_remove)
+				inventory.remove_item(slot.item, remove_now)
+				to_remove -= remove_now
 
 func openMenu2():
 	visible = true
@@ -62,51 +61,48 @@ func insert(item: InventoryItem) -> void:
 
 func _on_vege_2_pressed() -> void:
 	click.play()
-	if has_ingredients("vegetable (peeled)"):
-		consume_ingredients("vegetable (peeled)")
+	if has_ingredients("sliced vege"):
+		consume_ingredients("sliced vege")
 		var item = preload("res://Inventory/Item/sliced vege.tres")
 		insert(item)
 		inventorygui.update()
 		print("Crafted sliced vege")
 	else:
-		print("Not enough ingredients!")
+		print("Not enough ingredients (sliced vege)!")
 
 
 func _on_stomato_2_pressed() -> void:
 	click.play()
-	if has_ingredients("tomato (sliced)"):
-		consume_ingredients("tomato (sliced)")
+	if has_ingredients("sliced tomato"):
+		consume_ingredients("sliced tomato")
 		var item = preload("res://Inventory/Item/sliced tomato.tres")
 		insert(item)
 		inventorygui.update()
-		print("Crafted sliced vege")
+		print("Crafted sliced tomato")
 	else:
-		print("Not enough ingredients!")
+		print("Not enough ingredients (sliced tomato)!")
 
 
 func _on_mayo_2_pressed() -> void:
 	click.play()
 	var item = preload("res://Inventory/Item/mayonaise.tres")
-	print("mayo2")
+	print("mayo")
 	inventorygui.update()
 	insert(item)
-
 
 func _on_tsauce_2_pressed() -> void:
 	click.play()
 	var item = preload("res://Inventory/Item/tomato sauce.tres")
-	print("tsauce2")
+	print("tsauce")
 	inventorygui.update()
 	insert(item)
-
 
 func _on_oil_2_pressed() -> void:
 	click.play()
 	var item = preload("res://Inventory/Item/oil.tres")
-	print("oil2")
+	print("oil")
 	inventorygui.update()
 	insert(item)
-
 
 func _on_bbqs_2_pressed() -> void:
 	click.play()
@@ -114,8 +110,6 @@ func _on_bbqs_2_pressed() -> void:
 	print("bbqs")
 	inventorygui.update()
 	insert(item)
-	pass # Replace with function body.
-
 
 func _on_carrot_pressed() -> void:
 	click.play()
@@ -126,8 +120,7 @@ func _on_carrot_pressed() -> void:
 		inventorygui.update()
 		print("Crafted sliced carrot")
 	else:
-		print("Not enough ingredients!")
-
+		print("Not enough ingredients (sliced carrot)!")
 
 func _on_hot_water_pressed() -> void:
 	click.play()

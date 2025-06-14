@@ -1,8 +1,11 @@
 extends Node2D
 
-@onready var setting = $Setting
+@onready var Setting = $"Setting"
 @onready var slider = $PopupPanel2/Setting/HSlider
+
 const data = preload("res://Global.gd")
+
+
 
 func _input(event):
 
@@ -12,6 +15,7 @@ func _input(event):
 
 func _ready():
 	# 可选：每次进入场景先加载一次
+	Global.load_game("profile")
 	Global.load_volume()
 
 	# 初始化滑块
@@ -67,3 +71,14 @@ func _on_start_button_2_pressed() -> void:
 func _on_setting_button_pressed() -> void:
 	$ClickSound.play()
 	$PopupPanel2.popup_centered()
+
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	var bus_index = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(bus_index, value)
+	AudioServer.set_bus_mute(bus_index, value <= -60)
+	Global.volume_db = value
+	Global.save_game()
+
+		

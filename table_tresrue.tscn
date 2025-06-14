@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://lblast40tfu6"]
+[gd_scene load_steps=4 format=3 uid="uid://behaxi53ncvat"]
 
+[ext_resource type="Script" uid="uid://g1qrj7qefqc0" path="res://table_tresrue.gd" id="1_s025q"]
 [ext_resource type="Texture2D" uid="uid://bobj1av54kdck" path="res://photo/table.png" id="1_y3ovf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s025q"]
 size = Vector2(26, 80)
 
 [node name="Table Tresrue" type="Node2D"]
+script = ExtResource("1_s025q")
 
 [node name="table tresure" type="StaticBody2D" parent="."]
 

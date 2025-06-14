@@ -10,3 +10,5 @@ func _ready() -> void:
 
 func _process(_delta):
 	cactus_node.visible = Cactus.is_visible
+	if Cactus.is_visible == false:
+		$cactus/CollisionShape2D.disabled = true

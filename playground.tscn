@@ -1,4 +1,5 @@
-[gd_scene load_steps=67 format=4 uid="uid://bmlcjik7mnbd1"]
+
+[gd_scene load_steps=60 format=4 uid="uid://bmlcjik7mnbd1"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Script" uid="uid://chiaggp51axdq" path="res://playground.gd" id="1_snn6g"]
@@ -32,23 +33,26 @@
 [ext_resource type="Script" uid="uid://dmsel8ln7c5os" path="res://audio_stream_player.gd" id="30_g64nf"]
 [ext_resource type="Texture2D" uid="uid://236x4npymqqg" path="res://photo/door_1__1_-removebg-preview.png" id="32_ewi0c"]
 [ext_resource type="Texture2D" uid="uid://bb0v3jlxyv6lg" path="res://photo/door-removebg-preview.png" id="33_md5nv"]
-[ext_resource type="PackedScene" uid="uid://lblast40tfu6" path="res://table_tresrue.tscn" id="36_x557p"]
+[ext_resource type="Texture2D" uid="uid://cd8xttvy8y4py" path="res://photo/lamp-removebg-preview.png" id="35_j7gj2"]
+[ext_resource type="PackedScene" uid="uid://behaxi53ncvat" path="res://table_tresrue.tscn" id="36_x557p"]
 [ext_resource type="Script" path="res://table_tresrue.gd" id="37_gixy8"]
-[ext_resource type="PackedScene" path="res://table_deco.tscn" id="37_obxad"]
-[ext_resource type="PackedScene" path="res://pot.tscn" id="38_lu5cr"]
+[ext_resource type="PackedScene" uid="uid://dv8aoxjytnwu6" path="res://table_deco.tscn" id="37_obxad"]
 [ext_resource type="Script" path="res://table_deco.gd" id="38_x557p"]
-[ext_resource type="PackedScene" uid="uid://fw7ml8db2eu0" path="res://bin.tscn" id="39_2075e"]
-[ext_resource type="Script" path="res://pot.gd" id="39_obxad"]
+[ext_resource type="PackedScene" uid="uid://p4noyk3twc1e" path="res://pot.tscn" id="38_lu5cr"]
+[ext_resource type="PackedScene" uid="uid://b46wulkigsalp" path="res://bin.tscn" id="39_2075e"]
 [ext_resource type="Script" uid="uid://e1ce7cn3swjl" path="res://bin.gd" id="40_lu5cr"]
-[ext_resource type="PackedScene" path="res://cactus.tscn" id="41_j7gj2"]
+[ext_resource type="Script" uid="uid://77xndwwrws37" path="res://pot.gd" id="39_obxad"]
+[ext_resource type="PackedScene" uid="uid://ba71lpyhjrlgo" path="res://cactus.tscn" id="41_j7gj2"]
 [ext_resource type="Script" path="res://cactus02.gd" id="42_1nsp6"]
-[ext_resource type="PackedScene" path="res://frame.tscn" id="42_n1lva"]
-[ext_resource type="Script" path="res://frame.gd" id="43_2075e"]
-[ext_resource type="PackedScene" uid="uid://dut7vdwvmn2m7" path="res://signboard.tscn" id="47_gixy8"]
+[ext_resource type="PackedScene" uid="uid://dyf5s2jbiyp48" path="res://frame.tscn" id="42_n1lva"]
+[ext_resource type="Script" uid="uid://dh5ha8cg2hhiu" path="res://frame.gd" id="43_2075e"]
+[ext_resource type="PackedScene" uid="uid://dg4k48y46momn" path="res://compile_seat.tscn" id="45_lu5cr"]
+[ext_resource type="Script" uid="uid://ccewg1iool6ij" path="res://spawner.gd" id="46_x557p"]
+[ext_resource type="PackedScene" uid="uid://by8yo2u4pw38m" path="res://signboard.tscn" id="47_gixy8"]
 [ext_resource type="Script" path="res://signboard.gd" id="48_sq44e"]
-[ext_resource type="PackedScene" uid="uid://brpfbn4t374so" path="res://vvip_carpet.tscn" id="48_vevnq"]
-[ext_resource type="Script" path="res://vvip_carpet.gd" id="49_4gl70"]
-[ext_resource type="Texture2D" uid="uid://cd8xttvy8y4py" path="res://photo/lamp-removebg-preview.png" id="49_sq44e"]
+[ext_resource type="PackedScene" uid="uid://jab4cnh7batx" path="res://npc1.tscn" id="47_sq44e"]
+[ext_resource type="PackedScene" uid="uid://c78br7turw5qm" path="res://vvip_carpet.tscn" id="48_vevnq"]
+[ext_resource type="Script" uid="uid://cbrodblgnwkqf" path="res://vvip_carpet.gd" id="49_4gl70"]
 [ext_resource type="Texture2D" uid="uid://bbjgvvhbt7t3d" path="res://photo/menu.png" id="50_mawde"]
 [ext_resource type="Texture2D" uid="uid://dcm1t4g6nxw3l" path="res://photo/pressed_menu.png" id="51_vm8iy"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="53_vm8iy"]
@@ -1030,6 +1034,34 @@ gradient = SubResource("Gradient_j7gj2")
 fill_from = Vector2(0, 0.119266)
 fill_to = Vector2(0, 1)
 
+[sub_resource type="Gradient" id="Gradient_1nsp6"]
+offsets = PackedFloat32Array(0, 0.935065)
+colors = PackedColorArray(1, 0.484, 0.14, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n1lva"]
+gradient = SubResource("Gradient_1nsp6")
+fill = 1
+fill_from = Vector2(0.486239, 0.486239)
+fill_to = Vector2(1, 0.0366972)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2075e"]
+polygon = PackedVector2Array(30, -53, 30, -53, 14, -53, 4, -53, 4, -21, 30, -21)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lu5cr"]
+polygon = PackedVector2Array(-12, -31, -12, -31, -12, 47, -27, 47, -27, -31)
+
+[sub_resource type="Gradient" id="Gradient_j7gj2"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1nsp6"]
+gradient = SubResource("Gradient_j7gj2")
+fill_from = Vector2(0, 0.119266)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vevnq"]
+vertices = PackedVector2Array(410, 59.2031, 410, 36.2031, 480, 50.2031, 464, 59.2031, 550, 36.2031, 550, 59.2031, 496, 59.2031, 496, 84.7969, 550, 84.7969, 550, 123.203, 496, 123.203, 496, 148.797, 550, 148.797, 550, 187.203, 496, 187.203, 496, 212.797, 550, 212.797, 550, 238, 486, 238, 486, 350, -6, 350, -6, 266, 206.094, 298, 410, 298, 410, 212.797, 464, 212.797, 464, 187.203, 410, 187.203, 410, 148.797, 464, 148.797, 464, 123.203, 410, 123.203, 410, 84.7969, 464, 84.7969, 205.813, 266)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(19, 20, 21, 22), PackedInt32Array(23, 24, 25, 18, 19), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(30, 31, 32, 33), PackedInt32Array(21, 34, 22), PackedInt32Array(19, 22, 23), PackedInt32Array(14, 15, 18, 25, 26), PackedInt32Array(11, 14, 26, 29), PackedInt32Array(10, 11, 29, 30), PackedInt32Array(7, 10, 30, 33), PackedInt32Array(6, 7, 33, 3, 2)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-16, 256, -16, 360, 496, 360, 496, 248, 560, 248, 560, 24, 480, 40, 400, 24, 400, 288, 216, 288, 215.718, 256)])
 [node name="Playground" type="Node2D"]
 script = ExtResource("1_snn6g")
 
@@ -1309,7 +1341,6 @@ offset_bottom = 31.0
 stream = ExtResource("27_ofol1")
 parameters/looping = true
 script = ExtResource("30_g64nf")
-
 [node name="Player_character" parent="." instance=ExtResource("1_rupst")]
 position = Vector2(120, 150)
 scale = Vector2(1, 1)
@@ -1411,6 +1442,45 @@ texture = SubResource("GradientTexture2D_1nsp6")
 
 [node name="Sound Effect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("53_vm8iy")
+
+[node name="CompileSeat" parent="NavigationRegion2D" instance=ExtResource("45_lu5cr")]
+position = Vector2(432, 72)
+scale = Vector2(0.8, 0.8)
+
+[node name="CompileSeat3" parent="NavigationRegion2D" instance=ExtResource("45_lu5cr")]
+position = Vector2(432, 136)
+scale = Vector2(0.8, 0.8)
+
+[node name="CompileSeat4" parent="NavigationRegion2D" instance=ExtResource("45_lu5cr")]
+position = Vector2(528, 136)
+scale = Vector2(0.8, 0.8)
+
+[node name="CompileSeat5" parent="NavigationRegion2D" instance=ExtResource("45_lu5cr")]
+position = Vector2(432, 200)
+scale = Vector2(0.8, 0.8)
+
+[node name="CompileSeat6" parent="NavigationRegion2D" instance=ExtResource("45_lu5cr")]
+position = Vector2(528, 200)
+scale = Vector2(0.8, 0.8)
+
+[node name="CompileSeat2" parent="NavigationRegion2D" instance=ExtResource("45_lu5cr")]
+position = Vector2(528, 72)
+scale = Vector2(0.8, 0.8)
+
+[node name="Spawner" type="Node2D" parent="NavigationRegion2D"]
+script = ExtResource("46_x557p")
+npc_scene = ExtResource("47_sq44e")
+
+[node name="SpawnTimer" type="Timer" parent="NavigationRegion2D/Spawner"]
+
+[node name="CounterPoint" type="Marker2D" parent="NavigationRegion2D/Spawner"]
+position = Vector2(176, 272)
+
+[node name="SpawnPoint" type="Marker2D" parent="NavigationRegion2D/Spawner"]
+position = Vector2(16, 312)
+
+[node name="ExitPoint" type="Marker2D" parent="NavigationRegion2D/Spawner"]
+position = Vector2(464, 336)
 
 [connection signal="pressed" from="CanvasLayer/closeButton" to="CanvasLayer" method="_on_close_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/paycheck/paycheckmenu/next" to="CanvasLayer" method="_on_next_pressed"]

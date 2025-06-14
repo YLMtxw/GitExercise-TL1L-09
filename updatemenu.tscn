@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://jjtkcedp5hyj"]
+[gd_scene load_steps=75 format=3 uid="uid://jjtkcedp5hyj"]
 
 [ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_eupx0"]
@@ -49,6 +49,7 @@
 [ext_resource type="AudioStream" uid="uid://cqn1vk21dnclo" path="res://song/jazz-background-music-325355.mp3" id="36_gqinc"]
 [ext_resource type="Texture2D" uid="uid://c6wq8rfc2mea" path="res://photo/signboard lock.jpg" id="36_qrdaw"]
 [ext_resource type="Texture2D" uid="uid://cateqyff17j1j" path="res://photo/Daco.png" id="37_1qjyb"]
+[ext_resource type="Texture2D" uid="uid://cateqyff17j1j" path="res://photo/Daco.png" id="37_1qjyb"]
 [ext_resource type="Texture2D" uid="uid://mkerffylv5sm" path="res://photo/signboard-removebg-preview.png" id="37_02g0u"]
 [ext_resource type="Texture2D" uid="uid://dm7ldkjrpllsj" path="res://photo/plant pot lock.jpg" id="37_lfxla"]
 [ext_resource type="Texture2D" uid="uid://bobj1av54kdck" path="res://photo/table.png" id="38_txm7q"]
@@ -57,12 +58,16 @@
 [ext_resource type="Texture2D" uid="uid://bse38qb3812rg" path="res://photo/money_box-removebg-preview.png" id="40_7p0w4"]
 [ext_resource type="Texture2D" uid="uid://bue5c4maub8v2" path="res://MoneyLabel/MLabel_Sprites/Money.png" id="41_2ta2v"]
 [ext_resource type="Texture2D" uid="uid://dvn130sbcti2q" path="res://photo/frame lock.jpg" id="42_4gyba"]
+[ext_resource type="Texture2D" uid="uid://dvn130sbcti2q" path="res://photo/frame lock.jpg" id="42_4gyba"]
 [ext_resource type="Texture2D" uid="uid://dt5ewslwai5la" path="res://photo/cooked 01.png" id="42_rpnmw"]
 [ext_resource type="Texture2D" uid="uid://bqstpvyioyupd" path="res://photo/chatbox-removebg-preview.png" id="43_3hp0w"]
 [ext_resource type="Script" uid="uid://d1x6tcqwop57s" path="res://money_box.gd" id="43_cvh4x"]
 [ext_resource type="Texture2D" uid="uid://rvs2g47puntu" path="res://photo/water_fountain.png" id="43_rpnmw"]
 [ext_resource type="Script" uid="uid://fwycxljunopo" path="res://coin_label.gd" id="44_313i5"]
 [ext_resource type="AudioStream" uid="uid://b8etp3s1kt86j" path="res://song/wrong-answer-126515.mp3" id="46_cvh4x"]
+[ext_resource type="Texture2D" uid="uid://dnyua62jds6yp" path="res://photo/table deco lock.jpg" id="46_fkgnt"]
+[ext_resource type="Texture2D" uid="uid://bw6a62rngh2a0" path="res://photo/table tresure lock .jpg" id="47_nq8pj"]
+[ext_resource type="Texture2D" uid="uid://dmsuu22phiims" path="res://photo/vvip carpet lock.jpg" id="48_4gyba"]
 [ext_resource type="Texture2D" uid="uid://dnyua62jds6yp" path="res://photo/table deco lock.jpg" id="46_fkgnt"]
 [ext_resource type="Texture2D" uid="uid://bw6a62rngh2a0" path="res://photo/table tresure lock .jpg" id="47_nq8pj"]
 [ext_resource type="Texture2D" uid="uid://dmsuu22phiims" path="res://photo/vvip carpet lock.jpg" id="48_4gyba"]
@@ -75,6 +80,14 @@ font_size = 27
 font_color = Color(0, 0.407843, 1, 1)
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_nq8pj"]
+offsets = PackedFloat32Array(0.162338, 0.5, 0.805195)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0.47451, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fkgnt"]
+gradient = SubResource("Gradient_nq8pj")
+use_hdr = true
 
 [sub_resource type="Gradient" id="Gradient_nq8pj"]
 offsets = PackedFloat32Array(0.162338, 0.5, 0.805195)
@@ -103,6 +116,18 @@ use_hdr = true
 fill_from = Vector2(0.963303, 0)
 fill_to = Vector2(1, 1)
 
+[sub_resource type="Gradient" id="Gradient_br5ie"]
+interpolation_mode = 2
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0, 1)
+colors = PackedColorArray(0.188235, 0, 0, 1, 0, 0, 0, 1, 1, 0.17, 0.17, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4gyba"]
+gradient = SubResource("Gradient_br5ie")
+use_hdr = true
+fill_from = Vector2(0.963303, 0)
+fill_to = Vector2(1, 1)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -115,6 +140,11 @@ offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ra00y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(286.5, 168.45)
+scale = Vector2(0.532407, 0.533792)
+texture = ExtResource("2_k1gfb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(286.5, 168.45)
@@ -980,9 +1010,9 @@ texture = ExtResource("22_30naw")
 
 [node name="Label" type="Label" parent="photo2/blue box3"]
 offset_left = -82.5365
-offset_top = 59.5443
+offset_top = 82.2279
 offset_right = 82.4635
-offset_bottom = 83.5443
+offset_bottom = 106.228
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 27
@@ -1047,9 +1077,9 @@ texture = ExtResource("27_313i5")
 
 [node name="Coke" type="Label" parent="photo2/blue box4"]
 offset_left = -82.5352
-offset_top = 59.5444
+offset_top = 85.0634
 offset_right = 81.4648
-offset_bottom = 82.5444
+offset_bottom = 108.063
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 25
@@ -1080,6 +1110,7 @@ offset_left = -92.0
 offset_top = -108.0
 offset_right = 91.0
 offset_bottom = 108.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Up_price5" type="Label" parent="photo2/blue box4"]
 offset_left = -45.8523
@@ -1647,7 +1678,7 @@ texture = ExtResource("32_nt5q0")
 [node name="cactus button" type="TextureButton" parent="photo3/CactusLock"]
 offset_left = -137.0
 offset_top = -176.0
-offset_right = 133.0
+offset_right = 141.0
 offset_bottom = 176.0
 mouse_default_cursor_shape = 2
 
@@ -1655,6 +1686,11 @@ mouse_default_cursor_shape = 2
 position = Vector2(-106.659, 45.354)
 scale = Vector2(0.223535, 0.221239)
 texture = ExtResource("42_4gyba")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/Frame lock"]
+position = Vector2(2.52458, -39.9999)
+scale = Vector2(0.397066, 0.288358)
+texture = ExtResource("33_uxvje")
 
 [node name="Frame button" type="TextureButton" parent="photo3/Frame lock"]
 offset_left = -154.0
@@ -1691,9 +1727,15 @@ position = Vector2(-30.474, 45.354)
 scale = Vector2(0.358307, 0.359513)
 texture = ExtResource("39_qrdaw")
 
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/BinLock"]
+position = Vector2(-0.000102997, -24.6154)
+scale = Vector2(0.24788, 0.18154)
+texture = ExtResource("33_uxvje")
+
 [node name="bin lock button" type="TextureButton" parent="photo3/BinLock"]
 offset_left = -94.0
 offset_top = -120.0
+offset_right = 95.0
 offset_right = 95.0
 offset_bottom = 120.0
 
@@ -1701,6 +1743,11 @@ offset_bottom = 120.0
 position = Vector2(45.1467, 45.354)
 scale = Vector2(0.202149, 0.200659)
 texture = ExtResource("46_fkgnt")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/Table deco"]
+position = Vector2(-5.58331, -44.1025)
+scale = Vector2(0.439696, 0.317027)
+texture = ExtResource("33_uxvje")
 
 [node name="table deco button" type="TextureButton" parent="photo3/Table deco"]
 anchors_preset = -1
@@ -1717,6 +1764,11 @@ position = Vector2(120.767, -43.6947)
 scale = Vector2(0.217749, 0.216185)
 texture = ExtResource("47_nq8pj")
 
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/table tresure"]
+position = Vector2(-5.72205e-05, -2.55845)
+scale = Vector2(0.435982, 0.320688)
+texture = ExtResource("33_uxvje")
+
 [node name="table tresure button" type="TextureButton" parent="photo3/table tresure"]
 offset_left = -155.0
 offset_top = -197.0
@@ -1728,11 +1780,112 @@ position = Vector2(120.203, 45.354)
 scale = Vector2(0.220669, 0.221239)
 texture = ExtResource("48_4gyba")
 
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/VVIP carpet"]
+position = Vector2(-7.67216, -40)
+scale = Vector2(0.414369, 0.292682)
+texture = ExtResource("33_uxvje")
+
 [node name="VVIP carpet" type="TextureButton" parent="photo3/VVIP carpet"]
 offset_left = -156.0
 offset_top = -195.0
 offset_right = 156.0
 offset_bottom = 195.0
+
+[node name="Up_price2" type="Label" parent="photo3"]
+offset_left = -123.025
+offset_top = -85.177
+offset_right = -37.0248
+offset_bottom = -53.177
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$150"
+
+[node name="Up_price3" type="Label" parent="photo3"]
+offset_left = -46.2754
+offset_top = -86.2832
+offset_right = 39.7246
+offset_bottom = -54.2832
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$100"
+
+[node name="Up_price4" type="Label" parent="photo3"]
+offset_left = 27.088
+offset_top = -85.177
+offset_right = 113.088
+offset_bottom = -53.177
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$250"
+
+[node name="Up_price5" type="Label" parent="photo3"]
+offset_left = 102.709
+offset_top = -85.177
+offset_right = 195.709
+offset_bottom = -53.177
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$300"
+
+[node name="Up_price6" type="Label" parent="photo3"]
+offset_left = -123.025
+offset_top = 2.21239
+offset_right = -30.0248
+offset_bottom = 34.2124
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$150"
+
+[node name="Up_price7" type="Label" parent="photo3"]
+offset_left = -48.5327
+offset_top = 3.31859
+offset_right = 44.4673
+offset_bottom = 35.3186
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$200"
+
+[node name="Up_price8" type="Label" parent="photo3"]
+offset_left = 29.3454
+offset_top = 3.31859
+offset_right = 122.345
+offset_bottom = 35.3186
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$250"
+
+[node name="Up_price9" type="Label" parent="photo3"]
+offset_left = 99.3228
+offset_top = 3.31859
+offset_right = 192.323
+offset_bottom = 35.3186
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$500"
 
 [node name="button4" type="TextureButton" parent="."]
 layout_mode = 0
@@ -2041,10 +2194,9 @@ texture = ExtResource("59_slmgn")
 [connection signal="pressed" from="CanvasLayer/burger board/Label3/beef" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label4/vege" to="." method="_on_vege_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_chicken_01_pressed"]
-[connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Lamb Sand/lamb 01" to="." method="_on_lamb_01_pressed"]
-[connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/EGG MAYO/egg mayo 01" to="." method="_on_egg_mayo_01_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_cancel_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_texture_button_pressed"]
