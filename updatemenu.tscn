@@ -894,9 +894,9 @@ texture = ExtResource("22_30naw")
 
 [node name="Label" type="Label" parent="photo2/blue box3"]
 offset_left = -82.5365
-offset_top = 59.5443
+offset_top = 82.2279
 offset_right = 82.4635
-offset_bottom = 83.5443
+offset_bottom = 106.228
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 27
@@ -955,9 +955,9 @@ texture = ExtResource("27_313i5")
 
 [node name="Coke" type="Label" parent="photo2/blue box4"]
 offset_left = -82.5352
-offset_top = 59.5444
+offset_top = 85.0634
 offset_right = 81.4648
-offset_bottom = 82.5444
+offset_bottom = 108.063
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 25
@@ -988,6 +988,7 @@ offset_left = -92.0
 offset_top = -108.0
 offset_right = 91.0
 offset_bottom = 108.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Up_price5" type="Label" parent="photo2/blue box4"]
 offset_left = -45.8523
@@ -1706,7 +1707,6 @@ texture = ExtResource("59_slmgn")
 [connection signal="pressed" from="CanvasLayer/burger board/Label3/beef" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label4/vege" to="." method="_on_vege_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_chicken_01_pressed"]
-[connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Lamb Sand/lamb 01" to="." method="_on_lamb_01_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_01_pressed"]

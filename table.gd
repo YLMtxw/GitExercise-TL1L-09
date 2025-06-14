@@ -72,6 +72,29 @@ const PlayerData = preload("user://profile.json")
 @onready var Global = get_node("/root/Global")
 @onready var pInventory : Inventory = preload("res://Inventory/playerInventory.tres")
 
+#food price
+@onready var aglio : InventoryItem = preload("res://Inventory/Item/aglio olio.tres")
+@onready var beef_burger : InventoryItem = preload("res://Inventory/Item/beef burger.tres")
+@onready var beef_sandwich : InventoryItem = preload("res://Inventory/Item/beef sandwich.tres")
+@onready var bolognese : InventoryItem = preload("res://Inventory/Item/bolognese.tres")
+@onready var carbonara : InventoryItem = preload("res://Inventory/Item/carbonara.tres")
+@onready var chicken_burger : InventoryItem = preload("res://Inventory/Item/chicken burger.tres")
+@onready var chicken_sandwich : InventoryItem = preload("res://Inventory/Item/chicken sandwich.tres")
+@onready var egg_mayo_s : InventoryItem = preload("res://Inventory/Item/egg mayo sandwich.tres")
+@onready var lamb_burger : InventoryItem = preload("res://Inventory/Item/lamb burger.tres")
+@onready var lamb_sandwich : InventoryItem = preload("res://Inventory/Item/lamb sandwich.tres")
+@onready var GBeefS : InventoryItem = preload("res://Inventory/Item/meat beef.tres")
+@onready var GChickenS : InventoryItem = preload("res://Inventory/Item/meat chicken.tres")
+@onready var GLambS : InventoryItem = preload("res://Inventory/Item/meat lamb.tres")
+@onready var vege_burger : InventoryItem = preload("res://Inventory/Item/vege burger.tres")
+@onready var vege_sandwich : InventoryItem = preload("res://Inventory/Item/vege burger.tres")
+
+#drink price
+@onready var sprite : InventoryItem = preload("res://Inventory/Item/7up.tres")
+@onready var hplus : InventoryItem = preload("res://Inventory/Item/100plus.tres")
+@onready var coco : InventoryItem = preload("res://Inventory/Item/coke.tres")
+@onready var sparkling : InventoryItem = preload("res://Inventory/Item/sprite.tres")
+
 func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		get_tree().quit()
@@ -249,8 +272,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count1"] = count
 			Global.money -= 100
 			coin_label.text = str(Global.money)
+			aglio.price += 10
 			Global.save_game(Global.current_store_name)
-			if count == 3:
+			if count >= 3:
+				count = 3
 				label.text = str(text)
 				print("达到最大值")
 		
@@ -261,8 +286,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count2"] = count2
 			Global.money -= 100
 			coin_label.text = str(Global.money)
+			bolognese.price += 10
 			Global.save_game(Global.current_store_name)
-			if count2 == 3:
+			if count2 >= 3:
+				count2 = 3
 				label2.text = str(text)
 				print("达到最大值")
 		
@@ -273,8 +300,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count3"] = count3
 			Global.money -= 100
 			coin_label.text = str(Global.money)
+			carbonara.price += 10
 			Global.save_game(Global.current_store_name)
-			if count3 == 3:
+			if count3 >= 3:
+				count3 = 3
 				label3.text = str(text)
 			print("达到最大值")
 		
@@ -285,8 +314,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count4"] = count4
 			Global.money -= 200
 			coin_label.text = str(Global.money)
+			GChickenS.price += 15
 			Global.save_game(Global.current_store_name)
-			if count4 == 3:
+			if count4 >= 3:
+				count4 = 4
 				label4.text = str(text)
 			print("达到最大值")
 		
@@ -297,8 +328,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count5"] = count5
 			Global.money -= 150
 			coin_label.text = str(Global.money)
+			chicken_sandwich.price += 5
 			Global.save_game(Global.current_store_name)
-			if count5 == 3:
+			if count5 >= 3:
+				count5 = 3
 				label5.text = str(text)
 			print("达到最大值")
 		
@@ -309,8 +342,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count6"] = count6
 			Global.money -= 150
 			coin_label.text = str(Global.money)
+			lamb_sandwich.price += 5
 			Global.save_game(Global.current_store_name)
-			if count6 == 3:
+			if count6 >= 3:
+				count6 = 3
 				label6.text = str(text)
 			print("达到最大值")
 		
@@ -321,8 +356,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count7"] = count7
 			Global.money -= 150
 			coin_label.text = str(Global.money)
+			beef_sandwich.price += 5
 			Global.save_game(Global.current_store_name)
-			if count7 == 3:
+			if count7 >= 3:
+				count7 = 3
 				label7.text = str(text)
 			print("达到最大值")
 		
@@ -333,8 +370,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count8"] = count8
 			Global.money -= 150
 			coin_label.text = str(Global.money)
+			vege_sandwich.price += 5
 			Global.save_game(Global.current_store_name)
-			if count8 == 3:
+			if count8 >= 3:
+				count8 = 3
 				label8.text = str(text)
 			print("达到最大值")
 		
@@ -345,8 +384,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count9"] = count9
 			Global.money -= 150
 			coin_label.text = str(Global.money)
+			chicken_burger.price += 10
 			Global.save_game(Global.current_store_name)
-			if count9 == 3:
+			if count9 >= 3:
+				count9 = 3
 				label9.text = str(text)
 			print("达到最大值")
 		
@@ -357,8 +398,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count10"] = count10
 			Global.money -= 150
 			coin_label.text = str(Global.money)
+			lamb_burger.price += 10
 			Global.save_game(Global.current_store_name)
-			if count10 == 3:
+			if count10 >= 3:
+				count10 = 3
 				label10.text = str(text)
 			print("达到最大值")
 		
@@ -369,8 +412,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count11"] = count11
 			Global.money -= 150
 			coin_label.text = str(Global.money)
+			beef_burger.price += 10
 			Global.save_game(Global.current_store_name)
-			if count11 == 3:
+			if count11 >= 3:
+				count11 = 3
 				label11.text = str(text)
 			print("达到最大值")
 		
@@ -381,8 +426,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count12"] = count12
 			Global.money -= 150
 			coin_label.text = str(Global.money)
+			vege_burger.price += 10
 			Global.save_game(Global.current_store_name)
-			if count12 == 3:
+			if count12 >= 3:
+				count12 = 3
 				label12.text = str(text)
 			print("达到最大值")
 		
@@ -393,8 +440,11 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count13"] = count13
 			Global.money -= 200
 			coin_label.text = str(Global.money)
+			GLambS.price += 15
+			print("GLS price =", GLambS.price)
 			Global.save_game(Global.current_store_name)
-			if count13 == 3:
+			if count13 >= 3:
+				count13 = 3
 				label13.text = str(text)
 			print("达到最大值")
 		print("Bolognese")
@@ -406,8 +456,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count14"] = count14
 			Global.money -= 200
 			coin_label.text = str(Global.money)
+			GBeefS.price += 15
 			Global.save_game(Global.current_store_name)
-			if count14 == 3:
+			if count14 >= 3:
+				count14 = 3
 				label14.text = str(text)
 			print("达到最大值")
 		print("Bolognese")
@@ -419,8 +471,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count15"] = count15
 			Global.money -= 100
 			coin_label.text = str(Global.money)
+			sparkling.price += 5
 			Global.save_game(Global.current_store_name)
-			if count15 == 3:
+			if count15 >= 3:
+				count15 = 3
 				label15.text = str(text)
 				confirm.visible = true
 			print("达到最大值")
@@ -433,8 +487,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count16"] = count16
 			Global.money -= 100
 			coin_label.text = str(Global.money)
+			sprite.price += 5
 			Global.save_game(Global.current_store_name)
-			if count16 == 3:
+			if count16 >= 3:
+				count16 = 3
 				label16.text = str(text)
 				confirm.visible = true
 			print("达到最大值")
@@ -447,8 +503,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count17"] = count17
 			Global.money -= 100
 			coin_label.text = str(Global.money)
+			hplus.price += 5
 			Global.save_game(Global.current_store_name)
-			if count17 == 3:
+			if count17 >= 3:
+				count17 = 3
 				label17.text = str(text)
 				confirm.visible = true
 			print("达到最大值")
@@ -461,8 +519,10 @@ func _on_accept_button_pressed() -> void:
 			Global.upgrade["count18"] = count18
 			Global.money -= 100
 			coin_label.text = str(Global.money)
+			coco.price += 5
 			Global.save_game(Global.current_store_name)
-			if count18 == 3:
+			if count18 >= 3:
+				count18 = 3
 				label18.text = str(text)
 				confirm.visible = true
 			print("达到最大值")
