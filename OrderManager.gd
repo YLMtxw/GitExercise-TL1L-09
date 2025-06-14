@@ -29,29 +29,37 @@ func generate_random_order():
 	var recipe_name = keys[randi() % keys.size()]
 	var base_ingredients = RecipeDatabase.recipes[recipe_name].duplicate()
 	var modifications = []
+	var display_name = recipe_name # e.g. "beef burger (no cheese)"
 
 	# === Modification list
 	var modifiables = ["cheese", "sliced vege", "sliced tomato", "mayonaise"]
 	for mod in modifiables:
+		# Only decide a mod if it appears at least once in the recipe
 		if mod in base_ingredients:
 			var mod_type = randi() % 3 # 0 = normal, 1 = no <ingredient>, 2 = extra <ingredient>
 			if mod_type == 1:
-				base_ingredients.erase(mod)
+				# Remove ALL occurrences of mod from the list
+				while mod in base_ingredients:
+					base_ingredients.erase(mod)
 				modifications.append("no " + mod)
 			elif mod_type == 2:
+				# Add ONE more of this ingredient
 				base_ingredients.append(mod)
 				modifications.append("extra " + mod)
 			# else normal: do nothing
 
-	# Use just the recipe name (not with mods!) as order["name"]
-	var display_name = recipe_name
 
-	# Register this modified recipe for the cooking station to see
-	# (You may still need a unique key for internal lookup, but not for UI)
-	RecipeDatabase.recipes[display_name] = base_ingredients.duplicate()
+	# Compose a display name if there are modifications
+	if modifications.size() > 0:
+		display_name += " (" + ", ".join(modifications) + ")"
+
+	# Register this modified recipe for the cooking station
+	if modifications.size() > 0:
+		RecipeDatabase.recipes[display_name] = base_ingredients.duplicate()
 
 	var order = {
 		"name": display_name,
+		"base_name": recipe_name,
 		"ingredients": base_ingredients,
 		"modifications": modifications
 	}
@@ -71,7 +79,4 @@ func clear_order():
 
 func format_order_text(order: Dictionary) -> String:
 	var result = order.get("name", "???")
-	var mods = order.get("modifications", [])
-	if mods.size() > 0:
-		result += " (" + ", ".join(mods) + ")"
 	return result

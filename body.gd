@@ -106,11 +106,18 @@ func receive_served_item(served_dish_name: String):
 	served_ingredients.sort()
 	var expected_ingredients = order_data.get("ingredients", []).duplicate()
 	expected_ingredients.sort()
+	print("DEBUG: Served:", served_dish_name, served_ingredients)
+	print("DEBUG: Expected:", order_data["name"], expected_ingredients)
 
 	if served_ingredients == expected_ingredients:
 		print("✅ Correct dish served! Thank you!")
 		_hide_speech()
-		emit_signal("order_accepted", served_dish_name) # <- Add this
+		emit_signal("order_accepted", served_dish_name)
+		if order_data.has("base_name") and order_data["name"] != order_data["base_name"]:
+			if RecipeDatabase.recipes.has(order_data["name"]):
+				RecipeDatabase.recipes.erase(order_data["name"])
+				print("Temporary recipe erased:", order_data["name"])
+		print("DEBUG: Moving NPC to seat...")
 		move_to_seat()
 	else:
 		print("❌ Wrong order! I wanted:", expected_ingredients, "but got:", served_ingredients)

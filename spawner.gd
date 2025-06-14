@@ -54,8 +54,7 @@ func try_spawn_npc():
 			return
 
 func _process(_delta):
-	if Input.is_key_pressed(KEY_F) and waiting_npc:
-		waiting_npc.move_to_seat()
+	pass
 
 func _on_npc_started_moving():
 	waiting_npc = null

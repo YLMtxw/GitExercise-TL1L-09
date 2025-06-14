@@ -472,10 +472,10 @@ expand_mode = 1
 
 [connection signal="pressed" from="NinePatchRect/spaghetti cooked" to="." method="_on_spaghetti_cooked_pressed"]
 [connection signal="pressed" from="NinePatchRect/Aglio olio" to="." method="_on_aglio_olio_pressed"]
-[connection signal="pressed" from="NinePatchRect/carbo" to="." method="_on_carbo_pressed"]
 [connection signal="pressed" from="NinePatchRect/carbo" to="." method="_on_bolognese_pressed"]
-[connection signal="pressed" from="NinePatchRect/bolognese" to="." method="_on_bolognese_pressed"]
+[connection signal="pressed" from="NinePatchRect/carbo" to="." method="_on_carbo_pressed"]
 [connection signal="pressed" from="NinePatchRect/bolognese" to="." method="_on_carbonara_pressed"]
+[connection signal="pressed" from="NinePatchRect/bolognese" to="." method="_on_bolognese_pressed"]
 [connection signal="pressed" from="NinePatchRect/beef cooked" to="." method="_on_beef_cooked_pressed"]
 [connection signal="pressed" from="NinePatchRect/pattyb cooked" to="." method="_on_pattyb_cooked_pressed"]
 [connection signal="pressed" from="NinePatchRect/lamb cooked" to="." method="_on_lamb_cooked_pressed"]

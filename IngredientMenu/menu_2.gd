@@ -6,37 +6,37 @@ var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
 
 func has_ingredients(dish: String) -> bool:
-	var dish_lc = dish.to_lower()
-	if not RecipeDatabase.recipes.has(dish_lc):
-		print("Recipe not found (cutting):", dish_lc)
-		print("Available recipes:", RecipeDatabase.recipes.keys())
+	# ... (copy the debug code and ingredient logic from other stations)
+	if not RecipeDatabase.recipes.has(dish):
 		return false
-
-	var required = RecipeDatabase.recipes[dish_lc]
-	var available = inventory.slots
-
-	for ingredient_name in required:
-		var found = false
-		for slot in available:
-			if slot.item and slot.item.name == ingredient_name and slot.itemNum > 0:
-				found = true
-				break
-		if not found:
-			print("Missing ingredient (cutting): ", ingredient_name)
+	var required_counts := {}
+	for name in RecipeDatabase.recipes[dish]:
+		required_counts[name] = required_counts.get(name, 0) + 1
+	var available_counts := {}
+	for slot in inventory.slots:
+		if slot.item and slot.itemNum > 0:
+			available_counts[slot.item.name] = available_counts.get(slot.item.name, 0) + slot.itemNum
+	for name in required_counts.keys():
+		if available_counts.get(name, 0) < required_counts[name]:
+			print("Missing ingredient:", name)
 			return false
-
 	return true
 
 func consume_ingredients(dish: String):
-	var dish_lc = dish.to_lower()
-	if not RecipeDatabase.recipes.has(dish_lc):
+	if not RecipeDatabase.recipes.has(dish):
 		return
-
-	for ingredient_name in RecipeDatabase.recipes[dish_lc]:
+	var required_counts := {}
+	for name in RecipeDatabase.recipes[dish]:
+		required_counts[name] = required_counts.get(name, 0) + 1
+	for name in required_counts.keys():
+		var to_remove = required_counts[name]
 		for slot in inventory.slots:
-			if slot.item and slot.item.name == ingredient_name:
-				inventory.remove_item(slot.item, 1)
+			if to_remove == 0:
 				break
+			if slot.item and slot.item.name == name:
+				var remove_now = min(slot.itemNum, to_remove)
+				inventory.remove_item(slot.item, remove_now)
+				to_remove -= remove_now
 
 func openMenu2():
 	visible = true
@@ -58,6 +58,7 @@ func Mclose2():
 func insert(item: InventoryItem) -> void:
 	inventory.add_item(item)
 
+# Example for "cutting station" and sauces
 func _on_vege_2_pressed() -> void:
 	if has_ingredients("sliced vege"):
 		consume_ingredients("sliced vege")

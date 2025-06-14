@@ -210,7 +210,6 @@ func _input(event):
 			var held_item = get_selected_inventory_item()
 			if held_item != "":
 				npc_node_at_counter.receive_served_item(held_item)
-				remove_selected_item()
 			else:
 				print("You are not holding any food!")
 		else:
