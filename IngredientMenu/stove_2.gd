@@ -54,7 +54,7 @@ func get_current_order_name(base_name: String) -> String:
 	if OrderManager.current_order_data.has("base_name") and OrderManager.current_order_data["base_name"] == base_name:
 		return OrderManager.current_order_data["name"]
 	return base_name
-	
+  
 func _on_stove2_button_pressed(button: TextureButton):
 	if item and has_ingredients(item.name):
 		locked = true
@@ -102,7 +102,6 @@ func S2close():
 		is_menu_open = false
 
 
-
 func _on_vege_burger_pressed():
 	click.play()
 	item = preload("res://Inventory/Item/vege burger.tres")
@@ -136,7 +135,6 @@ func _on_bolognese_pressed() -> void:
 	item = preload("res://Inventory/Item/bolognese.tres")
 	item.name = get_current_order_name("bolognese")
 
-
 func _on_beef_cooked_pressed() -> void:
 	click.play()
 	item = preload("res://Inventory/Item/beef cooked.tres")
@@ -147,7 +145,6 @@ func _on_pattyb_cooked_pressed() -> void:
 	click.play()
 	item = preload("res://Inventory/Item/beef patty cooked.tres")
 	item.name = get_current_order_name("beef patty cooked")
-
 
 func _on_lamb_cooked_pressed() -> void:
 	click.play()
@@ -160,12 +157,10 @@ func _on_pattyl_cooked_pressed() -> void:
 	item = preload("res://Inventory/Item/lamb patty cooked.tres")
 	item.name = get_current_order_name("lamb patty cooked")
 
-
 func _on_chicken_cooked_pressed() -> void:
 	click.play()
 	item = preload("res://Inventory/Item/chicken cooked.tres")
 	item.name = get_current_order_name("chicken cooked")
-
 
 func _on_pattyc_cooked_pressed() -> void:
 	click.play()
@@ -187,7 +182,6 @@ func _on_lamb_pressed() -> void:
 	click.play()
 	item = preload("res://Inventory/Item/meat lamb.tres")
 	item.name = get_current_order_name("grilled lamb steak")
-
 
 func _on_lamb_burger_pressed() -> void:
 	click.play()

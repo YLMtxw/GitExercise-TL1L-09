@@ -61,6 +61,7 @@ func insert(item: InventoryItem) -> void:
 
 func _on_vege_1_pressed() -> void:
 	click.play()
+
 	if has_ingredients("sliced vege"):
 		consume_ingredients("sliced vege")
 		var item = preload("res://Inventory/Item/sliced vege.tres")
@@ -69,6 +70,7 @@ func _on_vege_1_pressed() -> void:
 		print("Crafted sliced vege")
 	else:
 		print("Not enough ingredients (sliced vege)!")
+
 
 func _on_mayo_1_pressed() -> void:
 	click.play()

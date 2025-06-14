@@ -77,7 +77,6 @@ func _on_loading_finished():
 			print("Added item to inventory: ", item.name)
 			item = null
 
-
 func _on_timer_timeout(button):
 	print("Timer for ", button.name, "finished!")
 
