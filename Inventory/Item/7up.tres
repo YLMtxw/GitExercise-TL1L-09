@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_3wyky")
-name = "sprite"
+name = "sprint"
 texture = ExtResource("2_k7ij8")
 price = 10
 metadata/_custom_type_script = "uid://c2jevq51ijiin"

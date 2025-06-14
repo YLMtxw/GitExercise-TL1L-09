@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ItemLists="*res://Inventory/ItemList.gd"
 Global="*res://Global.gd"
 Cactus="*res://cactus.gd"
 Frame01="*res://frame01.gd"
@@ -33,7 +32,7 @@ Vvip="*res://vvip.gd"
 window/size/viewport_width=576
 window/size/viewport_height=350
 window/size/window_width_override=1980
-window/size/window_height_override=1080
+window/size/window_height_override=1040
 window/stretch/mode="canvas_items"
 
 [editor]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://bmlcjik7mnbd1"]
+[gd_scene load_steps=56 format=4 uid="uid://bmlcjik7mnbd1"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Script" uid="uid://chiaggp51axdq" path="res://playground.gd" id="1_snn6g"]
@@ -34,19 +34,14 @@
 [ext_resource type="Texture2D" uid="uid://bb0v3jlxyv6lg" path="res://photo/door-removebg-preview.png" id="33_md5nv"]
 [ext_resource type="Texture2D" uid="uid://cd8xttvy8y4py" path="res://photo/lamp-removebg-preview.png" id="35_j7gj2"]
 [ext_resource type="PackedScene" uid="uid://behaxi53ncvat" path="res://table_tresrue.tscn" id="36_x557p"]
-[ext_resource type="Script" uid="uid://g1qrj7qefqc0" path="res://table_tresrue.gd" id="37_gixy8"]
 [ext_resource type="PackedScene" uid="uid://dv8aoxjytnwu6" path="res://table_deco.tscn" id="37_obxad"]
 [ext_resource type="PackedScene" uid="uid://p4noyk3twc1e" path="res://pot.tscn" id="38_lu5cr"]
-[ext_resource type="Script" uid="uid://21gre6sl7v8w" path="res://table_deco.gd" id="38_x557p"]
 [ext_resource type="PackedScene" uid="uid://b46wulkigsalp" path="res://bin.tscn" id="39_2075e"]
 [ext_resource type="Script" uid="uid://77xndwwrws37" path="res://pot.gd" id="39_obxad"]
-[ext_resource type="Script" uid="uid://e1ce7cn3swjl" path="res://bin.gd" id="40_lu5cr"]
 [ext_resource type="PackedScene" uid="uid://ba71lpyhjrlgo" path="res://cactus.tscn" id="41_j7gj2"]
-[ext_resource type="Script" uid="uid://bv0nqk5hpk3gb" path="res://cactus02.gd" id="42_1nsp6"]
 [ext_resource type="PackedScene" uid="uid://dyf5s2jbiyp48" path="res://frame.tscn" id="42_n1lva"]
 [ext_resource type="Script" uid="uid://dh5ha8cg2hhiu" path="res://frame.gd" id="43_2075e"]
 [ext_resource type="PackedScene" uid="uid://by8yo2u4pw38m" path="res://signboard.tscn" id="47_gixy8"]
-[ext_resource type="Script" uid="uid://ddma6fmweq646" path="res://signboard.gd" id="48_sq44e"]
 [ext_resource type="PackedScene" uid="uid://c78br7turw5qm" path="res://vvip_carpet.tscn" id="48_vevnq"]
 [ext_resource type="Script" uid="uid://cbrodblgnwkqf" path="res://vvip_carpet.gd" id="49_4gl70"]
 
@@ -1272,8 +1267,8 @@ color = Color(0, 0, 0, 0.839216)
 visible = false
 offset_left = 189.0
 offset_top = 31.0
-offset_right = 189.0
-offset_bottom = 31.0
+offset_right = -171.0
+offset_bottom = -32.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("27_ofol1")
@@ -1285,26 +1280,21 @@ position = Vector2(120, 150)
 scale = Vector2(1, 1)
 
 [node name="Table Tresrue" parent="." instance=ExtResource("36_x557p")]
-script = ExtResource("37_gixy8")
 
 [node name="table deco" parent="." instance=ExtResource("37_obxad")]
-script = ExtResource("38_x557p")
 
 [node name="Pot" parent="." instance=ExtResource("38_lu5cr")]
 position = Vector2(386, -1)
 script = ExtResource("39_obxad")
 
 [node name="Bin" parent="." instance=ExtResource("39_2075e")]
-script = ExtResource("40_lu5cr")
 
 [node name="cactus" parent="." instance=ExtResource("41_j7gj2")]
-script = ExtResource("42_1nsp6")
 
 [node name="Frame" parent="." instance=ExtResource("42_n1lva")]
 script = ExtResource("43_2075e")
 
 [node name="signboard" parent="." instance=ExtResource("47_gixy8")]
-script = ExtResource("48_sq44e")
 
 [node name="VVIP carpet" parent="." instance=ExtResource("48_vevnq")]
 script = ExtResource("49_4gl70")
@@ -1343,6 +1333,7 @@ texture = ExtResource("35_j7gj2")
 expand_mode = 1
 
 [node name="PointLight2D" type="PointLight2D" parent="Decoration/TextureRect"]
+z_index = 2
 position = Vector2(10, 9)
 color = Color(1, 0.66, 0.66, 1)
 energy = 1.61

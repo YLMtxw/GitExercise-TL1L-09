@@ -10,3 +10,5 @@ func _ready() -> void:
 
 func _process(_delta):
 	td_node.visible = Td01.td_visible
+	if Td01.td_visible == false:
+		$"table deco/CollisionShape2D".disabled = true

@@ -45,7 +45,6 @@ var last_saved_position := Vector2.ZERO
 func _ready():
 	global_position = Global.position
 
-
 func _process(delta):
 	if menuOpen.Mopen():
 		return
@@ -70,7 +69,7 @@ func movement(delta):
 	if direction != Vector2.ZERO:
 		#to store player direction so when player is not moving, it will face to where its stop
 		store_direction = direction
-	
+		
 	var near = is_near()
 	if near == "stove" or near == "refri" or near == "knive" or near == "bin" or near == "bm":
 		$InteractE.showE()
@@ -163,9 +162,9 @@ func _physics_process( delta ):
 func _input(event):
 	if event.is_action_pressed("sell"):  # q
 		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
-		money_display.add_money(10) 
-		paycheckmenu.add_money(10)
-		income.add_money(10)
+		money_display.add_money(100) 
+		paycheckmenu.add_money(100)
+		income.add_money(100)
 	if event.is_action_pressed("upgrade"): # r
 		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
 		money_display.upgrade(20)

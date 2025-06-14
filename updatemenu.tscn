@@ -981,9 +981,9 @@ texture = ExtResource("22_30naw")
 
 [node name="Label" type="Label" parent="photo2/blue box3"]
 offset_left = -82.5365
-offset_top = 59.5443
+offset_top = 82.2279
 offset_right = 82.4635
-offset_bottom = 83.5443
+offset_bottom = 106.228
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 27
@@ -1048,9 +1048,9 @@ texture = ExtResource("27_313i5")
 
 [node name="Coke" type="Label" parent="photo2/blue box4"]
 offset_left = -82.5352
-offset_top = 59.5444
+offset_top = 85.0634
 offset_right = 81.4648
-offset_bottom = 82.5444
+offset_bottom = 108.063
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 25
@@ -1081,6 +1081,7 @@ offset_left = -92.0
 offset_top = -108.0
 offset_right = 91.0
 offset_bottom = 108.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Up_price5" type="Label" parent="photo2/blue box4"]
 offset_left = -45.8523
@@ -1653,7 +1654,7 @@ texture = ExtResource("33_uxvje")
 [node name="cactus button" type="TextureButton" parent="photo3/CactusLock"]
 offset_left = -137.0
 offset_top = -176.0
-offset_right = 133.0
+offset_right = 141.0
 offset_bottom = 176.0
 mouse_default_cursor_shape = 2
 
@@ -1774,6 +1775,102 @@ offset_left = -156.0
 offset_top = -195.0
 offset_right = 156.0
 offset_bottom = 195.0
+
+[node name="Up_price2" type="Label" parent="photo3"]
+offset_left = -123.025
+offset_top = -85.177
+offset_right = -37.0248
+offset_bottom = -53.177
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$150"
+
+[node name="Up_price3" type="Label" parent="photo3"]
+offset_left = -46.2754
+offset_top = -86.2832
+offset_right = 39.7246
+offset_bottom = -54.2832
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$100"
+
+[node name="Up_price4" type="Label" parent="photo3"]
+offset_left = 27.088
+offset_top = -85.177
+offset_right = 113.088
+offset_bottom = -53.177
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$250"
+
+[node name="Up_price5" type="Label" parent="photo3"]
+offset_left = 102.709
+offset_top = -85.177
+offset_right = 195.709
+offset_bottom = -53.177
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$300"
+
+[node name="Up_price6" type="Label" parent="photo3"]
+offset_left = -123.025
+offset_top = 2.21239
+offset_right = -30.0248
+offset_bottom = 34.2124
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$150"
+
+[node name="Up_price7" type="Label" parent="photo3"]
+offset_left = -48.5327
+offset_top = 3.31859
+offset_right = 44.4673
+offset_bottom = 35.3186
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$200"
+
+[node name="Up_price8" type="Label" parent="photo3"]
+offset_left = 29.3454
+offset_top = 3.31859
+offset_right = 122.345
+offset_bottom = 35.3186
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$250"
+
+[node name="Up_price9" type="Label" parent="photo3"]
+offset_left = 99.3228
+offset_top = 3.31859
+offset_right = 192.323
+offset_bottom = 35.3186
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$500"
 
 [node name="button4" type="TextureButton" parent="."]
 layout_mode = 0
@@ -2082,11 +2179,10 @@ texture = ExtResource("59_slmgn")
 [connection signal="pressed" from="CanvasLayer/burger board/Label3/beef" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/burger board/Label4/vege" to="." method="_on_vege_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_chicken_01_pressed"]
-[connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Lamb Sand/lamb 01" to="." method="_on_lamb_01_pressed"]
-[connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_pressed"]
 [connection signal="pressed" from="CanvasLayer/sandwich/EGG MAYO/egg mayo 01" to="." method="_on_egg_mayo_01_pressed"]
-[connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_cancel_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_cancel_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Comfirmation/accept button" to="." method="_on_accept_button_pressed"]

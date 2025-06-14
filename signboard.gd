@@ -10,3 +10,5 @@ func _ready() -> void:
 
 func _process(_delta):
 	signboard_node.visible = Signboard01.signboard_visible
+	if Signboard01.signboard_visible == false:
+		$signboard/CollisionShape2D.disabled = true

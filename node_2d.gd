@@ -3,6 +3,7 @@ extends Node2D
 @onready var Setting = $"Setting"
 
 func _ready():
+	Global.load_game("profile")
 	var bus_index = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(bus_index, Global.volume_db)
 	$PopupPanel2/Setting/HSlider.value = Global.volume_db
@@ -60,6 +61,7 @@ func _on_h_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(bus_index, value)
 	AudioServer.set_bus_mute(bus_index, value <= -60)
 	Global.volume_db = value
+	Global.save_game()
 
 
 		
