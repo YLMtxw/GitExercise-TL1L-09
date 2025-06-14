@@ -29,7 +29,7 @@
 layout_mode = 3
 anchors_preset = 0
 offset_right = 154.0
-offset_bottom = 118.0
+offset_bottom = 158.0
 script = ExtResource("1_gij4g")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]

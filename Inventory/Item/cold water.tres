@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cdlh8wo3ucnme"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_604g0"]
+[ext_resource type="Texture2D" uid="uid://0f83fylocngw" path="res://IngredientMenu/Ingredient_Sprite/water-c.png" id="2_umavm"]
+
+[resource]
+script = ExtResource("1_604g0")
+name = "cold water"
+texture = ExtResource("2_umavm")
+price = 5
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

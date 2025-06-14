@@ -80,9 +80,10 @@ var text : String = "max"
 var lock_confirm := false
 var accept_button_disabled = false
 
-const PlayerData = preload("user://H.json")
-@onready var Global = get_node("/root/Global")
 
+const PlayerData = preload("user://profile.json")
+@onready var Global = get_node("/root/Global")
+@onready var pInventory : Inventory = preload("res://Inventory/playerInventory.tres")
 
 func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
@@ -95,50 +96,66 @@ func _ready():
 	for button in $Button2.get_children():
 		if button is Button or button is TextureButton:
 			button.pressed.connect(_on_button_2_pressed)
-	
-	var money = 0  # 改成你真实路径
+		
+	Global.load_game(Global.current_store_name)
 
-	var player_data = load_player_data()
+	# Apply loaded upgrade levels to UI
+	count = Global.upgrade.get("count1", 0)
+	label.text = str(count if count < max else text)
+	
+	count2 = Global.upgrade.get("count2", 0)
+	label2.text = str(count2 if count2 < max else text)
+	
+	count3 = Global.upgrade.get("count3", 0)
+	label3.text = str(count3 if count3 < max else text)
+	
+	count4 = Global.upgrade.get("count4", 0)
+	label4.text = str(count4 if count4 < max else text)
+	
+	count5 = Global.upgrade.get("count5", 0)
+	label5.text = str(count5 if count5 < max else text)
+	
+	count6 = Global.upgrade.get("count6", 0)
+	label6.text = str(count6 if count6 < max else text)
+	
+	count7 = Global.upgrade.get("count7", 0)
+	label7.text = str(count7 if count7 < max else text)
+	
+	count8 = Global.upgrade.get("count8", 0)
+	label8.text = str(count8 if count8 < max else text)
+	
+	count9 = Global.upgrade.get("count9", 0)
+	label9.text = str(count9 if count9 < max else text)
+	
+	count10 = Global.upgrade.get("count10", 0)
+	label10.text = str(count10 if count10 < max else text)
+	
+	count11 = Global.upgrade.get("count11", 0)
+	label11.text = str(count11 if count11 < max else text)
+	
+	count12 = Global.upgrade.get("count12", 0)
+	label12.text = str(count12 if count12 < max else text)
+	
+	count13 = Global.upgrade.get("count13", 0)
+	label13.text = str(count13 if count13 < max else text)
+	
+	count14 = Global.upgrade.get("count14", 0)
+	$"photo1/blue box8/Level/Label2".text = str(count14 if count14 < max else text)
+	
+	count15 = Global.upgrade.get("count15", 0)
+	label15.text = str(count15 if count15 < max else text)
+	
+	count16 = Global.upgrade.get("count16", 0)
+	label16.text = str(count16 if count16 < max else text)
+	
+	count17 = Global.upgrade.get("count17", 0)
+	label17.text = str(count17 if count17 < max else text)
+	
+	count18 = Global.upgrade.get("count18", 0)
+	label18.text = str(count18 if count18 < max else text)
+	
+	coin_label.text = str(Global.money)
 		
-	if Global.load_game(Global.current_store_name):
-		var upgrades = Global.player_data.upgrades
-		count = upgrades.get("count", 0)
-		count2 = upgrades.get("count2", 0)
-		count3 = upgrades.get("count3", 0)
-		count4 = upgrades.get("count4", 0)
-		count5 = upgrades.get("count5", 0)
-		count6 = upgrades.get("count6", 0)
-		count7 = upgrades.get("count7", 0)
-		count8 = upgrades.get("count8", 0)
-		count9 = upgrades.get("count9", 0)
-		count10 = upgrades.get("count10", 0)
-		count11 = upgrades.get("count11", 0)
-		count12 = upgrades.get("count12", 0)
-		count13 = upgrades.get("count13", 0)
-		count14 = upgrades.get("count14", 0)
-		count15 = upgrades.get("count15", 0)
-		count16 = upgrades.get("count16", 0)
-		count17 = upgrades.get("count17", 0)
-		count18 = upgrades.get("count18", 0)
-		
-		label.text = str(count) if count < max else text
-		label2.text = str(count2) if count2 < max else text
-		label3.text = str(count3) if count3 < max else text
-		label4.text = str(count4) if count4 < max else text
-		label5.text = str(count5) if count5 < max else text
-		label6.text = str(count6) if count6 < max else text
-		label7.text = str(count7) if count7 < max else text
-		label8.text = str(count8) if count8 < max else text
-		label9.text = str(count9) if count9 < max else text
-		label10.text = str(count10) if count10 < max else text
-		label11.text = str(count11) if count11 < max else text
-		label12.text = str(count12) if count12 < max else text
-		label13.text = str(count13) if count13 < max else text
-		label14.text = str(count14) if count14 < max else text
-		label15.text = str(count15) if count15 < max else text
-		label16.text = str(count16) if count16 < max else text
-		label17.text = str(count17) if count17 < max else text
-		label18.text = str(count18) if count18 < max else text
 		
 func load_player_data() -> Object:
 	var file_path = "user://profile.json" 
@@ -151,7 +168,6 @@ func load_player_data() -> Object:
 	else:
 		push_error("❌ 找不到 JSON 文件：%s" % file_path)
 	return null
-
 
 func _on_button_2_pressed() -> void:
 	$ClickSound.play()
@@ -192,63 +208,40 @@ func _on_exit_button_pressed() -> void:
 	$ClickSound01.play()
 	await $ClickSound01.finished
 	
-	var money_display = get_node_or_null("/root/Playground/CanvasLayer/MoneyLabel")
-	var player = get_node_or_null("/root/Playground/Player_character")
+	pInventory.clear()
 	
-	if money_display == null:
-		push_error("MoneyLabel not found at: /root/Playground/CanvasLayer/MoneyLabel")
-		get_tree().change_scene_to_file("res://playground.tscn")
-		return
+	var player = get_node_or_null("/root/Playground/Player_character")
 	   
 	if player == null:
 		push_error("Player_character not found at: /root/Playground/Player_character")
 		get_tree().change_scene_to_file("res://playground.tscn")
 		return
-	
-	if not money_display.has("money"):
-		push_error("MoneyLabel has no 'money' property")
-		get_tree().change_scene_to_file("res://playground.tscn")
-		return
-	
+		
 	Global.player_data = {
-		"money": money_display.money,
 		"position": player.global_position,
-		"upgrades": {
-			"count": count,
-			"count2": count2,
-			"count3": count3,
-			"count4": count4,
-			"count5": count5,
-			"count6": count6,
-			"count7": count7,
-			"count8": count8,
-			"count9": count9,
-			"count10": count10,
-			"count11": count11,
-			"count12": count12,
-			"count13": count13,
-			"count14": count14,
-			"count15": count15,
-			"count16": count16,
-			"count17": count17,
-			"count18": count18
-		}
-	}  
-	Global.save_data()
+	} 
+	
 	get_tree().change_scene_to_file("res://playground.tscn")
 
 func _on_upgrade_button_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 1
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+		print("not enough money")
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 1
+		confirm.visible = true
 
 
 func _on_upgrade_button_2_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 2
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 2
+		confirm.visible = true
 
 
 func _on_cancel_button_pressed() -> void:
@@ -276,13 +269,14 @@ func _on_accept_button_pressed() -> void:
 		if count < max:
 			count += 1
 			label.text = str(count)
+			Global.upgrade["count1"] = count
+			Global.money -= 100
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count == 3:
 				label.text = str(text)
 				accept_button_disabled = true
 				print("达到最大值")
-
-			print("Aglio Olio")
-		id = 0
 		
 	elif id == 2:
 		if count2 >= 3:
@@ -290,11 +284,14 @@ func _on_accept_button_pressed() -> void:
 		if count2 < max:
 			count2 += 1
 			label2.text = str(count2)
+			Global.upgrade["count2"] = count2
+			Global.money -= 100
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count2 == 3:
 				label2.text = str(text)
 				accept_button_disabled = true
 				print("达到最大值")
-		id = 0
 		
 	elif id == 3:
 		if count3 >= 3:
@@ -302,11 +299,14 @@ func _on_accept_button_pressed() -> void:
 		if count3 < max:
 			count3 += 1
 			label3.text = str(count3)
+			Global.upgrade["count3"] = count3
+			Global.money -= 100
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count3 == 3:
 				label3.text = str(text)
 				accept_button_disabled = true
 			print("达到最大值")
-		id = 0
 		
 	elif id == 4:
 		if count4 >= 3:
@@ -314,11 +314,14 @@ func _on_accept_button_pressed() -> void:
 		if count4 < max:
 			count4 += 1
 			label4.text = str(count4)
+			Global.upgrade["count4"] = count4
+			Global.money -= 200
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count4 == 3:
 				label4.text = str(text)
 				accept_button_disabled = true
 			print("达到最大值")
-		id = 0
 		
 	elif id == 5:
 		if count5 >= 3:
@@ -326,11 +329,14 @@ func _on_accept_button_pressed() -> void:
 		if count5 < max:
 			count5 += 1
 			label5.text = str(count5)
+			Global.upgrade["count5"] = count5
+			Global.money -= 150
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count5 == 3:
 				label5.text = str(text)
 				accept_button_disabled = true
 			print("达到最大值")
-		id = 0
 		
 	elif id == 6:
 		if count6 >= 3:
@@ -338,11 +344,14 @@ func _on_accept_button_pressed() -> void:
 		if count6 < max:
 			count6 += 1
 			label6.text = str(count6)
+			Global.upgrade["count6"] = count6
+			Global.money -= 150
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count6 == 3:
 				label6.text = str(text)
 				accept_button_disabled = true
 			print("达到最大值")
-		id = 0
 		
 	elif id == 7:
 		if count7 >= 3:
@@ -350,11 +359,14 @@ func _on_accept_button_pressed() -> void:
 		if count7 < max:
 			count7 += 1
 			label7.text = str(count7)
+			Global.upgrade["count7"] = count7
+			Global.money -= 150
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count7 == 3:
 				label7.text = str(text)
 				accept_button_disabled = true
 			print("达到最大值")
-		id = 0
 		
 	elif id == 8:
 		if count8 >= 3:
@@ -362,11 +374,14 @@ func _on_accept_button_pressed() -> void:
 		if count8 < max:
 			count8 += 1
 			label8.text = str(count8)
+			Global.upgrade["count8"] = count8
+			Global.money -= 150
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count8 == 3:
 				label8.text = str(text)
 				accept_button_disabled = true
 			print("达到最大值")
-		id = 0
 		
 	elif id == 9:
 		if count9 >= 3:
@@ -374,11 +389,14 @@ func _on_accept_button_pressed() -> void:
 		if count9 < max:
 			count9 += 1
 			label9.text = str(count9)
+			Global.upgrade["count9"] = count9
+			Global.money -= 150
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count9 == 3:
 				label9.text = str(text)
 				accept_button_disabled = true
 			print("达到最大值")
-		id = 0
 		
 	elif id == 10:
 		if count10 >= 3:
@@ -386,11 +404,14 @@ func _on_accept_button_pressed() -> void:
 		if count10 < max:
 			count10 += 1
 			label10.text = str(count10)
+			Global.upgrade["count10"] = count10
+			Global.money -= 150
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count10 == 3:
 				label10.text = str(text)
 				accept_button_disabled = true
 			print("达到最大值")
-		id = 0
 		
 	elif id == 11:
 		if count11 >= 3:
@@ -398,11 +419,14 @@ func _on_accept_button_pressed() -> void:
 		if count11 < max:
 			count11 += 1
 			label11.text = str(count11)
+			Global.upgrade["count11"] = count11
+			Global.money -= 150
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count11 == 3:
 				label11.text = str(text)
 				accept_button_disabled = true
 			print("达到最大值")
-		id = 0
 		
 	elif id == 12:
 		if count12 >= 3:
@@ -410,11 +434,14 @@ func _on_accept_button_pressed() -> void:
 		if count12 < max:
 			count12 += 1
 			label12.text = str(count12)
+			Global.upgrade["count12"] = count12
+			Global.money -= 150
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count12 == 3:
 				label12.text = str(text)
 				accept_button_disabled = true
 			print("达到最大值")
-		id = 0
 		
 	elif id == 13:
 		if count13 >= 3:
@@ -422,12 +449,15 @@ func _on_accept_button_pressed() -> void:
 		if count13 < max:
 			count13 += 1
 			label13.text = str(count13)
+			Global.upgrade["count13"] = count13
+			Global.money -= 200
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count13 == 3:
 				label13.text = str(text)
 				accept_button_disabled = true
 			print("达到最大值")
 		print("Bolognese")
-		id = 0
 		
 	elif id == 14:
 		if count4 >= 3:
@@ -435,12 +465,15 @@ func _on_accept_button_pressed() -> void:
 		if count14 < max:
 			count14 += 1
 			$"photo1/blue box8/Level/Label2".text = str(count14)
+			Global.upgrade["count14"] = count14
+			Global.money -= 200
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count14 == 3:
 				label14.text = str(text)
 				accept_button_disabled = true
 			print("达到最大值")
 		print("Bolognese")
-		id = 0
 		
 	elif id == 15:
 		if count15 >= 3:
@@ -448,13 +481,16 @@ func _on_accept_button_pressed() -> void:
 		if count15 < max:
 			count15 += 1
 			label15.text = str(count15)
+			Global.upgrade["count15"] = count15
+			Global.money -= 100
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count15 == 3:
 				label15.text = str(text)
 				confirm.visible = true
 				accept_button_disabled = true
 			print("达到最大值")
 		print("Bolognese")
-		id = 0
 		
 	elif id == 16:
 		if count16 >= 3:
@@ -462,13 +498,16 @@ func _on_accept_button_pressed() -> void:
 		if count16 < max:
 			count16 += 1
 			label16.text = str(count16)
+			Global.upgrade["count16"] = count16
+			Global.money -= 100
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count16 == 3:
 				label16.text = str(text)
 				confirm.visible = true
 				accept_button_disabled = true
 			print("达到最大值")
 		print("Bolognese")
-		id = 0
 		
 	elif id == 17:
 		if count17 >= 3:
@@ -476,13 +515,16 @@ func _on_accept_button_pressed() -> void:
 		if count17 < max:
 			count17 += 1
 			label17.text = str(count17)
+			Global.upgrade["count17"] = count17
+			Global.money -= 100
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count17 == 3:
 				label17.text = str(text)
 				confirm.visible = true
 				accept_button_disabled = true
 			print("达到最大值")
 		print("Bolognese")
-		id = 0
 		
 	elif id == 18:
 		if count18 >= 3:
@@ -490,13 +532,17 @@ func _on_accept_button_pressed() -> void:
 		if count18 < max:
 			count18 += 1
 			label18.text = str(count18)
+			Global.upgrade["count18"] = count18
+			Global.money -= 100
+			coin_label.text = str(Global.money)
+			Global.save_game(Global.current_store_name)
 			if count18 == 3:
 				label18.text = str(text)
 				confirm.visible = true
 				accept_button_disabled = true
 			print("达到最大值")
 		print("Bolognese")
-		id = 0
+		
 	
 	elif id == 19:
 			lock19.visible = false
@@ -559,35 +605,47 @@ func _on_accept_button_pressed() -> void:
 		
 
 func _on_chicken_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 9
-	confirm.visible = true
-	board.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 9
+		confirm.visible = true
+		board.visible = false
 
 
 func _on_lamb_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 10
-	confirm.visible = true
-	board.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 10
+		confirm.visible = true
+		board.visible = false
 
 
 func _on_beef_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 11
-	confirm.visible = true
-	board.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 11
+		confirm.visible = true
+		board.visible = false
 	
 	
 func _on_vege_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 12
-	confirm.visible = true
-	board.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 12
+		confirm.visible = true
+		board.visible = false
 
 
 func _on_select_button_pressed() -> void:
@@ -615,76 +673,104 @@ func save_player_data():
 
 
 func _on_upgrade_button_3_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 3
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 3
+		confirm.visible = true
 
 
 func _on_upgrade_button_4_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 4
-	confirm.visible = true
+	if Global.money < 200:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 4
+		confirm.visible = true
 
 
 func _on_upgrade_button_5_pressed() -> void:
-	$ClickSound.play()	
-	id = 8
-	board2.visible = true
+	if Global.money >= 150:
+		$ClickSound.play()	
+		id = 8
+		board2.visible = true
 
 
 func _on_upgrade_button_7_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 13
-	confirm.visible = true
+	if Global.money < 200:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 13
+		confirm.visible = true
 
 
 func _on_chicken_01_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 5
-	confirm.visible = true
-	board2.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 5
+		confirm.visible = true
+		board2.visible = false
 
 
 func _on_lamb_01_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 6
-	confirm.visible = true
-	board2.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 6
+		confirm.visible = true
+		board2.visible = false
 
 
 func _on_beef_01_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 7
-	confirm.visible = true
-	board2.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 7
+		confirm.visible = true
+		board2.visible = false
 
 
 func _on_egg_mayo_01_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 8
-	confirm.visible = true
-	board2.visible = false
+	if Global.money < 150:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 8
+		confirm.visible = true
+		board2.visible = false
 
 
 func _on_upgrade_button_8_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()	
-	id = 14
-	confirm.visible = true
+	if Global.money < 200:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()	
+		id = 14
+		confirm.visible = true
 
 
 func _on_button_sparkling_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()
-	id = 15
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()
+		id = 15
+		confirm.visible = true
 
 
 func _on_wrong_pressed() -> void:
@@ -696,24 +782,33 @@ func _on_coming_soon_pressed() -> void:
 
 
 func _on_button_sprite_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()
-	id = 16
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()
+		id = 16
+		confirm.visible = true
 
 
 func _on_plus_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()
-	id = 17
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()
+		id = 17
+		confirm.visible = true
 
 
 func _on_coke_pressed() -> void:
-	get_tree().paused = true
-	$ClickSound.play()
-	id = 18   
-	confirm.visible = true
+	if Global.money < 100:
+		id = 0
+	else:
+		get_tree().paused = true
+		$ClickSound.play()
+		id = 18   
+		confirm.visible = true
   
 
 

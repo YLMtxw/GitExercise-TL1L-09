@@ -112,7 +112,7 @@ func _on_bbqs_pressed() -> void:
 	print("chili_f1")
 	inventorygui.update()
 	insert(item)
-
+ 
 
 func _on_carrot_pressed() -> void:
 	click.play()
@@ -124,3 +124,21 @@ func _on_carrot_pressed() -> void:
 		print("Crafted sliced carrot")
 	else:
 		print("Not enough ingredients!")
+
+
+func _on_hot_water_pressed() -> void:
+	click.play()
+	var item = preload("res://Inventory/Item/hot water.tres")
+	print("hot water")
+	inventorygui.update()
+	insert(item)
+	pass # Replace with function body.
+
+
+func _on_chili_flake_pressed() -> void:
+	click.play()
+	var item = preload("res://Inventory/Item/chili flake(real).tres")
+	print("chili flake")
+	inventorygui.update()
+	insert(item)
+	pass # Replace with function body.

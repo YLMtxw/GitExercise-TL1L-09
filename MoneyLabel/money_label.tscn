@@ -9,19 +9,30 @@ script/source = "extends HBoxContainer
 
 var money: int = 0
 
+func _ready():
+	money = Global.money
+	update_label()
+
 func add_money(amount: int) -> void:
 	money += amount
-	money_label.text = str(money)
+	Global.money = money  
+	Global.save_game(Global.current_store_name) 
+	update_label()
 	
 	
 func upgrade(amount: int) -> bool:
 	if money >= amount:
 		money -= amount
-		money_label.text = str(money)
-		return true  
+		Global.money = money 
+		Global.save_game(Global.current_store_name) 
+		update_label()
+		return true
 	else:
-		return false  
-		
+		print(\"not enough money\")
+		return false 
+	
+func update_label():
+	money_label.text = str(money)
 "
 
 [node name="MoneyLabel" type="HBoxContainer"]

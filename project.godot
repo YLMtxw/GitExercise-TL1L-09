@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+ItemLists="*res://Inventory/ItemList.gd"
 Global="*res://Global.gd"
 Cactus="*res://cactus.gd"
 Frame01="*res://frame01.gd"

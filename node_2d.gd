@@ -40,6 +40,7 @@ func _on_start_button_2_pressed() -> void:
 	await $ClickSound.finished
 	if FileAccess.file_exists("user://profile.json"):
 		print("✅ 检测到已存在玩家资料，直接跳转主游戏")
+		Global.load_game("profile")  # Load existing profile
 		get_tree().change_scene_to_file("res://playground.tscn")
 	else:
 		print("🆕 第一次启动游戏，进入创建资料页面")
