@@ -220,7 +220,6 @@ func _input(event):
 				else:
 					print("You are not holding any food!")
 
-
 func _on_npc_at_counter(npc):
 	npc_at_counter = true
 	npc_node_at_counter = npc
