@@ -83,6 +83,7 @@ var count26 := 0
 
 
 var max := 3
+var max2 := 1
 var text : String = "max"
 var lock_confirm := false
 var accept_button_disabled = false
@@ -128,7 +129,7 @@ func _ready():
 			button.pressed.connect(_on_button_2_pressed)
 		
 	Global.load_game(Global.current_store_name)
-
+	
 	# Apply loaded upgrade levels to UI
 	count = Global.upgrade.get("count1", 0)
 	label.text = str(count if count < max else text)
@@ -661,7 +662,9 @@ func _on_accept_button_pressed() -> void:
 		
 	
 	elif id == 19:
-		if count19 == 0:
+		if count19 == 1:
+			return 
+		if count19 < max:
 			count19 += 1
 			Global.upgrade["count19"] = count19
 			Global.money -= 150
@@ -672,8 +675,6 @@ func _on_accept_button_pressed() -> void:
 				label19.visible = true
 				confirm.visible = true
 				Cactus.is_visible = true
-			
-				
 		
 	elif id == 20:
 		if count20 >= 1:
@@ -1086,6 +1087,7 @@ func _on_cactus_button_pressed() -> void:
 
 func _on_frame_button_pressed() -> void:
 	if count20 >= 1:
+		print("Count19 is already 1. Should play max sound.")
 		$"max sound".play()
 		return
 	if Global.money < 150:

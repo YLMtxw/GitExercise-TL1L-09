@@ -161,6 +161,7 @@ func remove_selected_item():
 		print("Inventory UI not found or not loaded.")
 
 func _physics_process( delta ):
+	
 	var current_speed = movement_speed
 	if Input.is_key_pressed(KEY_SHIFT): 
 		current_speed = run_speed
@@ -168,10 +169,6 @@ func _physics_process( delta ):
 	move_and_slide()
 	UpdateAction()
 	
-	if global_position != last_saved_position:
-		last_saved_position = global_position
-		Global.position = global_position
-		Global.save_game(Global.current_store_name)
 	
 func _input(event):
 	if event.is_action_pressed("sell"):  # q
@@ -197,20 +194,35 @@ func _input(event):
 		if is_near() == "bm":
 			print("bm")
 			
-	if event.is_action_pressed("serve"):
+	if event.is_action_pressed("interact"):
 		var current_tile = tilemap.local_to_map(global_position)
 		if (current_tile == COUNTER_POSITION1 or current_tile == COUNTER_POSITION2) and npc_at_counter and npc_node_at_counter:
 			var held_item = get_selected_inventory_item()
 			if held_item != "":
-				npc_node_at_counter.receive_served_item(held_item)
-				remove_selected_item()
-				var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
-				if inv and inv is InvOpenClose:
-					inv.update()
-			else:
-				print("You are not holding any food!")
-		else:
-			print("Cannot serve: not on counter tile or no NPC at counter")
+				# Check if the held item matches the NPC's order
+				var current_order = OrderManager.get_current_order()
+				if current_order and held_item == current_order["name"]:
+					# Get the item's price from the inventory
+					var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+					if inv and inv is InvOpenClose:
+						if inv.selected_index >= 0 and inv.selected_index < inventory.slots.size():
+							var slot = inventory.slots[inv.selected_index]
+							if slot.item:
+								var item_price = slot.item.price
+								var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
+								money_display.add_money(item_price)
+								paycheckmenu.add_money(item_price)
+								income.add_money(item_price)
+								Global.money += item_price
+								
+								inventory.remove_item(slot.item, 1)
+								npc_node_at_counter.receive_served_item(held_item)
+								inv.update()
+								return
+				# If we get here, the item didn't match the order
+					print("That's not what the customer ordered!")
+				else:
+					print("You are not holding any food!")
 
 
 func _on_npc_at_counter(npc):
@@ -232,11 +244,26 @@ func is_on_interact_tile() -> bool:
 	
 func _on_npc_order_accepted(dish_name):
 	var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+	var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
+	var paycheckmenu = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/total label/Total")
+	var income = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/Income label/Income")
+
 	if inv and inv is InvOpenClose:
-		for slot in inventory.slots:
+		for slot in inv.slots:
 			if slot.item and slot.item.name == dish_name and slot.itemNum > 0:
+				var item = slot.item
+				var item_price = item.price
+
+				# Add money immediately
+				Global.money += item_price
+				money_display.add_money(item_price)
+				paycheckmenu.add_money(item_price)
+				income.add_money(item_price)
+				print("Sold:", item.name, "for $", item_price)
+				
 				inventory.remove_item(slot.item, 1)
 				print("Removed served item from inventory:", dish_name)
+				
 				return
 				
 func get_selected_inventory_item():

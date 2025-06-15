@@ -101,3 +101,9 @@ func _on_next_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://updatemenu.tscn")
 	pass # Replace with function body.
+
+
+func _on_menu_button_pressed() -> void:
+	var menu = get_node("/root/Playground/CanvasLayer/Menu")
+	menu.visible = true
+	pass # Replace with function body.

@@ -60,7 +60,6 @@ func save() -> Dictionary:
 	return {
 		"volume_db": volume_db,
 		"money": money,
-		"position": { "x": position.x, "y": position.y },
 		"upgrade": upgrade,
 		"prices": {
 			"aglio": aglio.price,
@@ -108,8 +107,6 @@ func load_game(store_name: String):
 	if typeof(data) == TYPE_DICTIONARY:
 		volume_db = data.get("volume_db", 0.0)
 		money = data.get("money", 0)
-		var pos_data = data.get("position", {"x": 120, "y": 150})
-		position = Vector2(pos_data["x"], pos_data["y"])
 		upgrade = data.get("upgrade", {})
 		var prices = data.get("prices", {})
 		aglio.price = prices.get("aglio", aglio.price)

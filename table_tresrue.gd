@@ -12,4 +12,3 @@ func _process(_delta):
 	tt_node.visible = Tt01.tt_visible
 	if Tt01.tt_visible == false:
 		$"table tresure/CollisionShape2D".disabled = true
-		pass

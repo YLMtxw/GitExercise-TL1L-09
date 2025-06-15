@@ -3,7 +3,7 @@ extends Node
 var recipes = {
 	# ==== Stove / Main Cooking ====
 	"spaghetti cooked": ["spaghetti raw"],
-	"fried egg": ["egg", "oil"],
+	"fried egg": ["egg"],
 
 	"vege burger": ["bun", "sliced vege", "cheese", "sliced tomato", "mayonaise"],
 	"beef burger": ["bun", "cheese", "sliced vege", "beef patty cooked", "mayonaise"],
@@ -14,7 +14,7 @@ var recipes = {
 	"beef patty cooked": ["beef patty raw", "oil"],
 	"lamb patty cooked": ["lamb patty raw", "oil"],
 
-	"aglio olio": ["spaghetti cooked", "chili flake", "oil"],
+	"aglio olio": ["spaghetti cooked", "chili flake", "oil","chicken cooked"],
 	"carbonara": ["spaghetti cooked", "fried egg", "chicken cooked", "cheese"],
 	"bolognese": ["spaghetti cooked", "tomato sauce", "beef cooked"],
 
@@ -39,7 +39,6 @@ var recipes = {
 	"sprite": ["sprite"],
 	"cold water": ["cold water"],
 	"hot water": ["hot water"],
-	"ice": ["ice"],
 
 	# ==== Prep Ingredients / Subcomponents ====
 	"sliced vege": ["vegetable"],
