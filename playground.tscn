@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://bmlcjik7mnbd1"]
+[gd_scene load_steps=64 format=4 uid="uid://bmlcjik7mnbd1"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_rupst"]
 [ext_resource type="Script" uid="uid://chiaggp51axdq" path="res://playground.gd" id="1_snn6g"]
@@ -29,7 +29,11 @@
 [ext_resource type="Texture2D" uid="uid://c63k5aecrled" path="res://CLayer/sprite/Next_p.png" id="25_lraom"]
 [ext_resource type="PackedScene" uid="uid://dxceiapi1cbmt" path="res://In-game Setting/setting.tscn" id="27_lraom"]
 [ext_resource type="AudioStream" uid="uid://cemm7i42isxxp" path="res://song/jazz-restaurant-cafe-music-334836.mp3" id="27_ofol1"]
+[ext_resource type="PackedScene" uid="uid://bmhla7sag35as" path="res://menu.tscn" id="28_sq44e"]
+[ext_resource type="Texture2D" uid="uid://dtvdl88d16jy3" path="res://photo/menu.png" id="29_4gl70"]
+[ext_resource type="PackedScene" uid="uid://bfq2apfhur3sl" path="res://menu2.tscn" id="29_vevnq"]
 [ext_resource type="Script" uid="uid://dmsel8ln7c5os" path="res://audio_stream_player.gd" id="30_g64nf"]
+[ext_resource type="Texture2D" uid="uid://bdkjrtyxbfpba" path="res://photo/menu_p.png" id="30_mawde"]
 [ext_resource type="Texture2D" uid="uid://236x4npymqqg" path="res://photo/door_1__1_-removebg-preview.png" id="32_ewi0c"]
 [ext_resource type="Texture2D" uid="uid://bb0v3jlxyv6lg" path="res://photo/door-removebg-preview.png" id="33_md5nv"]
 [ext_resource type="Texture2D" uid="uid://cd8xttvy8y4py" path="res://photo/lamp-removebg-preview.png" id="35_j7gj2"]
@@ -42,7 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://dyf5s2jbiyp48" path="res://frame.tscn" id="42_n1lva"]
 [ext_resource type="Script" uid="uid://dh5ha8cg2hhiu" path="res://frame.gd" id="43_2075e"]
 [ext_resource type="PackedScene" uid="uid://dg4k48y46momn" path="res://compile_seat.tscn" id="45_lu5cr"]
-[ext_resource type="Script" path="res://spawner.gd" id="46_x557p"]
+[ext_resource type="Script" uid="uid://ccewg1iool6ij" path="res://spawner.gd" id="46_x557p"]
 [ext_resource type="PackedScene" uid="uid://by8yo2u4pw38m" path="res://signboard.tscn" id="47_gixy8"]
 [ext_resource type="PackedScene" uid="uid://jab4cnh7batx" path="res://npc1.tscn" id="47_sq44e"]
 [ext_resource type="PackedScene" uid="uid://c78br7turw5qm" path="res://vvip_carpet.tscn" id="48_vevnq"]
@@ -1275,6 +1279,28 @@ offset_top = 31.0
 offset_right = -171.0
 offset_bottom = -32.0
 
+[node name="Menu" parent="CanvasLayer" instance=ExtResource("28_sq44e")]
+visible = false
+offset_top = -3.0
+offset_bottom = -3.0
+scale = Vector2(0.998675, 1.01822)
+
+[node name="menu_button" type="TextureButton" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.12598, 0.537598)
+texture_normal = ExtResource("29_4gl70")
+texture_pressed = ExtResource("30_mawde")
+stretch_mode = 0
+
+[node name="Menu2" parent="CanvasLayer" instance=ExtResource("29_vevnq")]
+visible = false
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1.0
+offset_bottom = -3.0
+scale = Vector2(1, 0.990812)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("27_ofol1")
 parameters/looping = true
@@ -1411,3 +1437,4 @@ position = Vector2(464, 336)
 
 [connection signal="pressed" from="CanvasLayer/closeButton" to="CanvasLayer" method="_on_close_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/paycheck/paycheckmenu/next" to="CanvasLayer" method="_on_next_pressed"]
+[connection signal="pressed" from="CanvasLayer/menu_button" to="CanvasLayer" method="_on_menu_button_pressed"]

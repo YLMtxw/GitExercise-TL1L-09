@@ -199,15 +199,30 @@ func _input(event):
 		if (current_tile == COUNTER_POSITION1 or current_tile == COUNTER_POSITION2) and npc_at_counter and npc_node_at_counter:
 			var held_item = get_selected_inventory_item()
 			if held_item != "":
-				npc_node_at_counter.receive_served_item(held_item)
-				remove_selected_item()
-				var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
-				if inv and inv is InvOpenClose:
-					inv.update()
-			else:
-				print("You are not holding any food!")
-		else:
-			print("Cannot serve: not on counter tile or no NPC at counter")
+				# Check if the held item matches the NPC's order
+				var current_order = OrderManager.get_current_order()
+				if current_order and held_item == current_order["name"]:
+					# Get the item's price from the inventory
+					var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+					if inv and inv is InvOpenClose:
+						if inv.selected_index >= 0 and inv.selected_index < inventory.slots.size():
+							var slot = inventory.slots[inv.selected_index]
+							if slot.item:
+								var item_price = slot.item.price
+								var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
+								money_display.add_money(item_price)
+								paycheckmenu.add_money(item_price)
+								income.add_money(item_price)
+								Global.money += item_price
+								
+								inventory.remove_item(slot.item, 1)
+								npc_node_at_counter.receive_served_item(held_item)
+								inv.update()
+								return
+				# If we get here, the item didn't match the order
+					print("That's not what the customer ordered!")
+				else:
+					print("You are not holding any food!")
 
 
 func _on_npc_at_counter(npc):
