@@ -18,10 +18,13 @@ signal left_counter_unserved
 var order_data: Dictionary
 var target_seat: Node2D = null
 var counter_position: Vector2 = Vector2.ZERO
+var exit_position: Vector2 = Vector2.ZERO # Set by spawner!
 var seated: bool = false
 var waiting_at_counter: bool = true
 var has_shown_text: bool = false
 var at_counter_flag := false
+var exiting: bool = false
+var last_move_dir := Vector2.DOWN  # Default direction
 
 func _ready():
 	leave_timer.timeout.connect(_on_leave_timer_timeout)
@@ -42,7 +45,29 @@ func move_to_seat():
 		_play_walk_animation()
 		_hide_speech()
 
+func move_to_exit():
+	exiting = true
+	waiting_at_counter = false
+	seated = false
+	_hide_speech()
+	agent.target_position = exit_position
+	_play_walk_animation()
+
 func _physics_process(_delta):
+	if exiting:
+		if not agent.is_navigation_finished():
+			var next = agent.get_next_path_position()
+			velocity = (next - global_position).normalized() * speed
+			move_and_slide()
+			_play_walk_animation()
+		else:
+			velocity = Vector2.ZERO
+			move_and_slide()
+			_play_idle_animation()
+			emit_signal("npc_left", target_seat)
+			queue_free()
+		return
+
 	if seated or target_seat == null:
 		return
 
@@ -61,16 +86,21 @@ func _physics_process(_delta):
 			_show_speech(OrderManager.format_order_text(order_data))
 
 	# ✅ Seat detection
-	if not waiting_at_counter and global_position.distance_to(target_seat.global_position) < agent.target_desired_distance:
+	if not waiting_at_counter and not exiting and global_position.distance_to(target_seat.global_position) < agent.target_desired_distance:
 		target_seat._on_OccupyArea_body_entered(self)
 		seated = true
 		velocity = Vector2.ZERO
 		move_and_slide()
+		# Force idle direction at seat1/seat2
+		var dir = get_idle_direction_for_seat(target_seat)
+		if dir == "up":
+			last_move_dir = Vector2.UP
+		elif dir == "down":
+			last_move_dir = Vector2.DOWN
 		_play_idle_animation()
 		leave_timer.start()
 
 	if waiting_at_counter and not at_counter_flag:
-		# NPC has just arrived at counter
 		at_counter_flag = true
 		emit_signal("at_counter")
 		counter_wait_timer.start()	# Start wait timer at counter
@@ -78,26 +108,53 @@ func _physics_process(_delta):
 func _on_leave_timer_timeout():
 	if target_seat:
 		target_seat.occupied = false
-	emit_signal("npc_left", target_seat)
-	queue_free()
+	move_to_exit()
 
 func _on_counter_wait_timer_timeout():
 	if waiting_at_counter:
 		print("⏰ NPC was not served in time and leaves disappointed!")
 		emit_signal("left_counter_unserved", target_seat)
-		queue_free()
-		
+		move_to_exit()
+
 func _on_counter_timer_timeout():
 	emit_signal("left_counter_unserved", target_seat)
-	queue_free()
+	move_to_exit()
+
+func get_idle_direction_for_seat(seat: Node2D) -> String:
+	if seat == null:
+		return "down"
+	var seat_name = seat.name.to_lower()
+	if seat_name.contains("1"):
+		return "up"
+	elif seat_name.contains("2"):
+		return "down"
+	else:
+		return "down"  # default
 
 func _play_walk_animation():
-	if not animated_sprite.is_playing() or animated_sprite.animation != "walk":
-		animated_sprite.play("walk")
+	var dir = velocity.normalized()
+	if dir.length() < 0.1:
+		dir = last_move_dir
+	else:
+		last_move_dir = dir
+
+	# Prefer left/right if stronger in x, else up/down
+	if abs(dir.x) > abs(dir.y):
+		if dir.x > 0:
+			animated_sprite.play("walk_right")
+		else:
+			animated_sprite.play("walk_left")
+	else:
+		if dir.y > 0:
+			animated_sprite.play("walk_down")
+		else:
+			animated_sprite.play("walk_up")
 
 func _play_idle_animation():
-	if not animated_sprite.is_playing() or animated_sprite.animation != "idle":
-		animated_sprite.play("idle")
+	if last_move_dir.y < 0:
+		animated_sprite.play("idle_up")
+	else:
+		animated_sprite.play("idle_down")
 
 # ==== Speech Bubble ====
 func _show_speech(text: String):
@@ -110,7 +167,7 @@ func _hide_speech():
 
 func is_near_counter() -> bool:
 	return position.distance_to(counter_position) < 32
-	
+
 func receive_served_item(served_dish_name: String):
 	if not RecipeDatabase.recipes.has(served_dish_name):
 		print("❌ This food is not recognized.")
@@ -134,3 +191,6 @@ func receive_served_item(served_dish_name: String):
 	else:
 		print("❌ Wrong order! I wanted:", expected_ingredients, "but got:", served_ingredients)
 		_show_speech("That's not what I ordered!")
+		counter_wait_timer.stop()
+		emit_signal("left_counter_unserved", target_seat)
+		move_to_exit()
