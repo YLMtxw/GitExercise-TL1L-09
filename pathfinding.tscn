@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwbhtfj0imdiv"]
+[gd_scene load_steps=4 format=3 uid="uid://bkuivjap60gv1"]
 
-[ext_resource type="Texture2D" uid="uid://dxaarle8m0nf7" path="res://icon.svg" id="1_13jh8"]
-[ext_resource type="Script" uid="uid://b4t4k6adx31fk" path="res://enemy.gd" id="1_ecr60"]
+[ext_resource type="Texture2D" uid="uid://etdj3tmw85is" path="res://icon.svg" id="1_13jh8"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_ecr60"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ldcrm"]
 vertices = PackedVector2Array(657.281, 26.0078, 842.359, 56.8594, 842.25, 56.8516, 380.43, 210.063, 34.2891, 226.492, 39.7266, 31, 351.078, 31, 632.008, 141.633, 154.719, 580.109, 164.133, 459.453, 515.047, 511.117, 526.75, 620.906, 910.32, 558.953, 840.18, 459.828, 1021.77, 334.109, 869.32, 336.797, 997.773, 84.5234, 830.109, 195.852)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c78br7turw5qm"]
 
-[ext_resource type="Texture2D" uid="uid://dy8msosm3ujxx" path="res://photo/red line.png" id="1_42o2h"]
+[ext_resource type="Texture2D" uid="uid://dtgcd5butqs6c" path="res://photo/red line.png" id="1_42o2h"]
 
 [node name="VVIP carpet" type="Node2D"]
 

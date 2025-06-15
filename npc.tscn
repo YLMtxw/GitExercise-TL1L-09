@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://btkakixgpiy1b"]
+[gd_scene load_steps=4 format=3 uid="uid://bebewev1lbo7i"]
 
-[ext_resource type="Texture2D" uid="uid://cvjgfcf7xhufd" path="res://icon.svg" id="1_ideak"]
-[ext_resource type="Script" uid="uid://m11xdccmxsln" path="res://npc.gd" id="1_xxcha"]
+[ext_resource type="Texture2D" uid="uid://etdj3tmw85is" path="res://icon.svg" id="1_ideak"]
+[ext_resource type="Script" path="res://npc.gd" id="1_xxcha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kh24r"]
 size = Vector2(6.5, 6.5)

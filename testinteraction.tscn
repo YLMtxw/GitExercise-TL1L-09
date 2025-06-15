@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnlnh8x3et6au"]
+[gd_scene load_steps=3 format=3 uid="uid://wap41dsrxtsb"]
 
 [ext_resource type="PackedScene" uid="uid://dwjy4n3kb7xng" path="res://Player(chef)/player_character.tscn" id="1_3knxr"]
-[ext_resource type="PackedScene" uid="uid://b1mcbxgk61qy3" path="res://test_guy.tscn" id="2_dqemm"]
+[ext_resource type="PackedScene" uid="uid://cf4ccjtc5yvrp" path="res://test_guy.tscn" id="2_dqemm"]
 
 [node name="testinteraction" type="Node2D"]
 

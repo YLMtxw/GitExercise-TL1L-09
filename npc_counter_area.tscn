@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm6xj073wce2i"]
+[gd_scene load_steps=2 format=3 uid="uid://dbjlppufwvfqd"]
 
-[ext_resource type="Script" uid="uid://c8wmtemviyemw" path="res://npc_counter_area.gd" id="1_q8cmw"]
+[ext_resource type="Script" path="res://npc_counter_area.gd" id="1_q8cmw"]
 
 [node name="InteractionArea" type="Area2D"]
 script = ExtResource("1_q8cmw")

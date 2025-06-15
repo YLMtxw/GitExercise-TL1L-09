@@ -38,23 +38,13 @@ extends Control
 @onready var label24 = $"photo3/box 6"
 @onready var label25 = $"photo3/box 7"
 @onready var label26 = $"photo3/box 8"
-@onready var label24 = $"photo3/box 6"
-@onready var label25 = $"photo3/box 7"
-@onready var label26 = $"photo3/box 8"
 
 
 @onready var lock19 = $photo3/CactusLock
 @onready var lock20 = $"photo3/Frame lock"
-@onready var lock20 = $"photo3/Frame lock"
 @onready var lock21 = $photo3/PlantPotLock
 @onready var lock22 = $photo3/BinLock
 @onready var lock23 = $photo3/SignboardLock
-@onready var lock24 = $"photo3/Table deco"
-@onready var lock25 = $"photo3/table tresure"
-@onready var lock26 = $"photo3/VVIP carpet"
-
-
-@onready var cactus = get_node("/root/Cactus")
 @onready var lock24 = $"photo3/Table deco"
 @onready var lock25 = $"photo3/table tresure"
 @onready var lock26 = $"photo3/VVIP carpet"
@@ -95,7 +85,6 @@ var count26 := 0
 var max := 3
 var text : String = "max"
 var lock_confirm := false
-var accept_button_disabled = false
 var accept_button_disabled = false
 
 
@@ -348,13 +337,6 @@ func _on_cancel_button_pressed() -> void:
 
 
 func _on_accept_button_pressed() -> void:	
-	
-	var cactus = get_node_or_null("/root/Playground/cactus")
-	
-
-	
-
-	 
 	
 	var cactus = get_node_or_null("/root/Playground/cactus")
 	

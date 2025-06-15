@@ -1,6 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://jab4cnh7batx"]
+[gd_scene load_steps=21 format=3 uid="uid://cy70uw0t0t2w"]
 
-[ext_resource type="Script" uid="uid://jlppjd4u51dh" path="res://body.gd" id="1_f7vnm"]
+[ext_resource type="Script" path="res://body.gd" id="1_f7vnm"]
 [ext_resource type="Texture2D" uid="uid://co3yn6oj054oa" path="res://walk.png" id="2_f7vnm"]
 [ext_resource type="Texture2D" uid="uid://c4opwjfxnas8t" path="res://idle.png" id="2_i8u8t"]
 

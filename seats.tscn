@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4yjae4cvd4d8"]
+[gd_scene load_steps=4 format=3 uid="uid://cqiwn6uknwxrh"]
 
-[ext_resource type="Script" uid="uid://cywwwatd6m5go" path="res://seats.gd" id="1_l475e"]
+[ext_resource type="Script" path="res://seats.gd" id="1_l475e"]
 [ext_resource type="Texture2D" uid="uid://dgsdrfg6fbmqs" path="res://part-Slice 220.png" id="2_bd0dc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38oqx"]
