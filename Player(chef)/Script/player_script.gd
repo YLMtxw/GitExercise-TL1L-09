@@ -58,7 +58,7 @@ func _ready():
 func is_near_counter() -> bool:
 	var current_tile = tilemap.local_to_map(global_position)
 	return current_tile == COUNTER_POSITION1 or current_tile == COUNTER_POSITION2
-	
+
 func _process(delta):
 	if menuOpen.Mopen():
 		return

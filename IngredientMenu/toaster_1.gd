@@ -75,7 +75,9 @@ func _on_loading_finished():
 			inventorygui.update()
 			print("Added item to inventory: ", item_name)
 			item = null
-			item_name = ""
+
+func _on_timer_timeout(button):
+	print("Timer for ", button.name, "finished!")
 
 func insert(item: InventoryItem) -> void:
 	inventory.add_item(item)

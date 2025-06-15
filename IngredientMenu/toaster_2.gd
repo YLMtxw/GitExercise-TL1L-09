@@ -54,7 +54,7 @@ func get_current_order_name(base_name: String) -> String:
 	if OrderManager.current_order_data.has("base_name") and OrderManager.current_order_data["base_name"] == base_name:
 		return OrderManager.current_order_data["name"]
 	return base_name
-	
+  
 func _on_toaster2_button_pressed(button: TextureButton):
 	if item and has_ingredients(item.name):
 		locked = true
