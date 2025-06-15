@@ -1430,10 +1430,7 @@ npc_scene = ExtResource("47_sq44e")
 position = Vector2(176, 272)
 
 [node name="SpawnPoint" type="Marker2D" parent="NavigationRegion2D/Spawner"]
-position = Vector2(125, 342)
-
-[node name="ExitPoint" type="Marker2D" parent="NavigationRegion2D/Spawner"]
-position = Vector2(464, 336)
+position = Vector2(16, 312)
 
 [node name="ExitPoint" type="Marker2D" parent="NavigationRegion2D/Spawner"]
 position = Vector2(464, 336)
