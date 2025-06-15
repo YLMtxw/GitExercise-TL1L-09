@@ -144,12 +144,13 @@ shape = SubResource("CircleShape2D_i8u8t")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
 simplify_path = true
-debug_enabled = true
 
 [node name="LeaveTimer" type="Timer" parent="."]
+wait_time = 10.0
 one_shot = true
 
-[node name="PatienceTimer" type="Timer" parent="."]
+[node name="CounterWaitTimer" type="Timer" parent="."]
+wait_time = 100.0
 one_shot = true
 
 [node name="SpeechLabel" type="Label" parent="."]

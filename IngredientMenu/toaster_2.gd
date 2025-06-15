@@ -104,25 +104,26 @@ func t2close():
 
 func _on_vege_sandwich_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/vege sandwich.tres").duplicate()
+	item = preload("res://Inventory/Item/vege sandwich.tres")
 	item.name = get_current_order_name("vege sandwich")
 
 func _on_egg_mayo_sandwich_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/egg mayo sandwich.tres").duplicate()
+	item = preload("res://Inventory/Item/egg mayo sandwich.tres")
 	item.name = get_current_order_name("egg mayo sandwich")
 
 func _on_chic_sandwich_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/chicken sandwich.tres").duplicate()
+	item = preload("res://Inventory/Item/chicken sandwich.tres")
 	item.name = get_current_order_name("chicken sandwich")
 
 func _on_lamb_sandwich_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/lamb sandwich.tres").duplicate()
+	item = preload("res://Inventory/Item/lamb sandwich.tres")
 	item.name = get_current_order_name("lamb sandwich")
 
 func _on_beef_sandwich_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/beef sandwich.tres").duplicate()
+	item = preload("res://Inventory/Item/beef sandwich.tres")
 	item.name = get_current_order_name("beef sandwich")
+

@@ -205,10 +205,15 @@ func _input(event):
 			var held_item = get_selected_inventory_item()
 			if held_item != "":
 				npc_node_at_counter.receive_served_item(held_item)
+				remove_selected_item()
+				var inv = get_node("/root/Playground/CanvasLayer/InventoryGUI")
+				if inv and inv is InvOpenClose:
+					inv.update()
 			else:
 				print("You are not holding any food!")
 		else:
 			print("Cannot serve: not on counter tile or no NPC at counter")
+
 
 func _on_npc_at_counter(npc):
 	npc_at_counter = true

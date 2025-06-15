@@ -32,7 +32,6 @@ func try_spawn_npc():
 			var npc = npc_scene.instantiate()
 			npc.global_position = spawn_marker.global_position
 			npc.counter_position = counter_marker.global_position
-			npc.exit_position = exit_marker.global_position    # <<--- NEW!
 			npc.target_seat = seat
 
 			# Generate random order
@@ -47,6 +46,7 @@ func try_spawn_npc():
 			# Connect signals for spawner logic
 			npc.npc_left.connect(_on_npc_left)
 			npc.started_moving_to_seat.connect(_on_npc_started_moving)
+			npc.left_counter_unserved.connect(_on_npc_left_counter_unserved)
 
 			# Connect signals for PLAYER logic (so player gets notified)
 			npc.at_counter.connect(player._on_npc_at_counter.bind(npc))
@@ -58,13 +58,22 @@ func try_spawn_npc():
 func _process(_delta):
 	pass
 
+func _on_npc_left_counter_unserved(seat):
+	assigned_seats.erase(seat)
+	can_spawn = true
+	try_spawn_npc()  
+	
+	# Only spawn when NPC leaves from counter (unserved)
+
 func _on_npc_started_moving():
 	waiting_npc = null
 	can_spawn = true
-	spawn_timer.start()
+	spawn_timer.start()  # Only spawn new NPC after current one is moving to seat
 
 func _on_npc_left(seat):
 	assigned_seats.erase(seat)
+	# Do NOT call try_spawn_npc() here!
+	# Only unassign seat when NPC at seat despawns.
 
 func _on_counter_area_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
