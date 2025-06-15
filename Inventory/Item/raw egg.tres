@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_fm32w")
-name = "egg (raw)"
+name = "egg"
 texture = ExtResource("2_vor37")
+price = 0
 metadata/_custom_type_script = "uid://c2jevq51ijiin"
