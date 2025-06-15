@@ -21,7 +21,6 @@ var valid_dishes = [
 	"coke",
 	"100plus",
 	"sprite",
-	"7up"
 ]
 
 func generate_random_order():

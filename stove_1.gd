@@ -17,7 +17,12 @@ func _ready():
 	stoveBar.connect("loading_finished", Callable(self, "_on_loading_finished"))
 
 func has_ingredients(dish: String) -> bool:
-	# ... (keep debug print code here as before)
+	print("Trying to cook: ", dish)
+	print("Recipe exists? ", RecipeDatabase.recipes.has(dish))
+	print("Required ingredients: ", RecipeDatabase.recipes.get(dish, []))
+	for slot in inventory.slots:
+		if slot.item:
+			print("Inventory slot: ", slot.item.name, slot.itemNum)
 	if not RecipeDatabase.recipes.has(dish):
 		return false
 	var required_counts := {}
@@ -50,7 +55,6 @@ func consume_ingredients(dish: String):
 				to_remove -= remove_now
 
 func get_current_order_name(base_name: String) -> String:
-	# If there's an NPC at the counter with a modified order for this dish, use that name
 	if OrderManager.current_order_data.has("base_name") and OrderManager.current_order_data["base_name"] == base_name:
 		return OrderManager.current_order_data["name"]
 	return base_name
@@ -63,7 +67,10 @@ func _on_stove1_button_pressed(button: TextureButton):
 		stoveBar.show_bar()
 		closeStove1()
 	else:
-		print("You dont have enough ingredient to cook ", item.name)
+		if item:
+			print("You dont have enough ingredient to cook ", item.name)
+		else:
+			print("You dont have enough ingredient to cook - NO ITEM SELECTED")
 
 func _on_loading_finished():
 	if locked:
@@ -77,9 +84,9 @@ func _on_loading_finished():
 
 func _on_timer_timeout(button):
 	print("Timer for ", button.name, "finished!")
-	
-func insert(item: InventoryItem) -> void:
-	inventory.add_item(item)
+
+func insert(new_item: InventoryItem) -> void:
+	inventory.add_item(new_item)
 
 func openStove1():
 	if locked == true:
@@ -101,106 +108,93 @@ func S1close():
 	if stove1 == false:
 		is_menu_open = false
 
-
+# ==== Food selection (always duplicate and set name) ====
 func _on_vege_burger_pressed():
 	click.play()
-	item = preload("res://Inventory/Item/vege burger.tres")
+	item = preload("res://Inventory/Item/vege burger.tres").duplicate()
 	item.name = get_current_order_name("vege burger")
 
 func _on_egg_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/fried egg.tres")
+	item = preload("res://Inventory/Item/fried egg.tres").duplicate()
 	item.name = get_current_order_name("fried egg")
 
 func _on_spaghetti_cooked_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/spaghetti cooked.tres")
+	item = preload("res://Inventory/Item/spaghetti cooked.tres").duplicate()
 	item.name = get_current_order_name("spaghetti cooked")
-
 
 func _on_aglio_olio_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/aglio olio.tres")
+	item = preload("res://Inventory/Item/aglio olio.tres").duplicate()
 	item.name = get_current_order_name("aglio olio")
-
 
 func _on_carbo_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/carbonara.tres")
+	item = preload("res://Inventory/Item/carbonara.tres").duplicate()
 	item.name = get_current_order_name("carbonara")
-
 
 func _on_bolognese_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/bolognese.tres")
+	item = preload("res://Inventory/Item/bolognese.tres").duplicate()
 	item.name = get_current_order_name("bolognese")
-
 
 func _on_beef_cooked_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/beef cooked.tres")
+	item = preload("res://Inventory/Item/beef cooked.tres").duplicate()
 	item.name = get_current_order_name("beef cooked")
-
 
 func _on_pattyb_cooked_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/beef patty cooked.tres")
+	item = preload("res://Inventory/Item/beef patty cooked.tres").duplicate()
 	item.name = get_current_order_name("beef patty cooked")
-
 
 func _on_lamb_cooked_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/lamb cooked.tres")
+	item = preload("res://Inventory/Item/lamb cooked.tres").duplicate()
 	item.name = get_current_order_name("lamb cooked")
-
 
 func _on_pattyl_cooked_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/lamb patty cooked.tres")
+	item = preload("res://Inventory/Item/lamb patty cooked.tres").duplicate()
 	item.name = get_current_order_name("lamb patty cooked")
-
 
 func _on_chicken_cooked_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/chicken cooked.tres")
+	item = preload("res://Inventory/Item/chicken cooked.tres").duplicate()
 	item.name = get_current_order_name("chicken cooked")
-
 
 func _on_pattyc_cooked_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/chicken patty cooked.tres")
+	item = preload("res://Inventory/Item/chicken patty cooked.tres").duplicate()
 	item.name = get_current_order_name("chicken patty cooked")
 
 func _on_beef_steak_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/meat beef.tres")
+	item = preload("res://Inventory/Item/meat beef.tres").duplicate()
 	item.name = get_current_order_name("grilled beef steak")
 
 func _on_beef_burger_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/beef burger.tres")
+	item = preload("res://Inventory/Item/beef burger.tres").duplicate()
 	item.name = get_current_order_name("beef burger")
-
 
 func _on_lamb_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/meat lamb.tres")
+	item = preload("res://Inventory/Item/meat lamb.tres").duplicate()
 	item.name = get_current_order_name("grilled lamb steak")
-
 
 func _on_lamb_burger_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/lamb burger.tres")
+	item = preload("res://Inventory/Item/lamb burger.tres").duplicate()
 	item.name = get_current_order_name("lamb burger")
-
 
 func _on_chicken_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/meat chicken.tres")
+	item = preload("res://Inventory/Item/meat chicken.tres").duplicate()
 	item.name = get_current_order_name("grilled chicken steak")
-
 
 func _on_chicken_burger_pressed() -> void:
 	click.play()
-	item = preload("res://Inventory/Item/chicken burger.tres")
+	item = preload("res://Inventory/Item/chicken burger.tres").duplicate()
 	item.name = get_current_order_name("chicken burger")

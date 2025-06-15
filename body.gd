@@ -5,90 +5,91 @@ signal started_moving_to_seat
 signal at_counter
 signal left_counter
 signal order_accepted(dish_name)
+signal left_counter_unserved
 
 @export var speed := 100
 
 @onready var agent = $NavigationAgent2D
 @onready var leave_timer = $LeaveTimer
+@onready var counter_wait_timer = $CounterWaitTimer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var speech_label = $SpeechLabel
 
-var order_data: Dictionary # Set by spawner!
+var order_data: Dictionary
 var target_seat: Node2D = null
 var counter_position: Vector2 = Vector2.ZERO
-var exit_position: Vector2 = Vector2.ZERO # Set by spawner!
 var seated: bool = false
 var waiting_at_counter: bool = true
 var has_shown_text: bool = false
 var at_counter_flag := false
 
-var leaving := false  # <<-- tracks if NPC is leaving to ExitPoint
-
 func _ready():
 	leave_timer.timeout.connect(_on_leave_timer_timeout)
+	counter_wait_timer.timeout.connect(_on_counter_wait_timer_timeout)
 	if counter_position != Vector2.ZERO:
 		agent.target_position = counter_position
 		_play_walk_animation()
-		# Always set current order in OrderManager for reference/debug (optional)
 		OrderManager.set_current_order(self, order_data)
 
 func move_to_seat():
 	if target_seat:
 		waiting_at_counter = false
 		at_counter_flag = false
+		counter_wait_timer.stop()
 		emit_signal("left_counter")
 		agent.target_position = target_seat.global_position
 		emit_signal("started_moving_to_seat")
 		_play_walk_animation()
 		_hide_speech()
 
-func leave_restaurant():
-	leaving = true
-	agent.target_position = exit_position
-	_play_walk_animation()
-	_hide_speech()
-
 func _physics_process(_delta):
 	if seated or target_seat == null:
-		pass  # Let leave_timer handle when to leave seat
+		return
+
+	if not agent.is_navigation_finished():
+		var next = agent.get_next_path_position()
+		velocity = (next - global_position).normalized() * speed
+		move_and_slide()
+		_play_walk_animation()
 	else:
-		if not agent.is_navigation_finished():
-			var next = agent.get_next_path_position()
-			velocity = (next - global_position).normalized() * speed
-			move_and_slide()
-			_play_walk_animation()
-		else:
-			velocity = Vector2.ZERO
-			move_and_slide()
-			_play_idle_animation()
+		velocity = Vector2.ZERO
+		move_and_slide()
+		_play_idle_animation()
 
-			# ✅ Show order text once at counter
-			if waiting_at_counter and not has_shown_text:
-				_show_speech(OrderManager.format_order_text(order_data))
+		# ✅ Show order text once at counter
+		if waiting_at_counter and not has_shown_text:
+			_show_speech(OrderManager.format_order_text(order_data))
 
-		# ✅ Seat detection
-		if not waiting_at_counter and global_position.distance_to(target_seat.global_position) < agent.target_desired_distance and not leaving:
-			target_seat._on_OccupyArea_body_entered(self)
-			seated = true
-			velocity = Vector2.ZERO
-			move_and_slide()
-			_play_idle_animation()
-			leave_timer.start()
+	# ✅ Seat detection
+	if not waiting_at_counter and global_position.distance_to(target_seat.global_position) < agent.target_desired_distance:
+		target_seat._on_OccupyArea_body_entered(self)
+		seated = true
+		velocity = Vector2.ZERO
+		move_and_slide()
+		_play_idle_animation()
+		leave_timer.start()
 
-		if waiting_at_counter and not at_counter_flag:
-			# NPC has just arrived at counter
-			at_counter_flag = true
-			emit_signal("at_counter")
-
-	# Leaving logic: If we're heading to exit, despawn when close
-	if leaving and global_position.distance_to(exit_position) < agent.target_desired_distance:
-		emit_signal("npc_left", target_seat)
-		queue_free()
+	if waiting_at_counter and not at_counter_flag:
+		# NPC has just arrived at counter
+		at_counter_flag = true
+		emit_signal("at_counter")
+		counter_wait_timer.start()	# Start wait timer at counter
 
 func _on_leave_timer_timeout():
 	if target_seat:
 		target_seat.occupied = false
-	leave_restaurant()
+	emit_signal("npc_left", target_seat)
+	queue_free()
+
+func _on_counter_wait_timer_timeout():
+	if waiting_at_counter:
+		print("⏰ NPC was not served in time and leaves disappointed!")
+		emit_signal("left_counter_unserved", target_seat)
+		queue_free()
+		
+func _on_counter_timer_timeout():
+	emit_signal("left_counter_unserved", target_seat)
+	queue_free()
 
 func _play_walk_animation():
 	if not animated_sprite.is_playing() or animated_sprite.animation != "walk":
@@ -119,18 +120,16 @@ func receive_served_item(served_dish_name: String):
 	served_ingredients.sort()
 	var expected_ingredients = order_data.get("ingredients", []).duplicate()
 	expected_ingredients.sort()
-	print("DEBUG: Served:", served_dish_name, served_ingredients)
-	print("DEBUG: Expected:", order_data["name"], expected_ingredients)
 
 	if served_ingredients == expected_ingredients:
 		print("✅ Correct dish served! Thank you!")
 		_hide_speech()
-		emit_signal("order_accepted", served_dish_name)
+		counter_wait_timer.stop()
+		# ERASE THE MODIFIED RECIPE IF IT'S NOT THE BASE RECIPE
 		if order_data.has("base_name") and order_data["name"] != order_data["base_name"]:
 			if RecipeDatabase.recipes.has(order_data["name"]):
 				RecipeDatabase.recipes.erase(order_data["name"])
 				print("Temporary recipe erased:", order_data["name"])
-		print("DEBUG: Moving NPC to seat...")
 		move_to_seat()
 	else:
 		print("❌ Wrong order! I wanted:", expected_ingredients, "but got:", served_ingredients)

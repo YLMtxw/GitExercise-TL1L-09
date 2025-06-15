@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_7ka0k")
-name = "lamb patty (raw)"
+name = "lamb patty raw"
 texture = ExtResource("2_1y7u2")
+price = 0
 metadata/_custom_type_script = "uid://c2jevq51ijiin"
