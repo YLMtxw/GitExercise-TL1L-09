@@ -7,10 +7,6 @@ func _ready():
 	print("menu: ", menu)
 	print("menu2: ", menu2)
 
-func _input(event):
-	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		get_tree().quit()
-
 func _on_texture_button_pressed() -> void:
 	$ClickSound.play()
 	if menu2: menu2.visible = true
