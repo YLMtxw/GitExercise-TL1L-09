@@ -866,7 +866,8 @@ offset_bottom = 107.063
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 24
-text = "SPARKLING"
+text = "Sprite"
+horizontal_alignment = 1
 
 [node name="Level" type="Label" parent="photo2/blue box"]
 offset_left = -88.0
@@ -918,7 +919,8 @@ offset_bottom = 107.392
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 30
-text = "SPRINT"
+text = "7up"
+horizontal_alignment = 1
 
 [node name="Sprite" type="Sprite2D" parent="photo2/blue box2"]
 position = Vector2(-6.11383, -2.83545)
@@ -987,7 +989,8 @@ offset_bottom = 106.228
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 27
-text = "1000 PLUS"
+text = "100 PLUS"
+horizontal_alignment = 1
 
 [node name="Level" type="Label" parent="photo2/blue box3"]
 offset_left = -88.0
@@ -1054,7 +1057,8 @@ offset_bottom = 108.063
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_cy34d")
 theme_override_font_sizes/font_size = 25
-text = "COCO CACA"
+text = "Coke"
+horizontal_alignment = 1
 
 [node name="Level" type="Label" parent="photo2/blue box4"]
 offset_left = -88.0

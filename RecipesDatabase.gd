@@ -2,7 +2,7 @@ extends Node
 
 var recipes = {
 	# ==== Stove ====
-	"spaghetti (cooked)": ["spaghetti (raw)"],
+	"spaghetti cooked": ["spaghetti (raw)"],
 	"fried egg": ["egg (raw)", "oil"],
 	"vege burger": ["bun", "vegetable (peeled)", "cheese", "tomato (sliced)", "mayonaise"],
 	"beef burger": ["bun", "cheese", "vegetable (peeled)", "beef patty (grilled)", "mayonaise"],
@@ -11,9 +11,9 @@ var recipes = {
 	"chicken patty (grilled)": ["chicken patty (raw)", "oil"],
 	"beef patty (grilled)": ["beef patty (raw)", "oil"],
 	"lamb patty (grilled)": ["lamb patty (raw)", "oil"],
-	"aglio olio": ["spaghetti (cooked)", "oil"],
-	"carbonara": ["spaghetti (cooked)", "fried egg", "chicken (grilled)", "cheese"],
-	"bolognese": ["spaghetti (cooked)", "tomato sauce", "beef (grilled)"],
+	"aglio olio": ["spaghetti cooked", "oil"],
+	"carbonara": ["spaghetti cooked", "fried egg", "chicken (grilled)", "cheese"],
+	"bolognese": ["spaghetti cooked", "tomato sauce", "beef (grilled)"],
 	"beef (grilled)": ["beef (raw)"],
 	"chicken (grilled)": ["chicken (raw)"],
 	"lamb (grilled)": ["lamb (raw)"],

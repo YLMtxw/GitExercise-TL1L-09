@@ -194,7 +194,7 @@ func _input(event):
 		if is_near() == "bm":
 			print("bm")
 			
-	if event.is_action_pressed("serve"):
+	if event.is_action_pressed("interact"):
 		var current_tile = tilemap.local_to_map(global_position)
 		if (current_tile == COUNTER_POSITION1 or current_tile == COUNTER_POSITION2) and npc_at_counter and npc_node_at_counter:
 			var held_item = get_selected_inventory_item()
@@ -229,15 +229,17 @@ func _on_npc_order_accepted(dish_name):
 	var income = get_node("/root/Playground/CanvasLayer/paycheck/paycheckmenu/Income label/Income")
 
 	if inv and inv is InvOpenClose:
-		for slot in inventory.slots:
+		for slot in inv.slots:
 			if slot.item and slot.item.name == dish_name and slot.itemNum > 0:
-				var item_price = slot.item.price
-				Global.money += item_price
-				print("price +", item_price)
+				var item = slot.item
+				var item_price = item.price
 
+				# Add money immediately
+				Global.money += item_price
 				money_display.add_money(item_price)
 				paycheckmenu.add_money(item_price)
 				income.add_money(item_price)
+				print("Sold:", item.name, "for $", item_price)
 				
 				inventory.remove_item(slot.item, 1)
 				print("Removed served item from inventory:", dish_name)
