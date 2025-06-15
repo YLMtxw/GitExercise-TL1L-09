@@ -1013,9 +1013,9 @@ fill_from = Vector2(0, 0.119266)
 fill_to = Vector2(0, 1)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vevnq"]
-vertices = PackedVector2Array(410, 59.2031, 410, 36.2031, 480, 50.2031, 464, 59.2031, 550, 36.2031, 550, 59.2031, 496, 59.2031, 496, 84.7969, 550, 84.7969, 550, 123.203, 496, 123.203, 496, 148.797, 550, 148.797, 550, 187.203, 496, 187.203, 496, 212.797, 550, 212.797, 550, 238, 486, 238, 486, 350, -6, 350, -6, 266, 206.094, 298, 410, 298, 410, 212.797, 464, 212.797, 464, 187.203, 410, 187.203, 410, 148.797, 464, 148.797, 464, 123.203, 410, 123.203, 410, 84.7969, 464, 84.7969, 205.813, 266)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(19, 20, 21, 22), PackedInt32Array(23, 24, 25, 18, 19), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(30, 31, 32, 33), PackedInt32Array(21, 34, 22), PackedInt32Array(19, 22, 23), PackedInt32Array(14, 15, 18, 25, 26), PackedInt32Array(11, 14, 26, 29), PackedInt32Array(10, 11, 29, 30), PackedInt32Array(7, 10, 30, 33), PackedInt32Array(6, 7, 33, 3, 2)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-16, 256, -16, 360, 496, 360, 496, 248, 560, 248, 560, 24, 480, 40, 400, 24, 400, 288, 216, 288, 215.718, 256)])
+vertices = PackedVector2Array(402, 59.2031, 402, 35.9766, 480, 50.1563, 464, 59.2031, 558, 35.9766, 558, 59.2031, 496, 59.2031, 496, 84.7969, 558, 84.7969, 558, 123.203, 496, 123.203, 496, 148.797, 558, 148.797, 558, 187.203, 496, 187.203, 496, 212.797, 558, 212.797, 558, 238, 510, 238, 510, 282, 566, 282, 566, 318, 510, 318, 402, 298, 510, 350, 402, 350, 402, 326, 174, 326, 174, 350, -6, 350, -6, 298, 162, 298, 162, 266, 310, 266, 310, 298, 402, 212.797, 464, 212.797, 464, 187.203, 464, 148.797, 402, 187.203, 402, 148.797, 464, 123.203, 464, 84.7969, 402, 123.203, 402, 84.7969)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(19, 20, 21, 22, 23), PackedInt32Array(22, 24, 25, 26), PackedInt32Array(27, 28, 29, 30, 31), PackedInt32Array(31, 32, 33, 34, 27), PackedInt32Array(26, 27, 34, 23, 22), PackedInt32Array(19, 23, 35, 36, 18), PackedInt32Array(15, 18, 36), PackedInt32Array(14, 15, 36, 37), PackedInt32Array(11, 14, 37, 38), PackedInt32Array(37, 39, 40, 38), PackedInt32Array(10, 11, 38, 41), PackedInt32Array(7, 10, 41, 42), PackedInt32Array(41, 43, 44, 42), PackedInt32Array(6, 7, 42, 3, 2)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-16, 288, -16, 360, 184, 360, 184, 336, 392, 336, 392, 360, 520, 360, 520, 328, 576, 328, 576, 272, 520, 272, 520, 248, 568, 248, 568, 24, 480, 40, 392, 24, 392, 288, 320, 288, 320, 256, 152, 256, 152, 288)])
 
 [node name="Playground" type="Node2D"]
 script = ExtResource("1_snn6g")
@@ -1043,6 +1043,7 @@ offset_right = -441.0
 offset_bottom = -234.0
 
 [node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("5_o00ia")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -1064,6 +1065,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MoneyLabel" parent="CanvasLayer" instance=ExtResource("7_ynsuh")]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -1407,10 +1409,7 @@ npc_scene = ExtResource("47_sq44e")
 position = Vector2(176, 272)
 
 [node name="SpawnPoint" type="Marker2D" parent="NavigationRegion2D/Spawner"]
-position = Vector2(16, 312)
-
-[node name="ExitPoint" type="Marker2D" parent="NavigationRegion2D/Spawner"]
-position = Vector2(464, 336)
+position = Vector2(16, 320)
 
 [connection signal="pressed" from="CanvasLayer/closeButton" to="CanvasLayer" method="_on_close_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/paycheck/paycheckmenu/next" to="CanvasLayer" method="_on_next_pressed"]

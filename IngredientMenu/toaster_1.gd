@@ -6,9 +6,10 @@ var locked : bool = false
 @onready var toasterBar = get_node("/root/Playground/CanvasLayer/loadingBar3")
 var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
-var item = null
-
 @onready var click = $Clicksound
+
+var item = null              # InventoryItem resource (.tres)
+var item_name : String = ""  # The key for recipe lookups (could be modified!)
 
 func _ready():
 	for button in get_tree().get_nodes_in_group("toaster1"):
@@ -18,8 +19,8 @@ func _ready():
 	toasterBar.connect("loading_finished", Callable(self, "_on_loading_finished"))
 
 func has_ingredients(dish: String) -> bool:
-	# ... (keep debug print code here as before)
 	if not RecipeDatabase.recipes.has(dish):
+		print("Recipe not found:", dish)
 		return false
 	var required_counts := {}
 	for name in RecipeDatabase.recipes[dish]:
@@ -49,37 +50,32 @@ func consume_ingredients(dish: String):
 				var remove_now = min(slot.itemNum, to_remove)
 				inventory.remove_item(slot.item, remove_now)
 				to_remove -= remove_now
-				
+
 func get_current_order_name(base_name: String) -> String:
-	# If there's an NPC at the counter with a modified order for this sandwich, return that
 	if OrderManager.current_order_data.has("base_name") and OrderManager.current_order_data["base_name"] == base_name:
 		return OrderManager.current_order_data["name"]
 	return base_name
 
 func _on_toaster1_button_pressed(button: TextureButton):
-	if item and has_ingredients(item.name):
+	if item and item_name != "" and has_ingredients(item_name):
 		locked = true
 		print("Button pressed, showing bar...")
-		consume_ingredients(item.name)
+		consume_ingredients(item_name)
 		toasterBar.show_bar()
 		closeToaster1()
 	else:
-		print("You dont have enough ingredient to cook ", item.name)
+		print("You dont have enough ingredient to cook ", item_name)
 
 func _on_loading_finished():
 	if locked:
 		locked = false
 		print("Loading finished")
-		
 		if item:
 			insert(item)
-			inventorygui.update()  # ← Make sure this updates the UI
-			print("Added item to inventory: ", item.name)
+			inventorygui.update()
+			print("Added item to inventory: ", item_name)
 			item = null
-
-
-func _on_timer_timeout(button):
-	print("Timer for ", button.name, "finished!")
+			item_name = ""
 
 func insert(item: InventoryItem) -> void:
 	inventory.add_item(item)
@@ -104,27 +100,28 @@ func t1close():
 	if toaster1 == false:
 		is_menu_open = false
 
+# Sandwich selection handlers
 func _on_vege_sandwich_pressed() -> void:
 	click.play()
 	item = preload("res://Inventory/Item/vege sandwich.tres").duplicate()
-	item.name = get_current_order_name("vege sandwich")
+	item_name = get_current_order_name("vege sandwich")
 
 func _on_egg_mayo_sandwich_pressed() -> void:
 	click.play()
 	item = preload("res://Inventory/Item/egg mayo sandwich.tres").duplicate()
-	item.name = get_current_order_name("egg mayo sandwich")
+	item_name = get_current_order_name("egg mayo sandwich")
 
 func _on_chic_sandwich_pressed() -> void:
 	click.play()
 	item = preload("res://Inventory/Item/chicken sandwich.tres").duplicate()
-	item.name = get_current_order_name("chicken sandwich")
+	item_name = get_current_order_name("chicken sandwich")
 
 func _on_lamb_sandwich_pressed() -> void:
 	click.play()
 	item = preload("res://Inventory/Item/lamb sandwich.tres").duplicate()
-	item.name = get_current_order_name("lamb sandwich")
+	item_name = get_current_order_name("lamb sandwich")
 
 func _on_beef_sandwich_pressed() -> void:
 	click.play()
 	item = preload("res://Inventory/Item/beef sandwich.tres").duplicate()
-	item.name = get_current_order_name("beef sandwich")
+	item_name = get_current_order_name("beef sandwich")

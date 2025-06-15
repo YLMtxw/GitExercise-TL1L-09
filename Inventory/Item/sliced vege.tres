@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_2evpl")
-name = "vegetable (peeled)"
+name = "sliced vege"
 texture = ExtResource("2_2evpl")
 price = 0
 metadata/_custom_type_script = "uid://c2jevq51ijiin"
