@@ -3,7 +3,7 @@ extends Control
 var stove2 : bool = false
 var is_menu_open : bool = false
 var locked : bool = false
-@onready var stoveBar2 = get_node("/root/Playground/CanvasLayer/loadingBar1")
+@onready var stoveBar2 = get_node("/root/Playground/CanvasLayer/loadingBar2")
 var inventory = preload("res://Inventory/playerInventory.tres")
 @onready var inventorygui = get_node("/root/Playground/CanvasLayer/InventoryGUI")
 var item = null

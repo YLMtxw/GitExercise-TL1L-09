@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://bmhla7sag35as"]
+[gd_scene load_steps=10 format=3 uid="uid://bmhla7sag35as"]
 
-[ext_resource type="Texture2D" uid="uid://bkdo3b5s7g4ev" path="res://photo/sky.png" id="1_4hy44"]
 [ext_resource type="Script" uid="uid://bw6wjv8uyovkw" path="res://menu.gd" id="1_ytr4m"]
 [ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_nrnbx"]
 [ext_resource type="Texture2D" uid="uid://b4xetlk7ar7gw" path="res://photo/WhatsApp_图像2025-05-14于00.15.21_e46d42ba-removebg-preview.png" id="2_ytr4m"]
@@ -11,14 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://8cfdwgp2j1lm" path="res://photo/next hover.png" id="8_iqepy"]
 [ext_resource type="Texture2D" uid="uid://b8k0dup7t6smg" path="res://photo/close.png" id="10_iqepy"]
 
-[node name="Menu" type="Node2D"]
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_ytr4m")
 
 [node name="Sky" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(289, 171)
-scale = Vector2(1.02857, 1.11715)
-texture = ExtResource("1_4hy44")
+position = Vector2(288.5, 175.813)
+scale = Vector2(1.03036, 1.08688)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky"]
 position = Vector2(-6.80554, -11.9708)
@@ -45,8 +45,8 @@ pivot_offset = Vector2(0.1, 0)
 theme_override_fonts/font = ExtResource("4_ecwwl")
 theme_override_font_sizes/font_size = 60
 text = "1) Chicken Burger
-Bun, Lettuce (Peeled), Mayonnaise, 
-Chicken patty (Grilled), Bun"
+Bun, Sliced vegetable, Mayonnaise, 
+Chicken patty cooked, Cheese"
 
 [node name="Beef Burger" type="Label" parent="Sky"]
 texture_filter = 1
@@ -58,8 +58,8 @@ scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("4_ecwwl")
 theme_override_font_sizes/font_size = 70
 text = "2)  Beef Burger
-Bun, Lettuce (Peeled), Mayonnaise, 
-Beef patty (Grilled), Bun"
+Bun, Sliced vegetable, Mayonnaise, 
+Beef patty cooked, cheese"
 
 [node name="lamb Burger" type="Label" parent="Sky"]
 offset_left = -195.417
@@ -71,8 +71,8 @@ pivot_offset = Vector2(0.1, 0)
 theme_override_fonts/font = ExtResource("4_ecwwl")
 theme_override_font_sizes/font_size = 60
 text = "3)  Lamb Burger
-Bun, Lettuce (Peeled), Mayonnaise,
-Lamb patty (Grilled), Bun"
+Bun, Sliced vegetable, Mayonnaise,
+Lamb patty cooked, cheese"
 
 [node name="Vege Burger" type="Label" parent="Sky"]
 offset_left = -195.417
@@ -84,8 +84,8 @@ pivot_offset = Vector2(0.1, 0)
 theme_override_fonts/font = ExtResource("4_ecwwl")
 theme_override_font_sizes/font_size = 60
 text = "4)  Vege Burger
-Bun, Lettuce (Peeled), 
-Tomato (Sliced), Mayonnaise, Bun"
+Bun, Sliced vegetable, 
+Sliced tomato, Mayonnaise, Cheese"
 
 [node name="Grilled Beef" type="Label" parent="Sky"]
 offset_left = -204.167
@@ -98,8 +98,8 @@ theme_override_colors/font_color = Color(0.764706, 0.827451, 0, 1)
 theme_override_fonts/font = ExtResource("4_ecwwl")
 theme_override_font_sizes/font_size = 55
 text = "5)  Grilled Beef Steak
-Beef (Cut), Carrot, Asparagus,
-Garlic (Peeled), Sauce (Tomato/Barbecue)"
+Beef cooked, Carrot (sliced), 
+Barbecue sauce, oil, sliced vegetable"
 
 [node name="Grilled Lamb" type="Label" parent="Sky"]
 offset_left = 12.6389
@@ -112,8 +112,8 @@ theme_override_colors/font_color = Color(0.764706, 0.827451, 0, 1)
 theme_override_fonts/font = ExtResource("4_ecwwl")
 theme_override_font_sizes/font_size = 55
 text = "6)  Grilled Lamb Steak
-Lamb (Cut), Carrot, Asparagus, 
-Garlic (Peeled), Sauce (Tomato/Barbecue)"
+Lamb cooked, Carrot (sliced), 
+Barbecue sauce, oil, Sliced vegetable"
 
 [node name="Grilled Chicken" type="Label" parent="Sky"]
 offset_left = 12.6389
@@ -126,8 +126,8 @@ theme_override_colors/font_color = Color(0.764706, 0.827451, 0, 1)
 theme_override_fonts/font = ExtResource("4_ecwwl")
 theme_override_font_sizes/font_size = 55
 text = "7)  Grilled Chicken Steak
-Chicken (Cut), Carrot, Asparagus, 
-Garlic (Peeled), Sauce (Tomato/Barbecue)"
+Chicken cooked, Carrot (sliced), 
+Barbecue sauce, oil ,sliced vegetable"
 
 [node name="Carbonara" type="Label" parent="Sky"]
 offset_left = 15.5556
@@ -140,8 +140,9 @@ theme_override_colors/font_color = Color(0.764706, 0.647059, 0, 1)
 theme_override_fonts/font = ExtResource("4_ecwwl")
 theme_override_font_sizes/font_size = 55
 text = "8)  Carbonara
-Spaghetti pasta, Eggs, Parmesan cheese, 
-Beef bacon, Black pepper"
+Spaghetti cooked, Fried egg, Cheese, 
+Chicken cooked
+"
 
 [node name="Bolognese" type="Label" parent="Sky"]
 offset_left = 15.5556
@@ -154,8 +155,8 @@ theme_override_colors/font_color = Color(0.764706, 0.647059, 0, 1)
 theme_override_fonts/font = ExtResource("4_ecwwl")
 theme_override_font_sizes/font_size = 55
 text = "9)  Bolognese
-Spaghetti pasta, Beef (Minced), Onion, 
-Garlic, Tomato paste"
+Spaghetti cooked, Beef cooked, 
+Tomato sauce"
 
 [node name="Aglio Olio" type="Label" parent="Sky"]
 offset_left = 15.5556
@@ -168,8 +169,8 @@ theme_override_colors/font_color = Color(0.764706, 0.647059, 0, 1)
 theme_override_fonts/font = ExtResource("4_ecwwl")
 theme_override_font_sizes/font_size = 55
 text = "10)  Aglio Olio
-Spaghetti pasta, Chili flakes, Garlic, 
-Parsley"
+Spaghetti pasta, Chili flake,  oil, 
+chicken cooked"
 
 [node name="Chicken Sandwich" type="Label" parent="Sky"]
 offset_left = 15.5556
@@ -182,8 +183,8 @@ theme_override_colors/font_color = Color(0.215686, 0.588235, 0.662745, 1)
 theme_override_fonts/font = ExtResource("4_ecwwl")
 theme_override_font_sizes/font_size = 55
 text = "11)  Chicken Sandwich
-Bread, Chicken (Cut), Lettuce (Peeled), 
-Tomato (Sliced), Cheese (Sliced), 
+Bread, Chicken cooked, Sliced vegetable, 
+Sliced tomato, Cheese , 
 Mayonnaise, Bread"
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -208,10 +209,10 @@ theme_override_font_sizes/font_size = 22
 text = "SHOP MENU"
 
 [node name="TextureButton2" type="TextureButton" parent="."]
-offset_left = 9.0
-offset_top = 14.0
-offset_right = 26.0
-offset_bottom = 28.0
+offset_left = 57.0
+offset_top = 32.0
+offset_right = 74.0
+offset_bottom = 46.0
 scale = Vector2(2.3, 2.3)
 texture_normal = ExtResource("10_iqepy")
 

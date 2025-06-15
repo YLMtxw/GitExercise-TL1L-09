@@ -31,7 +31,7 @@ func generate_random_order():
 	var display_name = recipe_name # e.g. "beef burger (no cheese)"
 
 	# === Modification list
-	var modifiables = ["cheese", "sliced vege", "sliced tomato", "mayonaise"]
+	var modifiables = ["cheese", "vegetable (peeled)", "tomato (sliced)", "mayonaise"]
 	for mod in modifiables:
 		# Only decide a mod if it appears at least once in the recipe
 		if mod in base_ingredients:

@@ -115,7 +115,8 @@ script = ExtResource("5_ht3pi")
 
 [node name="PopupPanel" type="PopupPanel" parent="."]
 initial_position = 1
-size = Vector2i(300, 271)
+size = Vector2i(355, 349)
+visible = true
 max_size = Vector2i(32731, 32768)
 theme_override_styles/panel = SubResource("StyleBoxFlat_0d5ky")
 
@@ -125,10 +126,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 5.0
-offset_top = 15.0
-offset_right = 295.0
-offset_bottom = 266.0
+offset_left = 15.0
+offset_top = 25.0
+offset_right = 340.0
+offset_bottom = 334.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.976471, 0.803922, 0.556863, 1)
@@ -138,10 +139,13 @@ A key: Move left
 D key: Move right
 W key: Move up
 S key: Move down
-E key: Pick up food
+E key: Interaction
 Esc key : Setting
 I key : Inventory
-Shift key : Speed Up "
+Shift key : Speed Up 
+ORDER INSTRUCTION:
+1. Extra = ingredient add by 1
+2. No = remove the ingredient from recipe"
 horizontal_alignment = 1
 vertical_alignment = 1
 
