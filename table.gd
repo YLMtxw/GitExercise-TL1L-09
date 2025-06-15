@@ -662,9 +662,9 @@ func _on_accept_button_pressed() -> void:
 		
 	
 	elif id == 19:
-		if count19 == 1:
-			return 
-		if count19 < max:
+		if count19 >= 1:
+			return
+		if count19 == 0:
 			count19 += 1
 			Global.upgrade["count19"] = count19
 			Global.money -= 150
@@ -1071,12 +1071,12 @@ func _on_coke_pressed() -> void:
 
 
 func _on_cactus_button_pressed() -> void:
-	if count19 == 1:
-		$"max sound".play()
+	if count19 >= 1 :
 		return
 	if Global.money < 150:
 		$"max sound".play()
 		id = 0
+		return
 	else:
 		get_tree().paused = true
 		$ClickSound.play()
@@ -1087,8 +1087,6 @@ func _on_cactus_button_pressed() -> void:
 
 func _on_frame_button_pressed() -> void:
 	if count20 >= 1:
-		print("Count19 is already 1. Should play max sound.")
-		$"max sound".play()
 		return
 	if Global.money < 150:
 		$"max sound".play()
@@ -1102,7 +1100,7 @@ func _on_frame_button_pressed() -> void:
 
 func _on_plant_pot_button_pressed() -> void:
 	if count21 >= 1:
-		$"max sound".play()
+		return
 	if Global.money < 100:
 		$"max sound".play()
 		id = 0
@@ -1115,7 +1113,7 @@ func _on_plant_pot_button_pressed() -> void:
 
 func _on_bin_lock_button_pressed() -> void:
 	if count22 >= 1:
-		$"max sound".play()
+		return
 	if Global.money < 200:
 		$"max sound".play()
 		id = 0
@@ -1128,7 +1126,7 @@ func _on_bin_lock_button_pressed() -> void:
 
 func _on_signboard_button_pressed() -> void:
 	if count23 >= 1:
-		$"max sound".play()
+		return
 	if Global.money < 250:
 		$"max sound".play()
 		id = 0
@@ -1141,7 +1139,7 @@ func _on_signboard_button_pressed() -> void:
 
 func _on_table_deco_button_pressed() -> void:
 	if count24 >= 1:
-		$"max sound".play()
+		return
 	if Global.money < 250:
 		$"max sound".play()
 		id = 0
@@ -1154,7 +1152,7 @@ func _on_table_deco_button_pressed() -> void:
 
 func _on_table_tresure_button_pressed() -> void:
 	if count25 >= 1:
-		$"max sound".play()
+		return
 	if Global.money < 300:
 		$"max sound".play()
 		id = 0
@@ -1167,7 +1165,7 @@ func _on_table_tresure_button_pressed() -> void:
 
 func _on_vvip_carpet_pressed() -> void:
 	if count26 >= 1:
-		$"max sound".play()
+		return
 	if Global.money < 500:
 		$"max sound".play()
 		id = 0

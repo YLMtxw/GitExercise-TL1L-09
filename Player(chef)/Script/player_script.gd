@@ -84,7 +84,12 @@ func movement(delta):
 		#to store player direction so when player is not moving, it will face to where its stop
 		store_direction = direction
 		
+	var allowed_tiles = [
+		Vector2i(5, 43),
+		Vector2i(6, 43)
+	]
 	var near = is_near()
+	var near2 = allowed_tiles
 	if near == "stove" or near == "refri" or near == "knive" or near == "bin" or near == "bm":
 		$InteractE.showE()
 		$InteractE.position = $InteractE.EP_pos  # <- This line is the key
@@ -171,15 +176,6 @@ func _physics_process( delta ):
 	
 	
 func _input(event):
-	if event.is_action_pressed("sell"):  # q
-		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
-		money_display.add_money(100) 
-		paycheckmenu.add_money(100)
-		income.add_money(100)
-	if event.is_action_pressed("upgrade"): # r
-		var money_display = get_node("/root/Playground/CanvasLayer/MoneyLabel")
-		money_display.upgrade(20)
-		paycheckmenu.upgrade(20)
 	if event.is_action_pressed("interact"): # e
 		var near = is_near()
 		if is_near() == "stove":

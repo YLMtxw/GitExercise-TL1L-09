@@ -45,6 +45,7 @@ scale = Vector2(2.3, 2.3)
 texture_normal = ExtResource("4_ss8hp")
 
 [node name="Chicken Sandwich3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 79.0
 offset_top = 150.0
 offset_right = 1685.0
@@ -59,6 +60,7 @@ Bread, Sliced vegetable, Sliced tomato,
 Mayonnaise, Bread"
 
 [node name="egg mayo" type="Label" parent="."]
+layout_mode = 0
 offset_left = 88.0
 offset_top = 181.0
 offset_right = 1493.0
@@ -74,6 +76,7 @@ Sliced tomato, Cheese, Mayonnaise,
 Bread"
 
 [node name="WATER" type="Label" parent="."]
+layout_mode = 0
 offset_left = 129.0
 offset_top = 226.0
 offset_right = 202.0
@@ -190,6 +193,7 @@ texture_pressed = ExtResource("7_ss8hp")
 texture_hover = ExtResource("8_23yp1")
 
 [node name="lamb sandwich" type="Label" parent="."]
+layout_mode = 0
 offset_left = 88.0
 offset_top = 111.0
 offset_right = 1450.0
@@ -205,6 +209,7 @@ Sliced tomato, Cheese ,
 Mayonnaise, Bread"
 
 [node name="beef sandwich" type="Label" parent="."]
+layout_mode = 0
 offset_left = 88.0
 offset_top = 69.0
 offset_right = 1425.0
