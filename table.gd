@@ -115,10 +115,6 @@ const PlayerData = preload("user://profile.json")
 @onready var hplus : InventoryItem = preload("res://Inventory/Item/100plus.tres")
 @onready var coco : InventoryItem = preload("res://Inventory/Item/coke.tres")
 @onready var sparkling : InventoryItem = preload("res://Inventory/Item/sprite.tres")
-
-func _input(event):
-	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		get_tree().quit()
 	
 	
 func _ready():
