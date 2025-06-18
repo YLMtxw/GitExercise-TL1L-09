@@ -1274,6 +1274,7 @@ color = Color(0, 0, 0, 0.839216)
 
 [node name="Setting" parent="CanvasLayer" instance=ExtResource("27_lraom")]
 visible = false
+z_index = 2
 offset_left = 189.0
 offset_top = 31.0
 offset_right = -171.0
