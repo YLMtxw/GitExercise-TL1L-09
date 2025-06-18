@@ -1,0 +1,2191 @@
+[gd_scene load_steps=75 format=3 uid="uid://jjtkcedp5hyj"]
+
+[ext_resource type="Script" uid="uid://cag17jxngscam" path="res://table.gd" id="1_ra00y"]
+[ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="2_eupx0"]
+[ext_resource type="Texture2D" uid="uid://dalaivqo5qhq8" path="res://photo/background planning.jpg" id="2_k1gfb"]
+[ext_resource type="Texture2D" uid="uid://f6157ah74bx3" path="res://photo/menu01-removebg-preview.png" id="2_rc1au"]
+[ext_resource type="AudioStream" uid="uid://8pwv4v0iata" path="res://song/door-open-close-45475.mp3" id="3_g0luy"]
+[ext_resource type="Texture2D" uid="uid://dleod6oi06gyu" path="res://photo/WhatsApp_图像2025-05-14于00.15.16_9bdf4754-removebg-preview (1).png" id="3_k1gfb"]
+[ext_resource type="Script" uid="uid://i8iokgmrcl7t" path="res://bgm.gd" id="3_slmgn"]
+[ext_resource type="Texture2D" uid="uid://brwdj4lim6gvp" path="res://photo/WhatsApp_图像2025-05-14于00.15.16_b55d65e7-removebg-preview.png" id="4_0whe8"]
+[ext_resource type="Texture2D" uid="uid://cpe7flaxc7wqu" path="res://photo/WhatsApp_图像2025-05-14于00.15.17_72a5ef38-removebg-preview.png" id="5_ax1vu"]
+[ext_resource type="Texture2D" uid="uid://cluqgich4icd6" path="res://photo/WhatsApp_图像2025-05-14于00.15.17_6bd5c3b7-removebg-preview.png" id="6_8snal"]
+[ext_resource type="Texture2D" uid="uid://cdw8g1qym72tl" path="res://photo/aglio_olio-removebg-preview.png" id="7_8snal"]
+[ext_resource type="Texture2D" uid="uid://dvkrr630308np" path="res://photo/WhatsApp_图像2025-05-14于00.15.20_2c6ad564-removebg-preview.png" id="7_x6bcb"]
+[ext_resource type="Texture2D" uid="uid://ch7x4nd6148dg" path="res://photo/WhatsApp_图像2025-05-14于00.15.14_dd7fad6a-removebg-preview.png" id="8_6rsue"]
+[ext_resource type="Texture2D" uid="uid://bpfjd00jh36p6" path="res://photo/aglio olio.png" id="8_26cu5"]
+[ext_resource type="Texture2D" uid="uid://bjcoa78e4uwbq" path="res://photo/bolognese-removebg-preview.png" id="8_x6bcb"]
+[ext_resource type="Texture2D" uid="uid://c8lppk7664ej5" path="res://photo/exit planning screen.png" id="9_rc1au"]
+[ext_resource type="Texture2D" uid="uid://0yfnht3ym1cr" path="res://photo/cabonara-removebg-preview.png" id="11_30naw"]
+[ext_resource type="Texture2D" uid="uid://b74bbbpmgb771" path="res://photo/steak.png" id="12_8snal"]
+[ext_resource type="FontFile" uid="uid://bk4cd3hvf031o" path="res://font/PixelatedEleganceRegular-ovyAA.ttf" id="12_cy34d"]
+[ext_resource type="Texture2D" uid="uid://bc1mn1r8tdpor" path="res://photo/carbonara.png" id="12_eupx0"]
+[ext_resource type="Texture2D" uid="uid://c0t2pu6rq7obe" path="res://photo/chicken_steak-removebg-preview.png" id="13_g0luy"]
+[ext_resource type="Texture2D" uid="uid://c40t36g52dwsf" path="res://photo/chicken chop.png" id="14_1vrc5"]
+[ext_resource type="Texture2D" uid="uid://ij1dt3t45ifo" path="res://photo/lamb_steak-removebg-preview.png" id="18_002rh"]
+[ext_resource type="Texture2D" uid="uid://dtppohxn7gnc2" path="res://photo/burger-removebg-preview.png" id="18_gqinc"]
+[ext_resource type="Texture2D" uid="uid://duqgjj4pagwpl" path="res://photo/sandwich-removebg-preview.png" id="19_wlpo0"]
+[ext_resource type="Texture2D" uid="uid://du4cdeh56xp70" path="res://photo/comfirmation.png" id="20_55p65"]
+[ext_resource type="Texture2D" uid="uid://23vgpiual70w" path="res://photo/are u sure.png" id="21_slpgo"]
+[ext_resource type="Texture2D" uid="uid://3dlpocgx0sxq" path="res://photo/100plus.png" id="22_30naw"]
+[ext_resource type="Texture2D" uid="uid://btswaslmdpc10" path="res://photo/beef_steak-removebg-preview.png" id="24_08tfn"]
+[ext_resource type="Texture2D" uid="uid://hx5kbpuv2wn1" path="res://photo/sparkling.png" id="24_313i5"]
+[ext_resource type="Texture2D" uid="uid://b65gib0x1g1wy" path="res://photo/sprite.png" id="25_cvh4x"]
+[ext_resource type="Texture2D" uid="uid://cj2i16yfv3hpq" path="res://photo/coke-removebg-preview.png" id="27_313i5"]
+[ext_resource type="Texture2D" uid="uid://dyjy4bgwx0lgf" path="res://photo/cancel.png" id="27_dpwdq"]
+[ext_resource type="Texture2D" uid="uid://d2r0qe14d80eu" path="res://photo/Cold_Water-removebg-preview.png" id="28_2ta2v"]
+[ext_resource type="Texture2D" uid="uid://3kip4ao3w2ho" path="res://photo/cancel pressed.png" id="28_tyfo1"]
+[ext_resource type="Texture2D" uid="uid://ylboct5mb8ol" path="res://photo/Hot_Water-removebg-preview.png" id="29_rpnmw"]
+[ext_resource type="Texture2D" uid="uid://tobikanm2drg" path="res://photo/cancel hover.png" id="29_uv10y"]
+[ext_resource type="Texture2D" uid="uid://i5iwv38djvqf" path="res://photo/accept.png" id="30_afstm"]
+[ext_resource type="Texture2D" uid="uid://iscppd8e1cp0" path="res://photo/accept pressed.png" id="31_ologc"]
+[ext_resource type="Texture2D" uid="uid://bup63qirancjl" path="res://photo/cactus.png" id="31_rkwh0"]
+[ext_resource type="Texture2D" uid="uid://bl81ya34pa2bq" path="res://photo/accept hover.png" id="32_cy34d"]
+[ext_resource type="Texture2D" uid="uid://c3n6eh7lobgqh" path="res://photo/cactus lock.jpg" id="32_nt5q0"]
+[ext_resource type="Texture2D" uid="uid://d2kr5yuri0qm5" path="res://photo/pot_shell.png" id="33_ah72k"]
+[ext_resource type="Texture2D" uid="uid://dwpssfid7p6v3" path="res://photo/deco frame.png" id="33_linxu"]
+[ext_resource type="Texture2D" uid="uid://chiv0nef2dd1o" path="res://photo/padlock-removebg-preview.png" id="33_uxvje"]
+[ext_resource type="Texture2D" uid="uid://cjlxldy7cwqad" path="res://photo/bin-removebg-preview.png" id="34_by4wh"]
+[ext_resource type="Texture2D" uid="uid://de81fljuplytx" path="res://photo/paper.png" id="35_wcm3e"]
+[ext_resource type="AudioStream" uid="uid://cqn1vk21dnclo" path="res://song/jazz-background-music-325355.mp3" id="36_gqinc"]
+[ext_resource type="Texture2D" uid="uid://c6wq8rfc2mea" path="res://photo/signboard lock.jpg" id="36_qrdaw"]
+[ext_resource type="Texture2D" uid="uid://cateqyff17j1j" path="res://photo/Daco.png" id="37_1qjyb"]
+[ext_resource type="Texture2D" uid="uid://mkerffylv5sm" path="res://photo/signboard-removebg-preview.png" id="37_02g0u"]
+[ext_resource type="Texture2D" uid="uid://dm7ldkjrpllsj" path="res://photo/plant pot lock.jpg" id="37_lfxla"]
+[ext_resource type="Texture2D" uid="uid://bobj1av54kdck" path="res://photo/table.png" id="38_txm7q"]
+[ext_resource type="Texture2D" uid="uid://dy8msosm3ujxx" path="res://photo/red line.png" id="39_nq8pj"]
+[ext_resource type="Texture2D" uid="uid://dhlajgf7dscoc" path="res://photo/bin lock.jpg" id="39_qrdaw"]
+[ext_resource type="Texture2D" uid="uid://bse38qb3812rg" path="res://photo/money_box-removebg-preview.png" id="40_7p0w4"]
+[ext_resource type="Texture2D" uid="uid://bue5c4maub8v2" path="res://MoneyLabel/MLabel_Sprites/Money.png" id="41_2ta2v"]
+[ext_resource type="Texture2D" uid="uid://dvn130sbcti2q" path="res://photo/frame lock.jpg" id="42_4gyba"]
+[ext_resource type="Texture2D" uid="uid://dt5ewslwai5la" path="res://photo/cooked 01.png" id="42_rpnmw"]
+[ext_resource type="Texture2D" uid="uid://bqstpvyioyupd" path="res://photo/chatbox-removebg-preview.png" id="43_3hp0w"]
+[ext_resource type="Script" uid="uid://d1x6tcqwop57s" path="res://money_box.gd" id="43_cvh4x"]
+[ext_resource type="Texture2D" uid="uid://rvs2g47puntu" path="res://photo/water_fountain.png" id="43_rpnmw"]
+[ext_resource type="Script" uid="uid://fwycxljunopo" path="res://coin_label.gd" id="44_313i5"]
+[ext_resource type="AudioStream" uid="uid://b8etp3s1kt86j" path="res://song/wrong-answer-126515.mp3" id="46_cvh4x"]
+[ext_resource type="Texture2D" uid="uid://dnyua62jds6yp" path="res://photo/table deco lock.jpg" id="46_fkgnt"]
+[ext_resource type="Texture2D" uid="uid://bw6a62rngh2a0" path="res://photo/table tresure lock .jpg" id="47_nq8pj"]
+[ext_resource type="Texture2D" uid="uid://dmsuu22phiims" path="res://photo/vvip carpet lock.jpg" id="48_4gyba"]
+[ext_resource type="Texture2D" uid="uid://rba0np5jsl4e" path="res://photo/cant_pressed.png" id="59_slmgn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cvh4x"]
+line_spacing = 7.0
+paragraph_spacing = 5.0
+font_size = 27
+font_color = Color(0, 0.407843, 1, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_nq8pj"]
+offsets = PackedFloat32Array(0.162338, 0.5, 0.805195)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0.47451, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fkgnt"]
+gradient = SubResource("Gradient_nq8pj")
+use_hdr = true
+
+[sub_resource type="GDScript" id="GDScript_cvh4x"]
+script/source = "extends Sprite2D
+
+func _ready() -> void:
+	process_mode = PROCESS_MODE_ALWAYS
+"
+
+[sub_resource type="Gradient" id="Gradient_br5ie"]
+interpolation_mode = 2
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0, 1)
+colors = PackedColorArray(0.188235, 0, 0, 1, 0, 0, 0, 1, 1, 0.17, 0.17, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4gyba"]
+gradient = SubResource("Gradient_br5ie")
+use_hdr = true
+fill_from = Vector2(0.963303, 0)
+fill_to = Vector2(1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ra00y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(286.5, 168.45)
+scale = Vector2(0.532407, 0.533792)
+texture = ExtResource("2_k1gfb")
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("36_gqinc")
+volume_db = 10.0
+autoplay = true
+max_distance = 4096.0
+attenuation = 0.366022
+max_polyphony = 4
+parameters/looping = false
+script = ExtResource("3_slmgn")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_eupx0")
+volume_db = 10.0
+
+[node name="ClickSound01" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_g0luy")
+volume_db = 24.0
+pitch_scale = 1.3
+
+[node name="PlanningScreen" type="Sprite2D" parent="."]
+position = Vector2(315, 150)
+scale = Vector2(0.845347, 0.889)
+texture = ExtResource("2_rc1au")
+
+[node name="Chatbox-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(111, 114.281)
+scale = Vector2(0.219, 0.233125)
+texture = ExtResource("43_3hp0w")
+
+[node name="Story" type="Label" parent="Chatbox-removebg-preview"]
+offset_left = -214.612
+offset_top = -215.683
+offset_right = 245.388
+offset_bottom = 123.317
+theme_override_colors/font_color = Color(0, 0.341176, 0.807843, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 29
+text = "Hi, User ServeInEase,
+welcome to our Update
+menu, here is the place
+to let your kitchen to
+be advance, and let our
+customer happy when
+during in our store.
+
+Let us update our menu
+gooooooo............"
+label_settings = SubResource("LabelSettings_cvh4x")
+
+[node name="Button1" type="TextureButton" parent="."]
+texture_filter = 1
+clip_contents = true
+layout_mode = 0
+offset_left = 180.0
+offset_top = 28.0
+offset_right = 486.0
+offset_bottom = 240.0
+scale = Vector2(0.125, 0.13)
+texture_normal = ExtResource("3_k1gfb")
+stretch_mode = 0
+
+[node name="photo1" type="Sprite2D" parent="."]
+position = Vector2(306, 146)
+scale = Vector2(0.886168, 0.904)
+texture = ExtResource("4_0whe8")
+
+[node name="blue box" type="Sprite2D" parent="photo1"]
+position = Vector2(-102.689, -32.0796)
+scale = Vector2(0.374956, 0.385193)
+texture = ExtResource("8_6rsue")
+
+[node name="upgrade button" type="TextureButton" parent="photo1/blue box"]
+offset_left = -90.2878
+offset_top = -112.0
+offset_right = 93.7122
+offset_bottom = 107.0
+
+[node name="Aglio olio" type="Sprite2D" parent="photo1/blue box"]
+position = Vector2(-3.01043, -25.8463)
+scale = Vector2(0.337877, 0.267767)
+texture = ExtResource("7_8snal")
+
+[node name="AglioOlio word" type="Sprite2D" parent="photo1/blue box"]
+position = Vector2(-3.01044, 70.3588)
+scale = Vector2(3.78345, 3.17409)
+texture = ExtResource("8_26cu5")
+
+[node name="Level" type="Label" parent="photo1/blue box"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Up_price" type="Label" parent="photo1/blue box"]
+offset_left = -39.1252
+offset_top = 8.61526
+offset_right = 46.8748
+offset_bottom = 40.6153
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$100"
+
+[node name="Label" type="Label" parent="photo1/blue box"]
+offset_left = -27.0
+offset_top = -95.0
+offset_right = -7.0
+offset_bottom = -67.0
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box2" type="Sprite2D" parent="photo1"]
+position = Vector2(-28.5121, -32.2379)
+scale = Vector2(0.36895, 0.38378)
+texture = ExtResource("8_6rsue")
+
+[node name="upgrade button 2" type="TextureButton" parent="photo1/blue box2"]
+offset_left = -91.0
+offset_top = -109.0
+offset_right = 93.0
+offset_bottom = 111.0
+
+[node name="bolognese" type="Sprite2D" parent="photo1/blue box2"]
+position = Vector2(0.815175, -19.7642)
+scale = Vector2(0.363377, 0.292996)
+texture = ExtResource("8_x6bcb")
+
+[node name="bolognese word" type="Label" parent="photo1/blue box2"]
+clip_contents = true
+offset_left = -84.8245
+offset_top = 52.2949
+offset_right = 29.1755
+offset_bottom = 67.2949
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "BOLOGNESE"
+
+[node name="Label 2" type="Label" parent="photo1/blue box2"]
+offset_left = -23.6533
+offset_top = -94.7058
+offset_right = -3.65332
+offset_bottom = -66.7058
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Level" type="Label" parent="photo1/blue box2"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Up_price2" type="Label" parent="photo1/blue box2"]
+offset_left = -42.0046
+offset_top = 11.9418
+offset_right = 43.9954
+offset_bottom = 43.9419
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$100"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box2"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box3" type="Sprite2D" parent="photo1"]
+position = Vector2(44.2849, -32.2446)
+scale = Vector2(0.363072, 0.38372)
+texture = ExtResource("8_6rsue")
+
+[node name="upgrade button 3" type="TextureButton" parent="photo1/blue box3"]
+offset_left = -90.8921
+offset_top = -112.0
+offset_right = 93.1079
+offset_bottom = 109.0
+
+[node name="Cabonara-removebg-preview" type="Sprite2D" parent="photo1/blue box3"]
+position = Vector2(-0.757984, -19.7498)
+scale = Vector2(0.363416, 0.306554)
+texture = ExtResource("11_30naw")
+
+[node name="Carbonara word" type="Sprite2D" parent="photo1/blue box3"]
+position = Vector2(-3.86599, 66.7347)
+scale = Vector2(2.55861, 3.80773)
+texture = ExtResource("12_eupx0")
+
+[node name="Level" type="Label" parent="photo1/blue box3"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Label" type="Label" parent="photo1/blue box3"]
+offset_left = -28.7306
+offset_top = -94.7031
+offset_right = -8.73059
+offset_bottom = -66.7031
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Up_price3" type="Label" parent="photo1/blue box3"]
+offset_left = -47.379
+offset_top = 14.844
+offset_right = 38.621
+offset_bottom = 46.844
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$100"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box3"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box4" type="Sprite2D" parent="photo1"]
+position = Vector2(115.667, -31.8031)
+scale = Vector2(0.354143, 0.377785)
+texture = ExtResource("8_6rsue")
+
+[node name="upgrade button 4" type="TextureButton" parent="photo1/blue box4"]
+offset_left = -90.8147
+offset_top = -114.928
+offset_right = 90.1853
+offset_bottom = 108.072
+
+[node name="ChickenSteak-removebg-preview" type="Sprite2D" parent="photo1/blue box4"]
+position = Vector2(1.59191, -18.3007)
+scale = Vector2(0.209973, 0.174006)
+texture = ExtResource("13_g0luy")
+
+[node name="ChickenChop" type="Sprite2D" parent="photo1/blue box4"]
+position = Vector2(-1.594, 80)
+scale = Vector2(2.47369, 2.49844)
+texture = ExtResource("14_1vrc5")
+
+[node name="Label" type="Label" parent="photo1/blue box4"]
+offset_left = -17.5267
+offset_top = -91.5033
+offset_right = 22.4733
+offset_bottom = -68.5033
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Level" type="Label" parent="photo1/blue box4"]
+offset_left = -87.6886
+offset_top = -105.117
+offset_right = -46.6886
+offset_bottom = -82.1172
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Up_price4" type="Label" parent="photo1/blue box4"]
+offset_left = -39.8317
+offset_top = 19.7647
+offset_right = 46.1683
+offset_bottom = 51.7648
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$200"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box4"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box5" type="Sprite2D" parent="photo1"]
+position = Vector2(115.102, 57.5221)
+scale = Vector2(0.347456, 0.36832)
+texture = ExtResource("8_6rsue")
+
+[node name="Level" type="Label" parent="photo1/blue box5"]
+offset_left = -87.6886
+offset_top = -105.117
+offset_right = -46.6886
+offset_bottom = -82.1172
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+metadata/_edit_use_anchors_ = true
+
+[node name="upgrade button 5" type="TextureButton" parent="photo1/blue box5"]
+offset_left = -90.9364
+offset_top = -108.121
+offset_right = 91.0636
+offset_bottom = 110.879
+metadata/_edit_use_anchors_ = true
+
+[node name="Sandwich-removebg-preview" type="Sprite2D" parent="photo1/blue box5"]
+position = Vector2(-46.1682, 33.8892)
+scale = Vector2(0.199594, 0.277917)
+texture = ExtResource("19_wlpo0")
+
+[node name="sandwich" type="Label" parent="photo1/blue box5"]
+offset_left = -77.9453
+offset_top = 78.0873
+offset_right = 25.0547
+offset_bottom = 93.0873
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "SANDWICH"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="photo1/blue box5"]
+offset_left = -29.2289
+offset_top = -99.1105
+offset_right = -18.2289
+offset_bottom = -76.1105
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="photo1/blue box5/Label"]
+layout_mode = 0
+offset_left = 55.2119
+offset_right = 98.2119
+offset_bottom = 23.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "CHIC"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="photo1/blue box5"]
+offset_left = -29.2288
+offset_top = -75.0837
+offset_right = -18.2288
+offset_bottom = -52.0837
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="photo1/blue box5/Label2"]
+layout_mode = 0
+offset_left = 55.2119
+offset_top = 24.0268
+offset_right = 103.212
+offset_bottom = 39.0268
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "BEEF"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="photo1/blue box5"]
+offset_left = -29.2288
+offset_top = -51.0569
+offset_right = -18.2288
+offset_bottom = -28.0569
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="photo1/blue box5/Label3"]
+layout_mode = 0
+offset_left = 55.2119
+offset_top = -24.0268
+offset_right = 110.212
+offset_bottom = -9.02682
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "LAMB"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="photo1/blue box5"]
+offset_left = -29.2289
+offset_top = -27.0301
+offset_right = -18.2289
+offset_bottom = -4.03008
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="photo1/blue box5/Label4"]
+layout_mode = 0
+offset_left = 55.2119
+offset_right = 96.2119
+offset_bottom = 23.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "EGG"
+metadata/_edit_use_anchors_ = true
+
+[node name="Up_price8" type="Label" parent="photo1/blue box5"]
+offset_left = -6.49463
+offset_top = 39.0437
+offset_right = 86.5054
+offset_bottom = 71.0437
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$150"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box5"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box6" type="Sprite2D" parent="photo1"]
+position = Vector2(44.0097, 57.5221)
+scale = Vector2(0.359618, 0.3711)
+texture = ExtResource("8_6rsue")
+
+[node name="select button" type="TextureButton" parent="photo1/blue box6"]
+offset_left = -90.9998
+offset_top = -110.291
+offset_right = 93.0001
+offset_bottom = 110.708
+
+[node name="Burger-removebg-preview" type="Sprite2D" parent="photo1/blue box6"]
+position = Vector2(-45.5661, 28.6724)
+scale = Vector2(0.248995, 0.248539)
+texture = ExtResource("18_gqinc")
+
+[node name="burger" type="Label" parent="photo1/blue box6"]
+offset_left = -72.1723
+offset_top = 74.5214
+offset_right = -7.1723
+offset_bottom = 87.5214
+scale = Vector2(2.2, 2.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 13
+text = "BURGER"
+
+[node name="Label" type="Label" parent="photo1/blue box6"]
+offset_left = -28.2414
+offset_top = -98.3681
+offset_right = -17.2414
+offset_bottom = -83.3681
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
+
+[node name="Label" type="Label" parent="photo1/blue box6/Label"]
+layout_mode = 0
+offset_left = 53.3447
+offset_right = 96.3447
+offset_bottom = 15.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "CHIC"
+
+[node name="Label2" type="Label" parent="photo1/blue box6"]
+offset_left = -28.2413
+offset_top = -74.5212
+offset_right = -17.2413
+offset_bottom = -59.5212
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
+
+[node name="Label" type="Label" parent="photo1/blue box6/Label2"]
+layout_mode = 0
+offset_left = 53.3447
+offset_top = 23.8468
+offset_right = 101.345
+offset_bottom = 38.8468
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "BEEF"
+
+[node name="Label3" type="Label" parent="photo1/blue box6"]
+offset_left = -28.2414
+offset_top = -50.6744
+offset_right = -17.2414
+offset_bottom = -35.6744
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
+
+[node name="Label" type="Label" parent="photo1/blue box6/Label3"]
+layout_mode = 0
+offset_left = 53.3447
+offset_top = -23.8468
+offset_right = 108.345
+offset_bottom = -8.84683
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "LAMB"
+
+[node name="Label4" type="Label" parent="photo1/blue box6"]
+offset_left = -28.2414
+offset_top = -26.8276
+offset_right = -17.2414
+offset_bottom = -11.8276
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "0"
+
+[node name="Label" type="Label" parent="photo1/blue box6/Label4"]
+layout_mode = 0
+offset_left = 53.3447
+offset_right = 106.345
+offset_bottom = 15.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "VEGE"
+
+[node name="Level" type="Label" parent="photo1/blue box6"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Up_price7" type="Label" parent="photo1/blue box6"]
+offset_left = -9.41382
+offset_top = 38.7512
+offset_right = 83.5862
+offset_bottom = 70.7513
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$150"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box6"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box7" type="Sprite2D" parent="photo1"]
+position = Vector2(-28.6346, 57.5221)
+scale = Vector2(0.364647, 0.372847)
+texture = ExtResource("8_6rsue")
+
+[node name="upgrade button 7" type="TextureButton" parent="photo1/blue box7"]
+offset_left = -91.6789
+offset_top = -106.808
+offset_right = 92.3211
+offset_bottom = 114.192
+
+[node name="LambSteak-removebg-preview" type="Sprite2D" parent="photo1/blue box7"]
+position = Vector2(-5.02865, -38.5694)
+scale = Vector2(0.192988, 0.135546)
+texture = ExtResource("18_002rh")
+
+[node name="Label" type="Label" parent="photo1/blue box7"]
+offset_left = -57.6376
+offset_top = 38.5696
+offset_right = 58.3624
+offset_bottom = 97.5696
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "LAMB 
+CHOP"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="photo1/blue box7"]
+offset_left = -23.5965
+offset_top = -94.9403
+offset_right = 16.4035
+offset_bottom = -71.9403
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Level" type="Label" parent="photo1/blue box7"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Up_price6" type="Label" parent="photo1/blue box7"]
+offset_left = -54.543
+offset_top = 6.10352e-05
+offset_right = 38.457
+offset_bottom = 32.0001
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$200"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box7"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box8" type="Sprite2D" parent="photo1"]
+position = Vector2(-102.689, 57.5221)
+scale = Vector2(0.37215, 0.365809)
+texture = ExtResource("8_6rsue")
+
+[node name="upgrade button 8" type="TextureButton" parent="photo1/blue box8"]
+offset_left = -94.0008
+offset_top = -111.887
+offset_right = 89.9991
+offset_bottom = 109.113
+
+[node name="BeefSteak-removebg-preview" type="Sprite2D" parent="photo1/blue box8"]
+position = Vector2(-6.06541, -33.2636)
+scale = Vector2(0.202904, 0.168213)
+texture = ExtResource("24_08tfn")
+
+[node name="Label" type="Label" parent="photo1/blue box8"]
+offset_left = -66.7105
+offset_top = 39.3117
+offset_right = 60.2895
+offset_bottom = 98.3117
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "BEEF 
+STEAK"
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="Level" type="Label" parent="photo1/blue box8"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Label2" type="Label" parent="photo1/blue box8/Level"]
+layout_mode = 0
+offset_left = 66.7733
+offset_top = 7.23312
+offset_right = 86.7733
+offset_bottom = 35.2331
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Up_price5" type="Label" parent="photo1/blue box8"]
+offset_left = -48.517
+offset_top = 0.000110626
+offset_right = 44.483
+offset_bottom = 32.0001
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$200"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo1/blue box8"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="Button2" type="TextureButton" parent="."]
+texture_filter = 1
+clip_contents = true
+layout_mode = 0
+offset_left = 227.0
+offset_top = 28.0
+offset_right = 533.0
+offset_bottom = 240.0
+scale = Vector2(0.125, 0.13)
+texture_normal = ExtResource("3_k1gfb")
+
+[node name="photo2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(308, 147)
+scale = Vector2(0.886, 0.904)
+texture = ExtResource("5_ax1vu")
+
+[node name="blue box" type="Sprite2D" parent="photo2"]
+position = Vector2(-104.966, -44.2478)
+scale = Vector2(0.369219, 0.390131)
+texture = ExtResource("8_6rsue")
+
+[node name="button sparkling" type="TextureButton" parent="photo2/blue box"]
+offset_left = -88.6507
+offset_top = -110.582
+offset_right = 91.3493
+offset_bottom = 113.418
+
+[node name="Sparkling" type="Sprite2D" parent="photo2/blue box"]
+position = Vector2(-4.69504, -3.73571)
+scale = Vector2(0.703139, 0.504506)
+texture = ExtResource("24_313i5")
+
+[node name="word" type="Label" parent="photo2/blue box"]
+offset_left = -85.5938
+offset_top = 85.0634
+offset_right = 87.4062
+offset_bottom = 107.063
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 24
+text = "Sprite"
+horizontal_alignment = 1
+
+[node name="Level" type="Label" parent="photo2/blue box"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Label2" type="Label" parent="photo2/blue box/Level"]
+layout_mode = 0
+offset_left = 66.7733
+offset_top = 7.23312
+offset_right = 86.7733
+offset_bottom = 35.2331
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Up_price2" type="Label" parent="photo2/blue box"]
+offset_left = -55.0247
+offset_top = 39.6962
+offset_right = 30.9753
+offset_bottom = 71.6963
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$100"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box2" type="Sprite2D" parent="photo2"]
+position = Vector2(-32.7314, -44.2478)
+scale = Vector2(0.369219, 0.390131)
+texture = ExtResource("8_6rsue")
+
+[node name="Label" type="Label" parent="photo2/blue box2"]
+offset_left = -67.2519
+offset_top = 79.3925
+offset_right = 69.7481
+offset_bottom = 107.392
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "7up"
+horizontal_alignment = 1
+
+[node name="Sprite" type="Sprite2D" parent="photo2/blue box2"]
+position = Vector2(-6.11383, -2.83545)
+scale = Vector2(0.720667, 0.461268)
+texture = ExtResource("25_cvh4x")
+
+[node name="Level" type="Label" parent="photo2/blue box2"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Label2" type="Label" parent="photo2/blue box2/Level"]
+layout_mode = 0
+offset_left = 66.7733
+offset_top = 7.23312
+offset_right = 86.7733
+offset_bottom = 35.2331
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="button sprite" type="TextureButton" parent="photo2/blue box2"]
+offset_left = -89.0
+offset_top = -108.0
+offset_right = 92.0
+offset_bottom = 108.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Up_price3" type="Label" parent="photo2/blue box2"]
+offset_left = -48.9104
+offset_top = 39.6962
+offset_right = 37.0896
+offset_bottom = 71.6963
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$100"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box2"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box3" type="Sprite2D" parent="photo2"]
+position = Vector2(39.5034, -44.2478)
+scale = Vector2(0.369219, 0.390131)
+texture = ExtResource("8_6rsue")
+
+[node name="100Plus" type="Sprite2D" parent="photo2/blue box3"]
+position = Vector2(-3.05688, -2.83542)
+scale = Vector2(0.63917, 0.504454)
+texture = ExtResource("22_30naw")
+
+[node name="Label" type="Label" parent="photo2/blue box3"]
+offset_left = -82.5365
+offset_top = 82.2279
+offset_right = 82.4635
+offset_bottom = 106.228
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 27
+text = "100 PLUS"
+horizontal_alignment = 1
+
+[node name="Level" type="Label" parent="photo2/blue box3"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Label2" type="Label" parent="photo2/blue box3/Level"]
+layout_mode = 0
+offset_left = 66.7733
+offset_top = 7.23312
+offset_right = 86.7733
+offset_bottom = 35.2331
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="100plus" type="TextureButton" parent="photo2/blue box3"]
+anchors_preset = -1
+anchor_left = -0.054
+anchor_top = -0.013
+anchor_right = -0.054
+offset_left = -78.848
+offset_top = -105.088
+offset_right = 99.152
+offset_bottom = 108.0
+
+[node name="Up_price4" type="Label" parent="photo2/blue box3"]
+offset_left = -48.9105
+offset_top = 39.6963
+offset_right = 37.0895
+offset_bottom = 71.6963
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$100"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box3"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box4" type="Sprite2D" parent="photo2"]
+position = Vector2(110.609, -45.354)
+scale = Vector2(0.369219, 0.390131)
+texture = ExtResource("8_6rsue")
+
+[node name="Coke-removebg-preview" type="Sprite2D" parent="photo2/blue box4"]
+position = Vector2(4.29153e-05, 1.43051e-06)
+scale = Vector2(0.552327, 0.480584)
+texture = ExtResource("27_313i5")
+
+[node name="Coke" type="Label" parent="photo2/blue box4"]
+offset_left = -82.5352
+offset_top = 85.0634
+offset_right = 81.4648
+offset_bottom = 108.063
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "Coke"
+horizontal_alignment = 1
+
+[node name="Level" type="Label" parent="photo2/blue box4"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Label2" type="Label" parent="photo2/blue box4/Level"]
+layout_mode = 0
+offset_left = 66.7733
+offset_top = 7.23312
+offset_right = 86.7733
+offset_bottom = 35.2331
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="coke" type="TextureButton" parent="photo2/blue box4"]
+offset_left = -92.0
+offset_top = -108.0
+offset_right = 91.0
+offset_bottom = 108.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Up_price5" type="Label" parent="photo2/blue box4"]
+offset_left = -45.8523
+offset_top = 42.5317
+offset_right = 40.1477
+offset_bottom = 74.5317
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$100"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box4"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box5" type="Sprite2D" parent="photo2"]
+position = Vector2(-104.966, 44.2478)
+scale = Vector2(0.369219, 0.390131)
+texture = ExtResource("8_6rsue")
+
+[node name="Sprite2D" type="Sprite2D" parent="photo2/blue box5"]
+position = Vector2(-3.05728, -7.62939e-06)
+scale = Vector2(0.351398, 0.372405)
+texture = ExtResource("28_2ta2v")
+
+[node name="Label" type="Label" parent="photo2/blue box5"]
+offset_left = -76.423
+offset_top = 82.2279
+offset_right = 89.577
+offset_bottom = 106.228
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 21
+text = "Cold Water"
+
+[node name="Level" type="Label" parent="photo2/blue box5"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Label2" type="Label" parent="photo2/blue box5/Level"]
+layout_mode = 0
+offset_left = 66.7733
+offset_top = 7.23312
+offset_right = 86.7733
+offset_bottom = 35.2331
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "MAX"
+
+[node name="wrong" type="TextureButton" parent="photo2/blue box5"]
+offset_left = -92.0
+offset_top = -111.0
+offset_right = 92.0
+offset_bottom = 111.0
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box5"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box6" type="Sprite2D" parent="photo2"]
+position = Vector2(-32.7314, 44.2478)
+scale = Vector2(0.369219, 0.390131)
+texture = ExtResource("8_6rsue")
+
+[node name="Sprite2D" type="Sprite2D" parent="photo2/blue box6"]
+position = Vector2(9.15527e-05, -8.50633)
+scale = Vector2(0.348097, 0.388561)
+texture = ExtResource("29_rpnmw")
+
+[node name="Label" type="Label" parent="photo2/blue box6"]
+offset_left = -70.3088
+offset_top = 82.2279
+offset_right = 76.6912
+offset_bottom = 105.228
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 21
+text = "Hot Water"
+
+[node name="Level" type="Label" parent="photo2/blue box6"]
+offset_left = -88.0
+offset_top = -104.0
+offset_right = -39.0
+offset_bottom = -81.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Level :"
+
+[node name="Label2" type="Label" parent="photo2/blue box6/Level"]
+layout_mode = 0
+offset_left = 66.7733
+offset_top = 7.23312
+offset_right = 86.7733
+offset_bottom = 35.2331
+theme_override_colors/font_color = Color(0, 1, 0.419608, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 30
+text = "MAX"
+
+[node name="wrong" type="TextureButton" parent="photo2/blue box6"]
+offset_left = -92.0
+offset_top = -111.0
+offset_right = 92.0
+offset_bottom = 111.0
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box6"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box7" type="Sprite2D" parent="photo2"]
+position = Vector2(39.5034, 44.2478)
+scale = Vector2(0.369219, 0.390131)
+texture = ExtResource("8_6rsue")
+
+[node name="Label" type="Label" parent="photo2/blue box7"]
+offset_left = -58.0812
+offset_top = -25.519
+offset_right = 60.9188
+offset_bottom = 23.481
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "COMING
+SOON"
+horizontal_alignment = 1
+
+[node name="coming_soon" type="TextureButton" parent="photo2/blue box7"]
+offset_left = -89.0
+offset_top = -111.0
+offset_right = 89.0
+offset_bottom = 111.0
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box7"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="blue box8" type="Sprite2D" parent="photo2"]
+position = Vector2(111.738, 44.2478)
+scale = Vector2(0.369219, 0.390131)
+texture = ExtResource("8_6rsue")
+
+[node name="Label" type="Label" parent="photo2/blue box8"]
+offset_left = -58.0812
+offset_top = -25.519
+offset_right = 60.9188
+offset_bottom = 23.481
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "COMING
+SOON"
+horizontal_alignment = 1
+
+[node name="coming_soon" type="TextureButton" parent="photo2/blue box8"]
+offset_left = -89.0
+offset_top = -111.0
+offset_right = 89.0
+offset_bottom = 111.0
+
+[node name="PointLight2D" type="PointLight2D" parent="photo2/blue box8"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="Button3" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 271.0
+offset_top = 28.0
+offset_right = 577.0
+offset_bottom = 240.0
+scale = Vector2(0.125, 0.13)
+texture_normal = ExtResource("3_k1gfb")
+
+[node name="photo3" type="Sprite2D" parent="."]
+position = Vector2(307, 146)
+scale = Vector2(0.886, 0.904)
+texture = ExtResource("6_8snal")
+
+[node name="box 1" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(-106.095, -44.2478)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Cactus" type="Sprite2D" parent="photo3/box 1"]
+position = Vector2(7.62939e-06, -25.8997)
+scale = Vector2(0.346256, 0.309051)
+texture = ExtResource("31_rkwh0")
+
+[node name="Label" type="Label" parent="photo3/box 1"]
+offset_left = -69.184
+offset_top = 48.5095
+offset_right = 72.816
+offset_bottom = 85.5096
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 32
+text = "Cactus"
+
+[node name="Owned" type="Label" parent="photo3/box 1"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 1"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="box 2" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(-106.095, 45.354)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Frame" type="Sprite2D" parent="photo3/box 2"]
+position = Vector2(0.000518799, -17.1211)
+scale = Vector2(1.03292, 1.08173)
+texture = ExtResource("33_linxu")
+
+[node name="Label" type="Label" parent="photo3/box 2"]
+offset_left = -78.2075
+offset_top = 37.0955
+offset_right = 79.7925
+offset_bottom = 86.0955
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "Frame"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Owned" type="Label" parent="photo3/box 2"]
+offset_left = -33.0875
+offset_top = 79.898
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 2"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="box 3" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(-30.474, -44.2478)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Label" type="Label" parent="photo3/box 3"]
+offset_left = -81.216
+offset_top = 54.2166
+offset_right = 77.784
+offset_bottom = 77.2166
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 25
+text = "Plant Pot"
+
+[node name="PotShell" type="Sprite2D" parent="photo3/box 3"]
+position = Vector2(-1.21593e-05, -22.828)
+scale = Vector2(0.283088, 0.261414)
+texture = ExtResource("33_ah72k")
+
+[node name="Owned" type="Label" parent="photo3/box 3"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 3"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="box 4" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(-30.474, 45.354)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Bin-removebg-preview" type="Sprite2D" parent="photo3/box 4"]
+position = Vector2(3.91006e-05, -22.828)
+scale = Vector2(0.301424, 0.287548)
+texture = ExtResource("34_by4wh")
+
+[node name="Label" type="Label" parent="photo3/box 4"]
+offset_left = -36.096
+offset_top = 45.656
+offset_right = 41.904
+offset_bottom = 77.6561
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "Bin"
+
+[node name="Owned" type="Label" parent="photo3/box 4"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 4"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="box 5" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(45.1467, -44.2478)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="Signboard-removebg-preview" type="Sprite2D" parent="photo3/box 5"]
+position = Vector2(5.72205e-06, -16.2464)
+scale = Vector2(0.259378, 0.236669)
+texture = ExtResource("37_02g0u")
+
+[node name="Label" type="Label" parent="photo3/box 5"]
+offset_left = -66.176
+offset_top = 54.2166
+offset_right = 69.824
+offset_bottom = 77.2166
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 20
+text = "Signboard"
+
+[node name="Owned" type="Label" parent="photo3/box 5"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 5"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="box 6" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(45.1467, 45.354)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="TextureRect" type="TextureRect" parent="photo3/box 6"]
+offset_left = -66.0
+offset_top = -49.0
+offset_right = 66.0
+offset_bottom = 17.0
+texture = ExtResource("37_1qjyb")
+expand_mode = 1
+
+[node name="table deco" type="Label" parent="photo3/box 6"]
+offset_left = -69.1839
+offset_top = 54.2165
+offset_right = 70.8161
+offset_bottom = 77.2165
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 20
+text = "Table Deco"
+
+[node name="Owned" type="Label" parent="photo3/box 6"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 6"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="box 7" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(120.767, -44.2478)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="TextureRect" type="TextureRect" parent="photo3/box 7"]
+offset_left = -63.0
+offset_top = -43.0
+offset_right = 60.0
+offset_bottom = 6.0
+texture = ExtResource("38_txm7q")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="photo3/box 7"]
+offset_left = -54.1427
+offset_top = 37.0956
+offset_right = 56.8573
+offset_bottom = 76.0956
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 20
+text = "Table 
+Tresure"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Owned" type="Label" parent="photo3/box 7"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 7"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="box 8" type="Sprite2D" parent="photo3"]
+visible = false
+position = Vector2(120.767, 45.354)
+scale = Vector2(0.375222, 0.387662)
+texture = ExtResource("8_6rsue")
+
+[node name="TextureRect" type="TextureRect" parent="photo3/box 8"]
+offset_left = -45.1188
+offset_top = -51.3631
+offset_right = 42.8812
+offset_bottom = 28.6369
+texture = ExtResource("39_nq8pj")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="photo3/box 8"]
+offset_left = -45.1187
+offset_top = 37.0955
+offset_right = 43.8813
+offset_bottom = 78.0955
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 20
+text = "VVIP
+Carpet"
+horizontal_alignment = 1
+
+[node name="Owned" type="Label" parent="photo3/box 8"]
+offset_left = -33.0875
+offset_top = 79.8981
+offset_right = 27.9125
+offset_bottom = 102.898
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 19
+theme_override_constants/paragraph_spacing = 13
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Owned"
+
+[node name="PointLight2D" type="PointLight2D" parent="photo3/box 8"]
+position = Vector2(1.50392, 1.43578)
+scale = Vector2(0.743132, 0.89511)
+texture = SubResource("GradientTexture2D_fkgnt")
+texture_scale = 3.86
+
+[node name="CactusLock" type="Sprite2D" parent="photo3"]
+position = Vector2(-106.659, -43.6947)
+scale = Vector2(0.251273, 0.24198)
+texture = ExtResource("32_nt5q0")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/CactusLock"]
+position = Vector2(2.24597, -2.28571)
+scale = Vector2(0.399439, 0.292359)
+texture = ExtResource("33_uxvje")
+
+[node name="cactus button" type="TextureButton" parent="photo3/CactusLock"]
+offset_left = -137.0
+offset_top = -176.0
+offset_right = 141.0
+offset_bottom = 176.0
+mouse_default_cursor_shape = 2
+
+[node name="Frame lock" type="Sprite2D" parent="photo3"]
+position = Vector2(-106.659, 45.354)
+scale = Vector2(0.223535, 0.221239)
+texture = ExtResource("42_4gyba")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/Frame lock"]
+position = Vector2(2.52458, -39.9999)
+scale = Vector2(0.397066, 0.288358)
+texture = ExtResource("33_uxvje")
+
+[node name="Frame button" type="TextureButton" parent="photo3/Frame lock"]
+offset_left = -154.0
+offset_top = -195.0
+offset_right = 154.0
+offset_bottom = 195.0
+mouse_default_cursor_shape = 2
+
+[node name="SignboardLock" type="Sprite2D" parent="photo3"]
+position = Vector2(45.1467, -43.5287)
+scale = Vector2(0.431338, 0.424226)
+texture = ExtResource("36_qrdaw")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/SignboardLock"]
+position = Vector2(2.61676, -1.69492)
+scale = Vector2(0.248179, 0.170339)
+texture = ExtResource("33_uxvje")
+
+[node name="signboard button" type="TextureButton" parent="photo3/SignboardLock"]
+offset_left = -78.0
+offset_top = -98.0
+offset_right = 81.0
+offset_bottom = 100.0
+
+[node name="PlantPotLock" type="Sprite2D" parent="photo3"]
+position = Vector2(-30.739, -44.0266)
+scale = Vector2(0.258269, 0.245259)
+texture = ExtResource("37_lfxla")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/PlantPotLock"]
+position = Vector2(-3.34446, -0.902077)
+scale = Vector2(0.399439, 0.292359)
+texture = ExtResource("33_uxvje")
+
+[node name="plant pot button" type="TextureButton" parent="photo3/PlantPotLock"]
+offset_left = -134.0
+offset_top = -172.0
+offset_right = 137.0
+offset_bottom = 171.0
+mouse_default_cursor_shape = 2
+
+[node name="BinLock" type="Sprite2D" parent="photo3"]
+position = Vector2(-30.474, 45.354)
+scale = Vector2(0.358307, 0.359513)
+texture = ExtResource("39_qrdaw")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/BinLock"]
+position = Vector2(-0.000102997, -24.6154)
+scale = Vector2(0.24788, 0.18154)
+texture = ExtResource("33_uxvje")
+
+[node name="bin lock button" type="TextureButton" parent="photo3/BinLock"]
+offset_left = -94.0
+offset_top = -120.0
+offset_right = 95.0
+offset_bottom = 120.0
+
+[node name="Table deco" type="Sprite2D" parent="photo3"]
+position = Vector2(45.1467, 45.354)
+scale = Vector2(0.202149, 0.200659)
+texture = ExtResource("46_fkgnt")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/Table deco"]
+position = Vector2(-5.58331, -44.1025)
+scale = Vector2(0.439696, 0.317027)
+texture = ExtResource("33_uxvje")
+
+[node name="table deco button" type="TextureButton" parent="photo3/Table deco"]
+anchors_preset = -1
+anchor_top = -0.006
+anchor_bottom = -0.006
+offset_left = -173.083
+offset_top = -212.42
+offset_right = 166.917
+offset_bottom = 217.58
+mouse_default_cursor_shape = 2
+
+[node name="table tresure" type="Sprite2D" parent="photo3"]
+position = Vector2(120.767, -43.6947)
+scale = Vector2(0.217749, 0.216185)
+texture = ExtResource("47_nq8pj")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/table tresure"]
+position = Vector2(-5.72205e-05, -2.55845)
+scale = Vector2(0.435982, 0.320688)
+texture = ExtResource("33_uxvje")
+
+[node name="table tresure button" type="TextureButton" parent="photo3/table tresure"]
+offset_left = -155.0
+offset_top = -197.0
+offset_right = 155.0
+offset_bottom = 192.0
+
+[node name="VVIP carpet" type="Sprite2D" parent="photo3"]
+position = Vector2(120.203, 45.354)
+scale = Vector2(0.220669, 0.221239)
+texture = ExtResource("48_4gyba")
+
+[node name="Padlock-removebg-preview" type="Sprite2D" parent="photo3/VVIP carpet"]
+position = Vector2(-7.67216, -40)
+scale = Vector2(0.414369, 0.292682)
+texture = ExtResource("33_uxvje")
+
+[node name="VVIP carpet" type="TextureButton" parent="photo3/VVIP carpet"]
+offset_left = -156.0
+offset_top = -195.0
+offset_right = 156.0
+offset_bottom = 195.0
+
+[node name="Up_price2" type="Label" parent="photo3"]
+offset_left = -123.025
+offset_top = -85.177
+offset_right = -37.0248
+offset_bottom = -53.177
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$150"
+
+[node name="Up_price3" type="Label" parent="photo3"]
+offset_left = -46.2754
+offset_top = -86.2832
+offset_right = 39.7246
+offset_bottom = -54.2832
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$100"
+
+[node name="Up_price4" type="Label" parent="photo3"]
+offset_left = 27.088
+offset_top = -85.177
+offset_right = 113.088
+offset_bottom = -53.177
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$250"
+
+[node name="Up_price5" type="Label" parent="photo3"]
+offset_left = 102.709
+offset_top = -85.177
+offset_right = 195.709
+offset_bottom = -53.177
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$300"
+
+[node name="Up_price6" type="Label" parent="photo3"]
+offset_left = -123.025
+offset_top = 2.21239
+offset_right = -30.0248
+offset_bottom = 34.2124
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$150"
+
+[node name="Up_price7" type="Label" parent="photo3"]
+offset_left = -48.5327
+offset_top = 3.31859
+offset_right = 44.4673
+offset_bottom = 35.3186
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$200"
+
+[node name="Up_price8" type="Label" parent="photo3"]
+offset_left = 29.3454
+offset_top = 3.31859
+offset_right = 122.345
+offset_bottom = 35.3186
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$250"
+
+[node name="Up_price9" type="Label" parent="photo3"]
+offset_left = 99.3228
+offset_top = 3.31859
+offset_right = 192.323
+offset_bottom = 35.3186
+scale = Vector2(0.380328, 0.364881)
+theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 35
+text = "$500"
+
+[node name="button4" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 315.3
+offset_top = 28.0
+offset_right = 621.3
+offset_bottom = 240.0
+scale = Vector2(0.125, 0.13)
+pivot_offset = Vector2(0.125, 0)
+texture_normal = ExtResource("3_k1gfb")
+
+[node name="photo4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(306, 147)
+scale = Vector2(0.886, 0.904)
+texture = ExtResource("7_x6bcb")
+
+[node name="Label" type="Label" parent="photo4"]
+offset_left = -76.7494
+offset_top = -21.0177
+offset_right = 114.251
+offset_bottom = 55.9823
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 40
+text = "COMING
+SOON"
+horizontal_alignment = 1
+
+[node name="Exit Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 25.0
+offset_right = 758.0
+offset_bottom = 251.0
+scale = Vector2(0.125, 0.125)
+texture_normal = ExtResource("9_rc1au")
+
+[node name="steak" type="Sprite2D" parent="."]
+position = Vector2(199, 43)
+scale = Vector2(0.0442251, 0.0521978)
+texture = ExtResource("12_8snal")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="burger board" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(298, 165)
+scale = Vector2(0.258186, 0.237624)
+texture = ExtResource("35_wcm3e")
+
+[node name="Label" type="Label" parent="CanvasLayer/burger board"]
+offset_left = -313.727
+offset_top = -227.25
+offset_right = -124.727
+offset_bottom = -204.25
+scale = Vector2(3.5, 3.5)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "1. CHICKEN BURGER"
+
+[node name="Chicken" type="TextureButton" parent="CanvasLayer/burger board/Label"]
+layout_mode = 0
+offset_left = 17.0
+offset_right = 189.0
+offset_bottom = 15.0
+
+[node name="Label2" type="Label" parent="CanvasLayer/burger board"]
+offset_left = -305.98
+offset_top = -109.417
+offset_right = -142.98
+offset_bottom = -86.4167
+scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "2. LAMB BURGER"
+
+[node name="lamb" type="TextureButton" parent="CanvasLayer/burger board/Label2"]
+layout_mode = 0
+offset_left = 22.0
+offset_right = 160.0
+offset_bottom = 15.0
+
+[node name="Label3" type="Label" parent="CanvasLayer/burger board"]
+offset_left = -298.234
+offset_top = 21.0417
+offset_right = -168.234
+offset_bottom = 44.0417
+scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "3. BEEF BURGER"
+
+[node name="beef" type="TextureButton" parent="CanvasLayer/burger board/Label3"]
+layout_mode = 0
+offset_left = 21.0
+offset_right = 155.0
+offset_bottom = 15.0
+
+[node name="Label4" type="Label" parent="CanvasLayer/burger board"]
+offset_left = -290.488
+offset_top = 147.292
+offset_right = -160.488
+offset_bottom = 170.292
+scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("12_cy34d")
+text = "4. VEGE BURGER"
+
+[node name="vege" type="TextureButton" parent="CanvasLayer/burger board/Label4"]
+layout_mode = 0
+offset_left = 21.0
+offset_right = 161.0
+offset_bottom = 15.0
+
+[node name="sandwich" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(298, 165)
+scale = Vector2(0.258186, 0.237624)
+texture = ExtResource("35_wcm3e")
+
+[node name="Chic Sand" type="Label" parent="CanvasLayer/sandwich"]
+offset_left = -314.0
+offset_top = -227.0
+offset_right = -126.0
+offset_bottom = -212.0
+scale = Vector2(3.5, 3.5)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 14
+text = "1. Chicken Sandwich"
+
+[node name="Chicken 01" type="TextureButton" parent="CanvasLayer/sandwich/Chic Sand"]
+layout_mode = 0
+offset_left = 17.0
+offset_right = 189.0
+offset_bottom = 15.0
+
+[node name="Lamb Sand" type="Label" parent="CanvasLayer/sandwich"]
+offset_left = -306.0
+offset_top = -109.0
+offset_right = -142.0
+offset_bottom = -96.0
+scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 14
+text = "2. Lamb Sandwich"
+
+[node name="lamb 01" type="TextureButton" parent="CanvasLayer/sandwich/Lamb Sand"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -2.0
+offset_right = 164.0
+offset_bottom = 13.0
+
+[node name="Beef Sandwich" type="Label" parent="CanvasLayer/sandwich"]
+offset_left = -298.234
+offset_top = 21.0417
+offset_right = -168.234
+offset_bottom = 44.0417
+scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 14
+text = "3. Beef Sandwich "
+
+[node name="beef 01" type="TextureButton" parent="CanvasLayer/sandwich/Beef Sandwich"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -1.0
+offset_right = 158.0
+offset_bottom = 14.0
+
+[node name="EGG MAYO" type="Label" parent="CanvasLayer/sandwich"]
+offset_left = -290.0
+offset_top = 147.0
+offset_right = -188.0
+offset_bottom = 162.0
+scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 14
+text = "4. Egg Mayo"
+
+[node name="egg mayo 01" type="TextureButton" parent="CanvasLayer/sandwich/EGG MAYO"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -2.0
+offset_right = 102.0
+offset_bottom = 13.0
+
+[node name="Comfirmation" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(316, 167)
+scale = Vector2(0.351547, 0.407338)
+texture = ExtResource("20_55p65")
+script = SubResource("GDScript_cvh4x")
+
+[node name="AreUSure" type="Sprite2D" parent="CanvasLayer/Comfirmation"]
+position = Vector2(2.84444, -44.1893)
+scale = Vector2(3.88757, 3.53803)
+texture = ExtResource("21_slpgo")
+
+[node name="cancel button" type="TextureButton" parent="CanvasLayer/Comfirmation"]
+texture_filter = 1
+offset_left = 28.4457
+offset_top = 2.45495
+offset_right = 73.4457
+offset_bottom = 19.4549
+scale = Vector2(3, 3)
+texture_normal = ExtResource("27_dpwdq")
+texture_pressed = ExtResource("28_tyfo1")
+texture_hover = ExtResource("29_uv10y")
+
+[node name="accept button" type="TextureButton" parent="CanvasLayer/Comfirmation"]
+offset_left = -159.296
+offset_right = -114.296
+offset_bottom = 17.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("30_afstm")
+texture_pressed = ExtResource("31_ologc")
+texture_hover = ExtResource("32_cy34d")
+
+[node name="100Plus" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(247, 48)
+scale = Vector2(0.2125, 0.128968)
+texture = ExtResource("22_30naw")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+
+[node name="water fountain" type="Sprite2D" parent="CanvasLayer"]
+
+[node name="WaterFountain" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(291, 47)
+scale = Vector2(0.068, 0.052)
+texture = ExtResource("43_rpnmw")
+
+[node name="MoneyBox" type="Sprite2D" parent="."]
+position = Vector2(451, 253)
+scale = Vector2(0.218487, 0.141753)
+texture = ExtResource("40_7p0w4")
+script = ExtResource("43_cvh4x")
+
+[node name="Money" type="Sprite2D" parent="MoneyBox"]
+position = Vector2(-85.9445, -1.81198e-05)
+scale = Vector2(0.363611, 0.439402)
+texture = ExtResource("41_2ta2v")
+
+[node name="Coin_Label" type="Label" parent="MoneyBox"]
+offset_left = -32.0386
+offset_top = -21.1637
+offset_right = 87.9614
+offset_bottom = 32.8363
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_cy34d")
+theme_override_font_sizes/font_size = 60
+script = ExtResource("44_313i5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Cooked01" type="Sprite2D" parent="."]
+position = Vector2(109, 215)
+scale = Vector2(0.241525, 0.283009)
+texture = ExtResource("42_rpnmw")
+
+[node name="PointLight2D" type="PointLight2D" parent="Cooked01"]
+position = Vector2(124.211, 166.072)
+scale = Vector2(2.65242, 2.07194)
+shadow_enabled = true
+shadow_filter_smooth = 14.2
+texture = SubResource("GradientTexture2D_4gyba")
+
+[node name="max sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("46_cvh4x")
+volume_db = 24.0
+
+[node name="CantPressed" type="Sprite2D" parent="."]
+position = Vector2(334.25, 43.25)
+scale = Vector2(3.76667, 2.73077)
+texture = ExtResource("59_slmgn")
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="photo1/blue box/upgrade button" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="photo1/blue box2/upgrade button 2" to="." method="_on_upgrade_button_2_pressed"]
+[connection signal="pressed" from="photo1/blue box3/upgrade button 3" to="." method="_on_upgrade_button_3_pressed"]
+[connection signal="pressed" from="photo1/blue box4/upgrade button 4" to="." method="_on_upgrade_button_4_pressed"]
+[connection signal="pressed" from="photo1/blue box5/upgrade button 5" to="." method="_on_upgrade_button_5_pressed"]
+[connection signal="pressed" from="photo1/blue box6/select button" to="." method="_on_select_button_pressed"]
+[connection signal="pressed" from="photo1/blue box7/upgrade button 7" to="." method="_on_upgrade_button_7_pressed"]
+[connection signal="pressed" from="photo1/blue box8/upgrade button 8" to="." method="_on_upgrade_button_8_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="photo2/blue box/button sparkling" to="." method="_on_button_sparkling_pressed"]
+[connection signal="pressed" from="photo2/blue box2/button sprite" to="." method="_on_button_sprite_pressed"]
+[connection signal="pressed" from="photo2/blue box3/100plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="photo2/blue box4/coke" to="." method="_on_coke_pressed"]
+[connection signal="pressed" from="photo2/blue box5/wrong" to="." method="_on_wrong_pressed"]
+[connection signal="pressed" from="photo2/blue box6/wrong" to="." method="_on_wrong_pressed"]
+[connection signal="pressed" from="photo2/blue box7/coming_soon" to="." method="_on_coming_soon_pressed"]
+[connection signal="pressed" from="photo2/blue box8/coming_soon" to="." method="_on_coming_soon_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="photo3/CactusLock/cactus button" to="." method="_on_cactus_button_pressed"]
+[connection signal="pressed" from="photo3/Frame lock/Frame button" to="." method="_on_frame_button_pressed"]
+[connection signal="pressed" from="photo3/SignboardLock/signboard button" to="." method="_on_signboard_button_pressed"]
+[connection signal="pressed" from="photo3/PlantPotLock/plant pot button" to="." method="_on_plant_pot_button_pressed"]
+[connection signal="pressed" from="photo3/BinLock/bin lock button" to="." method="_on_bin_lock_button_pressed"]
+[connection signal="pressed" from="photo3/Table deco/table deco button" to="." method="_on_table_deco_button_pressed"]
+[connection signal="pressed" from="photo3/table tresure/table tresure button" to="." method="_on_table_tresure_button_pressed"]
+[connection signal="pressed" from="photo3/VVIP carpet/VVIP carpet" to="." method="_on_vvip_carpet_pressed"]
+[connection signal="pressed" from="button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/burger board/Label/Chicken" to="." method="_on_chicken_pressed"]
+[connection signal="pressed" from="CanvasLayer/burger board/Label2/lamb" to="." method="_on_lamb_pressed"]
+[connection signal="pressed" from="CanvasLayer/burger board/Label3/beef" to="." method="_on_beef_pressed"]
+[connection signal="pressed" from="CanvasLayer/burger board/Label4/vege" to="." method="_on_vege_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Chic Sand/Chicken 01" to="." method="_on_chicken_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Lamb Sand/lamb 01" to="." method="_on_lamb_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/Beef Sandwich/beef 01" to="." method="_on_beef_pressed"]
+[connection signal="pressed" from="CanvasLayer/sandwich/EGG MAYO/egg mayo 01" to="." method="_on_egg_mayo_01_pressed"]
+[connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Comfirmation/cancel button" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Comfirmation/accept button" to="." method="_on_accept_button_pressed"]

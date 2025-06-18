@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://b7hgu15whjkja"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_j7oo3"]
+[ext_resource type="Texture2D" uid="uid://c0hj58oxefkaf" path="res://IngredientMenu/Ingredient_Sprite/meat sandwich.png" id="2_m3dp3"]
+
+[resource]
+script = ExtResource("1_j7oo3")
+name = "lamb sandwich"
+texture = ExtResource("2_m3dp3")
+price = 10
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

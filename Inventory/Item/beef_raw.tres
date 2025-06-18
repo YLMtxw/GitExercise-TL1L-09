@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bj0q5kju2i7c0"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_anu46"]
+[ext_resource type="Texture2D" uid="uid://6vkc6p673pum" path="res://IngredientMenu/Ingredient_Sprite/beef raw (1).png" id="2_glehd"]
+
+[resource]
+script = ExtResource("1_anu46")
+name = "beef raw"
+texture = ExtResource("2_glehd")
+price = 0
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

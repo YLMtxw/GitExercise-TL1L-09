@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv8aoxjytnwu6"]
+
+[ext_resource type="Script" uid="uid://21gre6sl7v8w" path="res://table_deco.gd" id="1_h268w"]
+[ext_resource type="Texture2D" uid="uid://dvcvgi3xcpckt" path="res://photo/Daco_3273962-removebg-preview.png" id="1_pv7bn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h268w"]
+size = Vector2(33, 68)
+
+[node name="table deco" type="Node2D"]
+script = ExtResource("1_h268w")
+
+[node name="table deco" type="StaticBody2D" parent="."]
+
+[node name="table deco" type="Sprite2D" parent="table deco"]
+position = Vector2(17, 312)
+scale = Vector2(0.107087, 0.0866624)
+texture = ExtResource("1_pv7bn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table deco"]
+position = Vector2(16.5, 312)
+shape = SubResource("RectangleShape2D_h268w")

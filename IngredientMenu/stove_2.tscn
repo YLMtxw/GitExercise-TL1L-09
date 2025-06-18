@@ -1,0 +1,496 @@
+[gd_scene load_steps=25 format=3 uid="uid://dm3qtlptr7vky"]
+
+[ext_resource type="Script" uid="uid://cejnub02tjpt6" path="res://IngredientMenu/stove_2.gd" id="1_8k8cj"]
+[ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="2_6ficy"]
+[ext_resource type="PackedScene" uid="uid://b8m5u0iygxod5" path="res://Inventory/InvSlots.tscn" id="3_0602x"]
+[ext_resource type="Texture2D" uid="uid://br3axtxxam50y" path="res://IngredientMenu/Ingredient_Sprite/spaghetti cooked.png" id="4_s8j35"]
+[ext_resource type="Texture2D" uid="uid://bscsd1tq8d4kq" path="res://IngredientMenu/Ingredient_Sprite/aglio olio.png" id="5_887ku"]
+[ext_resource type="Texture2D" uid="uid://cvevoov0s56yu" path="res://IngredientMenu/Ingredient_Sprite/carbo.png" id="6_7stte"]
+[ext_resource type="Texture2D" uid="uid://c3nahgv8r72hg" path="res://IngredientMenu/Ingredient_Sprite/bolognese.png" id="7_ow1et"]
+[ext_resource type="Texture2D" uid="uid://cvbswq0p4t8a0" path="res://IngredientMenu/Ingredient_Sprite/selects.png" id="8_qowxa"]
+[ext_resource type="Texture2D" uid="uid://byy1iwm5st1bl" path="res://IngredientMenu/Ingredient_Sprite/selects_clicked.png" id="9_ei0p5"]
+[ext_resource type="Texture2D" uid="uid://ouc1g0wn6kxu" path="res://IngredientMenu/Ingredient_Sprite/BeefLabel (1).png" id="10_s8j35"]
+[ext_resource type="Texture2D" uid="uid://0sej6igb337m" path="res://IngredientMenu/Ingredient_Sprite/chickLabel (1).png" id="11_887ku"]
+[ext_resource type="Texture2D" uid="uid://b8xxyqfsa6gsm" path="res://IngredientMenu/Ingredient_Sprite/beef cooked (1).png" id="12_0basx"]
+[ext_resource type="Texture2D" uid="uid://d1kvqlj4ko8t6" path="res://IngredientMenu/Ingredient_Sprite/patty cooked.png" id="13_25dic"]
+[ext_resource type="Texture2D" uid="uid://8kpma8wth4kb" path="res://IngredientMenu/Ingredient_Sprite/lamb cooked.png" id="14_gy6fi"]
+[ext_resource type="Texture2D" uid="uid://dwmn5e3k7p8w7" path="res://IngredientMenu/Ingredient_Sprite/chicken cooked.png" id="15_wib8v"]
+[ext_resource type="Texture2D" uid="uid://bxrsrx50ff8o0" path="res://IngredientMenu/Ingredient_Sprite/LambLabel (1).png" id="16_7stte"]
+[ext_resource type="Texture2D" uid="uid://c1hnlasopmwto" path="res://IngredientMenu/Ingredient_Sprite/meat beef.png" id="17_mki3y"]
+[ext_resource type="Texture2D" uid="uid://cs8yvh86v480c" path="res://IngredientMenu/Ingredient_Sprite/burger.png" id="18_viacj"]
+[ext_resource type="Texture2D" uid="uid://cfqslvukxdior" path="res://IngredientMenu/Ingredient_Sprite/meat lamb.png" id="19_okukl"]
+[ext_resource type="Texture2D" uid="uid://p0fwxh5vhdl5" path="res://IngredientMenu/Ingredient_Sprite/meat chicken.png" id="20_51nsd"]
+[ext_resource type="Texture2D" uid="uid://cncbc65caocb7" path="res://IngredientMenu/Ingredient_Sprite/vegeLabel.png" id="21_ow1et"]
+[ext_resource type="Texture2D" uid="uid://cft82glfu4q7o" path="res://IngredientMenu/Ingredient_Sprite/otherLabel.png" id="22_qowxa"]
+[ext_resource type="Texture2D" uid="uid://bkrsxvd6fdeoj" path="res://IngredientMenu/Ingredient_Sprite/fried egg.png" id="23_ei0p5"]
+[ext_resource type="AudioStream" uid="uid://dwnomvmsq8402" path="res://song/mixkit-game-click-1114.wav" id="24_887ku"]
+
+[node name="stove2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 154.0
+offset_bottom = 158.0
+script = ExtResource("1_8k8cj")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 154.0
+offset_bottom = 158.0
+texture = ExtResource("2_6ficy")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 146.0
+offset_bottom = 29.0
+columns = 6
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 19.0
+texture = ExtResource("4_s8j35")
+expand_mode = 1
+
+[node name="InvSlots2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 19.0
+offset_bottom = 18.0
+texture = ExtResource("5_887ku")
+expand_mode = 1
+
+[node name="InvSlots3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots3"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 20.0
+offset_bottom = 18.0
+texture = ExtResource("6_7stte")
+expand_mode = 1
+
+[node name="InvSlots4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots4"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 20.0
+offset_bottom = 18.0
+texture = ExtResource("7_ow1et")
+expand_mode = 1
+
+[node name="spaghetti cooked" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 28.0
+offset_right = 28.0
+offset_bottom = 37.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="Aglio olio" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 28.0
+offset_right = 52.0
+offset_bottom = 37.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="carbo" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 28.0
+offset_right = 77.0
+offset_bottom = 37.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="bolognese" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 28.0
+offset_right = 101.0
+offset_bottom = 37.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 37.0
+offset_right = 31.0
+offset_bottom = 48.0
+texture = ExtResource("10_s8j35")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 37.0
+offset_right = 125.0
+offset_bottom = 47.0
+texture = ExtResource("11_887ku")
+expand_mode = 1
+
+[node name="GridContainer2" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 48.0
+offset_right = 145.0
+offset_bottom = 68.0
+columns = 6
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer2" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer2/InvSlots"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 20.0
+offset_bottom = 21.0
+texture = ExtResource("12_0basx")
+expand_mode = 1
+
+[node name="InvSlots2" parent="NinePatchRect/GridContainer2" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer2/InvSlots2"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = ExtResource("13_25dic")
+expand_mode = 1
+
+[node name="InvSlots3" parent="NinePatchRect/GridContainer2" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer2/InvSlots3"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = ExtResource("14_gy6fi")
+expand_mode = 1
+
+[node name="InvSlots4" parent="NinePatchRect/GridContainer2" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer2/InvSlots4"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = ExtResource("13_25dic")
+
+[node name="InvSlots5" parent="NinePatchRect/GridContainer2" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer2/InvSlots5"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = ExtResource("15_wib8v")
+expand_mode = 1
+
+[node name="InvSlots6" parent="NinePatchRect/GridContainer2" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer2/InvSlots6"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 20.0
+offset_bottom = 19.0
+texture = ExtResource("13_25dic")
+
+[node name="TextureRect4" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 37.0
+offset_right = 81.0
+offset_bottom = 48.0
+texture = ExtResource("16_7stte")
+expand_mode = 1
+
+[node name="beef cooked" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 69.0
+offset_right = 28.0
+offset_bottom = 78.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="pattyb cooked" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 69.0
+offset_right = 52.0
+offset_bottom = 78.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="lamb cooked" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 69.0
+offset_right = 76.0
+offset_bottom = 78.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="pattyl cooked" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 69.0
+offset_right = 100.0
+offset_bottom = 78.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="chicken cooked" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 69.0
+offset_right = 124.0
+offset_bottom = 78.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="pattyc cooked" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 69.0
+offset_right = 148.0
+offset_bottom = 78.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="GridContainer3" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 81.0
+offset_right = 73.0
+offset_bottom = 101.0
+columns = 6
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer3" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer3/InvSlots"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 19.0
+offset_bottom = 18.0
+texture = ExtResource("17_mki3y")
+expand_mode = 1
+
+[node name="InvSlots2" parent="NinePatchRect/GridContainer3" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer3/InvSlots2"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 19.0
+texture = ExtResource("18_viacj")
+expand_mode = 1
+
+[node name="InvSlots3" parent="NinePatchRect/GridContainer3" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer3/InvSlots3"]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 19.0
+offset_bottom = 18.0
+texture = ExtResource("19_okukl")
+expand_mode = 1
+
+[node name="InvSlots4" parent="NinePatchRect/GridContainer3" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer3/InvSlots4"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = ExtResource("18_viacj")
+expand_mode = 1
+
+[node name="InvSlots5" parent="NinePatchRect/GridContainer3" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer3/InvSlots5"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 20.0
+offset_bottom = 19.0
+texture = ExtResource("20_51nsd")
+expand_mode = 1
+
+[node name="InvSlots6" parent="NinePatchRect/GridContainer3" instance=ExtResource("3_0602x")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer3/InvSlots6"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 19.0
+texture = ExtResource("18_viacj")
+expand_mode = 1
+
+[node name="beef steak" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 102.0
+offset_right = 29.0
+offset_bottom = 111.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="beef burger" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 102.0
+offset_right = 52.0
+offset_bottom = 111.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="lamb" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 102.0
+offset_right = 76.0
+offset_bottom = 111.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="lamb burger" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 102.0
+offset_right = 100.0
+offset_bottom = 111.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="chicken" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 102.0
+offset_right = 124.0
+offset_bottom = 111.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="chicken burger" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 102.0
+offset_right = 148.0
+offset_bottom = 111.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="vege burger" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 144.0
+offset_right = 29.0
+offset_bottom = 153.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="egg" type="TextureButton" parent="NinePatchRect" groups=["stove2"]]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 144.0
+offset_right = 97.0
+offset_bottom = 153.0
+texture_normal = ExtResource("8_qowxa")
+texture_pressed = ExtResource("9_ei0p5")
+
+[node name="TextureRect3" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 113.0
+offset_right = 29.0
+offset_bottom = 122.0
+texture = ExtResource("21_ow1et")
+
+[node name="TextureRect5" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 113.0
+offset_right = 98.0
+offset_bottom = 122.0
+texture = ExtResource("22_qowxa")
+
+[node name="InvSlots" parent="NinePatchRect" instance=ExtResource("3_0602x")]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 123.0
+offset_right = 25.0
+offset_bottom = 143.0
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/InvSlots"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 19.0
+texture = ExtResource("18_viacj")
+expand_mode = 1
+
+[node name="InvSlots2" parent="NinePatchRect" instance=ExtResource("3_0602x")]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 123.0
+offset_right = 94.0
+offset_bottom = 143.0
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/InvSlots2"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 20.0
+texture = ExtResource("23_ei0p5")
+expand_mode = 1
+
+[node name="Clicksound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_887ku")
+
+[connection signal="pressed" from="NinePatchRect/spaghetti cooked" to="." method="_on_spaghetti_cooked_pressed"]
+[connection signal="pressed" from="NinePatchRect/Aglio olio" to="." method="_on_aglio_olio_pressed"]
+[connection signal="pressed" from="NinePatchRect/carbo" to="." method="_on_bolognese_pressed"]
+[connection signal="pressed" from="NinePatchRect/carbo" to="." method="_on_carbo_pressed"]
+[connection signal="pressed" from="NinePatchRect/bolognese" to="." method="_on_bolognese_pressed"]
+[connection signal="pressed" from="NinePatchRect/bolognese" to="." method="_on_carbonara_pressed"]
+[connection signal="pressed" from="NinePatchRect/beef cooked" to="." method="_on_beef_cooked_pressed"]
+[connection signal="pressed" from="NinePatchRect/pattyb cooked" to="." method="_on_pattyb_cooked_pressed"]
+[connection signal="pressed" from="NinePatchRect/lamb cooked" to="." method="_on_lamb_cooked_pressed"]
+[connection signal="pressed" from="NinePatchRect/pattyl cooked" to="." method="_on_pattyl_cooked_pressed"]
+[connection signal="pressed" from="NinePatchRect/chicken cooked" to="." method="_on_chicken_cooked_pressed"]
+[connection signal="pressed" from="NinePatchRect/pattyc cooked" to="." method="_on_pattyc_cooked_pressed"]
+[connection signal="pressed" from="NinePatchRect/beef steak" to="." method="_on_beef_steak_pressed"]
+[connection signal="pressed" from="NinePatchRect/beef burger" to="." method="_on_beef_burger_pressed"]
+[connection signal="pressed" from="NinePatchRect/lamb" to="." method="_on_lamb_pressed"]
+[connection signal="pressed" from="NinePatchRect/lamb burger" to="." method="_on_lamb_burger_pressed"]
+[connection signal="pressed" from="NinePatchRect/chicken" to="." method="_on_chicken_pressed"]
+[connection signal="pressed" from="NinePatchRect/chicken burger" to="." method="_on_chicken_burger_pressed"]
+[connection signal="pressed" from="NinePatchRect/vege burger" to="." method="_on_vege_burger_pressed"]
+[connection signal="pressed" from="NinePatchRect/egg" to="." method="_on_egg_pressed"]

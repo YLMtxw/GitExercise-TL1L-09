@@ -1,0 +1,736 @@
+[gd_scene load_steps=29 format=3 uid="uid://cy1d6xhr11qgy"]
+
+[ext_resource type="Texture2D" uid="uid://beadigyfjwf6l" path="res://Inventory/InventorySprites/InventoryRect.png" id="2_fu6ni"]
+[ext_resource type="Texture2D" uid="uid://b10vfo3m8noe3" path="res://IngredientMenu/Ingredient_Sprite/BeefLabel.png" id="3_dft21"]
+[ext_resource type="PackedScene" uid="uid://b8m5u0iygxod5" path="res://Inventory/InvSlots.tscn" id="4_i2w46"]
+[ext_resource type="Texture2D" uid="uid://6vkc6p673pum" path="res://IngredientMenu/Ingredient_Sprite/beef raw (1).png" id="5_cifew"]
+[ext_resource type="Texture2D" uid="uid://nhrgwiag0q8c" path="res://IngredientMenu/Ingredient_Sprite/patty raw.png" id="6_fqgwq"]
+[ext_resource type="Texture2D" uid="uid://bo0w4305k8g4w" path="res://IngredientMenu/Ingredient_Sprite/LambLabel.png" id="7_07ya7"]
+[ext_resource type="Texture2D" uid="uid://c8kaxdqf2l3jp" path="res://IngredientMenu/Ingredient_Sprite/lamb raw.png" id="8_hyg3o"]
+[ext_resource type="Texture2D" uid="uid://ccy7tacg4lkam" path="res://IngredientMenu/Ingredient_Sprite/chickLabel.png" id="9_1px5y"]
+[ext_resource type="Texture2D" uid="uid://bnxachvnhceut" path="res://IngredientMenu/Ingredient_Sprite/chicken raw.png" id="10_3c5yy"]
+[ext_resource type="Texture2D" uid="uid://cvbswq0p4t8a0" path="res://IngredientMenu/Ingredient_Sprite/selects.png" id="11_h7tpu"]
+[ext_resource type="Texture2D" uid="uid://byy1iwm5st1bl" path="res://IngredientMenu/Ingredient_Sprite/selects_clicked.png" id="12_gkade"]
+[ext_resource type="Texture2D" uid="uid://cft82glfu4q7o" path="res://IngredientMenu/Ingredient_Sprite/otherLabel.png" id="13_fqgwq"]
+[ext_resource type="Texture2D" uid="uid://cbawl20alpd5b" path="res://IngredientMenu/Ingredient_Sprite/vegetable.png" id="14_07ya7"]
+[ext_resource type="Texture2D" uid="uid://bkactxd3dubok" path="res://IngredientMenu/Ingredient_Sprite/tomato.png" id="15_hyg3o"]
+[ext_resource type="Texture2D" uid="uid://br3axtxxam50y" path="res://IngredientMenu/Ingredient_Sprite/spaghetti cooked.png" id="16_1px5y"]
+[ext_resource type="Texture2D" uid="uid://srkbl3adqsfd" path="res://IngredientMenu/Ingredient_Sprite/cheese.png" id="17_3c5yy"]
+[ext_resource type="Texture2D" uid="uid://baum32x8o0fgq" path="res://IngredientMenu/Ingredient_Sprite/Bun.png" id="17_gkade"]
+[ext_resource type="Texture2D" uid="uid://de0bdeguiyxuu" path="res://IngredientMenu/Ingredient_Sprite/Drink label.png" id="18_h7tpu"]
+[ext_resource type="Texture2D" uid="uid://cx3u0xgrcxpqx" path="res://IngredientMenu/Ingredient_Sprite/bread__1_-removebg-preview.png" id="18_tb2no"]
+[ext_resource type="Texture2D" uid="uid://dwsv5plhe76n0" path="res://IngredientMenu/Ingredient_Sprite/Coke.png" id="19_gkade"]
+[ext_resource type="Texture2D" uid="uid://bx1qm5blh1co8" path="res://IngredientMenu/Ingredient_Sprite/100plus.png" id="20_tb2no"]
+[ext_resource type="Texture2D" uid="uid://0sjanjo5bw45" path="res://IngredientMenu/Ingredient_Sprite/7up.png" id="21_wyqo1"]
+[ext_resource type="Texture2D" uid="uid://bbxqbulql4nuw" path="res://IngredientMenu/Ingredient_Sprite/Sprite.png" id="22_lmx7x"]
+[ext_resource type="Texture2D" uid="uid://0f83fylocngw" path="res://IngredientMenu/Ingredient_Sprite/water-c.png" id="24_3gfc6"]
+[ext_resource type="AudioStream" uid="uid://dwnomvmsq8402" path="res://song/mixkit-game-click-1114.wav" id="24_tb2no"]
+[ext_resource type="Texture2D" uid="uid://b7i5jn1i1a7wy" path="res://IngredientMenu/Ingredient_Sprite/carrot.png" id="24_wyqo1"]
+[ext_resource type="Texture2D" uid="uid://b4qcjgo58sb1u" path="res://IngredientMenu/Ingredient_Sprite/raw egg.png" id="25_lmx7x"]
+
+[sub_resource type="GDScript" id="GDScript_3c5yy"]
+script/source = "extends Control
+
+var refri : bool = false
+var is_menu_open : bool = false
+var inventory = preload(\"res://Inventory/playerInventory.tres\")
+@onready var inventorygui = get_node(\"/root/Playground/CanvasLayer/InventoryGUI\")
+@onready var click = $Clicksound
+
+
+func openRefri():
+	visible = true
+	refri = true
+
+func Ropen():
+	if refri == true:
+		is_menu_open = true
+	return refri
+
+func closeRefri():
+	visible = false
+	refri = false
+
+func Rclose():
+	if refri == false:
+		is_menu_open = false
+		
+func insert(item: InventoryItem) -> void:
+	inventory.add_item(item)
+	
+
+func _on_rvege_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/vegetable.tres\")
+	print(\"rvege\")
+	inventorygui.update()
+	insert(item)
+
+func _on_rtomato_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/tomato.tres\")
+	print(\"rtomato\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_rspaghetti_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/spaghetti raw.tres\")
+	print(\"rspaghetti\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_beefsteak_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/beef_raw.tres\")
+	print(\"beefsteak\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_beefpatty_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/beef patty raw.tres\")
+	print(\"beefpatty\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_lamb_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/lamb raw.tres\")
+	print(\"lamb\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_lambpatty_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/lamb patty raw.tres\")
+	print(\"lambpatty\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_chicken_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/chicken raw.tres\")
+	print(\"chicken\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_chickenpatty_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/chicken patty raw.tres\")
+	print(\"chickenpatty\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_rcheese_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/cheese.tres\")
+	print(\"rcheese\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_coke_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/coke.tres\")
+	print(\"coke\")
+	inventorygui.update()
+	insert(item)
+	
+
+
+func _on__pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/100plus.tres\")
+	print(\"100\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_up_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/7up.tres\")
+	print(\"7up\")
+	inventorygui.update()
+	insert(item)
+
+func _on_sprite_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/sprite.tres\")
+	print(\"sprite\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_bun_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/bun.tres\")
+	print(\"bun\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_bread_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/bread.tres\")
+	print(\"bread\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_carrot_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/carrot.tres\")
+	print(\"carrot\")
+	inventorygui.update()
+	insert(item)
+
+
+func _on_egg_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/raw egg.tres\")
+	print(\"egg\")
+	inventorygui.update()
+	insert(item)
+	pass # Replace with function body.
+
+
+func _on_cold_water_pressed() -> void:
+	click.play()
+	var item = preload(\"res://Inventory/Item/cold water.tres\")
+	print(\"cold water\")
+	inventorygui.update()
+	insert(item)
+	pass # Replace with function body.
+"
+
+[node name="refri" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 149.0
+offset_bottom = 174.0
+script = SubResource("GDScript_3c5yy")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 148.0
+offset_bottom = 174.0
+texture = ExtResource("2_fu6ni")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -23.0
+offset_right = 32.0
+offset_bottom = 17.0
+texture = ExtResource("3_dft21")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 16.0
+offset_right = 45.0
+offset_bottom = 36.0
+columns = 2
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -4.0
+offset_right = 21.0
+offset_bottom = 23.0
+texture = ExtResource("5_cifew")
+expand_mode = 1
+
+[node name="InvSlots2" parent="NinePatchRect/GridContainer" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/InvSlots2"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 20.0
+texture = ExtResource("6_fqgwq")
+
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -23.0
+offset_right = 80.0
+offset_bottom = 17.0
+texture = ExtResource("7_07ya7")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="GridContainer2" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 16.0
+offset_right = 95.0
+offset_bottom = 56.0
+columns = 2
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer2" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer2/InvSlots"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 20.0
+texture = ExtResource("8_hyg3o")
+
+[node name="InvSlots2" parent="NinePatchRect/GridContainer2" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer2/InvSlots2"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 20.0
+texture = ExtResource("6_fqgwq")
+
+[node name="TextureRect3" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = -35.0
+offset_right = 121.0
+offset_bottom = 16.0
+texture = ExtResource("9_1px5y")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="GridContainer3" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 16.0
+offset_right = 140.0
+offset_bottom = 56.0
+columns = 2
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer3" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer3/InvSlots"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = ExtResource("10_3c5yy")
+expand_mode = 1
+
+[node name="InvSlots2" parent="NinePatchRect/GridContainer3" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer3/InvSlots2"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 20.0
+texture = ExtResource("6_fqgwq")
+
+[node name="beefsteak" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 38.0
+offset_right = 30.0
+offset_bottom = 47.0
+scale = Vector2(0.9, 1.1)
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="beefpatty" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 38.0
+offset_right = 52.0
+offset_bottom = 47.0
+scale = Vector2(0.9, 1.1)
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+stretch_mode = 0
+
+[node name="lamb" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 38.0
+offset_right = 76.0
+offset_bottom = 47.0
+scale = Vector2(0.9, 1.1)
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="lambpatty" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 38.0
+offset_right = 98.0
+offset_bottom = 47.0
+scale = Vector2(0.9, 1.1)
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="chicken" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 38.0
+offset_right = 121.0
+offset_bottom = 47.0
+scale = Vector2(0.9, 1.1)
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="chickenpatty" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 38.0
+offset_right = 143.0
+offset_bottom = 47.0
+scale = Vector2(0.9, 1.1)
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="TextureRect4" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 52.0
+offset_right = 31.0
+offset_bottom = 61.0
+texture = ExtResource("13_fqgwq")
+expand_mode = 1
+
+[node name="GridContainer4" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 62.0
+offset_right = 144.0
+offset_bottom = 82.0
+columns = 6
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer4" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer4/InvSlots"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("14_07ya7")
+expand_mode = 1
+
+[node name="InvSlots2" parent="NinePatchRect/GridContainer4" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer4/InvSlots2"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 19.0
+texture = ExtResource("15_hyg3o")
+expand_mode = 1
+
+[node name="InvSlots3" parent="NinePatchRect/GridContainer4" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer4/InvSlots3"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 19.0
+texture = ExtResource("16_1px5y")
+expand_mode = 1
+
+[node name="InvSlots4" parent="NinePatchRect/GridContainer4" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer4/InvSlots4"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 23.0
+offset_bottom = 27.0
+texture = ExtResource("17_3c5yy")
+expand_mode = 1
+
+[node name="InvSlots5" parent="NinePatchRect/GridContainer4" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer4/InvSlots5"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 21.0
+texture = ExtResource("17_gkade")
+expand_mode = 1
+
+[node name="InvSlots6" parent="NinePatchRect/GridContainer4" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer4/InvSlots6"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 23.0
+offset_bottom = 22.0
+texture = ExtResource("18_tb2no")
+expand_mode = 1
+
+[node name="rvege" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 83.0
+offset_right = 28.0
+offset_bottom = 92.0
+scale = Vector2(0.9, 1)
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="rtomato" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 83.0
+offset_right = 52.0
+offset_bottom = 92.0
+scale = Vector2(0.9, 1)
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="rspaghetti" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 83.0
+offset_right = 76.0
+offset_bottom = 92.0
+scale = Vector2(0.9, 1)
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="rcheese" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 83.0
+offset_right = 100.0
+offset_bottom = 92.0
+scale = Vector2(0.9, 1)
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="TextureRect5" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 126.0
+offset_right = 31.0
+offset_bottom = 135.0
+texture = ExtResource("18_h7tpu")
+
+[node name="GridContainer5" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 136.0
+offset_right = 136.0
+offset_bottom = 156.0
+columns = 5
+
+[node name="InvSlots" parent="NinePatchRect/GridContainer5" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer5/InvSlots"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 16.0
+offset_bottom = 18.0
+texture = ExtResource("19_gkade")
+expand_mode = 1
+
+[node name="InvSlots2" parent="NinePatchRect/GridContainer5" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer5/InvSlots2"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 15.0
+offset_bottom = 19.0
+texture = ExtResource("20_tb2no")
+expand_mode = 1
+
+[node name="InvSlots3" parent="NinePatchRect/GridContainer5" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer5/InvSlots3"]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 16.0
+offset_bottom = 19.0
+texture = ExtResource("21_wyqo1")
+expand_mode = 1
+
+[node name="InvSlots4" parent="NinePatchRect/GridContainer5" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer5/InvSlots4"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 15.0
+offset_bottom = 19.0
+texture = ExtResource("22_lmx7x")
+expand_mode = 1
+
+[node name="InvSlots5" parent="NinePatchRect/GridContainer5" instance=ExtResource("4_i2w46")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer5/InvSlots5"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = ExtResource("24_3gfc6")
+expand_mode = 1
+
+[node name="coke" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 157.0
+offset_right = 28.0
+offset_bottom = 166.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="100" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 157.0
+offset_right = 52.0
+offset_bottom = 166.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="7up" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 157.0
+offset_right = 77.0
+offset_bottom = 166.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="sprite" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 157.0
+offset_right = 100.0
+offset_bottom = 166.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="bun" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 83.0
+offset_right = 123.0
+offset_bottom = 92.0
+scale = Vector2(0.9, 1)
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="bread" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 83.0
+offset_right = 147.0
+offset_bottom = 92.0
+scale = Vector2(0.9, 1)
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="InvSlots" parent="NinePatchRect" instance=ExtResource("4_i2w46")]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 94.0
+offset_right = 24.0
+offset_bottom = 114.0
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/InvSlots"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 18.0
+offset_bottom = 20.0
+texture = ExtResource("24_wyqo1")
+expand_mode = 1
+
+[node name="InvSlots3" parent="NinePatchRect" instance=ExtResource("4_i2w46")]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 94.0
+offset_right = 50.0
+offset_bottom = 114.0
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/InvSlots3"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 20.0
+texture = ExtResource("25_lmx7x")
+expand_mode = 1
+
+[node name="carrot" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 115.0
+offset_right = 28.0
+offset_bottom = 124.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="egg" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 115.0
+offset_right = 52.0
+offset_bottom = 124.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="cold water" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 157.0
+offset_right = 124.0
+offset_bottom = 166.0
+texture_normal = ExtResource("11_h7tpu")
+texture_pressed = ExtResource("12_gkade")
+
+[node name="Clicksound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_tb2no")
+
+[connection signal="pressed" from="NinePatchRect/beefsteak" to="." method="_on_beefsteak_pressed"]
+[connection signal="pressed" from="NinePatchRect/beefpatty" to="." method="_on_beefpatty_pressed"]
+[connection signal="pressed" from="NinePatchRect/lamb" to="." method="_on_lamb_pressed"]
+[connection signal="pressed" from="NinePatchRect/lambpatty" to="." method="_on_lambpatty_pressed"]
+[connection signal="pressed" from="NinePatchRect/chicken" to="." method="_on_chicken_pressed"]
+[connection signal="pressed" from="NinePatchRect/chickenpatty" to="." method="_on_chickenpatty_pressed"]
+[connection signal="pressed" from="NinePatchRect/rvege" to="." method="_on_rvege_pressed"]
+[connection signal="pressed" from="NinePatchRect/rtomato" to="." method="_on_rtomato_pressed"]
+[connection signal="pressed" from="NinePatchRect/rspaghetti" to="." method="_on_rspaghetti_pressed"]
+[connection signal="pressed" from="NinePatchRect/rcheese" to="." method="_on_rcheese_pressed"]
+[connection signal="pressed" from="NinePatchRect/coke" to="." method="_on_coke_pressed"]
+[connection signal="pressed" from="NinePatchRect/100" to="." method="_on__pressed"]
+[connection signal="pressed" from="NinePatchRect/7up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="NinePatchRect/sprite" to="." method="_on_sprite_pressed"]
+[connection signal="pressed" from="NinePatchRect/bun" to="." method="_on_bun_pressed"]
+[connection signal="pressed" from="NinePatchRect/bread" to="." method="_on_bread_pressed"]
+[connection signal="pressed" from="NinePatchRect/carrot" to="." method="_on_carrot_pressed"]
+[connection signal="pressed" from="NinePatchRect/egg" to="." method="_on_egg_pressed"]
+[connection signal="pressed" from="NinePatchRect/cold water" to="." method="_on_cold_water_pressed"]

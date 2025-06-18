@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://b3d2udoprdqun"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_womre"]
+[ext_resource type="Texture2D" uid="uid://xdmskorrna7b" path="res://IngredientMenu/Ingredient_Sprite/chili_flakes.png" id="2_o6mig"]
+
+[resource]
+script = ExtResource("1_womre")
+name = "barbecue sauce"
+texture = ExtResource("2_o6mig")
+price = 0
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://by8yo2u4pw38m"]
+
+[ext_resource type="Texture2D" uid="uid://mkerffylv5sm" path="res://photo/signboard-removebg-preview.png" id="1_31gs7"]
+[ext_resource type="Script" uid="uid://ddma6fmweq646" path="res://signboard.gd" id="1_kvjog"]
+
+[node name="signboard" type="Node2D"]
+script = ExtResource("1_kvjog")
+
+[node name="signboard" type="StaticBody2D" parent="."]
+
+[node name="sigboard" type="Sprite2D" parent="signboard"]
+position = Vector2(143, 273)
+scale = Vector2(0.0726453, 0.0736474)
+texture = ExtResource("1_31gs7")

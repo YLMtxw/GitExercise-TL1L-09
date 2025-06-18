@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://b4xvysr8510p"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_yt66e"]
+[ext_resource type="Texture2D" uid="uid://d1kvqlj4ko8t6" path="res://IngredientMenu/Ingredient_Sprite/patty cooked.png" id="2_nql3i"]
+
+[resource]
+script = ExtResource("1_yt66e")
+name = "lamb patty cooked"
+texture = ExtResource("2_nql3i")
+price = 0
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

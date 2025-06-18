@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://driqhneeflf36"]
+
+[ext_resource type="Script" uid="uid://c2jevq51ijiin" path="res://inventoryitem.gd" id="1_ms7km"]
+[ext_resource type="Texture2D" uid="uid://cs8yvh86v480c" path="res://IngredientMenu/Ingredient_Sprite/burger.png" id="2_w5o8m"]
+
+[resource]
+script = ExtResource("1_ms7km")
+name = "beef burger"
+texture = ExtResource("2_w5o8m")
+price = 15
+metadata/_custom_type_script = "uid://c2jevq51ijiin"

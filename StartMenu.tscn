@@ -1,0 +1,269 @@
+[gd_scene load_steps=25 format=3 uid="uid://v46hvmlbt3i0"]
+
+[ext_resource type="Script" uid="uid://ewyi0xfg6ddr" path="res://node_2d.gd" id="1_ufv5y"]
+[ext_resource type="Texture2D" uid="uid://ghn4vl843k8x" path="res://photo/final main menu.jpg" id="2_0d5ky"]
+[ext_resource type="Texture2D" uid="uid://coj4de1vjh0fw" path="res://photo/tutorial.png" id="2_ht3pi"]
+[ext_resource type="Texture2D" uid="uid://4wgnkqj5uvih" path="res://photo/tutorial 01.png" id="3_ms31j"]
+[ext_resource type="Texture2D" uid="uid://bckmsp7vrgy7q" path="res://photo/startttttt.png" id="4_ht3pi"]
+[ext_resource type="AudioStream" uid="uid://bp5df5e5p4t2n" path="res://song/china-culture-320198.mp3" id="5_3wf2c"]
+[ext_resource type="Script" uid="uid://bv73fbn0em47v" path="res://texture_button.gd" id="5_ht3pi"]
+[ext_resource type="Texture2D" uid="uid://c7420k42q2fbn" path="res://photo/start01111.png" id="5_ms31j"]
+[ext_resource type="Script" uid="uid://hhmdoorpi4i6" path="res://parallax_background.gd" id="6_rd8cm"]
+[ext_resource type="AudioStream" uid="uid://doflbm2rltmn2" path="res://song/mixkit-player-jumping-in-a-video-game-2043.wav" id="7_ht3pi"]
+[ext_resource type="Texture2D" uid="uid://c8rtdnwaknhfr" path="res://photo/setting.png" id="11_ms31j"]
+[ext_resource type="Texture2D" uid="uid://d4jti1aksdca7" path="res://photo/setting pressed.png" id="12_xuc80"]
+[ext_resource type="Texture2D" uid="uid://b4iiu364kj40a" path="res://photo/setting hover.png" id="13_aa878"]
+[ext_resource type="Texture2D" uid="uid://c02qcug22fath" path="res://photo/a_2025-05-27_143504-removebg-preview.png" id="14_q1tr0"]
+[ext_resource type="Script" uid="uid://dboerlcfa0opp" path="res://h_slider.gd" id="15_f6et0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d5ky"]
+bg_color = Color(0.552941, 0.290196, 0.215686, 1)
+border_width_left = 5
+border_width_top = 15
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.278431, 0.509804, 0.580392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 4
+shadow_color = Color(0.964706, 0.792157, 0.545098, 1)
+shadow_size = 10
+
+[sub_resource type="Animation" id="Animation_lo4tm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3wf2c"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rd8cm"]
+_data = {
+&"RESET": SubResource("Animation_lo4tm"),
+&"fade_out": SubResource("Animation_3wf2c")
+}
+
+[sub_resource type="GDScript" id="GDScript_lo4tm"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_q1tr0"]
+dof_blur_far_enabled = true
+
+[sub_resource type="Environment" id="Environment_f6et0"]
+
+[sub_resource type="Environment" id="Environment_7oljx"]
+
+[sub_resource type="World3D" id="World3D_7ei3k"]
+environment = SubResource("Environment_f6et0")
+fallback_environment = SubResource("Environment_7oljx")
+camera_attributes = SubResource("CameraAttributesPractical_q1tr0")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ufv5y")
+
+[node name="tutorial button" type="TextureButton" parent="."]
+texture_filter = 1
+clip_contents = true
+offset_left = 125.0
+offset_top = 255.0
+offset_right = 169.0
+offset_bottom = 275.0
+scale = Vector2(3, 3.5)
+tooltip_auto_translate_mode = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_ht3pi")
+texture_pressed = ExtResource("3_ms31j")
+
+[node name="start button2" type="TextureButton" parent="."]
+texture_filter = 1
+texture_repeat = 1
+anchors_preset = -1
+anchor_left = -0.04
+anchor_right = 0.87
+offset_left = 320.0
+offset_top = 255.0
+offset_right = 364.0
+offset_bottom = 275.0
+scale = Vector2(3, 3.5)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_ht3pi")
+texture_pressed = ExtResource("5_ms31j")
+script = ExtResource("5_ht3pi")
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+initial_position = 1
+size = Vector2i(355, 349)
+visible = true
+max_size = Vector2i(32731, 32768)
+theme_override_styles/panel = SubResource("StyleBoxFlat_0d5ky")
+
+[node name="TutorialLabel" type="Label" parent="PopupPanel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.5
+offset_top = -149.5
+offset_right = 162.5
+offset_bottom = 159.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.976471, 0.803922, 0.556863, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Welcome to ServeInEase!
+A key: Move left
+D key: Move right
+W key: Move up
+S key: Move down
+E key: Interaction
+Esc key : Setting
+I key : Inventory
+Shift key : Speed Up 
+ORDER INSTRUCTION:
+1. Extra = ingredient add by 1
+2. No = remove the ingredient from recipe"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 576.0
+offset_bottom = 349.0
+mouse_filter = 2
+color = Color(0.243173, 0.478954, 0.396798, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_rd8cm")
+}
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ht3pi")
+volume_db = 23.771
+script = SubResource("GDScript_lo4tm")
+
+[node name="bgm for Start menu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3wf2c")
+volume_db = 12.0
+autoplay = true
+parameters/looping = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("6_rd8cm")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+position = Vector2(0, 3)
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(574, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(287, 171.656)
+scale = Vector2(0.531017, 0.484288)
+texture = ExtResource("2_0d5ky")
+
+[node name="setting button" type="TextureButton" parent="."]
+offset_left = 510.0
+offset_top = 17.0
+offset_right = 532.0
+offset_bottom = 39.0
+scale = Vector2(2, 2)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_ms31j")
+texture_pressed = ExtResource("12_xuc80")
+texture_hover = ExtResource("13_aa878")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="PopupPanel2" type="PopupPanel" parent="."]
+world_3d = SubResource("World3D_7ei3k")
+canvas_item_default_texture_filter = 0
+position = Vector2i(193, 45)
+size = Vector2i(190, 220)
+visible = true
+transient_to_focused = true
+min_size = Vector2i(50, 0)
+content_scale_size = Vector2i(0, 15)
+content_scale_mode = 1
+content_scale_aspect = 2
+content_scale_stretch = 1
+
+[node name="Setting" type="Sprite2D" parent="PopupPanel2"]
+texture_filter = 1
+position = Vector2(99.1562, 109.187)
+scale = Vector2(1.36336, 1.64018)
+texture = ExtResource("14_q1tr0")
+
+[node name="HSlider" type="HSlider" parent="PopupPanel2/Setting"]
+anchors_preset = -1
+anchor_left = 0.223
+anchor_right = 0.223
+offset_left = -84.5267
+offset_top = -22.6728
+offset_right = 24.4733
+offset_bottom = -6.67284
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+size_flags_horizontal = 0
+min_value = -40.0
+max_value = 0.0
+script = ExtResource("15_f6et0")
+
+[node name="Label" type="Label" parent="PopupPanel2/Setting"]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.089
+anchor_top = 0.08
+anchor_right = 0.921
+anchor_bottom = 0.942
+offset_left = -66.5637
+offset_top = -82.0383
+offset_right = 13.7963
+offset_bottom = -111.718
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+tooltip_auto_translate_mode = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "
+VOLUME"
+horizontal_alignment = 1
+autowrap_mode = 2
+justification_flags = 160
+clip_text = true
+
+[connection signal="pressed" from="tutorial button" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="start button2" to="." method="_on_start_button_2_pressed"]
+[connection signal="pressed" from="setting button" to="." method="_on_setting_button_pressed"]
+[connection signal="value_changed" from="PopupPanel2/Setting/HSlider" to="." method="_on_h_slider_value_changed"]
